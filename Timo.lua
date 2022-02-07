@@ -11874,24 +11874,24 @@ if text == '/start' then
 Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 if not Redis:get(Timo.."Timo:Start:Bot") then
-local CmdStart = '*\n ⦁ أهلآ بك في بوت '..(Redis:get(Timo.."Timo:Name:Bot") or "صعيدي")..
+local CmdStart = '*\n ᪣ أهلآ بك في بوت '..(Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")..
 '\n ᪣ اختصاص البوت حماية المجموعات'..
 '\n ᪣ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n ᪣ اضف البوت الى مجموعتك'..
 '\n ᪣ ارفعه ادمن {مشرف}'..
 '\n ᪣ ارسل كلمة { تفعيل } ليتم تفعيل المجموعه'..
-'\n ᪣ مطور البوت ⇦ {'..UserSudo..'}*'
+'\n ᪣ مطور البوت ⇦ {@'..UserSudo..'}*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '𓄼•اضف البوت لمجموعتك•𓄹', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
 {text = '𓄼•مبرمج السورس•𓄹', url = "https://t.me/tt_tt_4"}
 },
 {
-{text = '𓄼• ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ •𓄹', url = 't.me/CH_Timo'}, 
+{text = '𓄼• ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ •𓄹', url = 't.me/S_a_i_d_i'}, 
 },
 }
 }
@@ -11901,13 +11901,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'}, 
-},
-{
-{text = '𓄼• ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ •𓄹', url = 't.me/CH_Timo'}, 
+{text = '𓄼•اضف البوت لمجموعتك•𓄹', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
 {text = '𓄼•مبرمج السورس•𓄹', url = "https://t.me/tt_tt_4"}
+},
+{
+{text = '𓄼• ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ •𓄹', url = 't.me/S_a_i_d_i'}, 
 },
 }
 }
@@ -11981,9 +11981,11 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي المطور الاساسي *', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'* ᪣ اهلا بك عزيزي المطور الاساسي *', 'md', false, false, false, false, reply_markup)
 end
 end
+
+
 if text == '𓄼 تنظيف المشتركين 𓄹' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
