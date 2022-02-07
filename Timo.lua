@@ -12476,15 +12476,15 @@ if Message_Get.forward_info then
 local Info_User = Redis:get(Timo.."Timo:Twasl:UserId"..Message_Get.forward_info.date) or 46899864
 if text == 'حظر' then
 Redis:sadd(Timo..'Timo:BaN:In:Tuasl',Info_User)  
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ᪣ تم حظره من تواصل البوت ').Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ⦁ تم حظره من تواصل البوت ').Reply,"md",true)  
 end 
 if text =='الغاء الحظر' or text =='الغاء حظر' then
 Redis:srem(Timo..'Timo:BaN:In:Tuasl',Info_User)  
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ᪣ تم الغاء حظره من تواصل البوت ').Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ⦁ تم الغاء حظره من تواصل البوت ').Reply,"md",true)  
 end 
 local ChatAction = LuaTele.sendChatAction(Info_User,'Typing')
 if not Info_User or ChatAction.message == "USER_IS_BLOCKED" then
-LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ᪣ قام بحظر البوت لا استطيع ارسال رسالتك ').Reply,"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ⦁ قام بحظر البوت لا استطيع ارسال رسالتك ').Reply,"md",true)  
 end
 if msg.content.video_note then
 LuaTele.sendVideoNote(Info_User, 0, msg.content.video_note.video.remote.id)
@@ -12512,7 +12512,7 @@ LuaTele.sendAudio(Info_User, 0, msg.content.audio.audio.remote.id, '', "md")
 elseif text then
 LuaTele.sendText(Info_User,0,text,"md",true)
 end 
-LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ᪣ تم ارسال رسالتك اليه ').Reply,"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,' ⦁ تم ارسال رسالتك اليه ').Reply,"md",true)  
 end
 end
 end 
