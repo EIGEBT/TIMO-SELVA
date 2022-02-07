@@ -67,16 +67,7 @@ UserSudo = "]]..Redis:get(SshId.."Info:Redis:User")..[[",
 SudoId = ]]..Redis:get(SshId.."Info:Redis:User:ID")..[[
 }
 ]])
-Timo:close()
-local Run = io.open("Run", 'w')
-Run:write([[
-cd $(cd $(dirname $0); pwd)
-while(true) do
-screen -S Timo -X kill
-screen -S Timo ./Timo
-done
-]])
-Run:close()
+Informationlua:close()
 Redis:del(SshId.."Info:Redis:User:ID");Redis:del(SshId.."Info:Redis:User");Redis:del(SshId.."Info:Redis:Token:User");Redis:del(SshId.."Info:Redis:Token")
 os.execute('chmod +x Timo;chmod +x Run;./Run')
 end
@@ -88,6 +79,15 @@ UserBot = Information.UserBot
 Timo = Token:match("(%d+)")
 os.execute('sudo rm -fr .CallBack-Bot/'..Timo)
 LuaTele = luatele.set_config{api_id=2692371,api_hash='fe85fff033dfe0f328aeb02b4f784930',session_name=Timo,token=Token}
+function getbio(User)
+local var = "لايوجد"
+local url , res = https.request("https://api.telegram.org/bot"..Token.."/getchat?chat_id="..User);
+data = json:decode(url)
+if data.result.bio then
+var = data.result.bio
+end
+return var
+end
 function var(value)  
 print(serpent.block(value, {comment=false}))   
 end 
