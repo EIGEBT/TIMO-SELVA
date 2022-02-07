@@ -5782,26 +5782,68 @@ if y == true then
 LuaTele.sendText(msg_chat_id,msg_id,restricted,"md",true)  
 end
 end
-if text == 'تاك للكل' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*• هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n• عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+if msg.content.photo then
+if msg.content.caption.text and msg.content.caption.text:match("^all (.*)$") then
+local ttag = msg.content.caption.text:match("^all (.*)$") 
+if msg.content.photo.sizes[1].photo.remote.id then
+idPhoto = msg.content.photo.sizes[1].photo.remote.id
+elseif msg.content.photo.sizes[2].photo.remote.id then
+idPhoto = msg.content.photo.sizes[2].photo.remote.id
+elseif msg.content.photo.sizes[3].photo.remote.id then
+idPhoto = msg.content.photo.sizes[3].photo.remote.id
 end
 local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
-local List_Members = Info_Members.members
-listall = '\n*• قائمه الاعضاء \n ༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻*\n'
-for k, v in pairs(List_Members) do
-local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if UserInfo.username ~= "" then
-listall = listall.."*"..k.." - @"..UserInfo.username.."*\n"
+x = 0 
+tags = 0 
+local list = Info_Members.members
+for k, v in pairs(list) do 
+local data = LuaTele.getUser(v.member_id.user_id)
+if x == 5 or x == tags or k == 0 then 
+tags = x + 5 
+if ttag then
+t = "#all "..ttag.."" 
 else
-listall = listall.."*"..k.." -* ["..UserInfo.id.."](tg://user?id="..UserInfo.id..")\n"
+t = "#all "
+end
+end 
+x = x + 1 
+tagname = data.first_name
+tagname = tagname:gsub("]","") 
+tagname = tagname:gsub("[[]","") 
+t = t..", ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
+if x == 5 or x == tags or k == 0 then 
+if ttag then
+Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
+else 
+Text = t:gsub('#all,','#all\n')
+end
+LuaTele.sendPhoto(msg.chat_id, 0, idPhoto,Text,"md")
+end 
+end 
 end
 end
+if text == "@all" or text == "تاك للكل" or text == "all" then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
+x = 0
+tags = 0
+local list = Info_Members.members
+for k, v in pairs(list) do
+local UserInfo = LuaTele.getUser(v.member_id.user_id)
+if x == 5 or x == tags or k == 0 then
+tags = x + 5
+listall = ""
+end
+x = x + 1
+if UserInfo.first_name ~= '' then
+listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id.."),"
+end
+if x == 5 or x == tags or k == 0 then
 LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)  
+end
+end
 end
 if text == "تاك للزوجات" or text == "الزوجات" then
 local zwgat_list = Redis:smembers(Timo..msg_chat_id.."zwgat:")
@@ -7227,7 +7269,7 @@ return false
 end 
 if text == "قفل الجهات بالكتم" then 
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص ?? '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
