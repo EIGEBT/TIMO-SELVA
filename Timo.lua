@@ -9468,7 +9468,6 @@ end
 local ban = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local rdbhoto = nspp[math.random(#nspp)]
-return LuaTele.sendText(msg_chat_id,msg_id,'*᪣ لا توجد صوره ف حسابك*',"md",true) 
 if photo.total_count > 0 then
 data = {} 
 data.inline_keyboard = {
@@ -9729,7 +9728,7 @@ data = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•اوامر المطورين•𓄹', data = msg.sender.user_id..'/help1'}, {text = '𓄼•اوامر التسليه•𓄹', data = msg.sender.user_id..'/help2'}, 
+{text = '??•اوامر المطورين•𓄹', data = msg.sender.user_id..'/help1'}, {text = '𓄼•اوامر التسليه•𓄹', data = msg.sender.user_id..'/help2'}, 
 },
 {
 {text = '𓄼•اوامر الاعضاء•𓄹', data = msg.sender.user_id..'/help3'}, {text = '𓄼•اوامر المسح•𓄹', data = msg.sender.user_id..'/help4'}, 
@@ -11743,7 +11742,7 @@ Redis:set(Timo.."Timo:Game:Difference"..msg.chat_id,name)
 name = string.gsub(name,"😸","😹😹😹😹😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
-name = string.gsub(name,"🐇","🕊??🕊🕊🕊🐇🕊🕊🕊🕊")
+name = string.gsub(name,"??","🕊??🕊🕊🕊🐇🕊🕊🕊🕊")
 name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟??🌟")
