@@ -9522,7 +9522,6 @@ return false
 end
 local ban = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
-local rdbhoto = nspp[math.random(#nspp)]
 return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,"md")
 if photo.total_count > 0 then
 data = {} 
