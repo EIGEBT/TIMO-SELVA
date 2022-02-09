@@ -5909,6 +5909,22 @@ end
 end
 return LuaTele.sendText(msg_chat_id,msg_id,klbk_list,"md",true) 
 end
+if text == "تاك للكساس" or text == "الكساس" then
+local klbklb_list = Redis:smembers(Timo..msg_chat_id.."klbklb:")
+if #klbklb_list == 0 then 
+return LuaTele.sendText(msg_chat_id,msg_id,'*᪣ لايوجد الكلاب *',"md",true) 
+end 
+local klbk_list = "* ᪣ قائمه كساس الجروب *"..#klbpklb_list.."\n*༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻*\n"
+for k, v in pairs(klbklb_list) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+klbk_list = klbk_list.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+klbk_list = klbk_list.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+return LuaTele.sendText(msg_chat_id,msg_id,klbk_list,"md",true) 
+end
 
 if text == "القناه المضافه" then
 return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Timo.."chadmin"..msg_chat_id),"md",true)  
@@ -7447,30 +7463,22 @@ return LuaTele.sendText(msg_chat_id,msg_id," ᪣ تم مسح الرابط ","md"
 end
 if text == "الرابط" or text == "رابط" or text == "الينك" then
 if not Redis:get(Timo.."Timo:Status:Link"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᪣ تم تعطيل جلب الرابط من قبل الادمنيه*","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id," ᪣ تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
 end 
 local Get_Chat = LuaTele.getChat(msg_chat_id)
-local GetLink = Redis:get(Timo.."Group:Link"..msg_chat_id) 
+local GetLink = Redis:get(Timo.."Timo:Group:Link"..msg_chat_id) 
 if GetLink then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text =Get_Chat.title, url = GetLink}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, "*᪣ Link Group : * \n["..Get_Chat.title.. ']('..GetLink..')', 'md', true, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id, msg_id, " ᪣ Link Group : \n["..Get_Chat.title.. ']('..GetLink..')', 'md', true, false, false, false, reply_markup)
 else 
 local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'Hussain',tonumber(msg.date+86400),0,true)
 if LinkGroup.code == 3 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᪣  لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط *","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id," ᪣ لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط ","md",true)
 end
-url = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..msg_chat_id..'')
-json = JSON.decode(url)
-local txt = "*᪣ Link Group : * \n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = Get_Chat.title, url=LinkGroup.invite_link},
-},
-}
-local rep = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..rep.."&photo=t.me/"..json.result.username.."&caption="..URL.escape(txt).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{{text = Get_Chat.title, url = LinkGroup.invite_link},},}}
+return LuaTele.sendText(msg_chat_id, msg_id, " ᪣ Link Group : \n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')', 'md', true, false, false, false, reply_markup)
 end
 end
 if text == "اسم الجروب" or text == "اسم البار" then
@@ -9601,7 +9609,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇᴛ•𓄹', url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/Timo8Bot"}
+{text = '𓄼•ʙᴏᴛ ᴛɪᴍᴏ•𓄹',url="t.me/Timo8Bot"}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -9907,6 +9915,44 @@ local rd_tlaq = {"😂 تم تنزيله كلب",
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tmtlaq[math.random(#rd_tmtlaq)]).Reply,"md",true)  
 else
 local rd_tmtlaq = {"😂 تم تنزيله كلب مسبقا",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
+end
+end
+if text == "رفع كس" or text == "كس" and msg.reply_to_message_id ~= 0 then
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*لا استطيع استخدام الأمر علي البوت ᪣*","md",true)  
+end
+if Redis:sismember(Timo..msg_chat_id.."klbklb:",Message_Reply.sender.user_id) then
+local rd_mtzwga = {"تم رفعه كس مسبقا 😂",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
+else
+local rd_zwag = {"تم رفعه كس ابدأ نيك  😂",
+}
+if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
+Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
+end
+Redis:sadd(Timo..msg_chat_id.."klbklb:",Message_Reply.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
+end
+end
+if text == "تنزيل كس" or text == "تنزل الكلب" and msg.reply_to_message_id ~= 0 then
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*لا استطيع استخدام الأمر علي البوت ᪣*","md",true)  
+end
+if Redis:sismember(Timo..msg_chat_id.."klbklb:",Message_Reply.sender.user_id) then
+Redis:srem(Timo..msg_chat_id.."klbklb:",Message_Reply.sender.user_id)
+Redis:sadd(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) 
+local rd_tlaq = {"تم تنزيله كس وبقا عندو بتاع 😂",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tmtlaq[math.random(#rd_tmtlaq)]).Reply,"md",true)  
+else
+local rd_tmtlaq = {"تم تنزيله كس قبل كدا 😂",
 }
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
 end
@@ -11685,7 +11731,7 @@ name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
 name = string.gsub(name,"🐇","🕊??🕊🕊🕊🐇🕊🕊🕊🕊")
 name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
-name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟🌟🌟")
+name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟??🌟")
 name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
 name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
