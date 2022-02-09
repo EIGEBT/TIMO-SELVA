@@ -9472,7 +9472,7 @@ if photo.total_count > 0 then
 data = {} 
 data.inline_keyboard = {
 {
-{text ='𓄼•صورتك جامده ياحب•𓄹 ',url = "https://t.me/"..ban.username..""}, 
+{text ='𓄼•عدد صورك ياحب•𓄹 𓄼• '..photo.total_count..' •𓄹 🌝💙 ',url = "https://t.me/"..ban.username..""}, 
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
