@@ -17,44 +17,44 @@ luatele = require 'luatele'
 local FileInformation = io.open("./Information.lua","r")
 if not FileInformation then
 if not Redis:get(SshId.."Info:Redis:Token") then
-io.write('\27[1;31mارسل لي توكن البوت الان \nSend Me a Bot Token Now ↡\n\27[0;39;49m')
+io.write('\27[1;31mابعت يا تيمو توكن البوت يلا \nSend Me a Bot Token Now ↡\n\27[0;39;49m')
 local TokenBot = io.read()
 if TokenBot and TokenBot:match('(%d+):(.*)') then
 local url , res = https.request('https://api.telegram.org/bot'..TokenBot..'/getMe')
 local Json_Info = JSON.decode(url)
 if res ~= 200 then
-print('\27[1;34mعذرا توكن البوت خطأ تحقق منه وارسله مره اخره \nBot Token is Wrong\n')
+print('\27[1;34mالتوكن غلط ياض يا تيمو \nBot Token is Wrong\n')
 else
-io.write('\27[1;34mتم حفظ التوكن بنجاح \nThe token been saved successfully \n\27[0;39;49m')
+io.write('\27[1;34mتم حفظ التوكن يا تيمو \nThe token been saved successfully \n\27[0;39;49m')
 TheTokenBot = TokenBot:match("(%d+)")
 os.execute('sudo rm -fr .CallBack-Bot/'..TheTokenBot)
 Redis:set(SshId.."Info:Redis:Token",TokenBot)
 Redis:set(SshId.."Info:Redis:Token:User",Json_Info.result.username)
 end 
 else
-print('\27[1;34mلم يتم حفظ التوكن جرب مره اخره \nToken not saved, try again')
+print('\27[1;34mلم يتم حفظ التوكن ياض يا تيمو جرب تاني \nToken not saved, try again')
 end 
 os.execute('lua Timo.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User") then
-io.write('\27[1;31mارسل معرف المطور الاساسي الان \nDeveloper UserName saved ↡\n\27[0;39;49m')
+io.write('\27[1;31mابعت يا تيمو يوزر المطور الاساسي \nDeveloper UserName saved ↡\n\27[0;39;49m')
 local UserSudo = io.read():gsub('@','')
 if UserSudo ~= '' then
-io.write('\n\27[1;34mتم حفظ معرف المطور \nDeveloper UserName saved \n\n\27[0;39;49m')
+io.write('\n\27[1;34mحفظت اليوزر يا تيمو \nDeveloper UserName saved \n\n\27[0;39;49m')
 Redis:set(SshId.."Info:Redis:User",UserSudo)
 else
-print('\n\27[1;34mلم يتم حفظ معرف المطور الاساسي \nDeveloper UserName not saved\n')
+print('\n\27[1;34mلم يتم حفظ اليوزر يا تيمو جرب تاني \nDeveloper UserName not saved\n')
 end 
 os.execute('lua Timo.lua')
 end
 if not Redis:get(SshId.."Info:Redis:User:ID") then
-io.write('\27[1;31mارسل ايدي المطور الاساسي الان \nDeveloper ID saved ↡\n\27[0;39;49m')
+io.write('\27[1;31mابعت ايدي المطور الاساسي يا تيمو \nDeveloper ID saved ↡\n\27[0;39;49m')
 local UserId = io.read()
 if UserId and UserId:match('(%d+)') then
-io.write('\n\27[1;34mتم حفظ ايدي المطور \nDeveloper ID saved \n\n\27[0;39;49m')
+io.write('\n\27[1;34mتم حفظ الايدي يا تيمو \nDeveloper ID saved \n\n\27[0;39;49m')
 Redis:set(SshId.."Info:Redis:User:ID",UserId)
 else
-print('\n\27[1;34mلم يتم حفظ ايدي المطور الاساسي \nDeveloper ID not saved\n')
+print('\n\27[1;34mلم يتم حفظ الايدي ياض يا تيمو جرب تاني \nDeveloper ID not saved\n')
 end 
 os.execute('lua Timo.lua')
 end
@@ -9675,6 +9675,9 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ²•𓄹', url = "https://t.me/Snp_Zmlkawe"},{text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ³•𓄹', url = "https://t.me/EL_ME_RE_KH_Y9"}
 },
 {
+{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ•𓄹', url = "https://t.me/bent_timo"}
+},
+{
 {text = '𓄼•ʙᴏᴛ ᴛᴇᴀᴍ•𓄹', url = "https://t.me/Timo8BOT"}
 },
 {
@@ -10933,7 +10936,7 @@ local texting = {"اخر افلام شاهدتها",
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
 "اخر كتاب قرآته", 
-"ليش حسين ذكي؟ ", 
+"ليش تيمو ذكي؟ ", 
 "افضل يوم ف حياتك", 
 "ليه مضيفتش كل جهاتك", 
 "حكمتك ف الحياه", 
