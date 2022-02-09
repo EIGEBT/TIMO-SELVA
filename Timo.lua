@@ -9523,11 +9523,12 @@ end
 local ban = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local rdbhoto = nspp[math.random(#nspp)]
+return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,"md")
 if photo.total_count > 0 then
 data = {} 
 data.inline_keyboard = {
 {
-{text ='𓄼•عدد صورك ياحب•𓄹 𓄼• '..photo.total_count..' •𓄹 🌝💙 ',url = "https://t.me/"..ban.username..""}, 
+{text ='𓄼•عدد صورك ياحب•𓄹 𓄼• '..photo.total_count..' •𓄹 🌝💙',url = "https://t.me/"..ban.username..""}, 
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
