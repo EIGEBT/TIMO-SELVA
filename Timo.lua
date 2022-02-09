@@ -9462,7 +9462,7 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 end
 if text == 'صورتي' or text == 'الصوره' then
-if Redis:get(Timo.."Status:photo"..msg.chat_id) then
+if not Redis:get(Timo.."Status:gamle"..msg_chat_id) then
 return false
 end
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -11742,7 +11742,7 @@ Redis:set(Timo.."Timo:Game:Difference"..msg.chat_id,name)
 name = string.gsub(name,"😸","😹😹😹😹😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
-name = string.gsub(name,"??","🕊??🕊🕊🕊??🕊🕊🕊🕊")
+name = string.gsub(name,"??","🕊??🕊??🕊??🕊🕊🕊🕊")
 name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟??🌟")
