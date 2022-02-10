@@ -9691,10 +9691,10 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ʙᴏᴛ ᴛᴇᴀᴍ•𓄹', url = "https://t.me/Timo8BOT"}
 },
 {
-{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/postat_selva"}
+{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇᴛ•𓄹', url = "https://t.me/postat_selva"}
 },
 {
-{text = '𓄼•™ʽ𝑻 𝑺ᯓ𝑺𝑬𝑳𝑽𝑨✘⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
+{text = '𓄼•انضم الي جروب التيم•𓄹', url = "https://t.me/br_selva"}
 },
 }
 local msgg = msg_id/2097152/0.5
