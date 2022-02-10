@@ -2103,7 +2103,7 @@ if NewCmmd then
 text = (NewCmmd or text)
 end
 end
-if text == 'رفع النسخه العامه' and msg.reply_to_message_id ~= 0 or text == 'رفع النسخه العامه' and msg.reply_to_message_id ~= 0 then
+if text == 'رفع النسخه' and msg.reply_to_message_id ~= 0 or text == 'رفع النسخه' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
@@ -2294,7 +2294,7 @@ end
 Redis:set(Timo.."Timo:AddSudosNew"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id," ᪣ ارسل معرف المطور الاساسي مع @","md",true)
 end
-if text == '𓄼 جلب النسخه العامه 𓄹' or text == 'جلب النسخه العامه' then
+if text == '𓄼 جلب النسخه 𓄹' or text == 'جلب النسخه' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
@@ -2389,7 +2389,7 @@ Get_Json = Get_Json..'}}'
 local File = io.open('./'..UserBot..'.json', "w")
 File:write(Get_Json)
 File:close()
-return LuaTele.sendDocument(msg_chat_id,msg_id,'./'..UserBot..'.json', '* ᪣ تم جلب النسخه العامه\n ᪣ احصائيات𓄼 '..#Groups..' 𓄹المجموعات \n ᪣ احصائيات𓄼 '..#UsersBot..' 𓄹المشتركين *\n', 'md')
+return LuaTele.sendDocument(msg_chat_id,msg_id,'./'..UserBot..'.json', '* ᪣ تم جلب النسخه\n ᪣ احصائيات𓄼 '..#Groups..' 𓄹المجموعات \n ᪣ احصائيات𓄼 '..#UsersBot..' 𓄹المشتركين *\n', 'md')
 end
 if text and text:match("^تعين عدد الاعضاء (%d+)$") then
 if not msg.ControllerBot then 
@@ -2869,6 +2869,13 @@ end
 if text == 'انا مين' then
 local ban = LuaTele.getUser(msg.sender.user_id)
 local news = '🖤🌝 انت ياقلبي = '..msg.Name_Controller
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{{text =news,url = "https://t.me/"..ban.username..""}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
+end
+if text == 'اسمي' then
+local ban = LuaTele.getUser(msg.sender.user_id)
+local news = '🖤🌝 اسمك ياقلبي = '..first_name
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text =news,url = "https://t.me/"..ban.username..""}, },}}
 return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
@@ -9497,27 +9504,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ◉ مطور البوت : {*['..
 end
 end
 end
-if text == 'اسمي' then
-local ban = LuaTele.getUser(msg.sender.user_id)
-local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
-local T = '..ban.first_name..'
-if photo.total_count > 0 then
-data = {} 
-data.inline_keyboard = {
-{
-{text = ban.first_name, url = 't.me/SU_SELVA'}, 
-},
-{
-{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
-},
-{
-{text = '𓄼•اضف البوت لمجموعتك•𓄹', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
-end
-end
 if text and text:match("^قول (.*)$")then
 local m = text:match("^قول (.*)$")
 if Redis:get(Timo.."Status:kool"..msg.chat_id) then
@@ -11954,7 +11940,7 @@ data = {
 {text = '𓄼 تنظيف المجموعات 𓄹',type = 'text'},{text = '𓄼 تنظيف المشتركين 𓄹', type = 'text'},
 },
 {
-{text = '𓄼 جلب النسخه العامه 𓄹',type = 'text'},
+{text = '𓄼 جلب النسخه 𓄹',type = 'text'},
 },
 {
 {text = '𓄼 اضف رد عام 𓄹',type = 'text'},{text = '𓄼 حذف رد عام 𓄹', type = 'text'},
@@ -12941,8 +12927,8 @@ local TextHelp = [[*
 𓄼• مسح جميع الملفات •𓄹
 𓄼• المتجر •𓄹
 𓄼• الاحصائيات •𓄹
-𓄼• جلب النسخه العامه •𓄹
-𓄼• رفع النسخه العامه •𓄹
+𓄼• جلب النسخه •𓄹
+𓄼• رفع النسخه •𓄹
 𓄼• اذاعه •𓄹
 𓄼• اذاعه بالتثبيت •𓄹
 𓄼• اذاعه خاص •𓄹
