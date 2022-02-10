@@ -9682,10 +9682,10 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ²•𓄹', url = "https://t.me/Snp_Zmlkawe"},{text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ³•𓄹', url = "https://t.me/EL_ME_RE_KH_Y9"}
 },
 {
-{text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ⁴•𓄹', url = "https://t.me/ASHR_AKAT"}
+{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ¹•𓄹', url = "https://t.me/bent_timo"}
 },
 {
-{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ•𓄹', url = "https://t.me/bent_timo"},{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ²•𓄹', url = "https://t.me/soskaa17"}
+{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ²•𓄹', url = "https://t.me/bent_ti_mo"},{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ³•𓄹', url = "https://t.me/bent_dad_timo"}
 },
 {
 {text = '𓄼•ʙᴏᴛ ᴛᴇᴀᴍ•𓄹', url = "https://t.me/Timo8BOT"}
@@ -9694,7 +9694,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/postat_selva"}
 },
 {
-{text = '𓄼•انضم الي جروب التيم•𓄹', url = "https://t.me/br_selva"}
+{text = '𓄼•™ʽ𝑻 𝑺ᯓ𝑺𝑬𝑳𝑽𝑨✘⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
 },
 }
 local msgg = msg_id/2097152/0.5
