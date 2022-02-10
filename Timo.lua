@@ -9605,7 +9605,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_tt_4"}
 },
 {
-{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇᴛ•𓄹', url = "https://t.me/SU_SELVA"}
+{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SU_SELVA"}
 },
 {
 {text = '𓄼•ʙᴏᴛ ᴛɪᴍᴏ•𓄹',url="t.me/Timo8Bot"}
@@ -9662,7 +9662,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ᴄʜᴀɴɴᴇᴛ•𓄹',url="t.me/SU_SELVA"}
+{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹',url="t.me/SU_SELVA"}
 },
 {
 {text = '𓄼•اضف البوت لمجموعتك•𓄹', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -9682,13 +9682,16 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ²•𓄹', url = "https://t.me/Snp_Zmlkawe"},{text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ³•𓄹', url = "https://t.me/EL_ME_RE_KH_Y9"}
 },
 {
-{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ•𓄹', url = "https://t.me/bent_timo"}
+{text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ⁴•𓄹', url = "https://t.me/ASHR_AKAT"}
+},
+{
+{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ•𓄹', url = "https://t.me/bent_timo"},{text = '𓄼•ʙᴇɴᴛ ᴛɪᴍᴏ²•𓄹', url = "https://t.me/soskaa17"}
 },
 {
 {text = '𓄼•ʙᴏᴛ ᴛᴇᴀᴍ•𓄹', url = "https://t.me/Timo8BOT"}
 },
 {
-{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇᴛ•𓄹', url = "https://t.me/postat_selva"}
+{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/postat_selva"}
 },
 {
 {text = '𓄼•انضم الي جروب التيم•𓄹', url = "https://t.me/br_selva"}
@@ -9713,7 +9716,7 @@ data = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '??•اوامر المطورين•𓄹', data = msg.sender.user_id..'/help1'}, {text = '𓄼•اوامر التسليه•𓄹', data = msg.sender.user_id..'/help2'}, 
+{text = '𓄼•اوامر المطورين•𓄹', data = msg.sender.user_id..'/help1'}, {text = '𓄼•اوامر التسليه•𓄹', data = msg.sender.user_id..'/help2'}, 
 },
 {
 {text = '𓄼•اوامر الاعضاء•𓄹', data = msg.sender.user_id..'/help3'}, {text = '𓄼•اوامر المسح•𓄹', data = msg.sender.user_id..'/help4'}, 
@@ -13159,26 +13162,26 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•اوامر المطورين•𓄹', data = msg.sender.user_id..'/help1'}, {text = '𓄼•اوامر التسليه•𓄹', data = msg.sender.user_id..'/help2'}, 
+{text = '𓄼•❶•𓄹 ', data = IdUser..'/help1'}, {text = '𓄼•❷•𓄹 ', data = IdUser..'/help2'}, 
 },
 {
-{text = '𓄼•اوامر الاعضاء•𓄹', data = msg.sender.user_id..'/help3'}, {text = '𓄼•اوامر المسح•𓄹', data = msg.sender.user_id..'/help4'}, 
+{text = '𓄼•❸•𓄹 ', data = IdUser..'/help3'}, {text = '𓄼•❹•𓄹 ', data = IdUser..'/help4'}, 
 },
 {
-{text = '𓄼•التفعيل والتعطيل•𓄹', data = msg.sender.user_id..'/listallAddorrem'}, {text = '𓄼•الفتح والقفل•𓄹', data = msg.sender.user_id..'/NoNextSeting'}, 
+{text = '𓄼•❺•𓄹 ', data = IdUser..'/listallAddorrem'}, {text = '𓄼•❻•𓄹 ', data = IdUser..'/NoNextSeting'}, 
 },
 {
-{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = 't.me/SU_SELVA'}, 
+{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹 ', url = 't.me/omar_goo_noor'}, 
 },
 }
 }
 local TextHelp = [[*
-༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻
-╗•اهـلا بـك عـزيـزي•
-╣•الـيـك الاوامـر فـي الاسـفل•
-╣•يـمـكـنـك الـتـحـكـم فـي الـجـروب•
-╝•بـواسـطـه مـنـشـئ الـجـروب•
-༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻
+╗•❶• ‹ اوامر المطورين ›
+╣•❷• ‹ اوامر التسليه ›
+╣•❸• ‹ اوامر الاعضاء ›
+╣•❹• ‹ اوامر المسح ›
+╣•❺• ‹ اوامر التفعيل والتعطيل ›
+╝•❻• ‹ اوامر الفتح والقفل ›
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
