@@ -6096,7 +6096,7 @@ list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","L
 for i,lock in pairs(list) do 
 Redis:set(Timo..'Timo:'..lock..msg_chat_id,"del")    
 end
-LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id," ᪣ تم قفـل جميع الاوامر").Lock,"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id," ᪣ تـم تفعيل الحمايه").Lock,"md",true)  
 return false
 end 
 
