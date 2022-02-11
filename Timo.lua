@@ -2405,6 +2405,8 @@ elseif text == 'الاحصائيات' or text == '𓄼 الاحصائيات 𓄹
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
@@ -2420,6 +2422,9 @@ local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = selva, url = 't.me/SU_SELVA'}, 
 },
@@ -2440,6 +2445,8 @@ elseif text == 'الجروبات' or text == '𓄼 الجروبات 𓄹' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
@@ -2454,6 +2461,9 @@ local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = selva, url = 't.me/SU_SELVA'}, 
 },
@@ -2471,6 +2481,8 @@ elseif text == 'المشتركين' or text == '𓄼 المشتركين 𓄹' th
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
@@ -2485,6 +2497,9 @@ local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = selva, url = 't.me/SU_SELVA'}, 
 },
@@ -9703,7 +9718,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/postat_selva"}
 },
 {
-{text = '𓄼•™ʽ𝑻 𝑺ᯓ𝑺𝑬𝑳𝑽𝑨✘⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
+{text = '𓄼•™ʽ𝑻 ??ᯓ𝑺𝑬𝑳𝑽𝑨✘⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
 },
 }
 local msgg = msg_id/2097152/0.5
