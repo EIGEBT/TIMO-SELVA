@@ -10109,13 +10109,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس 🏓', data = msg.sender.user_id..'/normgm'}, 
+{text = 'العاب متطورة ', data = msg.sender.user_id..'/degm'}, 
 },
 {
-{text = 'العاب متطورة 🥏', data = msg.sender.user_id..'/degm'}, 
-},
-{
-{text = '•ᴍʏ ᴄʜᴀɴɴᴇʟ♪', url = 't.me/Q_O_1l'}, 
+{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = 't.me/SU_SELVA'}, 
 },
 }
 }
@@ -14126,13 +14123,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس 🏓', data = IdUser..'/normgm'}, 
+{text = 'العاب متطورة ', data = IdUser..'/degm'}, 
 },
 {
-{text = 'العاب متطورة 🥏', data = IdUser..'/degm'}, 
-},
-{
-{text = '•ᴍʏ ᴄʜᴀɴɴᴇʟ♪', url = 't.me/Q_O_1l'}, 
+{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = 't.me/SU_SELVA'}, 
 },
 }
 }
@@ -14172,7 +14166,7 @@ data = {
 {{text = 'SpaceTraveler', url="https://t.me/gamee?game=SpaceTraveler"},{text = 'RedAndBlue', url="https://t.me/gamee?game=RedAndBlue"}},  
 {{text = 'SkodaHockey1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
 {{text = 'SmartUpShark', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
-{{text = '•ᴍʏ ᴄʜᴀɴɴᴇʟ♪', url = 't.me/Q_O_1l'}},
+{{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = 't.me/SU_SELVA'}},
 {{text = 'القائمه الرئيسيه', data = IdUser..'/help6'}},
 }
 }
