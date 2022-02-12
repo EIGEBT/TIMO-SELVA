@@ -9742,7 +9742,7 @@ end
 end
 end
 end
-if text == 'المطور' or text == 'مطور البوت' then   
+if text == 'المطور' or text == 'مطور' then   
 local  ban = LuaTele.getUser(Sudo_Id) 
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -9843,7 +9843,7 @@ end
 end
 end
 
-if text == 'المطور' or text == 'مطور البوت' or text == 'مطور' then   
+if text == 'المطور' or text == 'مطور' or text == 'مطور' then   
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
 local bains = LuaTele.getUser(msg.sender.user_id)
@@ -9898,34 +9898,6 @@ data = {
 }
 }
 LuaTele.sendText(1804133252,0,'*\n᪣ مرحباً عزيزي المبرمج باندا \nشخص ما يحتاج الي مساعده\nꔹ━━━━━ꔹ𝐅𝐈𝐑𝐄ꔹ━━━━━ꔹ\n᪣ اسمه :- '..klajq..' \n᪣ ايديه :-  : '..msg.sender.user_id..'\n᪣ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
-end
-if text == 'المطور' or text == 'مطور' then
-local TextingDevTimo = Redis:get(Timo..'Timo:Texting:DevTimo')
-if TextingDevTimo then 
-return LuaTele.sendText(msg_chat_id,msg_id,TextingDevTimo,"md",true)  
-else
-local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
-if photo.total_count > 0 then
-local ban = LuaTele.getUser(Sudo_Id)
-local T = '*🤍- 𝙳𝙴𝚅-𝙱𝙾𝚃 - = *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = ban.first_name, url = 't.me/SU_SELVA'}, 
-},
-{
-{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
-},
-{
-{text = '𓄼•اضف البوت لمجموعتك•𓄹', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-else
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ◉ مطور البوت : {*['..ban.first_name..'](tg://user?id='..ban.id..')*}*',"md",true)  
-end
-end
 end
 if text == 'اسمي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -12517,7 +12489,7 @@ end
  ]]):read('*all')
 LuaTele.sendText(msg_chat_id,msg_id,ioserver,"md",true)
 end
-if text == 'المطور' or text == 'مطور البوت' then   
+if text == 'المطور' or text == 'مطور' then   
 local  ban = LuaTele.getUser(Sudo_Id) 
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
 local Get_Chat = LuaTele.getChat(msg_chat_id)
