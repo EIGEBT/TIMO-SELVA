@@ -5955,50 +5955,6 @@ end
 end 
 end
 end
-if text and text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" or text == "تاك للكل" then  
-local ttag = text:match("^all (.*)$") or text:match("^@all (.*)$") 
-if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣ هاذا الامر يخص⦗ '..Controller_Num(6)..' ⦘* ',"md",true)  
-end
-if Redis:get(Timo.."lockalllll"..msg_chat_id) == "off" then
-return LuaTele.sendText(msg_chat_id,msg_id,'*᪣  تم تعطيل @all من قبل المدراء*',"md",true)  
-end
-local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 2000)
-x = 0 
-tags = 0 
-local list = Info_Members.members
-for k, v in pairs(list) do 
-local data = LuaTele.getUser(v.member_id.user_id)
-if x == 20 or x == tags or k == 0 then 
-tags = x + 8 
-if ttag then
-t = "#all "..ttag.."" 
-else
-t = "#all "
-end
-end 
-x = x + 1 
-tagname = data.first_name
-tagname = tagname:gsub("]","") 
-tagname = tagname:gsub("[[]","") 
-t = t.."᪣ ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
-if x == 20 or x == tags or k == 0 then 
-if ttag then
-Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
-else 
-Text = t:gsub('#all,','#all\n')
-end
-sendText(msg_chat_id,Text,0,'md') 
-end 
-end 
-end 
-if msg.content.video then
-local c = msg.content.caption.text
-return LuaTele.sendText(msg_chat_id,msg_id,c,"md",true)  
-end
-if msg.content.photo or msg.content.animation or msg.content.sticker or msg.content.video or msg.content.audio or msg.content.document or msg.content.voice_chats then
-Redis:sadd(Timo.."cleaner"..msg_chat_id,msg_id)
-end
 if text == "تاك للزوجات" or text == "الزوجات" then
 local zwgat_list = Redis:smembers(Timo..msg_chat_id.."zwgat:")
 if #zwgat_list == 0 then 
@@ -9899,26 +9855,23 @@ data = {
 }
 LuaTele.sendText(1804133252,0,'*\n᪣ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\nꔹ━━━━━ꔹ𝐅𝐈𝐑𝐄ꔹ━━━━━ꔹ\n᪣ اسمه :- '..klajq..' \n᪣ ايديه :-  : '..msg.sender.user_id..'\n᪣ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
-if text == 'اسمي' then
+if text == "اسمي"  then
 local ban = LuaTele.getUser(msg.sender.user_id)
-local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
-local T = '..ban.first_name..'
-if photo.total_count > 0 then
-data = {} 
-data.inline_keyboard = {
-{
-{text = ban.first_name, url = 't.me/SU_SELVA'}, 
-},
-{
-{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
-},
-{
-{text = '𓄼•اضف البوت لمجموعتك•𓄹', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+if ban.first_name then
+news = " `"..ban.first_name.."` "
+else
+news = " لا يوجد"
 end
+return LuaTele.sendText(msg_chat_id,msg_id,news,"md",true) 
+end
+if text == "معرفي" or text == "يوزري" then
+local ban = LuaTele.getUser(msg.sender.user_id)
+if ban.username then
+banusername = '[@'..ban.username..']'
+else
+banusername = 'لا يوجد'
+end
+return LuaTele.sendText(msg_chat_id,msg_id,banusername,"md",true) 
 end
 if text and text:match("^قول (.*)$")then
 local m = text:match("^قول (.*)$")
@@ -11073,6 +11026,50 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
+end
+if text and text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" or text == "تاك للكل" then  
+local ttag = text:match("^all (.*)$") or text:match("^@all (.*)$") 
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣ هاذا الامر يخص⦗ '..Controller_Num(6)..' ⦘* ',"md",true)  
+end
+if Redis:get(Timo.."lockalllll"..msg_chat_id) == "off" then
+return LuaTele.sendText(msg_chat_id,msg_id,'*᪣  تم تعطيل @all من قبل المدراء*',"md",true)  
+end
+local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 2000)
+x = 0 
+tags = 0 
+local list = Info_Members.members
+for k, v in pairs(list) do 
+local data = LuaTele.getUser(v.member_id.user_id)
+if x == 20 or x == tags or k == 0 then 
+tags = x + 8 
+if ttag then
+t = "#all "..ttag.."" 
+else
+t = "#all "
+end
+end 
+x = x + 1 
+tagname = data.first_name
+tagname = tagname:gsub("]","") 
+tagname = tagname:gsub("[[]","") 
+t = t.."᪣ ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
+if x == 20 or x == tags or k == 0 then 
+if ttag then
+Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
+else 
+Text = t:gsub('#all,','#all\n')
+end
+sendText(msg_chat_id,Text,0,'md') 
+end 
+end 
+end 
+if msg.content.video then
+local c = msg.content.caption.text
+return LuaTele.sendText(msg_chat_id,msg_id,c,"md",true)  
+end
+if msg.content.photo or msg.content.animation or msg.content.sticker or msg.content.video or msg.content.audio or msg.content.document or msg.content.voice_chats then
+Redis:sadd(Timo.."cleaner"..msg_chat_id,msg_id)
 end
 if text == 'السيرفر' or text == 'معلومات السرفر' then
 if not msg.ControllerBot then 
