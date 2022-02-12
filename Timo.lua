@@ -1121,26 +1121,27 @@ end
 
 if msg.content.luatele == "messageChatAddMembers" then -- اضافه اشخاص
 print('This is Add Membeers ')
-Redis:incr(Timo.."Timo:Num:Add:Memp"..msg_chat_id..":"..msg.sender.user_id) 
-local AddMembrs = Redis:get(Timo.."Timo:Lock:AddMempar"..msg_chat_id) 
-local Lock_Bots = Redis:get(Timo.."Timo:Lock:Bot:kick"..msg_chat_id)
+Redis:incr(Timo.."Num:Add:Memp"..msg_chat_id..":"..msg.sender.user_id) 
+local AddMembrs = Redis:get(Timo.."Lock:AddMempar"..msg_chat_id) 
+local Lock_Bots = Redis:get(Timo.."Lock:Bot:kick"..msg_chat_id)
 for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
-if Info_User.type.luatele == "userTypeBot" then
-if Lock_Bots == "del" and not msg.ControllerBot then
-LuaTele.setChatMemberStatus(msg.chat_id,v,'banned',0)
-elseif Lock_Bots == "kick" and not msg.ControllerBot then
-LuaTele.setChatMemberStatus(msg.chat_id,msg.sender.user_id,'banned',0)
-LuaTele.setChatMemberStatus(msg.chat_id,v,'banned',0)
+print(v)
+if v == tonumber(Timo) then
+local N = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+photo = LuaTele.getUserProfilePhotos(Timo)
+local bot = '᪣  انا بوت اسمي '..N..'\n᪣  وظيفتي حمايه الجروب من السبام والتفليش الخ....\n᪣  لتفعيل البوت قم اضافته للمجموعتك وقم برفعه مشرف واكتب تفعيل\n'
+if photo.total_count > 0 then
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼•اضف البوت لمجموعتك•𓄹', url = 't.me/'..UserBot..'?startgroup=new'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(bot).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-elseif Info_User.type.luatele == "userTypeRegular" then
-Redis:incr(Timo.."Timo:Num:Add:Memp"..msg.chat_id..":"..msg.sender.user_id) 
-if AddMembrs == "kick" and not msg.ControllerBot then
-LuaTele.setChatMemberStatus(msg.chat_id,v,'banned',0)
 end
-end
-end
-end 
 
 if msg.content.luatele == "messageContact" and not msg.Distinguished then  -- الجهات
 local Contact_Group = Redis:get(Timo.."Lock:Contact"..msg_chat_id)
@@ -9000,7 +9001,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"* ᪣ تم مسح {"..#Info_Members.
 end
 if TextMsg == 'المكتومين' then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' ??* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
@@ -13580,7 +13581,7 @@ local texting = {"اخر افلام شاهدتها",
 "اخر اغنية سمعتها ?", 
 "تكلم عن نفسك", 
 "ليه انت مش سالك", 
-"ما هيا عيوب سورس كلير ؟ ", 
+"ما هيا عيوب سورس سيلفا ؟ ", 
 "اخر كتاب قرآته", 
 "روايتك المفضله ?", 
 "اخر اكله اكلتها", 
@@ -13597,13 +13598,13 @@ local texting = {"اخر افلام شاهدتها",
 " ما السيء في هذه الحياة ؟ ", 
 "أجمل شيء حصل معك خلال هذا الاسبوع ؟ ", 
 "سؤال ينرفزك ؟ ", 
-" هل يعجبك سورس كلير ؟؟ ", 
+" هل يعجبك سورس سيلفا ؟؟ ", 
 " اكثر ممثل تحبه ؟ ", 
 "قد تخيلت شي في بالك وصار ؟ ", 
 "شيء عندك اهم من الناس ؟ ", 
 "تفضّل النقاش الطويل او تحب الاختصار ؟ ", 
 "وش أخر شي ضيعته؟ ", 
-"اي رايك في سورس كلير ؟ ", 
+"اي رايك في سورس سيلفا ؟ ", 
 "كم مره حبيت؟ ", 
 " اكثر المتابعين عندك باي برنامج؟", 
 " نسبه الندم عندك للي وثقت فيهم ؟", 
@@ -14133,7 +14134,7 @@ data = {
 }
 }
 local TextHelp = [[*
-• أهلا بك في قائمة العاب سورس كلير اختر نوع الالعاب 
+• أهلا بك في قائمة العاب سورس سيلفا اختر نوع الالعاب 
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -14173,7 +14174,7 @@ data = {
 }
 }
 local TextHelp = [[*
-• مرحبا بك في الالعاب المتطورة الخاص بسورس كلير 
+• مرحبا بك في الالعاب المتطورة الخاص بسورس سيلفا 
 • اختر اللعبه ثم اختار المحادثة التي تريد اللعب بها
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
