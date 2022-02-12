@@ -5955,6 +5955,29 @@ end
 end 
 end
 end
+if text == "@all" or text == "تاك للكل" or text == "all" then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
+x = 0
+tags = 0
+local list = Info_Members.members
+for k, v in pairs(list) do
+local UserInfo = LuaTele.getUser(v.member_id.user_id)
+if x == 5 or x == tags or k == 0 then
+tags = x + 5
+listall = ""
+end
+x = x + 1
+if UserInfo.first_name ~= '' then
+listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id.."),"
+end
+if x == 5 or x == tags or k == 0 then
+LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)  
+end
+end
+end
 if text == "تاك للزوجات" or text == "الزوجات" then
 local zwgat_list = Redis:smembers(Timo..msg_chat_id.."zwgat:")
 if #zwgat_list == 0 then 
@@ -11026,49 +11049,6 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
-end
-if text == "@all" or text == "تاك للكل" or text == "all" then 
-if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣ هاذا الامر يخص⦗ '..Controller_Num(6)..' ⦘* ',"md",true)  
-end
-if Redis:get(Timo.."lockalllll"..msg_chat_id) == "off" then
-return LuaTele.sendText(msg_chat_id,msg_id,'*᪣  تم تعطيل @all من قبل المدراء*',"md",true)  
-end
-local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 2000)
-x = 0 
-tags = 0 
-local list = Info_Members.members
-for k, v in pairs(list) do 
-local data = LuaTele.getUser(v.member_id.user_id)
-if x == 20 or x == tags or k == 0 then 
-tags = x + 8 
-if ttag then
-t = "#all "..ttag.."" 
-else
-t = "#all "
-end
-end 
-x = x + 1 
-tagname = data.first_name
-tagname = tagname:gsub("]","") 
-tagname = tagname:gsub("[[]","") 
-t = t.."᪣ ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
-if x == 20 or x == tags or k == 0 then 
-if ttag then
-Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
-else 
-Text = t:gsub('#all,','#all\n')
-end
-sendText(msg_chat_id,Text,0,'md') 
-end 
-end 
-end 
-if msg.content.video then
-local c = msg.content.caption.text
-return LuaTele.sendText(msg_chat_id,msg_id,c,"md",true)  
-end
-if msg.content.photo or msg.content.animation or msg.content.sticker or msg.content.video or msg.content.audio or msg.content.document or msg.content.voice_chats then
-Redis:sadd(Timo.."cleaner"..msg_chat_id,msg_id)
 end
 if text == 'السيرفر' or text == 'معلومات السرفر' then
 if not msg.ControllerBot then 
