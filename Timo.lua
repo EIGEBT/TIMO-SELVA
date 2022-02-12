@@ -11027,8 +11027,7 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
 end
-if text and text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" or text == "تاك للكل" then  
-local ttag = text:match("^all (.*)$") or text:match("^@all (.*)$") 
+if text == "@all" or text == "تاك للكل" or text == "all" then 
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣ هاذا الامر يخص⦗ '..Controller_Num(6)..' ⦘* ',"md",true)  
 end
@@ -11059,6 +11058,8 @@ if ttag then
 Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
 else 
 Text = t:gsub('#all,','#all\n')
+end
+sendText(msg_chat_id,Text,0,'md') 
 end 
 end 
 end 
