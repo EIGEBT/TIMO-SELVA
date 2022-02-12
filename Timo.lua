@@ -12326,7 +12326,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,' اهلا بك عزيزي المطور ', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*اهلا بك عزيزي المطور الاساسي*', 'md', false, false, false, false, reply_markup)
 end
 end
 if text == '𓄼 اوامر التفعيل 𓄹' then
