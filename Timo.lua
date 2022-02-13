@@ -9994,13 +9994,13 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╭───━━──𓄼•[※](http://t.me/SU_SELVA)•𓄹──━━───╮
-┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹┨
-╟━─━─━─━─━─━─━─━━─╢
-╟𓄼[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)𓄹╢
-╟━─━─━─━─━─━─━─━━─╢
-┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹┨
-╰───━━──𓄼•[※](http://t.me/SU_SELVA)•𓄹──━━───╯
+╭───━━──𓄼•[𓄼𓄹](http://t.me/SU_SELVA)•𓄹──━━───╮
+┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹
+╟━─━─━─━─━─━─━─━━─
+╟𓄼[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)𓄹
+╟━─━─━─━─━─━─━─━━─
+┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹
+╰───━━──𓄼•[𓄼𓄹](http://t.me/SU_SELVA)•𓄹──━━───╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10085,10 +10085,10 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴏᴡɴᴇʀ ᴛᴇᴀᴍ•𓄹', url = "https://t.me/tt_tt_4"}
 },
 {
-{text = '𓄼•ʙᴇɴᴛ ᴅᴇᴠ•ᴛɪᴍᴏ¹•𓄹', url = "https://t.me/bent_timo"}
+{text = '𓄼•ʙᴇɴᴛ•ᴛɪᴍᴏ¹•𓄹', url = "https://t.me/bent_timo"}
 },
 {
-{text = '𓄼•ʙᴇɴᴛ ᴅᴇᴠ•ᴛɪᴍᴏ²•𓄹', url = "https://t.me/bent_ti_mo"},{text = '𓄼•ʙᴇɴᴛ ᴅᴇᴠ•ᴛɪᴍᴏ³•𓄹', url = "https://t.me/bent_dad_timo"}
+{text = '𓄼•ʙᴇɴᴛ•ᴛɪᴍᴏ²•𓄹', url = "https://t.me/bent_ti_mo"},{text = '𓄼•ʙᴇɴᴛ•ᴛɪᴍᴏ³•𓄹', url = "https://t.me/bent_dad_timo"}
 },
 {
 {text = '𓄼•ʙᴏᴛ ᴛᴇᴀᴍ•𓄹', url = "https://t.me/Timo8BOT"}
@@ -10128,12 +10128,12 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
-╗•❶• ‹ اوامر المطورين ›
-╣•❷• ‹ اوامر التسليه ›
-╣•❸• ‹ اوامر الاعضاء ›
-╣•❹• ‹ اوامر المسح ›
-╣•❺• ‹ اوامر التفعيل والتعطيل ›
-╝•❻• ‹ اوامر الفتح والقفل ›
+╗•❶• ‹ اوامر المطورين 𓄼
+╣•❷• ‹ اوامر التسليه 𓄼
+╣•❸• ‹ اوامر الاعضاء 𓄼
+╣•❹• ‹ اوامر المسح 𓄼
+╣•❺• ‹ اوامر التفعيل والتعطيل 𓄼
+╝•❻• ‹ اوامر الفتح والقفل 𓄼
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
@@ -12145,7 +12145,7 @@ name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍�
 name = string.gsub(name,"🧚‍♀","🧚‍♂🧚‍♂🧚‍♂🧚‍♂🧚‍♀🧚‍♂🧚‍♂")
 name = string.gsub(name,"🧜‍♂","🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧚‍♂🧜‍♀🧜‍♀🧜‍♀")
 name = string.gsub(name,"🧝‍♂","🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♂🧝‍♀🧝‍♀🧝‍♀")
-name = string.gsub(name,"🙍‍♂️","🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙍‍♂️🙎‍♂️🙎‍♂️🙎‍♂️")
+name = string.gsub(name,"🙍‍♂️","??‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙍‍♂️🙎‍♂️🙎‍♂️🙎‍♂️")
 name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️♀️🧖‍♀️🧖‍♀️🧖‍♂️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️")
 name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭👭")
 name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍????‍👨‍👦??‍👨‍👦")
@@ -12648,13 +12648,13 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╭───━━──𓄼•[※](http://t.me/SU_SELVA)•𓄹──━━───╮
-┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹┨
-╟━─━─━─━─━─━─━─━━─╢
-╟𓄼[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)𓄹╢
-╟━─━─━─━─━─━─━─━━─╢
-┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹┨
-╰───━━──𓄼•[※](http://t.me/SU_SELVA)•𓄹──━━───╯
+╭───━━──𓄼•[𓄼𓄹](http://t.me/SU_SELVA)•𓄹──━━───╮
+┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹
+╟━─━─━─━─━─━─━─━━─
+╟𓄼[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)𓄹
+╟━─━─━─━─━─━─━─━━─
+┠𓄼[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)𓄹
+╰───━━──𓄼•[𓄼𓄹](http://t.me/SU_SELVA)•𓄹──━━───╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
