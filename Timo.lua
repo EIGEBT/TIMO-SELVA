@@ -12466,6 +12466,9 @@ data = {
 {text = '𓄼 اوامر اضف 𓄹',type = 'text'},{text = '𓄼 اوامر التفعيل 𓄹', type = 'text'},
 },
 {
+{text = '𓄼 جلب التوكن 𓄹',type = 'text'},
+},
+{
 {text = '𓄼 اوامر الاذاعه 𓄹',type = 'text'},{text = '𓄼 الاوامر 𓄹', type = 'text'},
 },
 {
@@ -12552,6 +12555,9 @@ data = {
 {text = '𓄼 اوامر اضف 𓄹',type = 'text'},{text = '𓄼 اوامر التفعيل 𓄹', type = 'text'},
 },
 {
+{text = '𓄼 جلب التوكن 𓄹',type = 'text'},
+},
+{
 {text = '𓄼 اوامر الاذاعه 𓄹',type = 'text'},{text = '𓄼 الاوامر 𓄹', type = 'text'},
 },
 {
@@ -12618,6 +12624,12 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر اضف', 'md', false, false, false, false, reply_markup)
 end
+if text == "جلب التوكن" or text == "𓄼 جلب التوكن 𓄹" then    
+  if not msg.ControllerBot then 
+  return LuaTele.sendText(msg_chat_id,msg_id,'\n* ๏ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
+  end
+  return LuaTele.sendText(msg_chat_id,msg_id,Token,"html",true)  
+  end
 if text == 'السيرفر' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*๏ هاذا الامر يخص⦗ '..Controller_Num(1)..' ⦘* ',"md",true)  
