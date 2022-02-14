@@ -2763,7 +2763,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true)
 end
 else
 if photo.total_count > 0 then
-local ban_ns ='\n* '..Description..'\n*𓄼๏ɴᴀᴍᴇ : '..ban.first_name..'\n𓄼๏ᴜѕᴇ = '..banusername..'\n𓄼๏ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ʙɪᴏ = '..getbio(UserId)..'*'
+local ban_ns ='\n* '..Description..'\n𓄼๏ᴜѕᴇ = '..banusername..'\n𓄼๏ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ʙɪᴏ = '..getbio(UserId)..'*'
 data = {} 
 data.inline_keyboard = {
 {
@@ -2773,7 +2773,7 @@ data.inline_keyboard = {
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(ban_ns).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
 else
-local ban_ns ='\n*𓄼๏ɴᴀᴍᴇ = '..ban.first_name..'\n𓄼๏ ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..'*'
+local ban_ns ='\n𓄼๏ ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..'*'
 data = {} 
 data.inline_keyboard = {
 {
@@ -2798,7 +2798,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto) 
 return LuaTele.sendText(msg_chat_id,msg_id,'['..Get_Is_Id..']',"md",true) 
 else
-local ban_ns ='\n*𓄼๏ɴᴀᴍᴇ = '..ban.first_name..'\n*𓄼๏ ᴜѕᴇ = '..banusername..'\n𓄼๏ ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..'*'
+local ban_ns ='\n*𓄼๏ ᴜѕᴇ = '..banusername..'\n𓄼๏ ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..'*'
 data = {} 
 data.inline_keyboard = {
 {
@@ -2845,7 +2845,6 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames)
 return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true) 
 else
 return LuaTele.sendText(msg_chat_id,msg_id,
-'\n*𓄼๏ɴᴀᴍᴇ : '..ban.first_name..
 '\n*𓄼๏ ᴜѕᴇ = '..UserInfousername..
 '\n𓄼๏ ɪᴅ = '..UserId..
 '\n𓄼๏ ѕᴛᴀ = '..RinkBot..
@@ -2887,7 +2886,6 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames)
 return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true) 
 else
 return LuaTele.sendText(msg_chat_id,msg_id,
-'\n*𓄼๏ɴᴀᴍᴇ : '..ban.first_name..
 '\n*𓄼๏ ᴜѕᴇ = @'..UserName..
 '\n𓄼๏ ɪᴅ = '..UserId..
 '\n𓄼๏ ѕᴛᴀ = '..RinkBot..
@@ -14522,7 +14520,7 @@ local TextHelp = [[*
 𓄼• الثانوين •𓄹
 𓄼• مسح الثانوين •𓄹
 𓄼• تحديث الملفات •𓄹
-༺┉┉┉⊶﴾??•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻
+༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻
 𓄼• تحديث السورس •𓄹
 𓄼• تفعيل البوت الخدمي •𓄹
 𓄼• تعيطل البوت الخدمي •𓄹
