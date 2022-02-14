@@ -2933,22 +2933,22 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n*๏ عذرآ البوت ليس ا
 end
 local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status
 if GetMemberStatus.can_change_info then
-change_info = '❬ ✘ ❭' else change_info = '❬ ✓ ❭'
+change_info = '❬ ✓ ❭' else change_info = '❬ ✘ ❭'
 end
 if GetMemberStatus.can_delete_messages then
-delete_messages = '❬ ✘ ❭' else delete_messages = '❬ ✓ ❭'
+delete_messages = '❬ ✓ ❭' else delete_messages = '❬ ✘ ❭'
 end
 if GetMemberStatus.can_invite_users then
-invite_users = '❬ ✘ ❭' else invite_users = '❬ ✓ ❭'
+invite_users = '❬ ✓ ❭' else invite_users = '❬ ✘ ❭'
 end
 if GetMemberStatus.can_pin_messages then
-pin_messages = '❬ ✘ ❭' else pin_messages = '❬ ✓ ❭'
+pin_messages = '❬ ✓ ❭' else pin_messages = '❬ ✘ ❭'
 end
 if GetMemberStatus.can_restrict_members then
-restrict_members = '❬ ✘ ❭' else restrict_members = '❬ ✓ ❭'
+restrict_members = '❬ ✓ ❭' else restrict_members = '❬ ✘ ❭'
 end
 if GetMemberStatus.can_promote_members then
-promote = '❬ ✘ ❭' else promote = '❬ ✓ ❭'
+promote = '❬ ✓ ❭' else promote = '❬ ✘ ❭'
 end
 PermissionsUser = '*\n๏ صلاحيات المستخدم :\n༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻\n๏ تغيير المعلومات : '..change_info..'\n๏ تثبيت الرسائل : '..pin_messages..'\n๏ اضافه مستخدمين : '..invite_users..'\n๏ مسح الرسائل : '..delete_messages..'\n๏ حظر المستخدمين : '..restrict_members..'\n๏ اضافه المشرفين : '..promote..'\n\n*'
 return LuaTele.sendText(msg_chat_id,msg_id,PermissionsUser,"md",true) 
@@ -10191,7 +10191,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/postat_selva"}
 },
 {
-{text = '𓄼•™ʽ𝑻 𝑺ᯓ𝑺𝑬𝑳𝑽𝑨✓⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
+{text = '𓄼•™ʽ𝑻 𝑺ᯓ𝑺𝑬𝑳𝑽𝑨✘⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -12024,7 +12024,7 @@ local vBandav_Msg = {
 " ي ابن المتناكة ",
 " يا لي امك احبهه ",
 " كسمينك",
-" كفياك كدا❤'✓",
+" كفياك كدا❤'✘",
 } 
 return LuaTele.sendText(msg_chat_id,Message_Reply.sender.user_id,vBandav_Msg[math.random(#vBandav_Msg)],'md')
 end
@@ -12897,7 +12897,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/postat_selva"}
 },
 {
-{text = '𓄼•™ʽ𝑻 𝑺ᯓ𝑺𝑬𝑳𝑽𝑨✓⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
+{text = '𓄼•™ʽ𝑻 𝑺ᯓ𝑺𝑬𝑳𝑽𝑨✘⃟🎌๏͈͈͈͈͈͈͈⌯•𓄹', url = "https://t.me/br_selva"}
 },
 }
 local msgg = msg_id/2097152/0.5
