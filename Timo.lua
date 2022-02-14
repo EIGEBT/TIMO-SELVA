@@ -2812,7 +2812,7 @@ end
 end
 if text == 'ايدي' or text == 'كشف'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local ban = LuaTele.getUser(Message_Reply.sender.user_id)
 if UserInfo.username then
 UserInfousername = '@'..UserInfo.username..''
 else
