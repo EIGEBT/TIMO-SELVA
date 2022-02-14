@@ -2812,11 +2812,11 @@ end
 end
 if text == 'ايدي' or text == 'كشف'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.username then
-UserInfousername = '@'..UserInfo.username..''
+local Selva = LuaTele.getUser(Message_Reply.sender.user_id)
+if Jabwa.username then
+Jabwausername = '@'..Jabwa.username..''
 else
-UserInfousername = 'لا يوجد'
+Jabwausername = 'لا يوجد'
 end
 local Name = UserInfo.first_name
 local UserId = Message_Reply.sender.user_id
@@ -5174,7 +5174,7 @@ end
 end
 if text == ('كتم عام') and msg.reply_to_message_id ~= 0 then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ๏ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ๏ هاذا الامر يخص ?? '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
@@ -6266,7 +6266,7 @@ return false
 end
 if text == "تفعيل الحمايه" then 
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ๏ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ๏ هاذا الامر يخص ?? '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
@@ -14522,7 +14522,7 @@ data = {
 }
 local TextHelp = [[*
 𓄼 اوامر مطور البوت الاساسي 𓄹
-༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻
+༺┉┉┉⊶﴾𓄼•ѕᴏ??ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻
 𓄼• حظر عام •𓄹
 𓄼• كتم عام •𓄹
 𓄼• قائمه العام •𓄹
