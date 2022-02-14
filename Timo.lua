@@ -2813,10 +2813,10 @@ end
 if text == 'ايدي' or text == 'كشف'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local Selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if Jabwa.username then
-Jabwausername = '@'..Jabwa.username..''
+if Selva.username then
+Selvausername = '@'..Selva.username..''
 else
-Jabwausername = 'لا يوجد'
+Selvausername = 'لا يوجد'
 end
 local Name = UserInfo.first_name
 local UserId = Message_Reply.sender.user_id
@@ -2859,13 +2859,13 @@ if text and text:match('^ايدي @(%S+)$') or text and text:match('^كشف @(%S
 local UserName = text:match('^ايدي @(%S+)$') or text:match('^كشف @(%S+)$')
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⦁ عذرا لا يوجد حساب بهاذا المعرف *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*๏ عذرا لا يوجد حساب بهاذا المعرف *","md",true)  
 end
 if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⦁ عذرا لا تستطيع استخدام معرف قناة او كروب *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*๏ عذرا لا تستطيع استخدام معرف قناة او كروب *","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⦁ عذرا لا تستطيع استخدام معرف البوت *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*๏ عذرا لا تستطيع استخدام معرف البوت *","md",true)  
 end
 local UserId = UserId_Info.id
 local RinkBot = Controller(msg_chat_id,UserId_Info.id)
