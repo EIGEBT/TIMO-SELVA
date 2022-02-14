@@ -2717,8 +2717,8 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ๏ اسم الجروب -›𓄼
 end
 end
 if chat_type(msg.chat_id) == "GroupBot" and Redis:sismember(Timo.."Timo:ChekBotAdd",msg_chat_id) then
-if text == "ايدي" or text =='الايدي' or text =='Id' or text == 'ID' and msg.reply_to_message_id == 0 then
-if not Redis:get(Timo.."Timo:Status:Id"..msg_chat_id) then
+if text == "ايدي" or text =='id' or text =='Id' or text == 'ID' and msg.reply_to_message_id == 0 then
+if not Redis:get(Timo.."Status:Id"..msg_chat_id) then
 return false
 end
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -2743,8 +2743,8 @@ news = " "..ban.first_name.." "
 else
 news = " لا يوجد"
 end
-Get_Is_Id = Redis:get(Timo.."Timo:Set:Id:Groups") or Redis:get(Timo.."Set:Id:Group"..msg_chat_id)
-if Redis:get(Timo.."Timo:Status:IdPhoto"..msg_chat_id) then
+Get_Is_Id = Redis:get(Timo.."Set:Id:Groups") or Redis:get(Timo.."Set:Id:Group"..msg_chat_id)
+if Redis:get(Timo.."Status:IdPhoto"..msg_chat_id) then
 if Get_Is_Id then
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
 local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
@@ -2763,7 +2763,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true)
 end
 else
 if photo.total_count > 0 then
-local ban_ns ='\n* '..Description..'\n𓄼๏ᴜѕᴇ = '..banusername..'\n𓄼๏ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ʙɪᴏ = '..getbio(UserId)..'*'
+local ban_ns ='\n*𓄼 #ɴᴀᴍᴇ : '..ban.first_name..'\n*𓄼᪣ ᴜѕᴇ = '..banusername..'\n𓄼᪣ ѕᴛᴀ =  '..RinkBot..'\n𓄼᪣ ɪᴅ = '..UserId..'\n𓄼᪣ᴍѕɢ =  '..TotalMsg..'\n𓄼᪣ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼᪣ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼᪣ ʙɪᴏ = '..getbio(UserId)..'*'
 data = {} 
 data.inline_keyboard = {
 {
@@ -2773,7 +2773,7 @@ data.inline_keyboard = {
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(ban_ns).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
 else
-local ban_ns ='\n*𓄼๏ ᴜѕᴇ = '..banusername..'\n𓄼๏ ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..'*'
+local ban_ns ='\n*𓄼 #ɴᴀᴍᴇ : '..ban.first_name..'\n*𓄼᪣ ᴜѕᴇ = '..banusername..'\n𓄼᪣ ѕᴛᴀ =  '..RinkBot..'\n𓄼᪣ ɪᴅ = '..UserId..'\n𓄼᪣ᴍѕɢ =  '..TotalMsg..'\n𓄼᪣ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼᪣ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼᪣ ʙɪᴏ = '..getbio(UserId)..'*'
 data = {} 
 data.inline_keyboard = {
 {
@@ -2790,7 +2790,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd)
 local Get_Is_Id = Get_Is_Id:gsub('#id',msg.sender.user_id) 
 local Get_Is_Id = Get_Is_Id:gsub('#username',banusername) 
 local Get_Is_Id = Get_Is_Id:gsub('#msgs',TotalMsg) 
-local Get_Is_Id = Get_Is_Id:gsub('#edit',TotalEdit)
+local Get_Is_Id = Get_Is_Id:gsub('#edit',TotalEdit) 
 local Get_Is_Id = Get_Is_Id:gsub('#stast',RinkBot) 
 local Get_Is_Id = Get_Is_Id:gsub('#auto',TotalMsgT)
 local Get_Is_Id = Get_Is_Id:gsub('#Description',Description)
@@ -2798,7 +2798,7 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames)
 local Get_Is_Id = Get_Is_Id:gsub('#photos',TotalPhoto) 
 return LuaTele.sendText(msg_chat_id,msg_id,'['..Get_Is_Id..']',"md",true) 
 else
-local ban_ns ='\n*𓄼๏ ᴜѕᴇ = '..banusername..'\n𓄼๏ ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..'*'
+local ban_ns ='\n*𓄼๏ɴᴀᴍᴇ : '..ban.first_name..'\n*𓄼๏ ᴜѕᴇ = '..banusername..'\n𓄼๏ ѕᴛᴀ =  '..RinkBot..'\n𓄼๏ ɪᴅ = '..UserId..'\n𓄼๏ᴍѕɢ =  '..TotalMsg..'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ =  '..TotalEdit..'\n𓄼๏ ᴛғᴀᴘʟᴋ =  '..TotalMsgT..'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..'*'
 data = {} 
 data.inline_keyboard = {
 {
@@ -2813,30 +2813,22 @@ end
 if text == 'ايدي' or text == 'كشف'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.username then
-UserInfousername = '@'..UserInfo.username..''
+if ban.username then
+banusername = '@'..ban.username..''
 else
-UserInfousername = 'لا يوجد'
+banusername = 'لا يوجد'
 end
-local Name = UserInfo.first_name
 local UserId = Message_Reply.sender.user_id
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{{text = Name , url = 'tg://user?id='..UserId }},
-}
-}
 local RinkBot = Controller(msg_chat_id,UserId)
-local TotalMsg = Redis:get(Timo..'Timo:Num:Message:User'..msg_chat_id..':'..UserId) or 0
-local TotalEdit = Redis:get(Timo..'Timo:Num:Message:Edit'..msg_chat_id..UserId) or 0
+local TotalMsg = Redis:get(Timo..'Num:Message:User'..msg_chat_id..':'..UserId) or 0
+local TotalEdit = Redis:get(Timo..'Num:Message:Edit'..msg_chat_id..UserId) or 0
 local TotalMsgT = Total_message(TotalMsg) 
-local NumAdd = Redis:get(Timo.."Timo:Num:Add:Memp"..msg.chat_id..":"..UserId) or 0
-local NumberGames = Redis:get(Timo.."Timo:Num:Add:Games"..msg.chat_id..UserId) or 0
+local NumAdd = Redis:get(Timo.."Num:Add:Memp"..msg.chat_id..":"..UserId) or 0
+local NumberGames = Redis:get(Timo.."Num:Add:Games"..msg.chat_id..UserId) or 0
 if Get_Is_Id then
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
-local Get_Is_Id = Get_Is_Id:gsub('#username',(ban.username or 'لا يوجد')) 
 local Get_Is_Id = Get_Is_Id:gsub('#id',UserId) 
-local Get_Is_Id = Get_Is_Id:gsub('#username',UserInfousername) 
+local Get_Is_Id = Get_Is_Id:gsub('#username',banusername) 
 local Get_Is_Id = Get_Is_Id:gsub('#msgs',TotalMsg) 
 local Get_Is_Id = Get_Is_Id:gsub('#edit',TotalEdit) 
 local Get_Is_Id = Get_Is_Id:gsub('#stast',RinkBot) 
@@ -2845,35 +2837,64 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames)
 return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true) 
 else
 return LuaTele.sendText(msg_chat_id,msg_id,
-'\n*𓄼๏ ᴜѕᴇ = '..UserInfousername..
-'\n𓄼๏ ɪᴅ = '..UserId..
-'\n𓄼๏ ѕᴛᴀ = '..RinkBot..
-'\n𓄼๏ ᴍѕɢ = '..TotalMsg..
+'\n*𓄼๏ɴᴀᴍᴇ : '..ban.first_name..
+'\n𓄼๏ᴜѕᴇ : '..banusername..
+'\n𓄼๏ѕᴛᴀ : '..RinkBot..
+'\n𓄼๏ɪᴅ : '..UserId..
+'\n𓄼๏ᴍѕɢ : '..TotalMsg..
 '\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ = '..TotalEdit..
 '\n𓄼๏ ᴛғᴀᴘʟᴋ = '..TotalMsgT..
-'\n𓄼๏ʙɪᴏ = '..getbio(UserId)..
-'*',"md",false, false, false, false, reply_markup) 
+'\n𓄼๏ʙɪᴏ : '..getbio(UserId)..
+'*',"md",true) 
 end
+end
+if text and text:match('^كشف (%d+)$') then
+local UserId = text:match('^كشف (%d+)$')
+local ban = LuaTele.getUser(UserId)
+if ban.username then
+UserName = '@'..ban.username..''
+else
+UserName = 'لا يوجد'
+end
+local RinkBot = Controller(msg_chat_id,UserId)
+local TotalMsg = Redis:get(Timo..'Num:Message:User'..msg_chat_id..':'..UserId) or 0
+local TotalEdit = Redis:get(Timo..'Num:Message:Edit'..msg_chat_id..UserId) or 0
+local TotalMsgT = Total_message(TotalMsg) 
+local NumAdd = Redis:get(Timo.."Num:Add:Memp"..msg.chat_id..":"..UserId) or 0
+local NumberGames = Redis:get(Timo.."Num:Add:Games"..msg.chat_id..UserId) or 0
+if ban.luatele == "error" and ban.code == 6 then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 عذرآ لا تستطيع استخدام ايدي خطأ ","md",true)  
+end 
+return LuaTele.sendText(msg_chat_id,msg_id,
+'\n*𓄼๏ɴᴀᴍᴇ : '..ban.first_name..
+'\n𓄼๏ᴜѕᴇ : '..banusername..
+'\n𓄼๏ѕᴛᴀ : '..RinkBot..
+'\n𓄼๏ɪᴅ : '..UserId..
+'\n𓄼๏ᴍѕɢ : '..TotalMsg..
+'\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ = '..TotalEdit..
+'\n𓄼๏ ᴛғᴀᴘʟᴋ = '..TotalMsgT..
+'\n𓄼๏ʙɪᴏ : '..getbio(UserId)..
+'*',"md",true) 
 end
 if text and text:match('^ايدي @(%S+)$') or text and text:match('^كشف @(%S+)$') then
 local UserName = text:match('^ايدي @(%S+)$') or text:match('^كشف @(%S+)$')
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⦁ عذرا لا يوجد حساب بهاذا المعرف *","md",true)  
+local bana = LuaTele.searchPublicChat(UserName)
+if not bana.id then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 عذرآ لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⦁ عذرا لا تستطيع استخدام معرف قناة او كروب *","md",true)  
+if bana.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 عذرآ لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⦁ عذرا لا تستطيع استخدام معرف البوت *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n𖥔 عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
 end
-local UserId = UserId_Info.id
-local RinkBot = Controller(msg_chat_id,UserId_Info.id)
-local TotalMsg = Redis:get(Timo..'Timo:Num:Message:User'..msg_chat_id..':'..UserId) or 0
-local TotalEdit = Redis:get(Timo..'Timo:Num:Message:Edit'..msg_chat_id..UserId) or 0
+local UserId = bana.id
+local RinkBot = Controller(msg_chat_id,bana.id)
+local TotalMsg = Redis:get(Timo..'Num:Message:User'..msg_chat_id..':'..UserId) or 0
+local TotalEdit = Redis:get(Timo..'Num:Message:Edit'..msg_chat_id..UserId) or 0
 local TotalMsgT = Total_message(TotalMsg) 
-local NumAdd = Redis:get(Timo.."Timo:Num:Add:Memp"..msg.chat_id..":"..UserId) or 0
-local NumberGames = Redis:get(Timo.."Timo:Num:Add:Games"..msg.chat_id..UserId) or 0
+local NumAdd = Redis:get(Timo.."Num:Add:Memp"..msg.chat_id..":"..UserId) or 0
+local NumberGames = Redis:get(Timo.."Num:Add:Games"..msg.chat_id..UserId) or 0
 if Get_Is_Id then
 local Get_Is_Id = Get_Is_Id:gsub('#AddMem',NumAdd) 
 local Get_Is_Id = Get_Is_Id:gsub('#id',UserId) 
@@ -2886,13 +2907,13 @@ local Get_Is_Id = Get_Is_Id:gsub('#game',NumberGames)
 return LuaTele.sendText(msg_chat_id,msg_id,Get_Is_Id,"md",true) 
 else
 return LuaTele.sendText(msg_chat_id,msg_id,
-'\n*𓄼๏ ᴜѕᴇ = @'..UserName..
-'\n𓄼๏ ɪᴅ = '..UserId..
-'\n𓄼๏ ѕᴛᴀ = '..RinkBot..
-'\n𓄼๏ ᴍѕɢ = '..TotalMsg..
+'\n*𓄼๏ɪᴅ : '..UserId..
+'\n𓄼๏ᴜѕᴇ : @'..UserName..
+'\n𓄼๏ѕᴛᴀ : '..RinkBot..
+'\n 𓄼๏ᴍѕɢ : '..TotalMsg..
 '\n𓄼๏ ᴛᴘᴅʏʟᴀᴛᴋ = '..TotalEdit..
 '\n𓄼๏ ᴛғᴀᴘʟᴋ = '..TotalMsgT..
-'\n𓄼๏ ʙɪᴏ = '..getbio(UserId)..
+'\n𓄼๏ʙɪᴏ : '..getbio(UserId)..
 '*',"md",true) 
 end
 end
@@ -11402,7 +11423,7 @@ end
 end
 if text == "سمايلات" or text == "سمايل" then
 if Redis:get(Timo.."Timo:Status:Games"..msg.chat_id) then
-Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒","🍑","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥒","🌶","🌽","🥕","🥔","🥖","🥐","🍞","🥨","🍟","🧀","🥚","🍳","🥓","🥩","🍗","??","🌭","🍔","🍠","🍕","🥪","🥙","☕️","🥤","🍶","🍺","🍻","🏀","⚽️","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🎰","🎮","🎳","🎯","🎲","🎻","🎸","🎺","🥁","🎹","🎼","🎧","🎤","🎬","🎨","🎭","🎪","🎟","🎫","🎗","🏵","🎖","🏆","🥌","🛷","🚗","🚌","🏎","🚓","🚑","🚚","🚛","🚜","⚔","🛡","🔮","??","💣","๏","📍","📓","📗","📂","📅","📪","📫","๏","📭","⏰","📺","🎚","☎️","📡"}
+Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒","🍑","🍍","🥥","🥝","🍅","🍆","🥑","🥦","🥒","??","🌽","🥕","🥔","🥖","🥐","🍞","🥨","🍟","🧀","🥚","🍳","🥓","🥩","🍗","??","🌭","🍔","🍠","🍕","🥪","🥙","☕️","🥤","🍶","🍺","🍻","🏀","⚽️","🏈","⚾️","🎾","🏐","🏉","🎱","🏓","🏸","🥅","🎰","🎮","🎳","🎯","🎲","🎻","🎸","🎺","🥁","🎹","🎼","🎧","🎤","🎬","🎨","🎭","🎪","🎟","🎫","🎗","🏵","🎖","🏆","🥌","🛷","🚗","🚌","🏎","🚓","🚑","🚚","🚛","🚜","⚔","🛡","🔮","??","💣","๏","📍","📓","📗","📂","📅","📪","📫","๏","📭","⏰","📺","🎚","☎️","📡"}
 SM = Random[math.random(#Random)]
 Redis:set(Timo.."Timo:Game:Smile"..msg.chat_id,SM)
 return LuaTele.sendText(msg_chat_id,msg_id," ๏ اسرع واحد يدز هاذا السمايل ? ~ {`"..SM.."`}","md",true)  
@@ -14716,7 +14737,7 @@ local TextHelp = [[*
 𓄼• انا مين •𓄹
 𓄼• ايدي •𓄹
 𓄼• لو خيروك •𓄹
-𓄼• لو خيروك بالصور •𓄹
+𓄼• لو خيروك بالصور •??
 𓄼• تويت •𓄹
 𓄼• تويت بالصور •𓄹
 𓄼• هل تعلم •𓄹
