@@ -9831,7 +9831,7 @@ end
 if ban.first_name then
 Creat = " "..ban.first_name.." "
 else
-Creat = " Developers FIRE\n"
+Creat = " Developers Timo\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
@@ -9882,7 +9882,7 @@ end
 if ban.first_name then
 Creat = " "..ban.first_name.." "
 else
-Creat = " Developers FIRE\n"
+Creat = " Developers Timo\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
@@ -10082,6 +10082,56 @@ Rrr = math.random(4,50)
 local m = "https://t.me/lo_khyarok/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
+if text == 'معلوماتي' then
+local ban = LuaTele.getUser(msg.sender.user_id)
+if ban.first_name then
+news = " "..ban.first_name.." "
+else
+news = " لا يوجد"
+end
+if ban.first_name then
+UserName = ' '..ban.first_name..' '
+else
+UserName = 'لا يوجد'
+end
+if ban.username then
+banusername = '@'..ban.username..''
+else
+banusername = 'لا يوجد'
+end
+local UserId = msg.sender.user_id
+local RinkBot = msg.Name_Controller
+local TotalMsg = Redis:get(Timo..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
+local news = 'ɪᴅ : '..UserId
+local uass = 'ɴᴀᴍᴇ : '..UserName
+local banhas = 'ᴜѕᴇ : '..banusername
+local rengk = 'ѕᴛᴀ : '..RinkBot
+local masha = 'ᴍѕɢ : '..TotalMsg
+local BIO = 'ʙɪᴏ : '..getbio(msg.sender.user_id)
+local again = 'مرحبا اليك معلومتك'
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{
+{text = uass, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = news, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = banhas, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = rengk, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = masha, url = "https://t.me/"..ban.username..""}, 
+},
+{
+{text = BIO, url = "https://t.me/"..ban.username..""}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'سورسي' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
