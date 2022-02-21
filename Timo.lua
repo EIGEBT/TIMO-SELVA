@@ -10138,13 +10138,13 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔╦═╦═╦═╦═╦═╦═╦═╦═╦╗
+╔════════𓄼•𓄹════════╗
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
-╚╩═╩═╩═╩═╩═╩═╩═╩═╩╝
+╚════════𓄼•𓄹════════╝
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12859,13 +12859,13 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔╦═╦═╦═╦═╦═╦═╦═╦═╦╗
+╔════════𓄼•𓄹════════╗
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
-╚╩═╩═╩═╩═╩═╩═╩═╩═╩╝
+╚════════𓄼•𓄹════════╝
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
