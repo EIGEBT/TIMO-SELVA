@@ -6003,25 +6003,25 @@ end
 end 
 end
 end
-if text == "@all" or text == "تاك للكل" or text == "all" then
+if text == "تاك للكل" or text == "all" or text == "@all" or text == "All" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ℘︙ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
 end
-local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
+local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 500)
 x = 0
 tags = 0
 local list = Info_Members.members
 for k, v in pairs(list) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
-if x == 5 or x == tags or k == 0 then
-tags = x + 5
+if x == 10 or x == tags or k == 0 then
+tags = x + 10
 listall = ""
 end
 x = x + 1
 if UserInfo.first_name ~= '' then
 listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id.."),"
 end
-if x == 5 or x == tags or k == 0 then
+if x == 10 or x == tags or k == 0 then
 LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)  
 end
 end
@@ -10109,7 +10109,7 @@ local banhas = 'ᴜѕᴇ : '..banusername
 local rengk = 'ѕᴛᴀ : '..RinkBot
 local masha = 'ᴍѕɢ : '..TotalMsg
 local BIO = 'ʙɪᴏ : '..getbio(msg.sender.user_id)
-local again = 'مرحبا اليك معلومتك'
+local again = '*مرحبا اليك معلوماتك*'
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {
 {text = uass, url = "https://t.me/"..ban.username..""}, 
@@ -10133,18 +10133,30 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
+if text == 'بايو' then
+local ban = LuaTele.getUser(msg.sender.user_id)
+local BIO = 'ʙɪᴏ : '..getbio(msg.sender.user_id)
+local again = '*مرحبا اليك البايو*'
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{
+{text = BIO, url = "https://t.me/"..ban.username..""}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
+end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'سورسي' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔════════𓄼•𓄹════════╗
+╔═══════𓄼•𓄹═══════╗
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
-╚════════𓄼•𓄹════════╝
+╚═══════𓄼•𓄹═══════╝
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10282,6 +10294,28 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ╣•❺• ‹ اوامر التفعيل والتعطيل 𓄼
 ╝•❻• ‹ اوامر الفتح والقفل 𓄼
 *]],"md",false, false, false, false, reply_markup)
+elseif text == 'ردود السورس' or text == 'تحكم الردود' or text == 'الردود' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ℘︙ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/belalelshayals'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ℘︙ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/belal_madeson'},
+},
+{
+{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/madeson_belal'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+᪣ ليك اوامر تفعيل وتعطيل ردود السورس⚡♥️
+*]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣ هاذا الامر يخص⦗ '..Controller_Num(7)..' ⦘* ',"md",true)  
@@ -10304,6 +10338,21 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'᪣  عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
 end
+if text == "الابراج" or text == "برجي" then
+LuaTele.sendText(msg_chat_id,msg_id,"* ℘︙ ارسل البرج الان لعرض التوقعات*","md",true) 
+Redis:set(Timo.."brgi"..msg.sender.user_id,"sendbr") 
+end
+if text and text:match("^برج (.*)$") then
+local Textbrj = text:match("^برج (.*)$")
+gk = https.request('https://apiabs.ml/brg.php?brg='..URL.escape(Textbrj)..'')
+br = JSON.decode(gk)
+i = 0
+for k,v in pairs(br.ok) do
+i = i + 1
+t = v.."\n"
+end
+LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
+end 
 if text and text:match("^معني (.*)$") then
 local TextName = text:match("^معني (.*)$")
 as = http.request('http://167.71.14.2/Mean.php?Name='..URL.escape(TextName)..'')
@@ -10464,6 +10513,35 @@ local rd_tmtlaq = {"😂 تم تنزيله كلب مسبقا",
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
 end
 end
+if text == "تخ" or text == "تخخ" and msg.reply_to_message_id ~= 0 then
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عايز يموت نفسه 😂*","md",true)  
+end
+if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك حد غير البوت يبنوسخه 😒*","md",true)  
+end
+if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
+local rd_mtzwga = {
+"مااااتتتت خلااااصصصص😹💔 ",
+"ده اتدفن يعم شوف حد تاني نقتلو🥲",
+"هو دهه في روحح عشان نقتلو اصلا😹💔",
+"ربنا يرحمو كان طيب🥲",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
+else
+local rd_zwag = {
+"تم القتل بنجاح😈",
+"تم القتل بنجاح😈",
+}
+if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
+Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
+end
+Redis:sadd(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
+end
+end
 -- time & date
 if text == "الوقت" then
 local date = os.date('*t')
@@ -10497,6 +10575,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*خالتك جرت ورايا 😹💔*',"md",false, false, false, false, reply_markup)
@@ -10512,6 +10593,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10529,6 +10613,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*مع الف سلامه يقلبي متجيش تاني 😹💔🎶*',"md",false, false, false, false, reply_markup)
@@ -10544,6 +10631,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10561,6 +10651,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*عليه الصلاه والسلام 🌝💛*',"md",false, false, false, false, reply_markup)
@@ -10576,6 +10669,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10593,6 +10689,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'* نزل عينك تحت كدا علشان هتخاد علي قفاك 😒❤️*',"md",false, false, false, false, reply_markup)
@@ -10608,6 +10707,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10625,6 +10727,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*ضحكتك عثل زيكك ينوحيي 🌝❤️*',"md",false, false, false, false, reply_markup)
@@ -10640,6 +10745,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10657,6 +10765,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'* بتفكر في اي 🤔*',"md",false, false, false, false, reply_markup)
@@ -10672,6 +10783,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10689,6 +10803,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*انا عايز مح انا كمان 🥺💔*',"md",false, false, false, false, reply_markup)
@@ -10704,6 +10821,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10721,6 +10841,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*متزعلش بحبك 😻🤍*',"md",false, false, false, false, reply_markup)
@@ -10736,6 +10859,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10753,6 +10879,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*وانا كمان بعشقك يا روحي 🤗🥰*',"md",false, false, false, false, reply_markup)
@@ -10768,6 +10897,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10785,6 +10917,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*هلا بيك ياروحي 👋*',"md",false, false, false, false, reply_markup)
@@ -10800,6 +10935,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10817,6 +10955,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*دايما ياحبيبي 🌝❤️*',"md",false, false, false, false, reply_markup)
@@ -10832,6 +10973,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10849,6 +10993,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*ونجيب اشخاص 😂👻*',"md",false, false, false, false, reply_markup)
@@ -10864,6 +11011,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10881,6 +11031,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*صباح العسل 😻🤍*',"md",false, false, false, false, reply_markup)
@@ -10896,6 +11049,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10913,6 +11069,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*اه اي يا قدع عيب 😹💔*',"md",false, false, false, false, reply_markup)
@@ -10928,6 +11087,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10945,6 +11107,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'روح وعقل بوتك 🥺💔',"md",false, false, false, false, reply_markup)
@@ -10960,6 +11125,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -10977,6 +11145,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*صح النوم 😹💔*',"md",false, false, false, false, reply_markup)
@@ -10992,6 +11163,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11009,6 +11183,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*ع فين لوين رايح وسايبنى 🥺💔*',"md",false, false, false, false, reply_markup)
@@ -11024,6 +11201,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11041,6 +11221,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*اهدا يوحش ميصحش كدا 😒😹*',"md",false, false, false, false, reply_markup)
@@ -11056,6 +11239,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11073,6 +11259,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*انت الي حلو ياقمر 🤤🌝*',"md",false, false, false, false, reply_markup)
@@ -11088,6 +11277,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11105,6 +11297,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*جتك اوهه م سامع ولا ايي 😹👻*',"md",false, false, false, false, reply_markup)
@@ -11120,6 +11315,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11137,6 +11335,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*حضرلك الخير يارب 🙂❤️*',"md",false, false, false, false, reply_markup)
@@ -11152,6 +11353,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11169,6 +11373,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*يوه خضتني ياسمك اي 🥺💔*',"md",false, false, false, false, reply_markup)
@@ -11184,6 +11391,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11201,6 +11411,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'* امك اسمها احلام 😹😹*',"md",false, false, false, false, reply_markup)
@@ -11217,6 +11430,9 @@ data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*خلصتت روحكك يبعيد 😹💔*',"md",false, false, false, false, reply_markup)
@@ -11232,6 +11448,9 @@ type = 'inline',
 data = {
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -11869,6 +12088,47 @@ local texting = {" مرة واحد مصري دخل سوبر ماركت في ال
 return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
+if text == "اعلام" or tect == "الاعلام" then
+if Redis:get(Timo.."Timo:Status:Games"..msg.chat_id) then
+AlamSpeed = {"انجلترا","البرازيل","مصر","كندا","فرنسا","اسبانيا","الارجنتين","اليمن","تونس","العراق","فلسطين","امريكا","سوريا","روسيا","البحرين","قطر","الاردن","الصين","ليبيا","السعوديه","الجزائر","لبنان","كوريا","ايطاليا","تركيا","البرتغال","المكسيك","سويسرا","نيجيريا","كرواتيا","السودان","الكاميرون","النيجر","المغرب"};
+name = AlamSpeed[math.random(#AlamSpeed)]
+Redis:set(Timo.."Timo:Game:Alam"..msg.chat_id,name)
+name = string.gsub(name,"انجلترا","🇦🇺")
+name = string.gsub(name,"البرازيل","🇧🇷")
+name = string.gsub(name,"مصر","🇪🇬")
+name = string.gsub(name,"كندا","🇨🇦")
+name = string.gsub(name,"فرنسا","🇫🇷")
+name = string.gsub(name,"اسبانيا","🇪🇦")
+name = string.gsub(name,"الارجنتين","🇦🇷")
+name = string.gsub(name,"اليمن","🇾🇪")
+name = string.gsub(name,"تونس","🇹🇳")
+name = string.gsub(name,"العراق","🇮🇶")
+name = string.gsub(name,"فلسطين","🇵🇸")
+name = string.gsub(name,"امريكا","🇺🇸")
+name = string.gsub(name,"سوريا","🇸🇾")
+name = string.gsub(name,"روسيا","🇷🇺")
+name = string.gsub(name,"البحرين","🇧🇭")
+name = string.gsub(name,"قطر","🇶🇦")
+name = string.gsub(name,"الاردن","🇯🇴")
+name = string.gsub(name,"الصين","🇨🇳")
+name = string.gsub(name,"ليبيا","🇱🇾")
+name = string.gsub(name,"السعوديه","🇸🇦")
+name = string.gsub(name,"الجزائر","🇩🇿")
+name = string.gsub(name,"لبنان","🇱🇧")
+name = string.gsub(name,"كوريا","🇰🇷")
+name = string.gsub(name,"ايطاليا","🇮🇹")
+name = string.gsub(name,"تركيا","🇹🇷")
+name = string.gsub(name,"البرتغال","🇵🇹")
+name = string.gsub(name,"المكسيك","🇲🇽")
+name = string.gsub(name,"سويسرا","🇨🇭")
+name = string.gsub(name,"كرواتيا","🇭🇷")
+name = string.gsub(name,"السودان","🇸🇩")
+name = string.gsub(name,"الكاميرون","🇨🇲")
+name = string.gsub(name,"النيجر","🇳🇪")
+name = string.gsub(name,"المغرب","🇲🇦")
+return LuaTele.sendText(msg_chat_id,msg_id," ℘︙ اسرع واحد يكتب اسم العلم ~ 〘 "..name.." 〙","md",true)  
+end
+end
 if text == "خيرني" or text == "لو خيروك" or text == "خيروك" then 
 if Redis:get(Timo.."Timo:Status:Games"..msg.chat_id) then
 local texting = {"لو خيروك |  بين الإبحار لمدة أسبوع كامل أو السفر على متن طائرة لـ 3 أيام متواصلة؟ ",
@@ -11968,7 +12228,8 @@ local texting = {"لو خيروك |  بين الإبحار لمدة أسبوع �
 "لو خيروك |  بين تناول الشوكولا التي تحبين طوال حياتك ولكن لا يمكنك الاستماع إلى الموسيقى وبين الاستماع إلى الموسيقى ولكن لا يمكن لك تناول الشوكولا أبدًا؟ ",
 "لو خيروك |  بين مشاركة المنزل مع عائلة من الفئران أو عائلة من الأشخاص المزعجين الفضوليين الذين يتدخلون في كل كبيرة وصغيرة؟ ",
 } 
-return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '𓄼•لو خيروك اخر•𓄹', data = msg.sender.user_id..'/lwghayrok'}, },}}
+return LuaTele.sendText(msg_chat_id,msg_id, texting[math.random(#texting)],'md', false, false, false, false, reply_markup)
 end
 end
 if text == "حروف" or text == "حرف" or text == "الحروف" then 
@@ -12456,13 +12717,13 @@ baniusername = '*['..bain.first_name..'](tg://user?id='..bain.id..')*'
 else
 baniusername = 'لا يوجد'
 end
-local CmdStart = '*\n ╔•أهلآ بك في بوت '..(Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")..
-'\n ╠•اختصاص البوت حماية المجموعات'..
-'\n ╠•لتفعيل البوت عليك اتباع مايلي ...'..
-'\n ╠•اضف البوت الى مجموعتك'..
-'\n ╠•ارفعه ادمن {مشرف}'..
-'\n ╠•ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
-'\n ╚•مطور البوت = 𓄼 @'..UserSudo..' 𓄹*'
+local CmdStart = '*\n •أهلآ بك في بوت '..(Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")..
+'\n •اختصاص البوت حماية المجموعات'..
+'\n •لتفعيل البوت عليك اتباع مايلي ...'..
+'\n •اضف البوت الى مجموعتك'..
+'\n •ارفعه ادمن {مشرف}'..
+'\n •ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
+'\n •مطور البوت = 𓄼 @'..UserSudo..' 𓄹*'
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12859,13 +13120,13 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔════════𓄼•𓄹════════╗
+╔═══════𓄼•𓄹═══════╗
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
-╚════════𓄼•𓄹════════╝
+╚═══════𓄼•𓄹═══════╝
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -14412,6 +14673,110 @@ local texting = {"اخر افلام شاهدتها",
   "أجمل شي بحياتك وش هو؟ ",
 } 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '𓄼•تويـت اخـر•𓄹', data = IdUser..'/Haiw7'}, },}}
+LuaTele.editMessageText(ChatId,Msg_id,texting[math.random(#texting)], 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)/lwghayrok') then
+local UserId = Text:match('(%d+)/lwghayrok')
+if tonumber(IdUser) == tonumber(UserId) then
+local texting = {"لو خيروك |  بين الإبحار لمدة أسبوع كامل أو السفر على متن طائرة لـ 3 أيام متواصلة؟ ",
+"لو خيروك |  بين شراء منزل صغير أو استئجار فيلا كبيرة بمبلغ معقول؟ ",
+"لو خيروك |  أن تعيش قصة فيلم هل تختار الأكشن أو الكوميديا؟ ",
+"لو خيروك |  بين تناول البيتزا وبين الايس كريم وذلك بشكل دائم؟ ",
+"لو خيروك |  بين إمكانية تواجدك في الفضاء وبين إمكانية تواجدك في البحر؟ ",
+"لو خيروك |  بين تغيير وظيفتك كل سنة أو البقاء بوظيفة واحدة طوال حياتك؟ ",
+"لو خيروك |  أسئلة محرجة أسئلة صراحة ماذا ستختار؟ ",
+"لو خيروك |  بين الذهاب إلى الماضي والعيش مع جدك أو بين الذهاب إلى المستقبل والعيش مع أحفادك؟ ",
+"لو كنت شخص اخر هل تفضل البقاء معك أم أنك ستبتعد عن نفسك؟ ",
+"لو خيروك |  بين الحصول على الأموال في عيد ميلادك أو على الهدايا؟ ",
+"لو خيروك |  بين القفز بمظلة من طائرة أو الغوص في أعماق البحر؟ ",
+"لو خيروك |  بين الاستماع إلى الأخبار الجيدة أولًا أو الاستماع إلى الأخبار السيئة أولًا؟ ",
+"لو خيروك |  بين أن تكون رئيس لشركة فاشلة أو أن تكون موظف في شركة ناجحة؟ ",
+"لو خيروك |  بين أن يكون لديك جيران صاخبون أو أن يكون لديك جيران فضوليون؟ ",
+"لو خيروك |  بين أن تكون شخص مشغول دائمًا أو أن تكون شخص يشعر بالملل دائمًا؟ ",
+"لو خيروك |  بين قضاء يوم كامل مع الرياضي الذي تشجعه أو نجم السينما الذي تحبه؟ ",
+"لو خيروك |  بين استمرار فصل الشتاء دائمًا أو بقاء فصل الصيف؟ ",
+"لو خيروك |  بين العيش في القارة القطبية أو العيش في الصحراء؟ ",
+"لو خيروك |  بين أن تكون لديك القدرة على حفظ كل ما تسمع أو تقوله وبين القدرة على حفظ كل ما تراه أمامك؟ ",
+"لو خيروك |  بين أن يكون طولك 150 سنتي متر أو أن يكون 190 سنتي متر؟ ",
+"لو خيروك |  بين إلغاء رحلتك تمامًا أو بقائها ولكن فقدان الأمتعة والأشياء الخاص بك خلالها؟ ",
+"لو خيروك |  بين أن تكون اللاعب الأفضل في فريق كرة فاشل أو أن تكون لاعب عادي في فريق كرة ناجح؟ ",
+"لو خيروك |  بين ارتداء ملابس البيت لمدة أسبوع كامل أو ارتداء البدلة الرسمية لنفس المدة؟ ",
+"لو خيروك |  بين امتلاك أفضل وأجمل منزل ولكن في حي سيء أو امتلاك أسوأ منزل ولكن في حي جيد وجميل؟ ",
+"لو خيروك |  بين أن تكون غني وتعيش قبل 500 سنة، أو أن تكون فقير وتعيش في عصرنا الحالي؟ ",
+"لو خيروك |  بين ارتداء ملابس الغوص ليوم كامل والذهاب إلى العمل أو ارتداء ملابس جدك/جدتك؟ ",
+"لو خيروك |  بين قص شعرك بشكل قصير جدًا أو صبغه باللون الوردي؟ ",
+"لو خيروك |  بين أن تضع الكثير من الملح على كل الطعام بدون علم أحد، أو أن تقوم بتناول شطيرة معجون أسنان؟ ",
+"لو خيروك |  بين قول الحقيقة والصراحة الكاملة مدة 24 ساعة أو الكذب بشكل كامل مدة 3 أيام؟ ",
+"لو خيروك |  بين تناول الشوكولا التي تفضلها لكن مع إضافة رشة من الملح والقليل من عصير الليمون إليها أو تناول ليمونة كاملة كبيرة الحجم؟ ",
+"لو خيروك |  بين وضع أحمر الشفاه على وجهك ما عدا شفتين أو وضع ماسكارا على شفتين فقط؟ ",
+"لو خيروك |  بين الرقص على سطح منزلك أو الغناء على نافذتك؟ ",
+"لو خيروك |  بين تلوين شعرك كل خصلة بلون وبين ارتداء ملابس غير متناسقة لمدة أسبوع؟ ",
+"لو خيروك |  بين تناول مياه غازية مجمدة وبين تناولها ساخنة؟ ",
+"لو خيروك |  بين تنظيف شعرك بسائل غسيل الأطباق وبين استخدام كريم الأساس لغسيل الأطباق؟ ",
+"لو خيروك |  بين تزيين طبق السلطة بالبرتقال وبين إضافة البطاطا لطبق الفاكهة؟ ",
+"لو خيروك |  بين اللعب مع الأطفال لمدة 7 ساعات أو الجلوس دون فعل أي شيء لمدة 24 ساعة؟ ",
+"لو خيروك |  بين شرب كوب من الحليب أو شرب كوب من شراب عرق السوس؟ ",
+"لو خيروك |  بين الشخص الذي تحبه وصديق الطفولة؟ ",
+"لو خيروك |  بين أمك وأبيك؟ ",
+"لو خيروك |  بين أختك وأخيك؟ ",
+"لو خيروك |  بين نفسك وأمك؟ ",
+"لو خيروك |  بين صديق قام بغدرك وعدوك؟ ",
+"لو خيروك |  بين خسارة حبيبك/حبيبتك أو خسارة أخيك/أختك؟ ",
+"لو خيروك |  بإنقاذ شخص واحد مع نفسك بين أمك أو ابنك؟ ",
+"لو خيروك |  بين ابنك وابنتك؟ ",
+"لو خيروك |  بين زوجتك وابنك/ابنتك؟ ",
+"لو خيروك |  بين جدك أو جدتك؟ ",
+"لو خيروك |  بين زميل ناجح وحده أو زميل يعمل كفريق؟ ",
+"لو خيروك |  بين لاعب كرة قدم مشهور أو موسيقي مفضل بالنسبة لك؟ ",
+"لو خيروك |  بين مصور فوتوغرافي جيد وبين مصور سيء ولكنه عبقري فوتوشوب؟ ",
+"لو خيروك |  بين سائق سيارة يقودها ببطء وبين سائق يقودها بسرعة كبيرة؟ ",
+"لو خيروك |  بين أستاذ اللغة العربية أو أستاذ الرياضيات؟ ",
+"لو خيروك |  بين أخيك البعيد أو جارك القريب؟ ",
+"لو خيروك |  يبن صديقك البعيد وبين زميلك القريب؟ ",
+"لو خيروك |  بين رجل أعمال أو أمير؟ ",
+"لو خيروك |  بين نجار أو حداد؟ ",
+"لو خيروك |  بين طباخ أو خياط؟ ",
+"لو خيروك |  بين أن تكون كل ملابس بمقاس واحد كبير الحجم أو أن تكون جميعها باللون الأصفر؟ ",
+"لو خيروك |  بين أن تتكلم بالهمس فقط طوال الوقت أو أن تصرخ فقط طوال الوقت؟ ",
+"لو خيروك |  بين أن تمتلك زر إيقاف موقت للوقت أو أن تمتلك أزرار للعودة والذهاب عبر الوقت؟ ",
+"لو خيروك |  بين أن تعيش بدون موسيقى أبدًا أو أن تعيش بدون تلفاز أبدًا؟ ",
+"لو خيروك |  بين أن تعرف متى سوف تموت أو أن تعرف كيف سوف تموت؟ ",
+"لو خيروك |  بين العمل الذي تحلم به أو بين إيجاد شريك حياتك وحبك الحقيقي؟ ",
+"لو خيروك |  بين معاركة دب أو بين مصارعة تمساح؟ ",
+"لو خيروك |  بين إما الحصول على المال أو على المزيد من الوقت؟ ",
+"لو خيروك |  بين امتلاك قدرة التحدث بكل لغات العالم أو التحدث إلى الحيوانات؟ ",
+"لو خيروك |  بين أن تفوز في اليانصيب وبين أن تعيش مرة ثانية؟ ",
+"لو خيروك |  بأن لا يحضر أحد إما لحفل زفافك أو إلى جنازتك؟ ",
+"لو خيروك |  بين البقاء بدون هاتف لمدة شهر أو بدون إنترنت لمدة أسبوع؟ ",
+"لو خيروك |  بين العمل لأيام أقل في الأسبوع مع زيادة ساعات العمل أو العمل لساعات أقل في اليوم مع أيام أكثر؟ ",
+"لو خيروك |  بين مشاهدة الدراما في أيام السبعينيات أو مشاهدة الأعمال الدرامية للوقت الحالي؟ ",
+"لو خيروك |  بين التحدث عن كل شيء يدور في عقلك وبين عدم التحدث إطلاقًا؟ ",
+"لو خيروك |  بين مشاهدة فيلم بمفردك أو الذهاب إلى مطعم وتناول العشاء بمفردك؟ ",
+"لو خيروك |  بين قراءة رواية مميزة فقط أو مشاهدتها بشكل فيلم بدون القدرة على قراءتها؟ ",
+"لو خيروك |  بين أن تكون الشخص الأكثر شعبية في العمل أو المدرسة وبين أن تكون الشخص الأكثر ذكاءً؟ ",
+"لو خيروك |  بين إجراء المكالمات الهاتفية فقط أو إرسال الرسائل النصية فقط؟ ",
+"لو خيروك |  بين إنهاء الحروب في العالم أو إنهاء الجوع في العالم؟ ",
+"لو خيروك |  بين تغيير لون عينيك أو لون شعرك؟ ",
+"لو خيروك |  بين امتلاك كل عين لون وبين امتلاك نمش على خديك؟ ",
+"لو خيروك |  بين الخروج بالمكياج بشكل مستمر وبين الحصول على بشرة صحية ولكن لا يمكن لك تطبيق أي نوع من المكياج؟ ",
+"لو خيروك |  بين أن تصبحي عارضة أزياء وبين ميك اب أرتيست؟ ",
+"لو خيروك |  بين مشاهدة كرة القدم أو متابعة الأخبار؟ ",
+"لو خيروك |  بين موت شخصية بطل الدراما التي تتابعينها أو أن يبقى ولكن يكون العمل الدرامي سيء جدًا؟ ",
+"لو خيروك |  بين العيش في دراما قد سبق وشاهدتها ماذا تختارين بين الكوميديا والتاريخي؟ ",
+"لو خيروك |  بين امتلاك القدرة على تغيير لون شعرك متى تريدين وبين الحصول على مكياج من قبل خبير تجميل وذلك بشكل يومي؟ ",
+"لو خيروك |  بين نشر تفاصيل حياتك المالية وبين نشر تفاصيل حياتك العاطفية؟ ",
+"لو خيروك |  بين البكاء والحزن وبين اكتساب الوزن؟ ",
+"لو خيروك |  بين تنظيف الأطباق كل يوم وبين تحضير الطعام؟ ",
+"لو خيروك |  بين أن تتعطل سيارتك في نصف الطريق أو ألا تتمكنين من ركنها بطريقة صحيحة؟ ",
+"لو خيروك |  بين إعادة كل الحقائب التي تملكينها أو إعادة الأحذية الجميلة الخاصة بك؟ ",
+"لو خيروك |  بين قتل حشرة أو متابعة فيلم رعب؟ ",
+"لو خيروك |  بين امتلاك قطة أو كلب؟ ",
+"لو خيروك |  بين الصداقة والحب ",
+"لو خيروك |  بين تناول الشوكولا التي تحبين طوال حياتك ولكن لا يمكنك الاستماع إلى الموسيقى وبين الاستماع إلى الموسيقى ولكن لا يمكن لك تناول الشوكولا أبدًا؟ ",
+"لو خيروك |  بين مشاركة المنزل مع عائلة من الفئران أو عائلة من الأشخاص المزعجين الفضوليين الذين يتدخلون في كل كبيرة وصغيرة؟ ",
+} 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '𓄼•لو خيروك اخر•𓄹', data = IdUser..'/lwghayrok'}, },}}
 LuaTele.editMessageText(ChatId,Msg_id,texting[math.random(#texting)], 'md', true, false, reply_markup)
 end
 end
