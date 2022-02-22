@@ -9802,17 +9802,6 @@ https.request("https://api.medooo.ml/leomedo/yt?text="..URL.escape(text).."&toke
 https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
 Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
 end
-if text == "مواقيت الصلاه" then
-slwat = https.request("https://mahmoudm50.xyz/anubis/pray.php?city=cairo")
-salawat = JSON.decode(slwat)
-pray_times = salawat['results']['datetime'][1]['times']
-Fajr = pray_times['Fajr']
-Dhuhr = pray_times['Dhuhr']
-Asr = pray_times['Asr']
-Maghrib = pray_times['Maghrib']
-Isha = pray_times['Isha']
-return LuaTele.sendText(msg_chat_id,msg_id, "* ᪣ مواقيت الصلاه *\n*▱▰▱▰▱▰▱▰▱▰▱▰▱▰*\n".."* الفجر = *"..Fajr.."\n* الظهر = *"..Dhuhr.."\n* العصر = *"..Asr.."\n* المغرب = *"..Maghrib.."\n* العشاء = *"..Isha.."\n*▱▰▱▰▱▰▱▰▱▰▱▰▱▰*\n* حسب التوقيت المحلي لمدينه القاهره*","md",true)
-end
 
 time = os.date("*t")
 hour = time.hour
