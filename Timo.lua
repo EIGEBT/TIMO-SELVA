@@ -10418,7 +10418,7 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_
 end
 if text == 'معلوماتي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
-if bain.username then
+if ban.first_name then
 news = " "..ban.first_name.." "
 else
 news = " لا يوجد"
@@ -10483,13 +10483,11 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔═══════𓄼•𓄹═══════╗
-╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
+╔•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
-╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
-╚═══════𓄼•𓄹═══════╝
+╚•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10639,10 +10637,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/jeka_alone'},
+{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/nxownsidbwkf'},
 },
 {
-{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/mostaf_sasa'},
+{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/yusndkcnslw'},
 },
 }
 }
@@ -13454,13 +13452,11 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔═══════𓄼•𓄹═══════╗
-╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
+╔•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
 ╠•[ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 ╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
-╠•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
-╚═══════𓄼•𓄹═══════╝
+╚•[ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -15151,7 +15147,7 @@ LuaTele.editMessageText(ChatId,Msg_id,texting[math.random(#texting)], 'md', true
 end
 end
 if Text and Text:match('(%d+)/hrooff') then
-local UserId = Text:match('(%d+)/lwghayrok')
+local UserId = Text:match('(%d+)/hrooff')
 if tonumber(IdUser) == tonumber(UserId) then
 local texting = {" جماد بحرف ⇦ ر  ", 
 " مدينة بحرف ⇦ ع  ",
@@ -16324,6 +16320,13 @@ Redis:del(Timo.."Timo:Sasa:Jeka"..ChatId)
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallAddorrem'},},}}
 LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تعطيل ردود السورس *").unLock, 'md', true, false, reply_markup)
 end
+elseif Text and Text:match('(%d+)/yusndkcnslw') then
+local UserId = Text:match('(%d+)/yusndkcnslw')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:del(Timo.."Timo:Sasa:Jeka"..ChatId) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'rdodtahlom'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تعطيل ردود السورس *").unLock, 'md', true, false, reply_markup)
+end
 elseif Text and Text:match('(%d+)/unmute_setadmib') then
 local UserId = Text:match('(%d+)/unmute_setadmib')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -16429,6 +16432,13 @@ if tonumber(IdUser) == tonumber(UserId) then
 Redis:set(Timo.."Timo:Status:KickMe"..ChatId,true) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallAddorrem'},},}}
 LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser," ᪣ تم تفعيل امر اطردني").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/nxownsidbwkf') then
+local UserId = Text:match('(%d+)/nxownsidbwkf')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(Timo.."Timo:Sasa:Jeka"..ChatId,true) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'rdodtahlom'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تفعيل ردود السورس *").unLock, 'md', true, false, reply_markup)
 end
 end
 if Text and Text:match('(%d+)/addAdmins@(.*)') then
@@ -16716,6 +16726,23 @@ data = {
 }
 }
 return LuaTele.editMessageText(ChatId,Msg_id,' ᪣ اوامر التفعيل والتعطيل ', 'md', false, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)/rdodtahlom') then
+local UserId = Text:match('(%d+)/rdodtahlom')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/nxownsidbwkf'},
+},
+{
+{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/yusndkcnslw'},
+},
+}
+}
+return LuaTele.editMessageText(ChatId,Msg_id,' ᪣اوامر تفعيل وتعطيل الردود  ', 'md', false, false, reply_markup)
 end
 end
 if Text and Text:match('(%d+)/listallAddorr') then
