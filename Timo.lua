@@ -12895,7 +12895,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ•𓄹', url = "https://t.me/hazf_timo_8bot"}
+{text = '𓄼•ʙᴏᴛ•𓄹 ', url = "https://t.me/hazf_timo_8bot"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
