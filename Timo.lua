@@ -10619,10 +10619,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/listallAddorrem'},
+{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/nxownsidbwkf'},
 },
 {
-{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/mostaf_sasa'},
+{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/yusndkcnslw'},
 },
 }
 }
@@ -14617,6 +14617,7 @@ local TextMahibesAgane = [[*
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
 end
+
 if Text and Text:match('(%d+)/Haiw7') then
 local UserId = Text:match('(%d+)/Haiw7')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -16266,6 +16267,13 @@ Redis:del(Timo.."Timo:Sasa:Jeka"..ChatId)
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallAddorrem'},},}}
 LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تعطيل ردود السورس *").unLock, 'md', true, false, reply_markup)
 end
+elseif Text and Text:match('(%d+)/yusndkcnslw') then
+local UserId = Text:match('(%d+)/yusndkcnslw')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:del(Timo.."Timo:Sasa:Jeka"..ChatId) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'rdodtahlom'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تعطيل ردود السورس *").unLock, 'md', true, false, reply_markup)
+end
 elseif Text and Text:match('(%d+)/unmute_setadmib') then
 local UserId = Text:match('(%d+)/unmute_setadmib')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -16371,6 +16379,14 @@ if tonumber(IdUser) == tonumber(UserId) then
 Redis:set(Timo.."Timo:Status:KickMe"..ChatId,true) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallAddorrem'},},}}
 LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser," ᪣ تم تفعيل امر اطردني").unLock, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/nxownsidbwkf') then
+local UserId = Text:match('(%d+)/nxownsidbwkf')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:set(Timo.."Timo:Sasa:Jeka"..ChatId,true) 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'rdodtahlom'},},}}
+LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تفعيل ردود السورس *").unLock, 'md', true, false, reply_markup)
+end
 end
 if Text and Text:match('(%d+)/addAdmins@(.*)') then
 local UserId = {Text:match('(%d+)/addAdmins@(.*)')}
