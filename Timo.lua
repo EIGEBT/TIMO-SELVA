@@ -4525,6 +4525,340 @@ end
 
 end
 
+if text and text:match("^(.*)$") then
+if Redis:get(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "true" then
+Redis:set(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id, "true1")
+Redis:set(Timo.."Timo1:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id, text)
+Redis:sadd(Timo.."Timo1:List:Rd:Sudo"..msg.chat_id, text)
+return  LuaTele.sendText(msg_chat_id,msg_id, '\nارسل لي الكلمه الان ') 
+end
+end
+if text and text:match("^(.*)$") then
+if Redis:get(Timo.."Timo1:Set:On"..msg.sender.user_id..":"..msg.chat_id) == "true" then
+Redis:del(Timo..'Timo1:Add:Rd:Sudo:Text'..text..msg.chat_id)
+Redis:del(Timo..'Timo1:Add:Rd:Sudo:Text1'..text..msg.chat_id)
+Redis:del(Timo..'Timo1:Add:Rd:Sudo:Text2'..text..msg.chat_id)
+Redis:del(Timo.."Timo1:Set:On"..msg.sender.user_id..":"..msg.chat_id)
+Redis:srem(Timo.."Timo1:List:Rd:Sudo"..msg.chat_id, text)
+return  LuaTele.sendText(msg_chat_id,msg_id,"تم حذف الرد من ردود المتعدده")
+end
+end
+if text == "مسح الردود المتعدده" or text == "مسح ردود المتعدده" or text ==  "مسح الردود المتعدد" or text == "مسح ردود متعدد" then     
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(6)..' }* ',"md",true)  
+end
+local list = Redis:smembers(Timo.."Timo1:List:Rd:Sudo"..msg.chat_id)
+for k,v in pairs(list) do  
+Redis:del(Timo.."Timo1:Add:Rd:Sudo:Text"..v..msg.chat_id) 
+Redis:del(Timo.."Timo1:Add:Rd:Sudo:Text1"..v..msg.chat_id) 
+Redis:del(Timo.."Timo1:Add:Rd:Sudo:Text2"..v..msg.chat_id) 
+Redis:del(Timo.."Timo1:List:Rd:Sudo"..msg.chat_id)
+end
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حذف ردود المتعدده")
+end
+if text == "الردود المتعدده" or text == "ردود المتعدده" or text ==  "الردود المتعدد" or text == "ردود متعدد" then    
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(6)..' }* ',"md",true)  
+end
+local list = Redis:smembers(Timo.."Timo1:List:Rd:Sudo"..msg.chat_id)
+text = "\nقائمه الردود المتعدده ⇧⇩\n༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻\n"
+for k,v in pairs(list) do
+db = "رساله "
+text = text..""..k.." -›〘 "..v.." 〙-›〘 "..db.." 〙\n"
+end
+if #list == 0 then
+text = "لا توجد ردود متعدده"
+end
+ LuaTele.sendText(msg_chat_id,msg_id," "..text.." ")
+end
+if text == "اضف رد متعدد" or text == "ضع رد متعدد" then   
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(6)..' 〙* ',"md",true)  
+end
+Redis:set(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,true)
+return  LuaTele.sendText(msg_chat_id,msg_id,"ارسل الرد الذي اريد اضافته")
+end
+if text == "حذف ردم متعدد" or text == "مسح رد متعدد" then
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(6)..' 〙* ',"md",true)  
+end
+Redis:set(Timo.."Timo1:Set:On"..msg.sender.user_id..":"..msg.chat_id,true)
+return  LuaTele.sendText(msg_chat_id,msg_id,"ارسل الان الكلمه لحذفها ")
+end
+if text then  
+local test = Redis:get(Timo.."Timo1:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
+if Redis:get(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "true1" then
+Redis:set(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,'rd1')
+if text then   
+text = text:gsub('"',"") 
+text = text:gsub('"',"") 
+text = text:gsub("`","") 
+text = text:gsub("*","") 
+Redis:set(Timo.."Timo1:Add:Rd:Sudo:Text"..test..msg.chat_id, text)  
+end  
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الاول ارسل الرد الثاني")
+return false  
+end  
+end
+if text then  
+local test = Redis:get(Timo.."Timo1:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
+if Redis:get(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "rd1" then
+Redis:set(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,'rd2')
+if text then   
+text = text:gsub('"',"") 
+text = text:gsub('"',"") 
+text = text:gsub("`","") 
+text = text:gsub("*","") 
+Redis:set(Timo.."Timo1:Add:Rd:Sudo:Text1"..test..msg.chat_id, text)  
+end  
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد الثالث")
+return false  
+end  
+end
+if text then  
+local test = Redis:get(Timo.."Timo1:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
+if Redis:get(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "rd2" then
+Redis:set(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,'rd3')
+if text then   
+text = text:gsub('"',"") 
+text = text:gsub('"',"") 
+text = text:gsub("`","") 
+text = text:gsub("*","") 
+Redis:set(Timo.."Timo1:Add:Rd:Sudo:Text2"..test..msg.chat_id, text)  
+end  
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد")
+return false  
+end  
+end
+if text then
+local Text = Redis:get(Timo.."Timo1:Add:Rd:Sudo:Text"..text..msg.chat_id)   
+local Text1 = Redis:get(Timo.."Timo1:Add:Rd:Sudo:Text1"..text..msg.chat_id)   
+local Text2 = Redis:get(Timo.."Timo1:Add:Rd:Sudo:Text2"..text..msg.chat_id)   
+if Text or Text1 or Text2 then 
+local texting = {
+Text,
+Text1,
+Text2
+}
+Textes = math.random(#texting)
+ LuaTele.sendText(msg_chat_id,msg_id,texting[Textes])
+end
+end
+if text and text:match("^(.*)$") then
+if Redis:get(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "true" then
+ LuaTele.sendText(msg_chat_id,msg_id, '\nارسل لي الكلمه الان ')
+Redis:set(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id, "true1")
+Redis:set(Timo.."Timo11:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id, text)
+Redis:sadd(Timo.."Timo11:List:Rd:Sudo", text)
+return false end
+end
+if text and text:match("^(.*)$") then
+if Redis:get(Timo.."Timo11:Set:On"..msg.sender.user_id..":"..msg.chat_id) == "true" then
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حذف الرد من ردود المتعدده")
+Redis:del(Timo..'Timo11:Add:Rd:Sudo:Text'..text)
+Redis:del(Timo..'Timo11:Add:Rd:Sudo:Text1'..text)
+Redis:del(Timo..'Timo11:Add:Rd:Sudo:Text2'..text)
+Redis:del(Timo.."Timo11:Set:On"..msg.sender.user_id..":"..msg.chat_id)
+Redis:srem(Timo.."Timo11:List:Rd:Sudo", text)
+return false
+end
+end
+if text == "مسح الردود المتعدده عام" or text == "مسح ردود المتعدده عام" or text ==  "مسح الردود المتعدد عام" or text == "مسح ردود متعدد عام" then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+end
+local list = Redis:smembers(Timo.."Timo11:List:Rd:Sudo")
+for k,v in pairs(list) do  
+Redis:del(Timo.."Timo11:Add:Rd:Sudo:Text"..v) 
+Redis:del(Timo.."Timo11:Add:Rd:Sudo:Text1"..v) 
+Redis:del(Timo.."Timo11:Add:Rd:Sudo:Text2"..v)   
+Redis:del(Timo.."Timo11:List:Rd:Sudo")
+end
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حذف ردود المتعدده")
+end
+if text == "الردود المتعدده عام" or text == "ردود المتعدده عام" or text ==  "الردود المتعدد عام" or text == "ردود متعدد عام" then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+end
+local list = Redis:smembers(Timo.."Timo11:List:Rd:Sudo")
+text = "\nقائمه الردود المتعدده عام ⇧⇩\n༺┉┉┉⊶﴾𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹﴿⊷┉┉┉༻\n"
+for k,v in pairs(list) do
+db = "رساله "
+text = text..""..k.." -›〘 "..v.." 〙-›〘 "..db.." 〙\n"
+end
+if #list == 0 then
+text = "لا توجد ردود متعدده عام"
+end
+ LuaTele.sendText(msg_chat_id,msg_id," "..text.." ")
+end
+if text == "اضف رد متعدد عام" or text == "وضع رد متعدد عام" then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+end
+Redis:set(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,true)
+return  LuaTele.sendText(msg_chat_id,msg_id,"ارسل الرد الذي اريد اضافته")
+end
+if text == "حذف رد متعدد عام" or text == "حذف رد متعدد عام" then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص〘 '..Controller_Num(1)..' 〙* ',"md",true)  
+end
+Redis:set(Timo.."Timo11:Set:On"..msg.sender.user_id..":"..msg.chat_id,true)
+return  LuaTele.sendText(msg_chat_id,msg_id,"ارسل الان الكلمه لحذفها ")
+end
+if text then  
+local test = Redis:get(Timo.."Timo11:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
+if Redis:get(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "true1" then
+Redis:set(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,'rd1')
+if text then   
+text = text:gsub('"',"") 
+text = text:gsub('"',"") 
+text = text:gsub("`","") 
+text = text:gsub("*","") 
+Redis:set(Timo.."Timo11:Add:Rd:Sudo:Text"..test, text)  
+end  
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الاول ارسل الرد الثاني")
+return false  
+end  
+end
+if text then  
+local test = Redis:get(Timo.."Timo11:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
+if Redis:get(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "rd1" then
+Redis:set(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,'rd2')
+if text then   
+text = text:gsub('"',"") 
+text = text:gsub('"',"") 
+text = text:gsub("`","") 
+text = text:gsub("*","") 
+Redis:set(Timo.."Timo11:Add:Rd:Sudo:Text1"..test, text)  
+end  
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد الثاني ارسل الرد الثالث")
+return false  
+end  
+end
+if text then  
+local test = Redis:get(Timo.."Timo11:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
+if Redis:get(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "rd2" then
+Redis:set(Timo.."Timo11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,'rd3')
+if text then   
+text = text:gsub('"',"") 
+text = text:gsub('"',"") 
+text = text:gsub("`","") 
+text = text:gsub("*","") 
+Redis:set(Timo.."Timo11:Add:Rd:Sudo:Text2"..test, text)  
+end  
+ LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد")
+return false  
+end  
+end
+if text then
+local Text = Redis:get(Timo.."Timo11:Add:Rd:Sudo:Text"..text)   
+local Text1 = Redis:get(Timo.."Timo11:Add:Rd:Sudo:Text1"..text)   
+local Text2 = Redis:get(Timo.."Timo11:Add:Rd:Sudo:Text2"..text)   
+if Text or Text1 or Text2 then 
+local texting = {
+Text,
+Text1,
+Text2
+}
+Textes = math.random(#texting)
+ LuaTele.sendText(msg_chat_id,msg_id,texting[Textes])
+end
+end
+ 
+if msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then      
+Redis:sadd(Timo.."Timo:allM"..msg.chat_id, msg.id)
+if Redis:get(Timo.."Timo:Status:Del:Media"..msg.chat_id) then    
+local gmedia = Redis:scard(Timo.."Timo:allM"..msg.chat_id)  
+if gmedia >= 200 then
+local liste = Redis:smembers(Timo.."Timo:allM"..msg.chat_id)
+for k,v in pairs(liste) do
+local Mesge = v
+if Mesge then
+t = " ᪣ تم مسح "..k.." من الوسائط تلقائيا\n ᪣ يمكنك تعطيل الميزه بستخدام الامر ( `تعطيل المسح التلقائي` )"
+LuaTele.deleteMessages(msg.chat_id,{[1]= Mesge})
+end
+end
+LuaTele.sendText(msg_chat_id,msg_id, t)
+Redis:del(Timo.."Timo:allM"..msg.chat_id)
+end
+end
+end
+
+if text == "مسح الميديا" then  
+if not msg.TheBasics then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(4)..' 〙* ',"md",true)  
+end
+local list = Redis:smembers(Timo.."Timo:allM"..msg.chat_id)
+for k,v in pairs(list) do
+local Message = v
+if Message then
+t = " ᪣ تم مسح "..k.." من الوسائط الموجوده"
+LuaTele.deleteMessages(msg.chat_id,{[1]= Message})
+Redis:del(Timo.."Timo:allM"..msg.chat_id)
+end
+end
+if #list == 0 then
+t = " ᪣ لا يوجد ميديا في المجموعه"
+end
+ LuaTele.sendText(msg_chat_id,msg_id, t)
+end
+if text == "عدد الميديا" then  
+if not msg.TheBasics then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(4)..' 〙* ',"md",true)  
+end
+local gmria = Redis:scard(Timo.."Timo:allM"..msg.chat_id)  
+ LuaTele.sendText(msg_chat_id,msg_id,"᪣ عدد الميديا الموجود هو〘* "..gmria.." *〙","md")
+end
+if text == "تعطيل المسح التلقائي" then        
+if not msg.TheBasics then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(4)..' 〙* ',"md",true)  
+end
+Redis:del(Timo.."Timo:Status:Del:Media"..msg.chat_id)
+ LuaTele.sendText(msg_chat_id,msg_id,' ᪣ تم تعطيل المسح التلقائي للميديا')
+return false
+end 
+if text == "تفعيل المسح التلقائي" then        
+if not msg.TheBasics then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(4)..' 〙* ',"md",true)  
+end
+Redis:set(Timo.."Timo:Status:Del:Media"..msg.chat_id,true)
+LuaTele.sendText(msg_chat_id,msg_id,' ᪣ تم تفعيل المسح التلقائي للميديا')
+return false
+end 
+if text == "تعطيل اليوتيوب" then        
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(6)..' 〙* ',"md",true)  
+end
+Redis:del(Timo.."Timo:Status:yt"..msg.chat_id)
+ LuaTele.sendText(msg_chat_id,msg_id,' ᪣ تم تعطيل المسح اليوتيوب')
+return false
+end 
+if text == "تفعيل اليوتيوب" then        
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(6)..' 〙* ',"md",true)  
+end
+Redis:set(Timo.."Timo:Status:yt"..msg.chat_id,true)
+LuaTele.sendText(msg_chat_id,msg_id,' ᪣ تم تفعيل اليوتيوب')
+return false
+end 
+if text and text:match('^بحث (.*)$') then
+local search = text:match('^بحث (.*)$')
+https.request("https://core1.tk/apies/youtube/script.php?token="..Token.."&chat="..msg_chat_id.."&text="..URL.escape(search))
+end
+
+if text == "يوتيوب" then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تحميل صوت', data = msg.sender.user_id..'/mp3'..msg_id}, {text = 'تحميل فيديو', data = msg.sender.user_id..'/mp4'..msg_id}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+◍ اختر كيف تريد التحميل
+*]],"md",false, false, false, false, reply_markup)
+end
 
 if text and text:match("^تعطيل (.*)$") and msg.reply_to_message_id == 0 then
 local TextMsg = text:match("^تعطيل (.*)$")
@@ -9437,10 +9771,203 @@ local Added_Me = Redis:get(Timo.."Who:Added:Me"..msg_chat_id..':'..msg.sender.us
 if Added_Me then 
 UserInfo = LuaTele.getUser(Added_Me)
 local Name = '['..UserInfo.first_name..'](tg://user?id='..Added_Me..')'
-Text = ' ᪣ الشخص الذي قام باضافتك هو = '..Name
+Text = ' ᪣ الشخص الذي قام باضافتك هو -› '..Name
 return LuaTele.sendText(msg_chat_id,msg_id,Text,"md",true) 
 else
 return LuaTele.sendText(msg_chat_id,msg_id,"* ᪣ انت دخلت عبر الرابط محدش ضافك*","md",true) 
+end
+end
+if text == 'بيقول اي' or text == "قال اي" or text == "يقول اي" or text == "وش يقول" then  
+if tonumber(msg.reply_to_message_id) > 0 then 
+local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id) 
+if result.content.voice_note then  
+local rep = msg.id/2097152/0.5 
+https.request("https://api.medooo.ml/leomedo/voiceRecognise?token="..Token.."&chat_id="..msg_chat_id.."&file_id="..result.content.voice_note.voice.remote.id.."&msg_id="..rep) 
+end 
+end 
+end
+if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp3" then
+local rep = msg.id/2097152/0.5
+local m = rep +1
+https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)
+https.request("https://api.medooo.ml/leomedo/yt?text="..URL.escape(text).."&token="..Token.."&msg_id="..rep.."&chat_id="..msg_chat_id.."&type=mp3")
+https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
+Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
+end
+if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp4" then
+local rep = msg.id/2097152/0.5
+local m = rep +1
+https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)
+https.request("https://api.medooo.ml/leomedo/yt?text="..URL.escape(text).."&token="..Token.."&msg_id="..rep.."&chat_id="..msg_chat_id.."&type=mp4")
+https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
+Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
+end
+if text == "مواقيت الصلاه" then
+slwat = https.request("https://mahmoudm50.xyz/anubis/pray.php?city=cairo")
+salawat = JSON.decode(slwat)
+pray_times = salawat['results']['datetime'][1]['times']
+Fajr = pray_times['Fajr']
+Dhuhr = pray_times['Dhuhr']
+Asr = pray_times['Asr']
+Maghrib = pray_times['Maghrib']
+Isha = pray_times['Isha']
+return LuaTele.sendText(msg_chat_id,msg_id, "* ᪣ مواقيت الصلاه *\n*▱▰▱▰▱▰▱▰▱▰▱▰▱▰*\n".."* الفجر -› *"..Fajr.."\n* الظهر -› *"..Dhuhr.."\n* العصر -› *"..Asr.."\n* المغرب -› *"..Maghrib.."\n* العشاء -› *"..Isha.."\n*▱▰▱▰▱▰▱▰▱▰▱▰▱▰*\n* حسب التوقيت المحلي لمدينه القاهره*","md",true)
+end
+
+time = os.date("*t")
+hour = time.hour
+min = time.min
+sec = time.sec
+local_time = hour..":"..min
+list_zkr = Redis:smembers(Timo.."ChekBotAdd")
+
+if local_time then
+if local_time == "0:0" and not Redis:get(Timo.."0:done") then -- الساعه 12 منتصف الليل 
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."0:done", true)
+for i = 1 , 23 ,1 do 
+Redis:del(Timo..i..":done")
+end
+end
+if local_time == "1:0" and not Redis:get(Timo.."1:done") then -- الساعه 1 بعد منتصف الليل
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."1:done", true)
+end
+if local_time == "2:0" and not Redis:get(Timo.."2:done") then -- الساعه 2 بعد منتصف الليل
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."2:done", true)
+end
+if local_time == "3:0" and not Redis:get(Timo.."3:done") then -- الساعه 3 بعد منتصف الليل
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."3:done", true)
+end
+if local_time == "4:0" and not Redis:get(Timo.."4:done") then -- الساعه 4 بعد منتصف الليل
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."4:done", true)
+end
+if local_time == "5:0" and not Redis:get(Timo.."5:done") then -- الساعه 5 صباحا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."5:done", true)
+end
+if local_time == "6:0" and not Redis:get(Timo.."6:done") then -- الساعه 6 صباحا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."6:done", true)
+end
+if local_time == "7:0" and not Redis:get(Timo.."7:done") then -- الساعه 7 صباحا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."7:done", true)
+end
+if local_time == "8:0" and not Redis:get(Timo.."8:done") then -- الساعه 8 صباحا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."8:done", true)
+end
+if local_time == "9:0" and not Redis:get(Timo.."9:done") then -- الساعه 9 صباحا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."8:done", true)
+end
+if local_time == "10:0" and not Redis:get(Timo.."10:done") then -- الساعه 10 صباحا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."10:done", true)
+end
+if local_time == "11:0" and not Redis:get(Timo.."11:done") then -- الساعه 11 صباحا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."11:done", true)
+end
+if local_time == "12:0" and not Redis:get(Timo.."12:done") then -- الساعه 12 ظهرا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","html",true)  
+end
+Redis:set(Timo.."12:done", true)
+end
+if local_time == "13:0" and not Redis:get(Timo.."13:done") then -- الساعه 1 مسائا
+for k,v in pairs(list_zkr) do
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."13:done", true)
+end
+if local_time == "14:0" and not Redis:get(Timo.."14:done") and not Redis:get(Timo.."14:done") then -- الساعه 2 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)
+end
+Redis:set(Timo.."14:done", true)
+end
+if local_time == "15:0" and not Redis:get(Timo.."15:done") then -- الساعه 3 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."15:done", true)
+end
+if local_time == "16:0" and not Redis:get(Timo.."16:done") then -- الساعه 4 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."16:done", true)
+end
+if local_time == "17:0" and not Redis:get(Timo.."17:done") then -- الساعه 5 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."17:done", true)
+end
+if local_time == "18:0" and not Redis:get(Timo.."18:done") then -- الساعه 6 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."18:done", true)
+end
+if local_time == "19:0" and not Redis:get(Timo.."19:done") then -- الساعه 7 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."19:done", true)
+end
+if local_time == "20:0" and not Redis:get(Timo.."20:done") then -- الساعه 8 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."20:done", true)
+end
+if local_time == "21:0" and not Redis:get(Timo.."21:done") then -- الساعه 9 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."21:done", true)
+end
+if local_time == "22:0" and not Redis:get(Timo.."22:done") then -- الساعه 10 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."22:done", true)
+end
+if local_time == "23:0" and not Redis:get(Timo.."23:done") then -- الساعه 11 مسائا
+for k,v in pairs(list_zkr) do 
+LuaTele.sendText(v,0, "اشهد ان لا اله الا الله وان سيدنا محمد رسول الله","md",true)  
+end
+Redis:set(Timo.."23:done", true)
 end
 end
 
@@ -9667,20 +10194,6 @@ end
 if text == "عدد الميديا" then
 local list = Redis:smembers(Timo.."cleaner"..msg_chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"عدد الميديا هو "..#list.."","md",true)
-end
-if text == "زخرفه" or text == "زخرف"  then
-if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᪣ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' زخرفه ',  data ='/leftz@'},
-},
-}
-}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\nاليك القوائم الزخرف  اضفط وزخرف*',"md",false, false, false, false, reply_markup)
 end
 if text and text:match("^معني (.*)$") then
 local TextName = text:match("^معني (.*)$")
@@ -10244,6 +10757,28 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ╣•❺• ‹ اوامر التفعيل والتعطيل 𓄼
 ╝•❻• ‹ اوامر الفتح والقفل 𓄼
 *]],"md",false, false, false, false, reply_markup)
+elseif text == 'ردود السورس' or text == 'تحكم الردود' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/belalelshayals'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᪣ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼• تفعيل ردود السورس •𓄹', data = msg.sender.user_id..'/jeka_alone'},
+},
+{
+{text = '𓄼• تعطيل ردود السورس •𓄹', data = msg.sender.user_id..'/mostaf_sasa'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+᪣اليك اوامر تفعيل وتعطيل ردود السورس⚡♥️
+*]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᪣ هاذا الامر يخص⦗ '..Controller_Num(7)..' ⦘* ',"md",true)  
@@ -10406,6 +10941,35 @@ else
 local rd_tmtlaq = {"😂 تم تنزيله كلب مسبقا",
 }
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
+end
+end
+if text == "تخ" or text == "تخخ" and msg.reply_to_message_id ~= 0 then
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عايز يموت نفسه 😂*","md",true)  
+end
+if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك حد غير البوت يبنوسخه 😒*","md",true)  
+end
+if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
+local rd_mtzwga = {
+"مااااتتتت خلااااصصصص😹💔 ",
+"ده اتدفن يعم شوف حد تاني نقتلو🥲",
+"هو دهه في روحح عشان نقتلو اصلا😹💔",
+"ربنا يرحمو كان طيب🥲",
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
+else
+local rd_zwag = {
+"تم القتل بنجاح😈",
+"تم القتل بنجاح😈",
+}
+if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
+Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
+end
+Redis:sadd(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
 end
 end
 -- time & date
@@ -14645,6 +15209,42 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '𓄼�
 LuaTele.editMessageText(ChatId,Msg_id,texting[math.random(#texting)], 'md', true, false, reply_markup)
 end
 end
+if Text and Text:match('(%d+)/mp3(.*)') then
+local UserId = {Text:match('(%d+)/mp3(.*)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"},
+},
+}
+}
+local TextHelp = [[*
+◍ ارسل ما تريد تحميله
+*]]
+Redis:set(Timo.."youtube"..IdUser..ChatId,'mp3')
+LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)/mp4(.*)') then
+local UserId = {Text:match('(%d+)/mp4(.*)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"},
+},
+}
+}
+local TextHelp = [[*
+◍ ارسل ما تريد تحميله
+*]]
+Redis:set(Timo.."youtube"..IdUser..ChatId,'mp4')
+LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
 if Text and Text:match('(%d+)/help1') then
 local UserId = Text:match('(%d+)/help1')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -15145,14 +15745,6 @@ if tonumber(IdUser) == tonumber(UserId) then
 LuaTele.editMessageText(ChatId,Msg_id,"*᪣ تم رفض الزواج من الزوجه*","md",true) 
 end
 end
-if Text == '/leftz@' then
-LuaTele.editMessageText(ChatId,Msg_id,"*᪣ ارسل الكلمه لزخرفتها عربي او انجلش*","md",true) 
-Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
-end 
-if Text == '/leftz@' then
-LuaTele.editMessageText(ChatId,Msg_id,"*᪣ ارسل الكلمه لزخرفتها عربي او انجلش*","md",true) 
-Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
-end 
 
 if Text and Text:match('(%d+)/lock_link') then
 local UserId = Text:match('(%d+)/lock_link')
