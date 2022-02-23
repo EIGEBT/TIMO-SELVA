@@ -10441,35 +10441,6 @@ local rd_tmtlaq = {"😂 تم تنزيله كلب مسبقا",
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
 end
 end
-if text == "تخ" or text == "تخخ" and msg.reply_to_message_id ~= 0 then
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عايز يموت نفسه 😂*","md",true)  
-end
-if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك حد غير البوت يبنوسخه 😒*","md",true)  
-end
-if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
-local rd_mtzwga = {
-"مااااتتتت خلااااصصصص😹💔 ",
-"ده اتدفن يعم شوف حد تاني نقتلو🥲",
-"هو دهه في روحح عشان نقتلو اصلا😹💔",
-"ربنا يرحمو كان طيب🥲",
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
-else
-local rd_zwag = {
-"تم القتل بنجاح😈",
-"تم القتل بنجاح😈",
-}
-if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
-Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
-end
-Redis:sadd(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
-end
-end
 -- time & date
 if text == "الوقت" then
 local date = os.date('*t')
@@ -10495,9 +10466,14 @@ if text == 'هاي' or text == 'هيي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ᪣ ردود السورس معطلة*","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10509,9 +10485,14 @@ if text == 'سلام عليكم' or text == 'السلام عليكم' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ᪣ ردود السورس معطلة*","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10523,9 +10504,14 @@ if text == 'سلام' or text == 'مع سلامه' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10537,9 +10523,14 @@ if text == 'برايفت' or text == 'تع برايفت' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10551,9 +10542,14 @@ if text == 'النبي' or text == 'صلي علي النبي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10565,9 +10561,14 @@ if text == 'نعم' or text == 'يا نعم' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10579,9 +10580,14 @@ if text == '🙄' or text == '🙄🙄' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10593,9 +10599,14 @@ if text == '🙄' or text == '??🙄' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10607,9 +10618,14 @@ if text == '😂' or text == '😂😂' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10621,9 +10637,14 @@ if text == '😹' or text == '😹' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10635,9 +10656,14 @@ if text == '🤔' or text == '🤔🤔' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10649,9 +10675,14 @@ if text == '🌚' or text == '🌝' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10663,9 +10694,14 @@ if text == '💋' or text == '💋💋' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10677,9 +10713,14 @@ if text == '😭' or text == '😭😭' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10691,9 +10732,14 @@ if text == '🥺' or text == '🥺🥺' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10705,9 +10751,14 @@ if text == '😒' or text == '😒😒' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10719,9 +10770,14 @@ if text == 'بحبك' or text == 'حبق' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10733,9 +10789,14 @@ if text == 'مح' or text == 'هات مح' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10747,9 +10808,14 @@ if text == 'هلا' or text == 'هلا وغلا' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10761,9 +10827,14 @@ if text == 'هشش' or text == 'هششخرص' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10775,9 +10846,14 @@ if text == 'الحمد الله' or text == 'بخير الحمد الله' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10789,9 +10865,14 @@ if text == 'بف' or text == 'بص بف' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10803,9 +10884,14 @@ if text == 'خاص' or text == 'بص خاص' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10817,9 +10903,14 @@ if text == 'صباح الخير' or text == 'مساء الخير' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10831,9 +10922,14 @@ if text == 'صباح النور' or text == 'باح الخير' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10845,9 +10941,14 @@ if text == 'حصل' or text == 'حثل' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10859,9 +10960,14 @@ if text == 'اه' or text == 'اها' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10873,9 +10979,14 @@ if text == 'كسم' or text == 'كسمك' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10887,9 +10998,14 @@ if text == 'بوتي' or text == 'يا بوتي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10901,9 +11017,14 @@ if text == 'متيجي' or text == 'تع' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10915,9 +11036,14 @@ if text == 'هيح' or text == 'لسه صاحي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10929,9 +11055,14 @@ if text == 'منور' or text == 'نورت' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10943,9 +11074,14 @@ if text == 'باي' or text == 'انا ماشي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10957,9 +11093,14 @@ if text == 'ويت' or text == 'ويت يحب' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10971,9 +11112,14 @@ if text == 'خخخ' or text == 'خخخخخ' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10985,9 +11131,14 @@ if text == 'شكرا' or text == 'مرسي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -10999,9 +11150,14 @@ if text == 'حلوه' or text == 'حلو' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11013,9 +11169,14 @@ if text == 'بموت' or text == 'هموت' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11027,9 +11188,14 @@ if text == 'اي' or text == 'ايه' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11041,9 +11207,14 @@ if text == 'طيب' or text == 'تيب' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11055,9 +11226,14 @@ if text == 'حاضر' or text == 'حتر' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11069,9 +11245,14 @@ if text == 'جيت' or text == 'انا جيت' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11083,9 +11264,14 @@ if text == 'بخ' or text == 'عو' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11097,9 +11283,14 @@ if text == 'حبيبي' or text == 'حبيبتي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11111,9 +11302,14 @@ if text == 'تمام' or text == 'تمم' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11125,9 +11321,14 @@ if text == 'خلاص' or text == 'خلص' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11139,9 +11340,14 @@ if text == 'سي في' or text == 'سيفي' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
@@ -11799,7 +12005,7 @@ name = string.gsub(name,"العراق","🇮🇶")
 name = string.gsub(name,"فلسطين","🇵🇸")
 name = string.gsub(name,"امريكا","🇺🇸")
 name = string.gsub(name,"سوريا","🇸🇾")
-name = string.gsub(name,"روسيا","??🇺")
+name = string.gsub(name,"روسيا","🇷🇺")
 name = string.gsub(name,"البحرين","🇧🇭")
 name = string.gsub(name,"قطر","🇶🇦")
 name = string.gsub(name,"الاردن","🇯🇴")
