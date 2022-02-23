@@ -4825,40 +4825,6 @@ Redis:set(Timo.."Timo:Status:Del:Media"..msg.chat_id,true)
 LuaTele.sendText(msg_chat_id,msg_id,' ᪣ تم تفعيل المسح التلقائي للميديا')
 return false
 end 
-if text == "تعطيل اليوتيوب" then        
-if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(6)..' 〙* ',"md",true)  
-end
-Redis:del(Timo.."Timo:Status:yt"..msg.chat_id)
- LuaTele.sendText(msg_chat_id,msg_id,' ᪣ تم تعطيل المسح اليوتيوب')
-return false
-end 
-if text == "تفعيل اليوتيوب" then        
-if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᪣ هاذا الامر يخص 〘 '..Controller_Num(6)..' 〙* ',"md",true)  
-end
-Redis:set(Timo.."Timo:Status:yt"..msg.chat_id,true)
-LuaTele.sendText(msg_chat_id,msg_id,' ᪣ تم تفعيل اليوتيوب')
-return false
-end 
-if text and text:match('^بحث (.*)$') then
-local search = text:match('^بحث (.*)$')
-https.request("https://core1.tk/apies/youtube/script.php?token="..Token.."&chat="..msg_chat_id.."&text="..URL.escape(search))
-end
-
-if text == "يوتيوب" then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'تحميل صوت', data = msg.sender.user_id..'/mp3'..msg_id}, {text = 'تحميل فيديو', data = msg.sender.user_id..'/mp4'..msg_id}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-◍ اختر كيف تريد التحميل
-*]],"md",false, false, false, false, reply_markup)
-end
 
 if text and text:match("^تعطيل (.*)$") and msg.reply_to_message_id == 0 then
 local TextMsg = text:match("^تعطيل (.*)$")
@@ -9777,31 +9743,6 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id,"* ᪣ انت دخلت عبر الرابط محدش ضافك*","md",true) 
 end
 end
-if text == 'بيقول اي' or text == "قال اي" or text == "يقول اي" or text == "وش يقول" then  
-if tonumber(msg.reply_to_message_id) > 0 then 
-local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id) 
-if result.content.voice_note then  
-local rep = msg.id/2097152/0.5 
-https.request("https://api.medooo.ml/leomedo/voiceRecognise?token="..Token.."&chat_id="..msg_chat_id.."&file_id="..result.content.voice_note.voice.remote.id.."&msg_id="..rep) 
-end 
-end 
-end
-if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp3" then
-local rep = msg.id/2097152/0.5
-local m = rep +1
-https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)
-https.request("https://api.medooo.ml/leomedo/yt?text="..URL.escape(text).."&token="..Token.."&msg_id="..rep.."&chat_id="..msg_chat_id.."&type=mp3")
-https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
-Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
-end
-if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp4" then
-local rep = msg.id/2097152/0.5
-local m = rep +1
-https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)
-https.request("https://api.medooo.ml/leomedo/yt?text="..URL.escape(text).."&token="..Token.."&msg_id="..rep.."&chat_id="..msg_chat_id.."&type=mp4")
-https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
-Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
-end
 
 if text == 'كشف القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -10678,10 +10619,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/nxownsidbwkf'},
+{text = '𓄼•تفعيل ردود السورس•𓄹', data = msg.sender.user_id..'/listallAddorrem'},
 },
 {
-{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/yusndkcnslw'},
+{text = '𓄼•تعطيل ردود السورس•𓄹', data = msg.sender.user_id..'/mostaf_sasa'},
 },
 }
 }
@@ -14676,42 +14617,6 @@ local TextMahibesAgane = [[*
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
 end
-if Text and Text:match('(%d+)/mp3(.*)') then
-local UserId = {Text:match('(%d+)/mp3(.*)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = 't.me/SU_SELVA'}, 
-},
-}
-}
-local TextHelp = [[*
-◍ ارسل ما تريد تحميله
-*]]
-Redis:set(Timo.."youtube"..IdUser..ChatId,'mp3')
-LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
-if Text and Text:match('(%d+)/mp4(.*)') then
-local UserId = {Text:match('(%d+)/mp4(.*)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = 't.me/SU_SELVA'}, 
-},
-}
-}
-local TextHelp = [[*
-◍ ارسل ما تريد تحميله
-*]]
-Redis:set(Timo.."youtube"..IdUser..ChatId,'mp4')
-LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
 if Text and Text:match('(%d+)/Haiw7') then
 local UserId = Text:match('(%d+)/Haiw7')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -16361,13 +16266,6 @@ Redis:del(Timo.."Timo:Sasa:Jeka"..ChatId)
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallAddorrem'},},}}
 LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تعطيل ردود السورس *").unLock, 'md', true, false, reply_markup)
 end
-elseif Text and Text:match('(%d+)/yusndkcnslw') then
-local UserId = Text:match('(%d+)/yusndkcnslw')
-if tonumber(IdUser) == tonumber(UserId) then
-Redis:del(Timo.."Timo:Sasa:Jeka"..ChatId) 
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'rdodtahlom'},},}}
-LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تعطيل ردود السورس *").unLock, 'md', true, false, reply_markup)
-end
 elseif Text and Text:match('(%d+)/unmute_setadmib') then
 local UserId = Text:match('(%d+)/unmute_setadmib')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -16473,14 +16371,6 @@ if tonumber(IdUser) == tonumber(UserId) then
 Redis:set(Timo.."Timo:Status:KickMe"..ChatId,true) 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'listallAddorrem'},},}}
 LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser," ᪣ تم تفعيل امر اطردني").unLock, 'md', true, false, reply_markup)
-end
-elseif Text and Text:match('(%d+)/nxownsidbwkf') then
-local UserId = Text:match('(%d+)/nxownsidbwkf')
-if tonumber(IdUser) == tonumber(UserId) then
-Redis:set(Timo.."Timo:Sasa:Jeka"..ChatId,true) 
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '`ʙᴀᴄᴋ´', data =UserId..'/'.. 'rdodtahlom'},},}}
-LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"* ᪣ تم تفعيل ردود السورس *").unLock, 'md', true, false, reply_markup)
-end
 end
 if Text and Text:match('(%d+)/addAdmins@(.*)') then
 local UserId = {Text:match('(%d+)/addAdmins@(.*)')}
