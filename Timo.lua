@@ -10266,39 +10266,6 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'᪣  عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
 end
-if text == "الابراج" or text == "برجي" then
-LuaTele.sendText(msg_chat_id,msg_id,"* ᪣ ارسل البرج الان لعرض التوقعات*","md",true) 
-Redis:set(Timo.."brgi"..msg.sender.user_id,"sendbr") 
-end
-if text and text:match("^برج (.*)$") then
-local Textbrj = text:match("^برج (.*)$")
-gk = https.request('https://apiabs.ml/brg.php?brg='..URL.escape(Textbrj)..'')
-br = JSON.decode(gk)
-i = 0
-for k,v in pairs(br.ok) do
-i = i + 1
-t = v.."\n"
-end
-LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
-end 
-if text and text:match("^معني (.*)$") then
-local TextName = text:match("^معني (.*)$")
-as = http.request('http://167.71.14.2/Mean.php?Name='..URL.escape(TextName)..'')
-mn = JSON.decode(as)
-k = mn.meaning
-LuaTele.sendText(msg_chat_id,msg_id,k,"md",true) 
-end
-if text and text:match("^احسب (.*)$") then
-local Textage = text:match("^احسب (.*)$")
-ge = https.request('https://boyka-api.ml/Calculateage.php?age='..URL.escape(Textage)..'')
-ag = JSON.decode(ge)
-i = 0
-for k,v in pairs(ag.ok) do
-i = i + 1
-t = v.."\n"
-end
-LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
-end
 if text and text:match("^قول (.*)$")then
 local m = text:match("^قول (.*)$")
 if Redis:get(Timo.."Status:kool"..msg.chat_id) then
