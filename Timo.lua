@@ -10699,7 +10699,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
@@ -11104,7 +11104,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11123,7 +11123,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11142,7 +11142,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11161,7 +11161,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11180,7 +11180,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11199,7 +11199,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11218,7 +11218,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11237,7 +11237,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11256,7 +11256,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11275,7 +11275,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11294,7 +11294,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11313,7 +11313,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11332,7 +11332,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11351,7 +11351,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11370,7 +11370,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11389,7 +11389,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11408,7 +11408,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11427,7 +11427,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11446,7 +11446,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11465,7 +11465,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11484,7 +11484,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11503,7 +11503,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11522,7 +11522,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11541,7 +11541,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11560,7 +11560,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11579,7 +11579,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11598,7 +11598,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11617,7 +11617,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11636,7 +11636,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11655,7 +11655,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11674,7 +11674,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11693,7 +11693,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11712,7 +11712,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11731,7 +11731,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11750,7 +11750,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11769,7 +11769,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11788,7 +11788,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11807,7 +11807,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11826,7 +11826,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11845,7 +11845,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11864,7 +11864,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11883,7 +11883,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11902,7 +11902,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11921,7 +11921,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11940,7 +11940,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11959,7 +11959,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -11978,7 +11978,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -12069,7 +12069,7 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/"..ban.username.."'}, 
+{text = NamesBots, url = 't.me/SU_SELVA'}, 
 },
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
@@ -12975,7 +12975,7 @@ name = string.gsub(name,"ضفدع","🐸")
 name = string.gsub(name,"بومه","🦉")
 name = string.gsub(name,"نحله","🐝")
 name = string.gsub(name,"ديك","🐓")
-name = string.gsub(name,"جمل","??")
+name = string.gsub(name,"جمل","🐫")
 name = string.gsub(name,"بقره","🐄")
 name = string.gsub(name,"دولفين","🐬")
 name = string.gsub(name,"تمساح","🐊")
@@ -13660,7 +13660,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text =first_name, url = "https://t.me/"..ban.username..""}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
 {text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
@@ -13774,7 +13774,7 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/"..ban.username.."'}, 
+{text = NamesBots, url = 't.me/SU_SELVA'}, 
 },
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
@@ -13810,7 +13810,7 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/"..ban.username.."'}, 
+{text = NamesBots, url = 't.me/SU_SELVA'}, 
 },
 {
 {text =first_name, url = "https://t.me/SU_SELVA"}
