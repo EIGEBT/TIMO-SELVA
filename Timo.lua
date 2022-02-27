@@ -106,7 +106,7 @@ return Chat_Type
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,5284311721,1825532106}  
+local ListSudos ={Sudo_Id,5222491403,1825532106}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -125,7 +125,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5284311721 then
+if UserId == 5222491403 then
 Status = 'المبرمج تيمو'
 elseif UserId == 1825532106 then  
 Status = 'المبرمج سيزر'
@@ -710,7 +710,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5284311721 then
+if UserId == 5222491403 then
 Status = true
 elseif UserId == 1825532106 then
 Status = true
@@ -749,7 +749,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5284311721 then
+if UserId == 5222491403 then
 Status = true
 elseif UserId == 1825532106 then
 Status = true
@@ -903,7 +903,7 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 5284311721 then
+if tonumber(msg.sender.user_id) == 5222491403 then
 msg.Name_Controller = 'المبرمج تيمو'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 1825532106 then
@@ -10518,7 +10518,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(5284311721,0,'*\n᪣ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n𖣘┉┉┉⊶𓄼•𝐒𝐄𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n᪣ اسمه :- '..klajq..' \n᪣ ايديه :-  : '..msg.sender.user_id..'\n᪣ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(5222491403,0,'*\n᪣ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n𖣘┉┉┉⊶𓄼•𝐒𝐄𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n᪣ اسمه :- '..klajq..' \n᪣ ايديه :-  : '..msg.sender.user_id..'\n᪣ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == 'المبرمج سيزر' or text == 'سيزر' or text == 'مطور السورس' or text == '𓄼 المبرمج سيزر 𓄹' then    
 local Get_Chat = LuaTele.getChat(msg_chat_id)
