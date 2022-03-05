@@ -10688,7 +10688,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'سورسي' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
-video = "http://t.me/t_imoo/4"
+photo = "http://t.me/sorcy_timo/2"
 local T =[[
 👻╔•[ᴡᴇʟᴄᴏᴍᴇ](http://t.me/SU_SELVA) ᴛᴏ ѕᴏ𝗎ʀᴄᴇ [ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ♻️╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
@@ -10712,7 +10712,7 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بوت حذف' or text == 'بوت الحذف' or text == 'بووت حذف' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
@@ -13554,7 +13554,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "  ❲ 𓄼•ᴅᴇᴠ•𓄹 ❳\n𖣘┉┉┉⊶𓄼•𝐒??𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n ᪣*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n᪣ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ 𓄼•ᴅᴇᴠ•𓄹 ❳\n𖣘┉┉┉⊶𓄼•𝐒??𝐋𝐕??•𓄹⊷┉┉┉𖣘\n ᪣*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n᪣ *Dev Bio* : [❲ "..Bio.." ❳]"
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
@@ -13649,7 +13649,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'سورسي' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
-video = "http://t.me/t_imoo/4"
+photo = "http://t.me/sorcy_timo/2"
 local T =[[
 👻╔•[ᴡᴇʟᴄᴏᴍᴇ](http://t.me/SU_SELVA) ᴛᴏ ѕᴏ𝗎ʀᴄᴇ [ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 ♻️╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
@@ -13673,7 +13673,7 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بوت حذف' or text == 'بوت الحذف' or text == 'بووت حذف' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
