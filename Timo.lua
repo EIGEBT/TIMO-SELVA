@@ -11854,7 +11854,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅س', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
