@@ -11022,9 +11022,6 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• الالعاب التسليه •𓄹', data = msg.sender.user_id..'/helma1'},
-},
-{
 {text = '𓄼•العاب متطورة•𓄹 ', data = msg.sender.user_id..'/degm'}, 
 },
 {
@@ -15923,9 +15920,6 @@ if tonumber(IdUser) == tonumber(UserId) then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
-{
-{text = '𓄼• الالعاب التسليه •𓄹', data = msg.sender.user_id..'/helma1'},
-},
 {
 {text = 'العاب متطورة ', data = msg.sender.user_id..'/degm'}, 
 },
