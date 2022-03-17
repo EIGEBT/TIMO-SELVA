@@ -10354,12 +10354,20 @@ local m = "https://t.me/mmsst13/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == "استوري" or text == 'فيديوهات' then
-local t = "مرحبا اليك استوري عشوائي 🌝💜"
-Rrr = math.random(4,50)
-local m = "https://t.me/Qapplu/"..Rrr..""
-local rep = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+if text == "استوري" then
+Abs = math.random(2,140); 
+local Text ='*▹￤تم اختيار الاستوري لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = ': استوري اخر.', callback_data = IdUser..'/timo-selzrr@'},
+},
+{
+{text = 'ՏΌႮᎡᏟᎬ ՏᎬᏞᏙᎪ',url="t.me/SU_SELVA"}
+},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendaudio?chat_id=' .. msg.chat_id .. '&audio=https://t.me/Qapplu/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "فيديوهات رومانسيه" or text == 'رومانسي' then
 local t = "مرحبا اليك فيديوهات رومانسيه 🌝💜"
@@ -15445,6 +15453,25 @@ LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل الكلمه لزخرفته
 Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
 end 
 
+if Text and Text:match('(%d+)/timo-selzrr@') then
+local UserId = Text:match('(%d+)/timo-selzrr@')
+if tonumber(IdUser) == tonumber(UserId) then
+Abs = math.random(2,140); 
+local Text ='*تم اختيار استوري الك*'
+local msg_id = Msg_id/2097152/0.5
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = ': استوري اخر.', callback_data = IdUser..'/st@'},
+},
+{
+{text = 'ՏΌႮᎡᏟᎬ ՏᎬᏞᏙᎪ',url="t.me/SU_SELVA"}
+},
+}
+https.request("https://api.telegram.org/bot"..Token..'/sendaudio?chat_id=' .. ChatId .. '&audio=https://t.me/Qapplu/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+end
+end
 if Text and Text:match('(%d+)/lock_link') then
 local UserId = Text:match('(%d+)/lock_link')
 if tonumber(IdUser) == tonumber(UserId) then
