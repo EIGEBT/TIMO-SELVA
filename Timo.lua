@@ -10461,7 +10461,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•ᎷẎ ᎠᎬᏙ•𓄹 ', data = msg.sender.user_id..'/dev-tiimo'}, {text = '𓄼•ᏟᎻᎪŃŃᎬᏞ•𓄹 ', data = msg.sender.user_id..'/dev-tiimoo'},
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
@@ -15444,6 +15444,58 @@ if Text == '/leftz@' then
 LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل الكلمه لزخرفتها عربي او انجلش*","md",true) 
 Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
 end 
+
+if Text and Text:match('(%d+)/dev-tiimo') then
+local UserId = Text:match('(%d+)/dev-tiimo')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+},
+{
+{text = '𓄼•ᏴᎪᏟᏦ•𓄹', data = msg.sender.user_id..'/backkt'}
+},
+}
+}
+local TextHelp = [[*
+مطورين ومبرمجين سورس سيلفا
+*]]
+LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+if Text and Text:match('(%d+)/backkt') then
+local UserId = Text:match('(%d+)/backkt')
+if tonumber(IdUser) == tonumber(UserId) then
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+video = "http://t.me/t_imoo/4"
+local T =[[
+[◌͜͡ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
+
+[◌͜͡ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
+
+[◌͜͡ғᴏʟʟᴏᴡ ᴛʜᴇ ʙ𝗎ᴛᴛᴏɴѕ ʙᴇʟᴏᴡ](http://t.me/SU_SELVA)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = '𓄼•ᎷẎ ᎠᎬᏙ•𓄹 ', data = msg.sender.user_id..'/dev-tiimo'}, {text = '𓄼•ᏟᎻᎪŃŃᎬᏞ•𓄹 ', data = msg.sender.user_id..'/dev-tiimoo'},
+},
+{
+{text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
 
 if Text and Text:match('(%d+)/lock_link') then
 local UserId = Text:match('(%d+)/lock_link')
