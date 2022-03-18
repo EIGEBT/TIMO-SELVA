@@ -10361,7 +10361,7 @@ local m = "https://t.me/Qapplu/"..Rrr..""
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'استوري اخر', callback_data = IdUser..'/st@'},
+{text = 'استوري اخر', callback_data ='/st@'},
 },
 }
 local msgg = msg_id/2097152/0.5
