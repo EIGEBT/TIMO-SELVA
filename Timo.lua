@@ -10358,7 +10358,13 @@ if text == "استوري" or text == 'فيديوهات' then
 local t = "مرحبا اليك استوري عشوائي 🌝💜"
 Rrr = math.random(4,50)
 local m = "https://t.me/Qapplu/"..Rrr..""
-local rep = msg.id/2097152/0.5
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'استوري اخر', callback_data = IdUser..'/st@'},
+},
+}
+local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == "فيديوهات رومانسيه" or text == 'رومانسي' then
@@ -12819,7 +12825,7 @@ name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟🌟🌟")
 name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
-name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
+name = string.gsub(name,"⛈","??🌨🌨🌨🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
 name = string.gsub(name,"👨‍🔬","??‍??👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍🔬👩‍🔬")
