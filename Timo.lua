@@ -10354,20 +10354,11 @@ local m = "https://t.me/mmsst13/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == "استوري" then
-Abs = math.random(2,140); 
-local Text ='*▹￤تم اختيار الاستوري لك*'
+if text == "استوري" or text == 'فيديوهات' then
+local t = "مرحبا اليك استوري عشوائي 🌝💜"
+Rrr = math.random(4,50)
 local m = "https://t.me/Qapplu/"..Rrr..""
 local rep = msg.id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = ': استوري اخر.', callback_data = IdUser..'/timo-selzrr@'},
-},
-{
-{text = 'ՏΌႮᎡᏟᎬ ՏᎬᏞᏙᎪ',url="t.me/SU_SELVA"}
-},
-}
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == "فيديوهات رومانسيه" or text == 'رومانسي' then
@@ -10458,11 +10449,11 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-👻╔•ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ
-♻️╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
-👁╠•ᴛʜᴇ ʙᴇѕᴛ [ѕᴏ𝗎ʀᴄᴇ](http://t.me/SU_SELVA) ᴛᴇʟᴇɢʀᴀᴍ
-🎧╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
-🦸╚•ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ
+[◌͜͡ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
+
+[◌͜͡ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
+
+[◌͜͡ғᴏʟʟᴏᴡ ᴛʜᴇ ʙ𝗎ᴛᴛᴏɴѕ ʙᴇʟᴏᴡ](http://t.me/SU_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13397,11 +13388,11 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-👻╔•ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ
-♻️╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
-👁╠•ᴛʜᴇ ʙᴇѕᴛ [ѕᴏ𝗎ʀᴄᴇ](http://t.me/SU_SELVA) ᴛᴇʟᴇɢʀᴀᴍ
-🎧╠•[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)𓄼•𓄹[𓄼•𓄹](http://t.me/SU_SELVA)
-🦸╚•ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ
+[◌͜͡ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
+
+[◌͜͡ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
+
+[◌͜͡ғᴏʟʟᴏᴡ ᴛʜᴇ ʙ𝗎ᴛᴛᴏɴѕ ʙᴇʟᴏᴡ](http://t.me/SU_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -15454,26 +15445,6 @@ LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل الكلمه لزخرفته
 Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
 end 
 
-if Text and Text:match('(%d+)/timo-selzrr@') then
-local UserId = Text:match('(%d+)/timo-selzrr@')
-if tonumber(IdUser) == tonumber(UserId) then
-Abs = math.random(2,140); 
-local Text ='*تم اختيار استوري الك*'
-local m = "https://t.me/Qapplu/"..Rrr..""
-local rep = msg.id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = ': استوري اخر.', callback_data = IdUser..'/st@'},
-},
-{
-{text = 'ՏΌႮᎡᏟᎬ ՏᎬᏞᏙᎪ',url="t.me/SU_SELVA"}
-},
-}
-https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
 if Text and Text:match('(%d+)/lock_link') then
 local UserId = Text:match('(%d+)/lock_link')
 if tonumber(IdUser) == tonumber(UserId) then
