@@ -5012,6 +5012,9 @@ end
 if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج سيزر' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام𓄼 "..Controller(msg_chat_id,UserId_Info.id).." 𓄹*","md",true)  
 end
+if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج عسليه' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام𓄼 "..Controller(msg_chat_id,UserId_Info.id).." 𓄹*","md",true)  
+end
 if Redis:sismember(Timo.."Timo:BanAll:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
@@ -5076,6 +5079,9 @@ if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج تيمو' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,UserId_Info.id).." 𓄹*","md",true)  
 end
 if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج سيزر' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,UserId_Info.id).." 𓄹*","md",true)  
+end
+if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج عسليه' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,UserId_Info.id).." 𓄹*","md",true)  
 end
 if Redis:sismember(Timo.."Timo:ktmAll:Groups",UserId_Info.id) then
@@ -5463,6 +5469,9 @@ end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج سيزر' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام𓄼 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 𓄹*","md",true)  
 end
+if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج عسليه' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام𓄼 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 𓄹*","md",true)  
+end
 if Redis:sismember(Timo.."Timo:BanAll:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
@@ -5518,6 +5527,9 @@ if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المطور الث�
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 𓄹*","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج تيمو' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 𓄹*","md",true)  
+end
+if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج سيزر' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 𓄹*","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المبرمج سيزر' then
@@ -5818,6 +5830,9 @@ end
 if Controller(msg_chat_id,UserId) == 'المبرمج سيزر' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام𓄼 "..Controller(msg_chat_id,UserId).." 𓄹*","md",true)  
 end
+if Controller(msg_chat_id,UserId) == 'المبرمج عسليه' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام𓄼 "..Controller(msg_chat_id,UserId).." 𓄹*","md",true)  
+end
 if Redis:sismember(Timo.."Timo:BanAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
@@ -5870,6 +5885,9 @@ if Controller(msg_chat_id,UserId) == 'المبرمج تيمو' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*  ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,UserId).." 𓄹*","md",true)  
 end
 if Controller(msg_chat_id,UserId) == 'المبرمج سيزر' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*  ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,UserId).." 𓄹*","md",true)  
+end
+if Controller(msg_chat_id,UserId) == 'المبرمج عسليه' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*  ⌯ عذرا لا تستطيع كتم عام𓄼 "..Controller(msg_chat_id,UserId).." 𓄹*","md",true)  
 end
 if Redis:sismember(Timo.."Timo:ktmAll:Groups",UserId) then
@@ -10168,7 +10186,7 @@ keyboardd.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/Timo8Bot"}
+{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/asdsobot"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -10184,7 +10202,7 @@ keyboardd.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/Timo8Bot"}
+{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/asdsobot"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -10223,6 +10241,51 @@ local msg_id = msg.id/2097152/0.5
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
 local TestText = " 𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = '𓄼•ᴅᴇᴠ•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+},
+{
+{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SU_SELVA"}
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+end
+end
+end
+if text == 'المبرمج عسليه' or text == 'عسليه' or text == 'اين عسليه' or text == '𓄼 المبرمج عسليه 𓄹' then    
+local UserId_Info = LuaTele.searchPublicChat("AsaliyaEgypt")
+if UserId_Info.id then
+local  ban = LuaTele.getUser(UserId_Info.id)
+local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
+if  bain.bio then
+Bio =  bain.bio
+else
+Bio = 'لا يوجد'
+end
+if ban.first_name then
+Creat = " "..ban.first_name.." "
+else
+Creat = " Developers Timo\n"
+end
+local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
+if photo.total_count > 0 then
+local TestText = "𓄼•𝙰𝚂𝙰𝙻𝙸𝚈𝙰 𝙴𝙶𝚈𝙿𝚃•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = '𓄼•𝙰𝚂𝙰𝙻𝙸𝚈𝙰 𝙴𝙶𝚈𝙿𝚃•𓄹', url = "https://t.me/AsaliyaEgypt"}
+},
+{
+{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/Tem_Asaliya"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/V_I_K_I_N_G_1"}
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+else
+local TestText = " 𓄼•𝙰𝚂𝙰𝙻𝙸𝚈𝙰 𝙴𝙶𝚈𝙿𝚃•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10494,11 +10557,11 @@ video = "http://t.me/t_imoo/4"
 local T =[[
 ╔•ـــــــــــــــــــــــــــــــــــــــــ
 
-[⚙️╠ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗦𝗢𝗨𝗥𝗖𝗘 𝗦𝗘𝗟𝗩𝗔] (http://t.me/SU_SELVA)
+[⚙️╠ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗦𝗢𝗨𝗥𝗖𝗘 𝗦𝗘𝗟𝗩𝗔](http://t.me/SU_SELVA)
 
 ╠•ـــــــــــــــــــــــــــــــــــــــــ
 
-[🌐╠ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗦𝗢𝗨𝗥𝗖𝗘 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠] (http://t.me/SU_SELVA)
+[🌐╠ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗦𝗢𝗨𝗥𝗖𝗘 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠](http://t.me/SU_SELVA)
 
 ╠•ـــــــــــــــــــــــــــــــــــــــــ
 
@@ -10556,7 +10619,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/Timo8Bot"}
+{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/asdsobot"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -10592,7 +10655,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•صـاحـب الـتـيـم•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/Timo8BOT"}
+{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/asdsobot"}
 },
 {
 {text = '𓄼•جـروب التـيـم•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•قـنـاه الـتـيـم•𓄹', url = "https://t.me/rmdan_karim"}
@@ -13065,7 +13128,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/TIMO8BOT"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/asdsobot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SU_SELVA'}, 
@@ -13088,7 +13151,7 @@ data = {
 {text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/TIMO8BOT"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/asdsobot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SU_SELVA'}, 
@@ -13379,7 +13442,7 @@ keyboardd.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/Timo8Bot"}
+{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/asdsobot"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -13395,7 +13458,7 @@ keyboardd.inline_keyboard = {
 {text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/Timo8Bot"}
+{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/asdsobot"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -13552,7 +13615,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/Timo8Bot"}
+{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/asdsobot"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -13588,7 +13651,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•صـاحـب الـتـيـم•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/Timo8BOT"}
+{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/asdsobot"}
 },
 {
 {text = '𓄼•جـروب التـيـم•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•قـنـاه الـتـيـم•𓄹', url = "https://t.me/postat_selva"}
