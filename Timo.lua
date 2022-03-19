@@ -13488,11 +13488,19 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-[◌͜͡ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
+╔•ـــــــــــــــــــــــــــــــــــــــــ
 
-[◌͜͡ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
+[⚙️╠ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗦𝗢𝗨𝗥𝗖𝗘 𝗦𝗘𝗟𝗩𝗔] (http://t.me/SU_SELVA)
 
-[◌͜͡ғᴏʟʟᴏᴡ ᴛʜᴇ ʙ𝗎ᴛᴛᴏɴѕ ʙᴇʟᴏᴡ](http://t.me/SU_SELVA)
+╠•ـــــــــــــــــــــــــــــــــــــــــ
+
+[🌐╠ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗦𝗢𝗨𝗥𝗖𝗘 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠] (http://t.me/SU_SELVA)
+
+╠•ـــــــــــــــــــــــــــــــــــــــــ
+
+[🎊╠ 𝗙𝗢𝗟𝗟𝗢𝗪 𝗧𝗛𝗘 𝗕𝗨𝗧𝗧𝗢𝗡𝗦  𝗕𝗘𝗟𝗟𝗢𝗪](http://t.me/SU_SELVA)
+
+╚•ـــــــــــــــــــــــــــــــــــــــــ
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13500,7 +13508,10 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•𝚃𝙸𝙼𝙾•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•𝚂𝙴𝚉𝚁•𓄹', url = "https://t.me/ttccss"}
+},
+{
+{text = '𓄼•𝙰𝚂𝙰𝙻𝙸𝚈𝙰 𝙴𝙶𝚈𝙿𝚃•𓄹', url = "https://t.me/AsaliyaEgypt"}
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
