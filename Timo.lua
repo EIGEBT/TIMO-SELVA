@@ -106,7 +106,7 @@ return Chat_Type
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,5222491403,1825532106,1124610301}  
+local ListSudos ={Sudo_Id,5260941121,1825532106,1124610301}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -125,7 +125,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5222491403 then
+if UserId == 5260941121 then
 Status = 'المبرمج تيمو'
 elseif UserId == 1825532106 then  
 Status = 'المبرمج سيزر'
@@ -712,7 +712,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5222491403 then
+if UserId == 5260941121 then
 Status = true
 elseif UserId == 1825532106 then
 Status = true
@@ -753,7 +753,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5222491403 then
+if UserId == 5260941121 then
 Status = true
 elseif UserId == 1825532106 then
 Status = true
@@ -909,7 +909,7 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 5222491403 then
+if tonumber(msg.sender.user_id) == 5260941121 then
 msg.Name_Controller = 'المبرمج تيمو'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 1825532106 then
@@ -10355,7 +10355,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(5222491403,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n𖣘┉┉┉⊶𓄼•𝐒𝐄𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(5260941121,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n𖣘┉┉┉⊶𓄼•𝐒𝐄𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == 'المبرمج سيزر' or text == 'سيزر' or text == 'مطور السورس' or text == '𓄼 المبرمج سيزر 𓄹' then    
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -10555,19 +10555,11 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔•ـــــــــــــــــــــــــــــــــــــــــ
+[◌͜͡ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 
-[⚙️╠ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗦𝗢𝗨𝗥𝗖𝗘 𝗦𝗘𝗟𝗩𝗔](http://t.me/SU_SELVA)
+[◌͜͡ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 
-╠•ـــــــــــــــــــــــــــــــــــــــــ
-
-[🌐╠ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗦𝗢𝗨𝗥𝗖𝗘 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠](http://t.me/SU_SELVA)
-
-╠•ـــــــــــــــــــــــــــــــــــــــــ
-
-[🎊╠ 𝗙𝗢𝗟𝗟𝗢𝗪 𝗧𝗛𝗘 𝗕𝗨𝗧𝗧𝗢𝗡𝗦  𝗕𝗘𝗟𝗟𝗢𝗪](http://t.me/SU_SELVA)
-
-╚•ـــــــــــــــــــــــــــــــــــــــــ
+[◌͜͡ғᴏʟʟᴏᴡ ᴛʜᴇ ʙ𝗎ᴛᴛᴏɴѕ ʙᴇʟᴏᴡ](http://t.me/SU_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -10575,10 +10567,10 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•𝚃𝙸𝙼𝙾•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•𝚂𝙴𝚉𝚁•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
 },
 {
-{text = '𓄼•𝙰𝚂𝙰𝙻𝙸𝚈𝙰 𝙴𝙶𝚈𝙿𝚃•𓄹', url = "https://t.me/AsaliyaEgypt"}
+{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"}
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
@@ -10642,26 +10634,6 @@ keyboard.inline_keyboard = {
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'سيلفا' or text == 'تيم سيلفا' or text == 'تيم' or text == 'التيم' then
-photo = "https://t.me/sorcy/6"
-local Name = '𓄼•ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛᴇᴀᴍ ѕᴇʟᴠᴀ•𓄹'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼•صـاحـب الـتـيـم•𓄹', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/asdsobot"}
-},
-{
-{text = '𓄼•جـروب التـيـم•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•قـنـاه الـتـيـم•𓄹', url = "https://t.me/rmdan_karim"}
-},
-{
-{text = 'تيم سيلفآ آصح ـآب آلتلي 🎌✘⃟๏͈͈͈͈͈͈͈', url = "https://t.me/br_selva"}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -13551,19 +13523,11 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 video = "http://t.me/t_imoo/4"
 local T =[[
-╔•ـــــــــــــــــــــــــــــــــــــــــ
+[◌͜͡ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ](http://t.me/SU_SELVA)
 
-[⚙️╠ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝗦𝗢𝗨𝗥𝗖𝗘 𝗦𝗘𝗟𝗩𝗔](http://t.me/SU_SELVA)
+[◌͜͡ᴛʜᴇ ʙᴇѕᴛ ѕᴏ𝗎ʀᴄᴇ ᴛᴇʟᴇɢʀᴀᴍ](http://t.me/SU_SELVA)
 
-╠•ـــــــــــــــــــــــــــــــــــــــــ
-
-[🌐╠ 𝗧𝗛𝗘 𝗕𝗘𝗦𝗧 𝗦𝗢𝗨𝗥𝗖𝗘 𝗧𝗘𝗟𝗘𝗚𝗥𝗔𝗠](http://t.me/SU_SELVA)
-
-╠•ـــــــــــــــــــــــــــــــــــــــــ
-
-[🎊╠ 𝗙𝗢𝗟𝗟𝗢𝗪 𝗧𝗛𝗘 𝗕𝗨𝗧𝗧𝗢𝗡𝗦  𝗕𝗘𝗟𝗟𝗢𝗪](http://t.me/SU_SELVA)
-
-╚•ـــــــــــــــــــــــــــــــــــــــــ
+[◌͜͡ғᴏʟʟᴏᴡ ᴛʜᴇ ʙ𝗎ᴛᴛᴏɴѕ ʙᴇʟᴏᴡ](http://t.me/SU_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -13571,10 +13535,10 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•𝚃𝙸𝙼𝙾•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•𝚂𝙴𝚉𝚁•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
 },
 {
-{text = '𓄼•𝙰𝚂𝙰𝙻𝙸𝚈𝙰 𝙴𝙶𝚈𝙿𝚃•𓄹', url = "https://t.me/AsaliyaEgypt"}
+{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"}
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
