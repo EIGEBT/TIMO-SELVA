@@ -10567,10 +10567,10 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"}
+{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
@@ -13535,10 +13535,10 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"}
+{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
