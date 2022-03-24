@@ -10488,7 +10488,7 @@ local m = "https://t.me/lo_khyarok/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == 'معلوماتي' then
+if text == 'معلوماتي' or text == 'انا مين' then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = " "..ban.first_name.." "
@@ -10570,7 +10570,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•ᴀѕᴀʟɪʏᴀ•𓄹', url = "https://t.me/AsaliyaEgypt"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
@@ -10638,6 +10638,24 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+elseif text == 'جيت' or text == 'انا جيت' or text == 'جييت' or text == 'قيت' then
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+video = "http://t.me/sorcetimo/2"
+local T =[[
+[لـف وارجــع تـانـي مـشـحـوار 😂💔](http://t.me/SU_SELVA)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'الاوامر' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* 𖤓 هاذا الامر يخص ❴ '..Controller_Num(7)..' ❵* ',"md",true)  
@@ -10673,7 +10691,43 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ
 https://t.me/SU_SELVA
 *]],"md",false, false, false, false, reply_markup)
-elseif text == 'ردود السورس' or text == 'تحكم الردود' then
+elseif text == 'اوامر المسح' or text == 'مسح' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/belalelshayals'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼• المنشئين الاساسيين •𓄹', data = IdUser..'/TheBasics'}, {text = '𓄼• مسح المالكين •𓄹', data = IdUser..'/TheBasicsQ'}, 
+},
+{
+{text = '𓄼• مسح الثانوين •𓄹', data = IdUser..'/DevelopersQ'}, {text = '𓄼• مسح المطورين •𓄹', data = IdUser..'/Developers'}, 
+},
+{
+{text = '𓄼• مسح المميزين •𓄹', data = IdUser..'/DelDistinguished'}, {text = '𓄼• مسح المنشئين •𓄹', data = IdUser..'/Originators'}, 
+},
+{
+{text = '𓄼• مسح المدراء •𓄹', data = IdUser..'/Managers'}, {text = '𓄼• مسح الادمنيه •𓄹', data = IdUser..'/Addictive'}, 
+},
+{
+{text = '𓄼• مسح المكتومين •𓄹', data = IdUser..'/SilentGroupGroup'}, {text = '𓄼• مسح المحظورين •𓄹', data = IdUser..'/BanGroup'}, 
+},
+{
+{text = '𓄼• مسح المكتومين عام •𓄹', data = IdUser..'/SASAII'}, {text = '𓄼• مسح المحظورين عام •𓄹', data = IdUser..'/Redisa'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+🖥️╗•اليك اوامر 𓄼
+🎧╣•مسح الرتب 𓄼
+💎╝•الخاصه بالمطور الاساسي 𓄼
+*]],"md",false, false, false, false, reply_markup)
+elseif text == 'تحكم الردود' or text == 'الردود' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
 end
