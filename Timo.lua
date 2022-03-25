@@ -2918,13 +2918,6 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text =news,url = "https://t.me/"..ban.username..""}, },}}
 return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
 end
-if text == 'انا مين' then
-local ban = LuaTele.getUser(msg.sender.user_id)
-local news = '🖤🌝 انت ياقلبي = '..msg.Name_Controller
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =news,url = "https://t.me/"..ban.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
-end
 if text == 'التاريخ' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_n = os.date("%Y/%m/%d")  
@@ -10426,7 +10419,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'موافقه ', data = Message_Reply.sender.user_id..'/zog1'},{text = 'مش موافقه', data = Message_Reply.sender.user_id..'/zog2'}, 
+{text = 'موافقه', data = Message_Reply.sender.user_id..'/zog1'},{text = 'مش موافقه', data = Message_Reply.sender.user_id..'/zog2'}, 
 },
 }
 }
@@ -11788,25 +11781,6 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*حضرلك الخير يارب 🙂❤️*',"md",false, false, false, false, reply_markup)
-end
-if text == 'جيت' or text == 'انا جيت' then
-if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
-end
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text =first_name, url = "https://t.me/SU_SELVA"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,'* لف ورجع تانى مشحوار 😂🚶‍♂👻*',"md",false, false, false, false, reply_markup)
 end
 if text == 'بخ' or text == 'عو' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
@@ -13592,7 +13566,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•ᴀѕᴀʟɪʏᴀ ᴇɢʏᴘᴛ•𓄹', url = "https://t.me/AsaliyaEgypt"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•ᴀѕᴀʟɪʏᴀ•𓄹', url = "https://t.me/AsaliyaEgypt"},{text = '𓄼•ѕᴇᴢʀ•𓄹', url = "https://t.me/ttccss"}
 },
 {
 {text = '𓄼•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•𓄹', url = "https://t.me/SU_SELVA"}
