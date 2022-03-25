@@ -10136,9 +10136,12 @@ Creat = " Developers Bot \n"
 end
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
-local TestText = "  ❲ Developers Bot ❳\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : ["..Bio.." ]\n"
+local TestText = "الاول هو مطور السورس \n والتاني هو مطور البوت \n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
+{
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
+},
 {
 {text = Creat, url = "https://t.me/"..ban.username..""},
 },
@@ -10637,6 +10640,24 @@ local first_name = user_info.first_name
 video = "http://t.me/sorcetimo/2"
 local T =[[
 [لـف وارجــع تـانـي مـشـحـوار 😂💔](http://t.me/SU_SELVA)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SU_SELVA"}
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+elseif text == '😂' or text == '😂😂' or text == '😂😂😂' or text == '😂😂😂😂' then
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+video = "http://t.me/sorcetimo/4"
+local T =[[
+[ضـحـتـك عـثـل زيـك يـنـوحـي😂🖤](http://t.me/SU_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11154,25 +11175,6 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*نزل عينك تحت كدا علشان هتخاد علي قفاك 😒❤️*',"md",false, false, false, false, reply_markup)
-end
-if text == '😂' or text == '😂😂' then
-if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
-end
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text =first_name, url = "https://t.me/SU_SELVA"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,'*ضحكتك عثل زيكك ينوحيي 🌝❤️*',"md",false, false, false, false, reply_markup)
 end
 if text == '😹' or text == '😹' then
 if not Redis:get(Timo.."Timo:Sasa:Jeka"..msg_chat_id) then
