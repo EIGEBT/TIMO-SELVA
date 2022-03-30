@@ -12919,10 +12919,7 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•سـيـزر•𓄹', url = "https://t.me/ttccss"}
-},
-{
-{text = '𓄼•عـسـلـيـه•𓄹', url = "https://t.me/AsaliyaEgypt"}
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
 {text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
@@ -12945,7 +12942,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•سـيـزر•𓄹', url = "https://t.me/ttccss"}
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
 {text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
