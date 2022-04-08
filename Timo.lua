@@ -1200,7 +1200,6 @@ LuaTele.setChatMemberStatus(msg.chat_id,v,'selvaned',0)
 end
 end
 end
-end 
 
 if msg.content.luatele == "messageContact" and not msg.Distinguished then  -- الجهات
 local Contact_Group = Redis:get(Timo.."Lock:Contact"..msg_chat_id)
