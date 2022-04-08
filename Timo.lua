@@ -4548,6 +4548,299 @@ type = 'inline',
 data = {{{text = '⌯ مسح المميزين ⌯', data = msg.sender.user_id..'/DelDistinguished'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
+if text == 'المتوحدين' or text == 'تاك للمتوحدين' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."twhd:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد المتوحدين في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه المتوحدين ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'الكلاب' or text == 'تاك للكلاب' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."klb:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد كلاب في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه الكلاب ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'القرود' or text == 'تاك للقرود' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."Monkey:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد قرود في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه القرود ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'قلبي' or text == 'تاك لقلبي' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."Myheart:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد احدفي قبلك*","md",true)  
+end
+ListMembers = '\n*⌯ قائمه الناس اللي في قلبك ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'البقرات' or text == 'تاك للبقرات' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."acow:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد بقرات في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه البقرات ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'الارمله' or text == 'تاك للارامل' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."widow:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوحد ارمله في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه الارمله ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'الخولات' or text == 'تاك للخولات' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."let:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد خولات في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه الخولات ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'الحمير' or text == 'تاك للحمير' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."donkey:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد حمير في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه الحمير ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'المزز' or text == 'تاك للمزز' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."Beautiful:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد موزه في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه المزز ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'الوتكات' or text == 'تاك للوتكات' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."tick:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد الوتكات في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه الوتكات ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'ولادي' or text == 'تاك لولادي' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."myson:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد ابنك في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه أولادك ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'بناتي' or text == 'تاك لبناتي' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."daughter:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد بنتك في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه بناتك ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
+if text == 'الخاينين' or text == 'تاك للخاينين' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Info_Members = Redis:smembers(Timo.."betray:Group"..msg_chat_id) 
+if #Info_Members == 0 then
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد خاين في الجروب *","md",true)  
+end
+ListMembers = '\n*⌯ قائمه الخاينين ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
+for k, v in pairs(Info_Members) do
+local UserInfo = LuaTele.getUser(v)
+if UserInfo and UserInfo.username and UserInfo.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
+else
+ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
+end
 if text == 'المحظورين عام' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
@@ -6786,22 +7079,6 @@ end
 end
 return LuaTele.sendText(msg_chat_id,msg_id,zwga_list,"md",true) 
 end
-if text == "تاك للمتوحدين" or text == "المتوحدين" then
-local lonely_list = Redis:smembers(Timo..msg_chat_id.."lonely:")
-if #lonely_list == 0 then 
-return LuaTele.sendText(msg_chat_id,msg_id,'*⌯ لايوجد متوحدين *',"md",true) 
-end 
-local lone_list = "* ⌯ قائمة متوحدين الجروب *"..#lonely_list.."\n*𖣘┉┉┉⊶❨•𝐒𝐄𝐋𝐕𝐀•❩⊷┉┉┉𖣘*\n"
-for k, v in pairs(lonely_list) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-lone_list = lone_list.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-lone_list = lone_list.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-return LuaTele.sendText(msg_chat_id,msg_id,lone_list,"md",true) 
-end
 if text == "تاك للمطلقات" or text == "المطلقات" then
 local mutlqat_list = Redis:smembers(Timo..msg_chat_id.."mutlqat:")
 if #mutlqat_list == 0 then 
@@ -6817,299 +7094,6 @@ mutlqa_list = mutlqa_list.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
 end
 return LuaTele.sendText(msg_chat_id,msg_id,mutlqa_list,"md",true) 
-end
-if text == 'المتوحدين' or text == 'تاك للمتوحدين' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."twhd:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد المتوحدين في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه المتوحدين ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الكلاب' or text == 'تاك للكلاب' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."klb:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد كلاب في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه الكلاب ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'القرود' or text == 'تاك للقرود' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."Monkey:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد قرود في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه القرود ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'قلبي' or text == 'تاك لقلبي' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."Myheart:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد احدفي قبلك*","md",true)  
-end
-ListMembers = '\n*⌯ قائمه الناس اللي في قلبك ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'البقرات' or text == 'تاك للبقرات' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."acow:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد بقرات في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه البقرات ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الارمله' or text == 'تاك للارامل' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."widow:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوحد ارمله في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه الارمله ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الخولات' or text == 'تاك للخولات' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."let:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد خولات في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه الخولات ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الحمير' or text == 'تاك للحمير' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."donkey:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد حمير في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه الحمير ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'المزز' or text == 'تاك للمزز' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."Beautiful:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد موزه في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه المزز ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الوتكات' or text == 'تاك للوتكات' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."tick:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد الوتكات في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه الوتكات ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'ولادي' or text == 'تاك لولادي' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."myson:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد ابنك في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه أولادك ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'بناتي' or text == 'تاك لبناتي' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."daughter:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد بنتك في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه بناتك ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الخاينين' or text == 'تاك للخاينين' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."betray:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد خاين في الجروب *","md",true)  
-end
-ListMembers = '\n*⌯ قائمه الخاينين ⍖\n 𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = LuaTele.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
 
 if text == "القناه المضافه" then
