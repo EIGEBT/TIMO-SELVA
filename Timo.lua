@@ -1183,7 +1183,6 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 end
 end
-end
 
 
 Redis:set(Timo.."Who:Added:Me"..msg_chat_id..":"..v,msg.sender.user_id)
