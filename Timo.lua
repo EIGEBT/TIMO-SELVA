@@ -4841,6 +4841,12 @@ ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id=
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {{{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = "http://t.me/SO_SELVA"}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
+end
 if text == 'المحظورين عام' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
