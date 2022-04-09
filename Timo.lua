@@ -106,7 +106,7 @@ return Chat_Type
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,5260941121}  
+local ListSudos ={Sudo_Id,1918693330}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -125,7 +125,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5260941121 then
+if UserId == 1918693330 then
 Status = 'المبرمج تيمو'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -708,7 +708,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5260941121 then
+if UserId == 1918693330 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -745,7 +745,7 @@ Managers = Redis:sismember(Timo.."Timo:Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Timo:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Timo:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5260941121 then
+if UserId == 1918693330 then
 Status = true
 Status = true
 elseif UserId == Sudo_Id then    
@@ -898,7 +898,7 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 5260941121 then
+if tonumber(msg.sender.user_id) == 1918693330 then
 msg.Name_Controller = 'المبرمج تيمو'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -3077,59 +3077,59 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع ا
 end
 if UserName[1] == "مطور ثانوي" then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."DevelopersQ:Groups",UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:DevelopersQ:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"* ⌯ تم تنزيله مطور ثانوي مسبقا *").Reply,"md",true)  
 else
-Redis:srem(Timo.."DevelopersQ:Groups",UserId_Info.id) 
+Redis:srem(Timo.."Timo:DevelopersQ:Groups",UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"* ⌯ تم تنزيله مطور ثانوي *").Reply,"md",true)  
 end
 end
 if UserName[1]  == 'مساعد' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."selva:Groups",selvaa.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم تنزيله مساعد مسبقا ").Reply,"md",true)  
+if not Redis:sismember(Timo.."HELPBEVQ:Groups",bana.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"⌯ تم تنزيله مساعد مسبقا ").Reply,"md",true)  
 else
-Redis:del(Timo.."selva:Groups")
-Redis:del(Timo.."selva:Groups", selvaa.id)
-Redis:del(Timo.."id:selva:Groups", selvaa.id)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم تنزيله مساعد").Reply,"md",true)  
+Redis:del(Timo.."HELPBEVQ:Groups")
+Redis:del(Timo.."HELPBEVQ:Groups", bana.id)
+Redis:del(Timo.."id:HELPBEVQ:Groups", bana.id)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"⌯ تم تنزيله مساعد").Reply,"md",true)  
 end
 end
 if UserName[1] == "مطور" then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Developers:Groups",UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:Developers:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله مطور مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Developers:Groups",UserId_Info.id) 
+Redis:srem(Timo.."Timo:Developers:Groups",UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله مطور ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مالك" then
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(3)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(3)..' 𓄹* ',"md",true)  
 end
-if not Redis:sismember(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله مالك مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله مالك ").Reply,"md",true)  
 end
 end
@@ -3138,73 +3138,73 @@ if not msg.TheBasicsm then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص { '..Controller_Num(44)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."TheBasics:Group"..msg_chat_id,UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."TheBasics:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله منشئ اساسي ").Reply,"md",true)  
 end
 end
 if UserName[1] == "منشئ" then
 if not msg.TheBasics then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(4)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(4)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Originators:Group"..msg_chat_id,UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:Originators:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Originators:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(Timo.."Timo:Originators:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من المنشئين ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مدير" then
 if not msg.Originators then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(5)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(5)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Managers:Group"..msg_chat_id,UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:Managers:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Managers:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(Timo.."Timo:Managers:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من المدراء ").Reply,"md",true)  
 end
 end
 if UserName[1] == "ادمن" then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(6)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Addictive:Group"..msg_chat_id,UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Addictive:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من الادمنيه ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مميز" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Distinguished:Group"..msg_chat_id,UserId_Info.id) then
+if not Redis:sismember(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Distinguished:Group"..msg_chat_id,UserId_Info.id) 
+Redis:srem(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تنزيله من المميزبن ").Reply,"md",true)  
 end
 end
@@ -3212,68 +3212,68 @@ end
 if text and text:match("^تنزيل (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^تنزيل (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if selva.message == "Invalid user ID" then
+local ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if ban and ban.type and ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if TextMsg == 'مطور ثانوي' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."DevelopersQ:Groups",Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:DevelopersQ:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مطور ثانوي مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."DevelopersQ:Groups",Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:DevelopersQ:Groups",Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مطور ثانوي").Reply,"md",true)  
 end
 end
 if TextMsg == 'مساعد' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."selva:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مساعد مسبقا ").Reply,"md",true)  
+if not Redis:sismember(Timo.."HELPBEVQ:Groups",Message_Reply.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌯ تم تنزيله مساعد مسبقا ").Reply,"md",true)  
 else
-Redis:del(Timo.."selva:Groups")
-Redis:del(Timo.."selva:Groups", Message_Reply.sender.user_id)
-Redis:del(Timo.."id:selva:Groups", Message_Reply.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مساعد").Reply,"md",true)  
+Redis:del(Timo.."HELPBEVQ:Groups")
+Redis:del(Timo.."HELPBEVQ:Groups", Message_Reply.sender.user_id)
+Redis:del(Timo.."id:HELPBEVQ:Groups", Message_Reply.sender.user_id)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌯ تم تنزيله مساعد").Reply,"md",true)  
 end
 end
 if TextMsg == 'مطور' then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Developers:Groups",Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:Developers:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مطور مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Developers:Groups",Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:Developers:Groups",Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مطور ").Reply,"md",true)  
 end
 end
 if TextMsg == "مالك" then
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(3)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(3)..' 𓄹* ',"md",true)  
 end
-if not Redis:sismember(Timo.."TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مالك مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله مالك ").Reply,"md",true)  
 end
 end
@@ -3282,179 +3282,74 @@ if not msg.TheBasicsm then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص { '..Controller_Num(44)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله منشئ اساسي ").Reply,"md",true)  
 end
 end
 if TextMsg == "منشئ" then
 if not msg.TheBasics then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(4)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(4)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من المنشئين ").Reply,"md",true)  
 end
 end
 if TextMsg == "مدير" then
 if not msg.Originators then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(5)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(5)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من المدراء ").Reply,"md",true)  
 end
 end
 if TextMsg == "ادمن" then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(6)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من الادمنيه ").Reply,"md",true)  
 end
 end
 if TextMsg == "مميز" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم تنزيله من المميزبن ").Reply,"md",true)  
-end
-end
-----تنزيل تسليه -----
-if TextMsg == "متوحد" then
-if not Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "كلب" then
-if not Redis:sismember(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐶 تم رفعه كلب مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐶 تم رفعه كلب في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "قرد" then
-if not Redis:sismember(Timo.."Monkey:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐒 تم رفعه قرد مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."Monkey:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐒 تم رفعه قرد في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "قلبي" then
-if not Redis:sismember(Timo.."Myheart:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💜 تم رفعه في قلبك مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."Myheart:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💜 تم رفعه في قلبك ").Timo,"md",true)  
-end
-end
-if TextMsg == "بقره" then
-if not Redis:sismember(Timo.."acow:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐮 تم رفعه بقره مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."acow:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐮 تم رفعه بقره في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "ارمله" then
-if not Redis:sismember(Timo.."widow:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😹 تم رفعه ارمله مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."widow:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😹 تم رفعه ارمله في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "حمار" then
-if not Redis:sismember(Timo.."donkey:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🦓 تم رفعه حمار مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."donkey:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🦓 تم رفعه حمار في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "خول" then
-if not Redis:sismember(Timo.."let:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🙀 تم رفعه خول مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."let:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🙀 تم رفعه خول في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "مزه" then
-if not Redis:sismember(Timo.."Beautiful:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😻 تم رفعه مزه مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."Beautiful:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😻 تم رفعه مزه في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "وتكه" then
-if not Redis:sismember(Timo.."tick:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💃 تم رفعه وتكه مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."tick:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💃 تم رفعه وتكه في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "ابني" then
-if not Redis:sismember(Timo.."myson:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧒 تم رفعه ابني مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."myson:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧒 تم رفعه ابني في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "بنتي" then
-if not Redis:sismember(Timo.."daughter:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧑‍🎄 تم رفعه بنتي مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."daughter:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧑‍🎄 تم رفعه بنتي في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "خاين" then
-if not Redis:sismember(Timo.."betray:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💔 تم رفعه خاين مسبقا ").Timo,"md",true)  
-else
-Redis:srem(Timo.."betray:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💔 تم رفعه خاين في الجروب ").Timo,"md",true)  
 end
 end
 end
@@ -3462,71 +3357,71 @@ end
 
 if text and text:match('^تنزيل (.*) (%d+)$') then
 local UserId = {text:match('^تنزيل (.*) (%d+)$')}
-local selva = LuaTele.getUser(UserId[2])
-if selva.luatele == "error" and selva.code == 6 then
+local ban = LuaTele.getUser(UserId[2])
+if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
-if selva.message == "Invalid user ID" then
+if ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if ban and ban.type and ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if UserId[1] == 'مطور ثانوي' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."DevelopersQ:Groups",UserId) then
+if not Redis:sismember(Timo.."Timo:DevelopersQ:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"* ⌯ تم تنزيله مطور ثانوي مسبقا *").Reply,"md",true)  
 else
-Redis:srem(Timo.."DevelopersQ:Groups",UserId) 
+Redis:srem(Timo.."Timo:DevelopersQ:Groups",UserId) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"* ⌯ تم تنزيله مطور ثانوي *").Reply,"md",true)  
 end
 end
 if UserId[1] == 'مساعد' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."selva:Groups",UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم تنزيله مساعد مسبقا ").Reply,"md",true)  
+if not Redis:sismember(Timo.."HELPBEVQ:Groups",UserId) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم تنزيله مساعد مسبقا ").Reply,"md",true)  
 else
-Redis:del(Timo.."selva:Groups")
-Redis:del(Timo.."selva:Groups", UserId)
-Redis:del(Timo.."id:selva:Groups", UserId)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم تنزيله مساعد").Reply,"md",true)  
+Redis:del(Timo.."HELPBEVQ:Groups")
+Redis:del(Timo.."HELPBEVQ:Groups", UserId)
+Redis:del(Timo.."id:HELPBEVQ:Groups", UserId)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم تنزيله مساعد").Reply,"md",true)  
 end
 end
 if UserId[1] == 'مطور' then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Developers:Groups",UserId) then
+if not Redis:sismember(Timo.."Timo:Developers:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم تنزيله مطور مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Developers:Groups",UserId) 
+Redis:srem(Timo.."Timo:Developers:Groups",UserId) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم تنزيله مطور ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مالك" then
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(3)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(3)..' 𓄹* ',"md",true)  
 end
-if not Redis:sismember(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId[2]) then
+if not Redis:sismember(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله مالك مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId[2]) 
+Redis:srem(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله مالك ").Reply,"md",true)  
 end
 end
@@ -3535,73 +3430,73 @@ if not msg.TheBasicsm then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص { '..Controller_Num(44)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."TheBasics:Group"..msg_chat_id,UserId[2]) then
+if not Redis:sismember(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."TheBasics:Group"..msg_chat_id,UserId[2]) 
+Redis:srem(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله منشئ اساسي ").Reply,"md",true)  
 end
 end
 if UserId[1] == "منشئ" then
 if not msg.TheBasics then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(4)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(4)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Originators:Group"..msg_chat_id,UserId[2]) then
+if not Redis:sismember(Timo.."Timo:Originators:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Originators:Group"..msg_chat_id,UserId[2]) 
+Redis:srem(Timo.."Timo:Originators:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من المنشئين ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مدير" then
 if not msg.Originators then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(5)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(5)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Managers:Group"..msg_chat_id,UserId[2]) then
+if not Redis:sismember(Timo.."Timo:Managers:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Managers:Group"..msg_chat_id,UserId[2]) 
+Redis:srem(Timo.."Timo:Managers:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من المدراء ").Reply,"md",true)  
 end
 end
 if UserId[1] == "ادمن" then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(6)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Addictive:Group"..msg_chat_id,UserId[2]) then
+if not Redis:sismember(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Addictive:Group"..msg_chat_id,UserId[2]) 
+Redis:srem(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من الادمنيه ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مميز" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(Timo.."Distinguished:Group"..msg_chat_id,UserId[2]) then
+if not Redis:sismember(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Distinguished:Group"..msg_chat_id,UserId[2]) 
+Redis:srem(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم تنزيله من المميزبن ").Reply,"md",true)  
 end
 end
@@ -3620,59 +3515,59 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع ا
 end
 if UserName[1] == "مطور ثانوي" then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."DevelopersQ:Groups",UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:DevelopersQ:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."DevelopersQ:Groups",UserId_Info.id) 
+Redis:sadd(Timo.."Timo:DevelopersQ:Groups",UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مطور ثانوي").Reply,"md",true)  
 end
 end
 if UserName[1] == "مساعد" then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."selva:Groups",selvaa.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
+if Redis:sismember(Timo.."HELPBEVQ:Groups",bana.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"⌯ تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
 else
-Redis:del(Timo.."selva:Groups")
-Redis:sadd(Timo.."selva:Groups", UserId)
-Redis:set(Timo.."id:selva:Groups", UserId)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم ترقيته مساعد").Reply,"md",true)  
+Redis:del(Timo.."HELPBEVQ:Groups")
+Redis:sadd(Timo.."HELPBEVQ:Groups", UserId)
+Redis:set(Timo.."id:HELPBEVQ:Groups", UserId)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(bana.id,"⌯ تم ترقيته مساعد").Reply,"md",true)  
 end
 end
 if UserName[1] == "مطور" then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Developers:Groups",UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:Developers:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مطور مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Developers:Groups",UserId_Info.id) 
+Redis:sadd(Timo.."Timo:Developers:Groups",UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مطور ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مالك" then
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(3)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(3)..' 𓄹* ',"md",true)  
 end
-if Redis:sismember(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مالك مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) 
+Redis:sadd(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مالك ").Reply,"md",true)  
 end
 end
@@ -3681,149 +3576,148 @@ if not msg.TheBasicsm then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص { '..Controller_Num(44)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."TheBasics:Group"..msg_chat_id,UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."TheBasics:Group"..msg_chat_id,UserId_Info.id) 
+Redis:sadd(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته منشئ اساسي ").Reply,"md",true)  
 end
 end
 if UserName[1] == "منشئ" then
 if not msg.TheBasics then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(4)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(4)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Originators:Group"..msg_chat_id,UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:Originators:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Originators:Group"..msg_chat_id,UserId_Info.id) 
+Redis:sadd(Timo.."Timo:Originators:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته منشئ  ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مدير" then
 if not msg.Originators then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(5)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(5)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Managers:Group"..msg_chat_id,UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:Managers:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مدير  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Managers:Group"..msg_chat_id,UserId_Info.id) 
+Redis:sadd(Timo.."Timo:Managers:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مدير  ").Reply,"md",true)  
 end
 end
 if UserName[1] == "ادمن" then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(6)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not msg.Originators and not Redis:get(Timo.."Status:SetId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(Timo.."Addictive:Group"..msg_chat_id,UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته ادمن  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Addictive:Group"..msg_chat_id,UserId_Info.id) 
+Redis:sadd(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته ادمن  ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مميز" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not msg.Originators and not Redis:get(Timo.."Status:SetId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(Timo.."Distinguished:Group"..msg_chat_id,UserId_Info.id) then
+if Redis:sismember(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مميز  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Distinguished:Group"..msg_chat_id,UserId_Info.id) 
+Redis:sadd(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم ترقيته مميز  ").Reply,"md",true)  
 end
 end
----تسليه بالمعرف---
 end
 if text and text:match("^رفع (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^رفع (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if selva.message == "Invalid user ID" then
+local ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if ban and ban.type and ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if TextMsg == 'مطور ثانوي' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."DevelopersQ:Groups",Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:DevelopersQ:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."DevelopersQ:Groups",Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:DevelopersQ:Groups",Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مطور ثانوي").Reply,"md",true)  
 end
 end
 if TextMsg == 'مساعد' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."selva:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مساعد مسبقا ").Reply,"md",true)  
+if Redis:sismember(Timo.."HELPBEVQ:Groups",Message_Reply.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌯ تم ترقيته مساعد مسبقا ").Reply,"md",true)  
 else
-Redis:del(Timo.."selva:Groups")
-Redis:sadd(Timo.."selva:Groups", Message_Reply.sender.user_id)
-Redis:set(Timo.."id:selva:Groups", Message_Reply.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته  مساعد").Reply,"md",true)  
+Redis:del(Timo.."HELPBEVQ:Groups")
+Redis:sadd(Timo.."HELPBEVQ:Groups", Message_Reply.sender.user_id)
+Redis:set(Timo.."id:HELPBEVQ:Groups", Message_Reply.sender.user_id)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"⌯ تم ترقيته  مساعد").Reply,"md",true)  
 end
 end
 if TextMsg == 'مطور' then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Developers:Groups",Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:Developers:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مطور مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Developers:Groups",Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:Developers:Groups",Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مطور ").Reply,"md",true)  
 end
 end
 if TextMsg == "مالك" then
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(3)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(3)..' 𓄹* ',"md",true)  
 end
-if Redis:sismember(Timo.."TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مالك مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مالك ").Reply,"md",true)  
 end
 end
@@ -3832,324 +3726,154 @@ if not msg.TheBasicsm then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص { '..Controller_Num(44)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته منشئ اساسي ").Reply,"md",true)  
 end
 end
 if TextMsg == "منشئ" then
 if not msg.TheBasics then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(4)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(4)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته منشئ  ").Reply,"md",true)  
 end
 end
 if TextMsg == "مدير" then
 if not msg.Originators then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(5)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(5)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مدير  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مدير  ").Reply,"md",true)  
 end
 end
 if TextMsg == "ادمن" then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(6)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not msg.Originators and not Redis:get(Timo.."Status:SetId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(Timo.."Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته ادمن  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته ادمن  ").Reply,"md",true)  
 end
 end
 if TextMsg == "مميز" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not msg.Originators and not Redis:get(Timo.."Status:SetId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(Timo.."Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مميز  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم ترقيته مميز  ").Reply,"md",true)  
-end
-end
----تسليه بالرد
-if TextMsg == "متوحد" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "كلب" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐶 تم رفعه كلب مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐶 تم رفعه كلب في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "قرد" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."Monkey:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐒 تم رفعه قرد مسبقا ").Reply,"md",true)  
-else
-Redis:sadd(Timo.."Monkey:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐒 تم رفعه قرد في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "قلبي" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."Myheart:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💜 تم رفعه في قلبك مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."Myheart:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💜 تم رفعه في قلبك ").Timo,"md",true)  
-end
-end
-if TextMsg == "بقره" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."acow:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐮 تم رفعه بقره مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."acow:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐮 تم رفعه بقره في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "ارمله" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."widow:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😹 تم رفعه ارمله مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."widow:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😹 تم رفعه ارمله في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "حمار" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."donkey:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🦓 تم رفعه حمار مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."donkey:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🦓 تم رفعه حمار في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "خول" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."let:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🙀 تم رفعه خول مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."let:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🙀 تم رفعه خول في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "مزه" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."Beautiful:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😻 تم رفعه مزه مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."Beautiful:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😻 تم رفعه مزه في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "وتكه" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."tick:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💃 تم رفعه وتكه مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."tick:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💃 تم رفعه وتكه في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "ابني" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."myson:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧒 تم رفعه ابني مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."myson:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧒 تم رفعه ابني في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "بنتي" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."daughter:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧑‍🎄 تم رفعه بنتي مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."daughter:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🧑‍🎄 تم رفعه بنتي في الجروب ").Timo,"md",true)  
-end
-end
-if TextMsg == "خاين" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."betray:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💔 تم رفعه خاين مسبقا ").Timo,"md",true)  
-else
-Redis:sadd(Timo.."betray:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 💔 تم رفعه خاين في الجروب ").Timo,"md",true)  
 end
 end
 end
 if text and text:match('^رفع (.*) (%d+)$') then
 local UserId = {text:match('^رفع (.*) (%d+)$')}
-local selva = LuaTele.getUser(UserId[2])
-if selva.luatele == "error" and selva.code == 6 then
+local ban = LuaTele.getUser(UserId[2])
+if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
-if selva.message == "Invalid user ID" then
+if ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if ban and ban.type and ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if UserId[1] == 'مطور ثانوي' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."DevelopersQ:Groups",UserId) then
+if Redis:sismember(Timo.."Timo:DevelopersQ:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم ترقيته مطور ثانوي مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."DevelopersQ:Groups",UserId) 
+Redis:sadd(Timo.."Timo:DevelopersQ:Groups",UserId) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم ترقيته مطور ثانوي").Reply,"md",true)  
 end
 end
 if UserId[1] == 'مساعد' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."selva:Groups",UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم ترقيته مساعد مسبقا ").Reply,"md",true)  
+if Redis:sismember(Timo.."HELPBEVQ:Groups",UserId) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم ترقيته مساعد مسبقا ").Reply,"md",true)  
 else
-Redis:del(Timo.."selva:Groups")
-Redis:sadd(Timo.."selva:Groups", UserId)
-Redis:set(Timo.."id:selva:Groups", UserId)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم مساعد").Reply,"md",true)  
+Redis:del(Timo.."HELPBEVQ:Groups")
+Redis:sadd(Timo.."HELPBEVQ:Groups", UserId)
+Redis:set(Timo.."id:HELPBEVQ:Groups", UserId)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم مساعد").Reply,"md",true)  
 end
 end
 if UserId[1] == 'مطور' then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Developers:Groups",UserId) then
+if Redis:sismember(Timo.."Timo:Developers:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم ترقيته مطور مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Developers:Groups",UserId) 
+Redis:sadd(Timo.."Timo:Developers:Groups",UserId) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId," ⌯ تم ترقيته مطور ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مالك" then
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(3)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(3)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId[2]) then
+if Redis:sismember(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته مالك مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."TheBasicsQ:Group"..msg_chat_id,UserId[2]) 
+Redis:sadd(Timo.."Timo:TheBasicsQ:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته مالك ").Reply,"md",true)  
 end
 end
@@ -4158,79 +3882,79 @@ if not msg.TheBasicsm then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص { '..Controller_Num(44)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."TheBasics:Group"..msg_chat_id,UserId[2]) then
+if Redis:sismember(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته منشئ اساسي مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."TheBasics:Group"..msg_chat_id,UserId[2]) 
+Redis:sadd(Timo.."Timo:TheBasics:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته منشئ اساسي ").Reply,"md",true)  
 end
 end
 if UserId[1] == "منشئ" then
 if not msg.TheBasics then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(4)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(4)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Originators:Group"..msg_chat_id,UserId[2]) then
+if Redis:sismember(Timo.."Timo:Originators:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته منشئ  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Originators:Group"..msg_chat_id,UserId[2]) 
+Redis:sadd(Timo.."Timo:Originators:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته منشئ  ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مدير" then
 if not msg.Originators then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(5)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(5)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Managers:Group"..msg_chat_id,UserId[2]) then
+if Redis:sismember(Timo.."Timo:Managers:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته مدير  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Managers:Group"..msg_chat_id,UserId[2]) 
+Redis:sadd(Timo.."Timo:Managers:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته مدير  ").Reply,"md",true)  
 end
 end
 if UserId[1] == "ادمن" then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(6)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not msg.Originators and not Redis:get(Timo.."Status:SetId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(Timo.."Addictive:Group"..msg_chat_id,UserId[2]) then
+if Redis:sismember(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته ادمن  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Addictive:Group"..msg_chat_id,UserId[2]) 
+Redis:sadd(Timo.."Timo:Addictive:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته ادمن  ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مميز" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if not msg.Originators and not Redis:get(Timo.."Status:SetId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(Timo.."Distinguished:Group"..msg_chat_id,UserId[2]) then
+if Redis:sismember(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته مميز  مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Distinguished:Group"..msg_chat_id,UserId[2]) 
+Redis:sadd(Timo.."Timo:Distinguished:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2]," ⌯ تم ترقيته مميز  ").Reply,"md",true)  
 end
 end
@@ -5534,135 +5258,114 @@ end
 
 if text and text:match('^حظر عام @(%S+)$') then
 local UserName = text:match('^حظر عام @(%S+)$')
-if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
+if Controller(msg_chat_id,selvaa.id) == 'المطور الاساسي' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المطور الثانوي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
+if StatusCanOrNotCan(msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج تيمو' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر عام❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
-end
-if Redis:sismember(Timo.."Timo:BanAll:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
+if Redis:sismember(Timo.."BanAll:Groups",selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Timo:BanAll:Groups",UserId_Info.id) 
-LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'banned',0)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"* ⌯ تم حظره عام من المجموعات *").Reply,"md",true)  
+Redis:sadd(Timo.."BanAll:Groups",selvaa.id) 
+LuaTele.setChatMemberStatus(msg.chat_id,selvaa.id,'Banned',0)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم حظره عام من المجموعات ").Reply,"md",true)  
 end
 end
 if text and text:match('^الغاء العام @(%S+)$') then
 local UserName = text:match('^الغاء العام @(%S+)$')
-if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."Timo:BanAll:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء حظره عام من المجموعات مسبقا ").Reply,"md",true)  
+if not Redis:sismember(Timo.."BanAll:Groups",selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Timo:BanAll:Groups",UserId_Info.id) 
-LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'restricted',{1,1,1,1,1,1,1,1,1})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء حظره عام من المجموعات  ").Reply,"md",true)  
+Redis:srem(Timo.."BanAll:Groups",selvaa.id) 
+LuaTele.setChatMemberStatus(msg.chat_id,selvaa.id,'restricted',{1,1,1,1,1,1,1,1,1})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء حظره عام من المجموعات  ").Reply,"md",true)  
 end
 end
 if text and text:match('^كتم عام @(%S+)$') then
 local UserName = text:match('^كتم عام @(%S+)$')
-if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
+if Controller(msg_chat_id,selvaa.id) == 'المطور الاساسي' then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المطور الثانوي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
+if StatusCanOrNotCan(msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'المبرمج تيمو' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم عام❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
-end
-if Redis:sismember(Timo.."Timo:ktmAll:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
+if Redis:sismember(Timo.."ktmAll:Groups",selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Timo:ktmAll:Groups",UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم كتمه عام من المجموعات ").Reply,"md",true)  
+Redis:sadd(Timo.."ktmAll:Groups",selvaa.id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم كتمه عام من المجموعات ").Reply,"md",true)  
 end
 end
-if text and text:match('^الغاء كتم عام @(%S+)$') then
-local UserName = text:match('^الغاء كتم عام @(%S+)$')
-if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+if text and text:match('^الغاء كتم العام @(%S+)$') then
+local UserName = text:match('^الغاء كتم العام @(%S+)$')
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."Timo:ktmAll:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
+if not Redis:sismember(Timo.."ktmAll:Groups",selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Timo:ktmAll:Groups",UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء كتمه عام من المجموعات  ").Reply,"md",true)  
+Redis:srem(Timo.."ktmAll:Groups",selvaa.id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء كتمه عام من المجموعات  ").Reply,"md",true)  
 end
 end
 if text and text:match('^حظر @(%S+)$') then
 local UserName = text:match('^حظر @(%S+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+local chinfo = Redis:get(Timo.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -5671,37 +5374,38 @@ end
 if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Timo:Status:BanId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل ❨الحظر : الطرد : التقييد❩ من قبل المدراء","md",true)
+if not msg.Originators and not Redis:get(Timo.."Status:BanId"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if StatusCanOrNotCan(msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع حظر❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
+if StatusCanOrNotCan(msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
 end
-if Redis:sismember(Timo.."Timo:BanGroup:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم حظره من الجروب مسبقا ").Reply,"md",true)  
+if Redis:sismember(Timo.."BanGroup:Group"..msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم حظره من الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Timo:BanGroup:Group"..msg_chat_id,UserId_Info.id) 
-LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'banned',0)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم حظره من الجروب ").Reply,"md",true)  
+Redis:sadd(Timo.."BanGroup:Group"..msg_chat_id,selvaa.id) 
+LuaTele.setChatMemberStatus(msg.chat_id,selvaa.id,'Banned',0)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم حظره من الجروب ").Reply,"md",true)  
 end
 end
 if text and text:match('^الغاء حظر @(%S+)$') then
 local UserName = text:match('^الغاء حظر @(%S+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+local chinfo = Redis:get(Timo.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -5710,90 +5414,93 @@ end
 if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."Timo:BanGroup:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء حظره من الجروب مسبقا ").Reply,"md",true)  
+if not Redis:sismember(Timo.."BanGroup:Group"..msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء حظره من الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Timo:BanGroup:Group"..msg_chat_id,UserId_Info.id) 
-LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'restricted',{1,1,1,1,1,1,1,1,1})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء حظره من الجروب  ").Reply,"md",true)  
+Redis:srem(Timo.."BanGroup:Group"..msg_chat_id,selvaa.id) 
+LuaTele.setChatMemberStatus(msg.chat_id,selvaa.id,'restricted',{1,1,1,1,1,1,1,1,1})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء حظره من الجروب  ").Reply,"md",true)  
 end
 end
 
 if text and text:match('^كتم @(%S+)$') then
 local UserName = text:match('^كتم @(%S+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+local chinfo = Redis:get(Timo.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
 end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if StatusSilent(msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع كتم?? "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
+if StatusSilent(msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
 end
-if Redis:sismember(Timo.."Timo:SilentGroup:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم كتمه في الجروب مسبقا ").Reply,"md",true)  
+if Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم كتمه في الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."Timo:SilentGroup:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم كتمه في الجروب  ").Reply,"md",true)  
+Redis:sadd(Timo.."SilentGroup:Group"..msg_chat_id,selvaa.id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم كتمه في الجروب  ").Reply,"md",true)  
 end
 end
 if text and text:match('^الغاء كتم @(%S+)$') then
 local UserName = text:match('^الغاء كتم @(%S+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+local chinfo = Redis:get(Timo.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName)
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."Timo:SilentGroup:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء كتمه من الجروب ").Reply,"md",true)  
+if not Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء كتمه من الجروب ").Reply,"md",true)  
 else
-Redis:srem(Timo.."Timo:SilentGroup:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم الغاء كتمه من الجروب ").Reply,"md",true)  
+Redis:srem(Timo.."SilentGroup:Group"..msg_chat_id,selvaa.id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم الغاء كتمه من الجروب ").Reply,"md",true)  
 end
 end
 if text and text:match('^تقييد (%d+) (.*) @(%S+)$') then
 local UserName = {text:match('^تقييد (%d+) (.*) @(%S+)$') }
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+local chinfo = Redis:get(Timo.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -5802,21 +5509,21 @@ end
 if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Timo:Status:BanId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل ❨الحظر : الطرد : التقييد❩ من قبل المدراء","md",true)
+if not msg.Originators and not Redis:get(Timo.."Status:BanId"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
-local UserId_Info = LuaTele.searchPublicChat(UserName[3])
-if not UserId_Info.id then
+local selvaa = LuaTele.searchPublicChat(UserName[3])
+if not selvaa.id then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+if selvaa.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 if UserName[3] and UserName[3]:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
-if StatusCanOrNotCan(msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع تقييد❨ "..Controller(msg_chat_id,UserId_Info.id).." ❩*","md",true)  
+if StatusCanOrNotCan(msg_chat_id,selvaa.id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
 end
 if UserName[2] == 'يوم' then
 Time_Restrict = UserName[1]:match('(%d+)')
@@ -5830,17 +5537,18 @@ if UserName[2] == 'دقيقه' then
 Time_Restrict = UserName[1]:match('(%d+)')
 Time = Time_Restrict * 60
 end
-LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'restricted',{1,0,0,0,0,0,0,0,0,tonumber(msg.date+Time)})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id," ⌯ تم تقييده في الجروب \n ⌯ لمدة : "..UserName[1]..' '..UserName[2]).Reply,"md",true)  
+LuaTele.setChatMemberStatus(msg.chat_id,selvaa.id,'restricted',{1,0,0,0,0,0,0,0,0,tonumber(msg.date+Time)})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selvaa.id," ⌯ تم تقييده في الجروب \n ⌯ لمدة : "..UserName[1]..' '..UserName[2]).Reply,"md",true)  
 end
 
 if text and text:match('^تقييد (%d+) (.*)$') and msg.reply_to_message_id ~= 0 then
 local TimeKed = {text:match('^تقييد (%d+) (.*)$') }
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+local chinfo = Redis:get(Timo.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -5849,19 +5557,19 @@ end
 if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Timo:Status:BanId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل ❨الحظر : الطرد : التقييد❩ من قبل المدراء","md",true)
+if not msg.Originators and not Redis:get(Timo.."Status:BanId"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local ban = LuaTele.getUser(Message_Reply.sender.user_id)
-if ban.message == "Invalid user ID" then
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if ban and ban.type and ban.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع تقييد❨"..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
 if TimeKed[2] == 'يوم' then
 Time_Restrict = TimeKed[1]:match('(%d+)')
@@ -5882,10 +5590,11 @@ end
 if text and text:match('^تقييد (%d+) (.*) (%d+)$') then
 local UserId = {text:match('^تقييد (%d+) (.*) (%d+)$') }
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+local chinfo = Redis:get(Timo.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
@@ -5894,15 +5603,15 @@ end
 if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Timo:Status:BanId"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل ❨الحظر : الطرد : التقييد❩ من قبل المدراء","md",true)
+if not msg.Originators and not Redis:get(Timo.."Status:BanId"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
-local ban = LuaTele.getUser(UserId[3])
-if ban.luatele == "error" and ban.code == 6 then
+local Ban = LuaTele.getUser(UserId[3])
+if Ban.luatele == "error" and Ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,UserId[3]) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع تقييد ❨ "..Controller(msg_chat_id,UserId[3]).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,UserId[3]).." )*","md",true)  
 end
 if UserId[2] == 'يوم' then
 Time_Restrict = UserId[1]:match('(%d+)')
@@ -5919,10 +5628,11 @@ end
 LuaTele.setChatMemberStatus(msg.chat_id,UserId[3],'restricted',{1,0,0,0,0,0,0,0,0,tonumber(msg.date+Time)})
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[3],"\n ⌯ تم تقييده في الجروب \n ⌯ لمدة : "..UserId[1]..' ' ..UserId[2]).Reply,"md",true)  
 end
+
 if text and text:match('^تقييد @(%S+)$') then
 local UserName = text:match('^تقييد @(%S+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -5932,7 +5642,7 @@ end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Status:selvaId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Status:BanId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local bain = LuaTele.getUser(msg.sender.user_id)
@@ -5947,13 +5657,13 @@ if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,selvaa.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,selvaa.id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,selvaa.id).." )*","md",true)  
               end
 LuaTele.setChatMemberStatus(msg.chat_id,selvaa.id,'restricted',{1,0,0,0,0,0,0,0,0})
-if selva.first_name then
-selvaiusername = '*المستخدم  ⇜ *['..selvaa.first_name..'](tg://user?id='..selvaa.id..' ❩*\n ⌯ تم تقييده في الجروب\nمن قبل  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..' ❩*\n*'
+if Ban.first_name then
+Baniusername = '*المستخدم ↫ *['..selvaa.first_name..'](tg://user?id='..selvaa.id..' )*\n ⌯ تم تقييده في الجروب\nمن قبل ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
-selvaiusername = 'لا يوجد'
+Baniusername = 'لا يوجد'
 end
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -5962,13 +5672,13 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(selvaiusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(Baniusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
 if text and text:match('^الغاء التقييد @(%S+)$') then
 local UserName = text:match('^الغاء التقييد @(%S+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -5978,7 +5688,7 @@ end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-if GetInfoBot(msg).selvaUser == false then
+if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
 local selvaa = LuaTele.searchPublicChat(UserName)
@@ -5998,7 +5708,7 @@ end
 if text and text:match('^طرد @(%S+)$') then
 local UserName = text:match('^طرد @(%S+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6026,7 +5736,7 @@ if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,bana.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,bana.id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,bana.id).." )*","md",true)  
 end
 LuaTele.setChatMemberStatus(msg.chat_id,bana.id,'banned',0)
 if ban.first_name then
@@ -6045,32 +5755,32 @@ https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. ms
 end
 if text == 'حظر عام' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
 local bain = LuaTele.getUser(msg.sender.user_id)
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
-if selva.message == "Invalid user ID" then
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
 if Redis:sismember(Timo.."BanAll:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."BanAll:Groups",Message_Reply.sender.user_id) 
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'selvaned',0)
-if selva.first_name then
-selvaiusername = '*الـعـضـو  ⇜ *['..selva.first_name..'](tg://user?id='..selva.id..' ❩*\n ⌯ تـم حـظـره عـام مـن الـمـجـمـوعـات\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..' ❩*\n*'
+LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'Banned',0)
+if Ban.first_name then
+Baniusername = '*الـعـضـو ↫ *['..Ban.first_name..'](tg://user?id='..Ban.id..' )*\n ⌯ تـم حـظـره عـام مـن الـمـجـمـوعـات\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
-selvaiusername = 'لا يوجد'
+Baniusername = 'لا يوجد'
 end
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -6079,20 +5789,20 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/105&caption=".. URL.escape(selvaiusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/105&caption=".. URL.escape(Baniusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == 'الغاء الحظر عام' and msg.reply_to_message_id ~= 0 then
 if not msg.DevelopersQ then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(2)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(2)..' )* ',"md",true)  
 end
 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if selva.message == "Invalid user ID" then
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if not Redis:sismember(Timo.."BanAll:Groups",Message_Reply.sender.user_id) then
@@ -6105,31 +5815,31 @@ end
 end
 if text == ('كتم عام') and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
 local bain = LuaTele.getUser(msg.sender.user_id)
-if selva.message == "Invalid user ID" then
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
 if Redis:sismember(Timo.."ktmAll:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."ktmAll:Groups",Message_Reply.sender.user_id) 
-if selva.first_name then
-selvaiusername = '*الـعـضـو  ⇜ *['..selva.first_name..'](tg://user?id='..selva.id..' ❩*\nتـم كـتـمـه فـي الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..' ❩*\n*'
+if Ban.first_name then
+Baniusername = '*الـعـضـو ↫ *['..Ban.first_name..'](tg://user?id='..Ban.id..' )*\nتـم كـتـمـه فـي الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
-selvaiusername = 'لا يوجد'
+Baniusername = 'لا يوجد'
 end
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -6138,19 +5848,19 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(selvaiusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(Baniusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == 'الغاء كتم العام' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if selva.message == "Invalid user ID" then
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if not Redis:sismember(Timo.."ktmAll:Groups",Message_Reply.sender.user_id) then
@@ -6162,7 +5872,7 @@ end
 end
 if text == 'حظر' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6172,33 +5882,33 @@ end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-if GetInfoBot(msg).selvaUser == false then
+if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Status:selvaId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Status:BanId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
 local bain = LuaTele.getUser(msg.sender.user_id)
-if selva.message == "Invalid user ID" then
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
-if Redis:sismember(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم حظره من الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'selvaned',0)
-if selva.first_name then
-selvaiusername = '*الـعـضـو  ⇜ *['..selva.first_name..'](tg://user?id='..selva.id..' ❩*\n ⌯ تـم حـظـره مـن الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..' ❩*\n*'
+Redis:sadd(Timo.."BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'Banned',0)
+if Ban.first_name then
+Baniusername = '*الـعـضـو ↫ *['..Ban.first_name..'](tg://user?id='..Ban.id..' )*\n ⌯ تـم حـظـره مـن الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
-selvaiusername = 'لا يوجد'
+Baniusername = 'لا يوجد'
 end
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -6207,12 +5917,12 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(selvaiusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(Baniusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == 'الغاء حظر' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6223,17 +5933,17 @@ if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if selva.message == "Invalid user ID" then
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء حظره من الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء حظره من الجروب  ").Reply,"md",true)  
 end
@@ -6241,7 +5951,7 @@ end
 
 if text == 'كتم' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6252,25 +5962,25 @@ if GetInfoBot(msg).Delmsg == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
 local bain = LuaTele.getUser(msg.sender.user_id)
-if selva.message == "Invalid user ID" then
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if StatusSilent(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
 if Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم كتمه في الجروب مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-if selva.first_name then
-selvaiusername = '*الـعـضـو  ⇜ *['..selva.first_name..'](tg://user?id='..selva.id..' ❩*\nتـم كـتـمـه فـي الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..' ❩*\n*'
+if Ban.first_name then
+Baniusername = '*الـعـضـو ↫ *['..Ban.first_name..'](tg://user?id='..Ban.id..' )*\nتـم كـتـمـه فـي الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
-selvaiusername = 'لا يوجد'
+Baniusername = 'لا يوجد'
 end
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -6279,12 +5989,12 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(selvaiusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(Baniusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == 'الغاء كتم' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6292,11 +6002,11 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if selva.message == "Invalid user ID" then
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if not Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
@@ -6309,7 +6019,7 @@ end
 
 if text == 'تقييد' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6319,29 +6029,29 @@ end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-if GetInfoBot(msg).selvaUser == false then
+if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Status:selvaId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Status:BanId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
 local bain = LuaTele.getUser(msg.sender.user_id)
-if selva.message == "Invalid user ID" then
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,0,0,0,0,0,0,0,0})
-if selva.first_name then
-selvaiusername = '*الـعـضـو  ⇜ *['..selva.first_name..'](tg://user?id='..selva.id..' ❩*\n ⌯ تـم تقـيـيـده فـي الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..' ❩*\n*'
+if Ban.first_name then
+Baniusername = '*الـعـضـو ↫ *['..Ban.first_name..'](tg://user?id='..Ban.id..' )*\n ⌯ تـم تقـيـيـده فـي الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
-selvaiusername = 'لا يوجد'
+Baniusername = 'لا يوجد'
 end
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -6350,12 +6060,12 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/104&caption=".. URL.escape(selvaiusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/104&caption=".. URL.escape(Baniusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
 if text == 'الغاء التقييد' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6365,15 +6075,15 @@ end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-if GetInfoBot(msg).selvaUser == false then
+if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local selva = LuaTele.getUser(Message_Reply.sender.user_id)
-if selva.message == "Invalid user ID" then
+local Ban = LuaTele.getUser(Message_Reply.sender.user_id)
+if Ban.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
-if selva and selva.type and selva.type.luatele == "userTypeBot" then
+if Ban and Ban.type and Ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1})
@@ -6382,7 +6092,7 @@ end
 
 if text == 'طرد' and msg.reply_to_message_id ~= 0 then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6408,11 +6118,11 @@ if ban and ban.type and ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'banned',0)
 if ban.first_name then
-baniusername = '*الـعـضـو  ⇜ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم طـرده مـن الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم طـرده مـن الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
 else
 baniusername = 'لا يوجد'
 end
@@ -6429,7 +6139,7 @@ end
 if text and text:match('^حظر عام (%d+)$') then
 local UserId = text:match('^حظر عام (%d+)$')
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 local ban = LuaTele.getUser(UserId)
 local bain = LuaTele.getUser(msg.sender.user_id)
@@ -6437,10 +6147,10 @@ if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end 
 if Controller(msg_chat_id,UserId) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,UserId).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,UserId).." )*","md",true)  
 end
-if UserId == "5260941121" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المبرمج تيمو *","md",true)  
+if UserId == "1918693330" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 if Redis:sismember(Timo.."BanAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
@@ -6448,7 +6158,7 @@ else
 Redis:sadd(Timo.."BanAll:Groups",UserId) 
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'banned',0)
 if ban.first_name then
-baniusername = '*الـعـضـو  ⇜ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم حـظـره عـام مـن الـمـجمـوعـات\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم حـظـره عـام مـن الـمـجمـوعـات\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
 else
 baniusername = 'لا يوجد'
 end
@@ -6465,7 +6175,7 @@ end
 if text and text:match('^الغاء العام (%d+)$') then
 local UserId = text:match('^الغاء العام (%d+)$')
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 
 local ban = LuaTele.getUser(UserId)
@@ -6483,10 +6193,10 @@ end
 if text and text:match('^كتم عام (%d+)$') then
 local UserId = text:match('^كتم عام (%d+)$')
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
-if UserId == "5260941121" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المبرمج تيمو *","md",true)  
+if UserId == "1918693330" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 local ban = LuaTele.getUser(UserId)
 local bain = LuaTele.getUser(msg.sender.user_id)
@@ -6494,14 +6204,14 @@ if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end 
 if Controller(msg_chat_id,UserId) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,UserId).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,UserId).." )*","md",true)  
 end
 if Redis:sismember(Timo.."ktmAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."ktmAll:Groups",UserId) 
 if ban.first_name then
-baniusername = '*الـعـضـو  ⇜ *['..ban.first_name..'](tg://user?id='..ban.id..')*\nتـم كـتـمـه عـام مـن الـمـجـمـوعـات \nnبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\nتـم كـتـمـه عـام مـن الـمـجـمـوعـات \nnبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
 else
 baniusername = 'لا يوجد'
 end
@@ -6518,7 +6228,7 @@ end
 if text and text:match('^الغاء كتم العام (%d+)$') then
 local UserId = text:match('^الغاء كتم العام (%d+)$')
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 local ban = LuaTele.getUser(UserId)
 if ban.luatele == "error" and ban.code == 6 then
@@ -6534,7 +6244,7 @@ end
 if text and text:match('^حظر (%d+)$') then
 local UserId = text:match('^حظر (%d+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6556,7 +6266,7 @@ if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,UserId).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,UserId).." )*","md",true)  
 end
 if Redis:sismember(Timo.."BanGroup:Group"..msg_chat_id,UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم حظره من الجروب مسبقا ").Reply,"md",true)  
@@ -6564,7 +6274,7 @@ else
 Redis:sadd(Timo.."BanGroup:Group"..msg_chat_id,UserId) 
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'banned',0)
 if ban.first_name then
-baniusername = '*الـعـضـو  ⇜ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم حـظـره مـن الـجـروب \nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم حـظـره مـن الـجـروب \nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
 else
 baniusername = 'لا يوجد'
 end
@@ -6581,7 +6291,7 @@ end
 if text and text:match('^الغاء حظر (%d+)$') then
 local UserId = text:match('^الغاء حظر (%d+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6610,7 +6320,7 @@ end
 if text and text:match('^كتم (%d+)$') then
 local UserId = text:match('^كتم (%d+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6626,14 +6336,14 @@ if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
 if StatusSilent(msg_chat_id,UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,UserId).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,UserId).." )*","md",true)  
 end
 if Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم كتمه في الجروب مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."SilentGroup:Group"..msg_chat_id,UserId) 
 if ban.first_name then
-baniusername = '*الـعـضـو  ⇜ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم كـتـمـه فـي الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تـم كـتـمـه فـي الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
 else
 baniusername = 'لا يوجد'
 end
@@ -6650,7 +6360,7 @@ end
 if text and text:match('^الغاء كتم (%d+)$') then
 local UserId = text:match('^الغاء كتم (%d+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6672,7 +6382,7 @@ end
 if text and text:match('^تقييد (%d+)$') then
 local UserId = text:match('^تقييد (%d+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6694,11 +6404,11 @@ if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,UserId).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,UserId).." )*","md",true)  
 end
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'restricted',{1,0,0,0,0,0,0,0,0})
 if ban.first_name then
-baniusername = '*الـعـضـو  ⇜ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n ⌯ تـم تقـيـيـده فـي الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n ⌯ تـم تقـيـيـده فـي الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
 else
 baniusername = 'لا يوجد'
 end
@@ -6715,7 +6425,7 @@ end
 if text and text:match('^الغاء التقييد (%d+)$') then
 local UserId = text:match('^الغاء التقييد (%d+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6739,7 +6449,7 @@ end
 if text and text:match('^طرد (%d+)$') then
 local UserId = text:match('^طرد (%d+)$')
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص❨ '..Controller_Num(7)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -6761,11 +6471,11 @@ if ban.luatele == "error" and ban.code == 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرا لا تستطيع استخدام ايدي خطأ ","md",true)  
 end
 if StatusCanOrNotCan(msg_chat_id,UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على❨ "..Controller(msg_chat_id,UserId).." ❩*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,UserId).." )*","md",true)  
 end
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'banned',0)
 if ban.first_name then
-baniusername = '*الـعـضـو  ⇜ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n ⌯ تـم طـرده مـن الـجـروب\nبـواسـطـه  ⇜ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n ⌯ تـم طـرده مـن الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
 else
 baniusername = 'لا يوجد'
 end
@@ -7107,14 +6817,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Timo.."chadmin"..msg_chat_i
 end
 if text == "اضف قناه" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص「 '..Controller_Num(7)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 Redis:set(Timo.."addchannel"..msg.sender.user_id,"on") 
 LuaTele.sendText(msg_chat_id,msg_id,"⌯  ارسل ايدي القناه","md",true)  
 end
 if text == "قفل القناه" then 
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص「 '..Controller_Num(7)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -7199,7 +6909,7 @@ return false
 end 
 if text == "تعطيل all" or text == "تعطيل @all" then 
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص「 '..Controller_Num(6)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(6)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -7212,7 +6922,7 @@ return false
 end 
 if text == "تفعيل all" or text == "تفعيل @all" then 
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص「 '..Controller_Num(6)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(6)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -7308,7 +7018,7 @@ return false
 end 
 if text == "فتح القناه" then 
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص「 '..Controller_Num(7)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -7322,7 +7032,7 @@ end
 if text and text:match("^وضع تكرار (%d+)$") then 
 local Num = text:match("وضع تكرار (.*)")
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص「 '..Controller_Num(7)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(7)..' )* ',"md",true)  
 end
 Redis:hset(Timo.."Spam:Group:User"..msg_chat_id ,"Num:Spam" ,Num) 
 LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯  تم وضع عدد تكرار '..Num..'* ',"md",true)  
@@ -10938,7 +10648,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(5260941121,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n𖣘┉┉┉⊶❨•𝐒𝐄𝐋𝐕𝐀•❩⊷┉┉┉𖣘\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(1918693330,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n𖣘┉┉┉⊶❨•𝐒𝐄𝐋𝐕𝐀•❩⊷┉┉┉𖣘\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == "تتجوزيني"  then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -11197,6 +10907,21 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
+elseif text == 'تف' or text == 'تفف' or text == 'تفو' then
+video = "http://t.me/sorcetimo/6"
+local T =[[
+تـم الـتـف عـلـيـه بـنـجـاح
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'تم التف عليه بنجاح', url = 't.me/omar_goo_noor'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video="..video.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'الاوامر' then
 if not msg.Addictive then
@@ -11420,33 +11145,6 @@ else
 local rd_zwag = {
 "تم القتل بنجاح😈",
 "تم القتل بنجاح😈",
-}
-if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
-Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
-end
-Redis:sadd(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
-end
-end
-if text == "تف" or text == "تفف" and msg.reply_to_message_id ~= 0 then
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الواد تعبان بيتف علي نفسه 😂*","md",true)  
-end
-if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك حد غير البوت يبنوسخه 😒*","md",true)  
-end
-if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
-local rd_mtzwga = {
-"ياعم تفينا عليه قبل كدا😂",
-"عطلاق هرناه تفافه😂😂",
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
-else
-local rd_zwag = {
-"تم التف عليه بنجاح",
-"تف علي وش امك😂",
 }
 if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
 Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
@@ -12333,7 +12031,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه ل�
 end
 if text == 'السيرفر' or text == 'معلومات السرفر' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص「 '..Controller_Num(1)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -12343,7 +12041,7 @@ end
  ioserver = io.popen([[
  linux_version=`lsb_release -ds`
  memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
- HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" 」}'`
+ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" )}'`
  CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
  uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
  echo '⌯   { نظام التشغيل } ⊰•\n*-› '"$linux_version"'*' 
@@ -12567,6 +12265,80 @@ Random = {"🍏","🍎","🍐","🍊","🍋","🍉","🍇","🍓","🍈","🍒",
 SM = Random[math.random(#Random)]
 Redis:set(Timo.."Timo:Game:Smile"..msg.chat_id,SM)
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ اسرع واحد يدز هاذا السمايل ? ~ {`"..SM.."`}","md",true)  
+end
+end
+if Redis:get(Timo.."tast"..msg.sender.user_id) == "botttt" then
+local nspp = {"يراجل قول كلام غير كدا 😹","انت كداب يا ابو صلاح 😹","كلامك صحيح 👍","انت صح يواد 😊","اي تذب ده كلو 😒","الرجل ده صح 🙈❤️","الرجل ده كداب 😂",}
+local rdbhoto = nspp[math.random(#nspp)]
+xl = '*❨  '..text..'  ❩*\n* '..rdbhoto..' *'
+LuaTele.sendText(msg_chat_id,msg_id,xl,"md",true) 
+Redis:del(Timo.."tast"..msg.sender.user_id) 
+end
+if text == "صراحه" or text == "صرحه" then
+Redis:set(Timo.."tast"..msg.sender.user_id,"botttt") 
+if Redis:get(Timo.."Status:Games"..msg.chat_id) then
+local texting = {"صراحه   ⇜  صوتك حلوة؟",
+"صراحه   ⇜  التقيت الناس مع وجوهين ⌯ ",
+"صراحه   ⇜  شيء وكنت تحقق اللسان ⌯ ",
+"صراحه   ⇜  أنا شخص ضعيف عندما ⌯ ",
+"صراحه   ⇜  هل ترغب في إظهار حبك ومرفق لشخص أو رؤية هذا الضعف ⌯ ",
+"صراحه   ⇜  يدل على أن الكذب مرات تكون ضرورية شي ⌯ ",
+"صراحه   ⇜  أشعر بالوحدة على الرغم من أنني تحيط بك كثيرا ⌯ ",
+"صراحه   ⇜  كيفية الكشف عن من يكمن عليك ⌯ ",
+"صراحه   ⇜  إذا حاول شخص ما أن يكرهه أن يقترب منك ويهتم بك تعطيه فرصة ⌯ ",
+"صراحه   ⇜  أشجع شيء حلو في حياتك ⌯ ",
+"صراحه   ⇜  طريقة جيدة يقنع حتى لو كانت الفكرة خاطئة توافق ⌯ ",
+"صراحه   ⇜  كيف تتصرف مع من يسيئون فهمك ويأخذ على ذهنه ثم ينتظر أن يرفض ⌯ ",
+"صراحه   ⇜  التغيير العادي عندما يكون الشخص الذي يحبه ⌯ ",
+"صراحه   ⇜  المواقف الصعبة تضعف لك ولا ترفع ⌯ ",
+"صراحه   ⇜  نظرة و يفسد الصداقة ⌯ ",
+"صراحه   ⇜  ‏‏إذا أحد قالك كلام سيء بالغالب وش تكون ردة فعلك ⌯ ",
+"صراحه   ⇜  شخص معك بالحلوه والمُره ⌯ ",
+"صراحه   ⇜  ‏هل تحب إظهار حبك وتعلقك بالشخص أم ترى ذلك ضعف ⌯ ",
+"صراحه   ⇜  تأخذ بكلام اللي ينصحك ولا تسوي اللي تبي ⌯ ",
+"صراحه   ⇜  وش تتمنى الناس تعرف عليك ⌯ ",
+"صراحه   ⇜  ابيع المجرة عشان ⌯ ",
+"صراحه   ⇜  أحيانا احس ان الناس ، كمل ⌯ ",
+"صراحه   ⇜  مع مين ودك تنام اليوم ⌯ ",
+"صراحه   ⇜  صدفة العمر الحلوة هي اني ⌯ ",
+"صراحه   ⇜  الكُره العظيم دايم يجي بعد حُب قوي تتفق ⌯ ",
+"صراحه   ⇜  صفة تحبها في نفسك ⌯ ",
+"صراحه   ⇜  ‏الفقر فقر العقول ليس الجيوب  ، تتفق ⌯ ",
+"صراحه   ⇜  تصلي صلواتك الخمس كلها ⌯ ",
+"صراحه   ⇜  ‏تجامل أحد على راحتك ⌯ ",
+"صراحه   ⇜  اشجع شيء سويتة بحياتك ⌯ ",
+"صراحه   ⇜  وش ناوي تسوي اليوم ⌯ ",
+"صراحه   ⇜  وش شعورك لما تشوف المطر ⌯ ",
+"صراحه   ⇜  غيرتك هاديه ولا تسوي مشاكل ⌯ ",
+"صراحه   ⇜  ما اكثر شي ندمن عليه ⌯ ",
+"صراحه   ⇜  اي الدول تتمنى ان تزورها ⌯ ",
+"صراحه   ⇜  متى اخر مره بكيت ⌯ ",
+"صراحه   ⇜  تقيم حظك من عشره ⌯ ",
+"صراحه   ⇜  هل تعتقد ان حظك سيئ ⌯ ",
+"صراحه   ⇜  شـخــص تتمنــي الإنتقــام منـــه ⌯ ",
+"صراحه   ⇜  كلمة تود سماعها كل يوم ⌯ ",
+"صراحه   ⇜  **هل تُتقن عملك أم تشعر بالممل ⌯ ",
+"صراحه   ⇜  هل قمت بانتحال أحد الشخصيات لتكذب على من حولك ⌯ ",
+"صراحه   ⇜  متى اخر مرة قمت بعمل مُشكلة كبيرة وتسببت في خسائر ⌯ ",
+"صراحه   ⇜  ما هو اسوأ خبر سمعته بحياتك ⌯ ",
+"‏صراحه   ⇜ هل جرحت شخص تحبه من قبل  ⌯ ",
+"صراحه   ⇜  ما هي العادة التي تُحب أن تبتعد عنها ⌯ ",
+"‏صراحه   ⇜ هل تحب عائلتك ام تكرههم ⌯ ",
+"‏صراحه   ⇜  من هو الشخص الذي يأتي في قلبك بعد الله – سبحانه وتعالى- ورسوله الكريم – صلى الله عليه وسلم ⌯ ",
+"‏صراحه   ⇜  هل خجلت من نفسك من قبل ⌯ ",
+"‏صراحه   ⇜  ما هو ا الحلم  الذي لم تستطيع ان تحققه ⌯ ",
+"‏صراحه   ⇜  ما هو الشخص الذي تحلم به كل ليلة ⌯ ",
+"‏صراحه   ⇜  هل تعرضت إلى موقف مُحرج جعلك تكره صاحبهُ ⌯ ",
+"‏صراحه   ⇜  هل قمت بالبكاء أمام من تُحب ⌯ ",
+"‏صراحه   ⇜  ماذا تختار حبيبك أم صديقك ⌯ ",
+"‏صراحه   ⇜ هل حياتك سعيدة أم حزينة ⌯ ",
+"صراحه   ⇜  ما هي أجمل سنة عشتها بحياتك ⌯ ",
+"‏صراحه   ⇜  ما هو عمرك الحقيقي ⌯ ",
+"‏صراحه   ⇜  ما اكثر شي ندمن عليه ⌯ ",
+"صراحه   ⇜  ما هي أمنياتك المُستقبلية ⌯ ‏",
+"صراحه   ⇜ هل قبلت فتاه ⌯ "
+}
+return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
 if text == "تويت" or text == "كت تويت" then
