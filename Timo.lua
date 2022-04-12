@@ -11487,6 +11487,14 @@ Redis:sadd(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
 end
 end
+if text == "كلب" or text == "رفع كلب" and msg.reply_to_message_id ~= 0 then
+if not Redis:sismember(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐶 تم رفعه كلب مسبقا ").Timo,"md",true)  
+else
+Redis:srem(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 🐶 تم رفعه كلب في الجروب ").Timo,"md",true)  
+end
+end
 -- time & date
 if text == "الوقت" then
 local date = os.date('*t')
@@ -12427,59 +12435,56 @@ Redis:del(Timo.."Timo:Name:Bot")
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف اسم البوت ","md",true)   
 end
 if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
-local photo = LuaTele.getUserProfilePhotos(paris)
-local Ban = LuaTele.getUser(paris)
-local sudo_info = LuaTele.getUser(Sudo_Id)
-local sudo_name = sudo_info.first_name
-local sudo_id = sudo_info.id
-for Name_User in string.gmatch(Ban.first_name, "[^%s]+" ) do
-Ban.first_name = Name_User
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(paris.."paris:Name:Bot") or "باريس")
+local NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
 local BotName = {
-    'اسمي '..NamesBot..' يا قلبي 😍💜',
-    'اسمي '..NamesBot..' يا روحي 🙈❤️',
-    'اسمي '..NamesBot..' يا عمري 🥰🤍',
-    'اسمي '..NamesBot..' يا قمر 🐼💚',
-    'اسمي بوت '..NamesBot..' 😻❤️',
-    'اسمي '..NamesBot..' يا مزه 😘🍒',
-    'اسمي '..NamesBot..' يعم 😒',
-    'مقولت اسمي '..NamesBot..' في اي 🙄',
-    'اسمي '..NamesBot..' الكيوت 🌝💙',
-    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
-    'اسمي '..NamesBot..' يوتكه 🙈💔',
+'اسمي '..NamesBot..' يا قلبي 😍💜',
+'اسمي '..NamesBot..' يا روحي 🙈❤️',
+'اسمي '..NamesBot..' يا عمري 🥰🤍',
+'اسمي '..NamesBot..' يا قمر 🐼💚',
+'اسمي بوت '..NamesBot..' 😻❤️',
+'اسمي '..NamesBot..' يا مزه 😘🍒',
+'اسمي '..NamesBot..' يعم 😒',
+'مقولت اسمي '..NamesBot..' في اي 🙄',
+'اسمي '..NamesBot..' الكيوت 🌝💙',
+'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+'اسمي '..NamesBot..' يوتكه 🙈💔',
 }
 NamesBots = BotName[math.random(#BotName)]
-local first_n = Ban.first_name
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/belalelshayals'}, 
+{text = NamesBots, url = 't.me/CH_Timo'}, 
 },
 {
-{text = sudo_name, url = 'tg://user?id='..sudo_id},
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = 'أضغط لاضافه ألبوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == (Redis:get(paris.."paris:Name:Bot") or "باريس") then
-local photo = LuaTele.getUserProfilePhotos(paris)
-local Ban = LuaTele.getUser(paris)
-local sudo_info = LuaTele.getUser(Sudo_Id)
-local sudo_name = sudo_info.first_name
-local sudo_id = sudo_info.id
-for Name_User in string.gmatch(Ban.first_name, "[^%s]+" ) do
-Ban.first_name = Name_User
+if text == (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا") then
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(paris.."paris:Name:Bot") or "باريس")
+local NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
 local BotName = {
 'نعم يروحي 🌝💙',
 'نعم يا قلب '..NamesBot..'',
@@ -12497,22 +12502,21 @@ local BotName = {
 'نعم 🍒🤍'
 }
 NamesBots = BotName[math.random(#BotName)]
-local first_n = Ban.first_name
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/belalelshayals'}, 
+{text = NamesBots, url = 't.me/CH_Timo'}, 
 },
 {
-{text = sudo_name, url = 'tg://user?id='..sudo_id},
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = 'أضغط لاضافه ألبوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا').." غادر" or text == 'غادر' or text == 'بوت غادر' then
