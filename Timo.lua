@@ -3361,10 +3361,14 @@ end
 end
 ----تنزيل تسليه -----
 if TextMsg == "متوحد" then
-if not Redis:sismember(Timo.."Timo:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if not Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد مسبقا ").Timo,"md",true)  
 else
-Redis:srem(Timo.."Timo:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد في الجروب ").Timo,"md",true)  
 end
 end
@@ -3921,10 +3925,10 @@ local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(Timo.."Timo:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد مسبقا ").Timo,"md",true)  
 else
-Redis:sadd(Timo.."Timo:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," 😂 تم رفعه متوحد في الجروب ").Timo,"md",true)  
 end
 end
@@ -4559,7 +4563,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Timo.."Timo:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(Timo.."twhd:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد المتوحدين في الجروب *","md",true)  
 end
