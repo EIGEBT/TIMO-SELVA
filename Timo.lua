@@ -7152,26 +7152,8 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(ban_ns).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
 end
 end
+end
 
-if text == "تست" then
-if Redis:get(Timo.."Status:photo"..msg.chat_id) then
-local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
-local ban = LuaTele.getUser(msg.sender.user_id)
-local ban_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
-if photo.total_count > 0 then
-data = {} 
-data.inline_keyboard = {
-{
-{text = '❨ اخفاء الامر ❩ ', callback_data = msg.sender.user_id..'/ban88'}, 
-},
-{
-{text = '❨ صورتك القادمه ❩', callback_data= msg.sender.user_id..'/ban89'}, 
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(ban_ns).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
-end
-end
 if text == 'كشف البوتات' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(6)..' ❩* ',"md",true)  
@@ -11661,7 +11643,7 @@ if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) the
 local rd_mtzwga = {
 "الا تصلح انت تكون متجوزه 😹",
 "المزه متجوزه مسبقا 😒",
-"عذرا لا تصلح للجواز 😢💔",
+"عذرا لا تصلح للجواز ??💔",
 "انها متناكه من قبل عزيزي 😅😂",
 "شوفلك كلبه غير دي 😒😂",
 }
