@@ -13697,11 +13697,11 @@ Redis:set(Timo.."Timo:Game:Estimate"..msg.chat_id..msg.sender.user_id,Num)
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ اهلا بك عزيزي في لعبة التخمين :\nٴ━━━━━━━━━━\n".." ⌯ ملاحظه لديك { 3 } محاولات فقط فكر قبل ارسال تخمينك \n\n".." ⌯ سيتم تخمين عدد ما بين ال {1 و 20} اذا تعتقد انك تستطيع الفوز جرب واللعب الان ؟ ","md",true)  
 end
 end
-if text == "المختلف" then
+if text == "مختلف" or tect == "المختلف" then
 if Redis:get(Timo.."Timo:Status:Games"..msg.chat_id) then
 KlamSpeed = {"😸","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","⛄️","👨‍🔬","👨‍💻","👨‍🔧","🧚‍♀","??‍♂","🧝‍♂","🙍‍♂","🧖‍♂","👬","🕒","🕤","⌛️","📅",};
 name = KlamSpeed[math.random(#KlamSpeed)]
-Redis:set(Timo.."Timo:Game:Monotonous"..msg.chat_id,name)
+Redis:set(Timo.."Timo:Game:Difference"..msg.chat_id,name)
 name = string.gsub(name,"😸","😹😹😹😹😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
@@ -13728,7 +13728,7 @@ name = string.gsub(name,"🕒","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
 name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
 name = string.gsub(name,"??","📆📆📆📆📆📆📅📆📆")
-return LuaTele.sendText(msg_chat_id,msg_id," ⌯ اسرع واحد يدز الاختلاف ~ {"..name.."}","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ اسرع واحد يرتبها ~ {"..name.."}","md",true)  
 end
 end
 if text == "امثله" then
@@ -14076,7 +14076,7 @@ data = {
 {text = '𓄼 تحديث السورس 𓄹',type = 'text'},
 },
 {
-{text = '𓄼 الغاء الامر ??',type = 'text'},
+{text = '?? الغاء الامر ??',type = 'text'},
 },
 }
 }
@@ -14640,7 +14640,7 @@ return LuaTele.sendText(msg_chat_id,msg_id," ⌯ ارسل لي الاسم الا
 end
 if text == '𓄼 حذف اسم البوت 𓄹' then 
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ?? '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
@@ -14791,7 +14791,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Timo.."Timo:List:Rd:Sudo")
-text = "\nقائمة الردود العامه ⇧⇩ \n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯??•𓄹⊷┉┉┉⊰\n"
+text = "\nقائمة الردود العامه ⇧⇩ \n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫??𝐞 𝐒𝐞𝐥𝐯??•𓄹⊷┉┉┉⊰\n"
 for k,v in pairs(list) do
 if Redis:get(Timo.."Timo:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه"
@@ -16032,7 +16032,7 @@ local TextHelp = [[*
 𓄼• مسح المكتومين •𓄹
 𓄼• غادر •𓄹
 𓄼• الاحصائيات •𓄹
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 ??𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼• تفعيل الردود العامه •𓄹
 𓄼• تعطيل الردود العامه •𓄹
 ??• اضف رد متعدد •𓄹
