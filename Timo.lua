@@ -11390,9 +11390,11 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 elseif text == 'تف' or text == 'تفف' or text == 'تفو' then
 video = "http://t.me/sorcetimo/6"
-local T =[[
-تـم الـتـف عـلـيـه بـنـجـاح
-]]
+if ban.first_name then
+baniusername = '*الـعـضـو ↫ *['..ban.first_name..'](tg://user?id='..ban.id..')*\n⌯ تم التف عليه \nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
+else
+baniusername = 'لا يوجد'
+end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -13897,9 +13899,6 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼•معلومات عن السورس•𓄹 ', data = msg.sender.user_id..'/batol'}
-},
-{
 {text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
@@ -14264,7 +14263,7 @@ Creat = " Developers tito\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "𓄼•𝐃𝐞𝐯 𝐓𝐢𝐭𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "𓄼•𝐃??𝐯 𝐓𝐢𝐭𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -16255,42 +16254,6 @@ local TextHelp = [[*
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼 رفع + تنزيل -› خاين 𓄹
 𓄼 تاك للخاينين 𓄹
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
-*]]
-LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-elseif Text and Text:match('(%d+)/batol') then
-local UserId = Text:match('(%d+)/batol')
-if tonumber(IdUser) == tonumber(UserId) then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼•معلومات عن السورس•𓄹 ', data = msg.sender.user_id..'/batol'}
-},
-{
-{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/asdsobot"}
-},
-{
-{text = '𓄼• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •𓄹', url = 't.me/SO_SELVA'}, 
-},
-}
-}
-local TextHelp = [[*
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
-سورس سيلفا من احسن سورسات التلي
-سورس حمايه كامل
-بالاضافه الي جميع المميزات
-لتفعيل البوت اضف البوت لمجموعتك
-+ارفعه ادمن في المجموعه
-ثم اكتب تفعيل
-وسيتم تفعيل البوت بكتمل اساليب الحمايه
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
