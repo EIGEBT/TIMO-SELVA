@@ -2054,6 +2054,16 @@ Redis:del(Timo.."Timo:Game:Monotonous"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد خسرت حضا اوفر في المره القادمه\n ⌯ اللعب مره اخره وارسل - الاسرع او ترتيب","md",true)  
 end
 end 
+if Redis:get(Timo.."Timo:Game:Countrygof"..msg.chat_id) then
+if text == Redis:get(Timo.."Timo:Game:Countrygof"..msg.chat_id) then
+Redis:del(Timo.."Timo:Game:Countrygof"..msg.chat_id)
+Redis:incrby(Timo.."Timo:Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد فزت في اللعبه \n ⌯ اللعب مره اخره وارسل - اعلام","md",true)  
+else
+Redis:del(Timo.."Timo:Game:Countrygof"..msg.chat_id)
+return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد خسرت حضا اوفر في المره القادمه\n ⌯ اللعب مره اخره وارسل - الاسرع او ترتيب","md",true)  
+end
+end 
 if Redis:get(Timo.."Timo:Game:Riddles"..msg.chat_id) then
 if text == Redis:get(Timo.."Timo:Game:Riddles"..msg.chat_id) then
 Redis:incrby(Timo.."Timo:Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
@@ -4327,7 +4337,7 @@ Redis:set(Timo.."Timo:President:Group:Reply"..msg.chat_id,Teext)
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تغير رد المنشئ الاساسي الى :"..Teext)
 elseif text and text:match("^تغير رد المنشئ (.*)$") then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' ??* ',"md",true)  
 end
 local Teext = text:match("^تغير رد المنشئ (.*)$") 
 Redis:set(Timo.."Timo:Constructor:Group:Reply"..msg.chat_id,Teext)
@@ -13418,11 +13428,10 @@ return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
 if text == "اعلام" or text == "اعلام ودول" or text == "اعلام و دول" or text == "دول" then
-if Redis:get(Timo.."Status:Games"..msg.chat_id) then
-Redis:del(Timo.."Set:Country"..msg.chat_id)
-Country_Rand = {"مصر","العراق","السعوديه","المانيا","تونس","الجزائر","فلسطين","اليمن","المغرب","البحرين","فرنسا","سويسرا","تركيا","انجلترا","الولايات المتحده","كندا","الكويت","ليبيا","السودان","سوريا"}
-name = Country_Rand[math.random(#Country_Rand)]
-Redis:set(Timo.."Game:Countrygof"..msg.chat_id,name)
+if Redis:get(Timo.."Timo:Status:Games"..msg.chat_id) then
+KlamSpeed = {"مصر","العراق","السعوديه","المانيا","تونس","الجزائر","فلسطين","اليمن","المغرب","البحرين","فرنسا","سويسرا","تركيا","انجلترا","الولايات المتحده","كندا","الكويت","ليبيا","السودان","سوريا"}
+name = KlamSpeed[math.random(#KlamSpeed)]
+Redis:set(Timo.."Timo:Game:Countrygof"..msg.chat_id,name)
 name = string.gsub(name,"مصر","🇪🇬")
 name = string.gsub(name,"العراق","🇮🇶")
 name = string.gsub(name,"السعوديه","🇸🇦")
@@ -14067,7 +14076,7 @@ data = {
 {text = '𓄼 تحديث السورس 𓄹',type = 'text'},
 },
 {
-{text = '𓄼 الغاء الامر 𓄹',type = 'text'},
+{text = '𓄼 الغاء الامر ??',type = 'text'},
 },
 }
 }
