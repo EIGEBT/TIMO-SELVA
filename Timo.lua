@@ -11530,10 +11530,24 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,' ⌯ اليك قسم الالعاب من سورس سيلفا ',"md",false, false, false, false, reply_markup)
 end
+if text == "زخرفه" or text == "زخرف"  then
+if msg.can_be_deleted_for_all_users == false then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = ' زخرفه ',  data ='/leftz@'},
+},
+}
+}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\nاليك القوائم الزخرف  اضفط وزخرف*',"md",false, false, false, false, reply_markup)
+end
 if Redis:get(Timo.."zhrfa"..msg.sender.user_id) == "sendzh" then
-zh = https.request('https://apiTimo.ml/zrf.php?Timo='..URL.escape(text)..'')
+zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(text)..'')
 zx = JSON.decode(zh)
-t = "\n* ⌯ قائمه الزخرفه ⍖*\n*𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n* أضغط علي الاسم لا يتم النسخ ⌯ *\n"
+t = "\n ⌯قائمه الزخرفه \n𖣘┉┉┉⊶𓄼•𝐒𝐄𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
@@ -11542,32 +11556,17 @@ end
 LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
 Redis:del(Timo.."zhrfa"..msg.sender.user_id) 
 end
-if text == "زخرفه" or text == "زخرفة" then
-LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ ارسل الكلمه لزخرفتها عربي او انجلش*","md",true) 
-Redis:set(Timo.."zhrfa"..msg.sender.user_id,"sendzh") 
-end
 if text and text:match("^زخرفه (.*)$") then
 local TextZhrfa = text:match("^زخرفه (.*)$")
-zh = https.request('https://apiTimo.ml/zrf.php?Timo='..URL.escape(TextZhrfa)..'')
+zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
-t = "\n* ⌯ قائمه الزخرفه ⍖*\n*⩹𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘*\n* أضغط علي الاسم لا يتم النسخ ⌯ *\n"
+t = "\n* ⌯ قائمه الزخرفه ⇓⇑*\n*༺┉┉┉⊶﴾•ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ•﴿⊷┉┉┉༻*\n* أضغط علي الاسم لا يتم النسخ ⌯ *\n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
-t = t..i.."- `"..v.."` \n"
+t = t..i.."-  `"..v.."` \n"
 end
 LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
-end 
-if Redis:get(Timo.."brgi"..msg.sender.user_id) == "sendbr" then
-gk = https.request('https://apiTimo.ml/brg.php?brg='..URL.escape(text)..'')
-br = JSON.decode(gk)
-i = 0
-for k,v in pairs(br.ok) do
-i = i + 1
-t = v.."\n"
-end
-LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
-Redis:del(Timo.."brgi"..msg.sender.user_id) 
 end
 if text == "الابراج" or text == "برجي" then
 LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ ارسل البرج الان لعرض التوقعات*","md",true) 
@@ -15393,6 +15392,14 @@ if tonumber(IdUser) == tonumber(UserId) then
 LuaTele.editMessageText(ChatId,Msg_id,"* ⌯ تم رفض الزواج من الزوجه*","md",true) 
 end
 end
+if Text == '/leftz@' then
+LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل الكلمه لزخرفتها عربي او انجلش*","md",true) 
+Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
+end 
+if Text == '/leftz@' then
+LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل الكلمه لزخرفتها عربي او انجلش*","md",true) 
+Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
+end 
 if Text and Text:match('(%d+)/lock_link') then
 local UserId = Text:match('(%d+)/lock_link')
 if tonumber(IdUser) == tonumber(UserId) then
