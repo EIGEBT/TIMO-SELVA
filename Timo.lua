@@ -4610,7 +4610,7 @@ local Info_Members = Redis:smembers(Timo.."Timo:Distinguished:Group"..msg_chat_i
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ لا يوجد مميزين في البوت *","md",true)  
 end
-ListMembers = '\n* ⌯ قائمه المميزين في البوت ⇧⇩*\n𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘\n'
+ListMembers = '\n* ⌯ قائمه المميزين في البوت ⇧⇩*\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n'
 for k, v in pairs(Info_Members) do
 local ban = LuaTele.getUser(v)
 if ban and ban.username and ban.username ~= "" then
@@ -4633,7 +4633,7 @@ local Info_Members = Redis:smembers(Timo.."twhd:Distinguished:Group"..msg_chat_i
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد المتوحدين في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه المتوحدين ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه المتوحدين ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4656,7 +4656,7 @@ local Info_Members = Redis:smembers(Timo.."klb:Distinguished:Group"..msg_chat_id
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد كلاب في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه الكلاب ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه الكلاب ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮??𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4679,7 +4679,7 @@ local Info_Members = Redis:smembers(Timo.."Monkey:Distinguished:Group"..msg_chat
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد قرود في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه القرود ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه القرود ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4702,7 +4702,7 @@ local Info_Members = Redis:smembers(Timo.."Myheart:Distinguished:Group"..msg_cha
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد احدفي قبلك*","md",true)  
 end
-ListMembers = '\n*⌯ قائمه الناس اللي في قلبك ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه الناس اللي في قلبك ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4725,7 +4725,7 @@ local Info_Members = Redis:smembers(Timo.."acow:Distinguished:Group"..msg_chat_i
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد بقرات في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه البقرات ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه البقرات ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4748,7 +4748,7 @@ local Info_Members = Redis:smembers(Timo.."widow:Distinguished:Group"..msg_chat_
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوحد ارمله في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه الارمله ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه الارمله ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4771,7 +4771,7 @@ local Info_Members = Redis:smembers(Timo.."let:Distinguished:Group"..msg_chat_id
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد خولات في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه الخولات ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه الخولات ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4794,7 +4794,7 @@ local Info_Members = Redis:smembers(Timo.."donkey:Distinguished:Group"..msg_chat
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد حمير في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه الحمير ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه الحمير ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4817,7 +4817,7 @@ local Info_Members = Redis:smembers(Timo.."Beautiful:Distinguished:Group"..msg_c
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد موزه في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه المزز ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه المزز ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4840,7 +4840,7 @@ local Info_Members = Redis:smembers(Timo.."tick:Distinguished:Group"..msg_chat_i
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد الوتكات في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه الوتكات ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه الوتكات ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4863,7 +4863,7 @@ local Info_Members = Redis:smembers(Timo.."myson:Distinguished:Group"..msg_chat_
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد ابنك في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه أولادك ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه أولادك ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4886,7 +4886,7 @@ local Info_Members = Redis:smembers(Timo.."daughter:Distinguished:Group"..msg_ch
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد بنتك في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه بناتك ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه بناتك ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4909,7 +4909,7 @@ local Info_Members = Redis:smembers(Timo.."betray:Distinguished:Group"..msg_chat
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد خاين في الجروب *","md",true)  
 end
-ListMembers = '\n*⌯ قائمه الخاينين ⌯\n 𖣘┉┉┉⊶𓄼•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•𓄹⊷┉┉┉𖣘*\n'
+ListMembers = '\n*⌯ قائمه الخاينين ⌯\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -11496,6 +11496,9 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
+{text = '𓄼•الالعاب التسليه•𓄹 ', data = msg.sender.user_id..'/normgm'},
+},
+{
 {text = '𓄼•العاب متطورة•𓄹 ', data = msg.sender.user_id..'/degm'}, 
 },
 {
@@ -13694,7 +13697,7 @@ name = string.gsub(name,"😸","😹😹😹😹😹😹😹😹😸😹😹😹
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
 name = string.gsub(name,"🐇","🕊??🕊🕊🕊🐇🕊🕊🕊🕊")
-name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
+name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚??🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
 name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟??🌟")
 name = string.gsub(name,"✨","??💫💫💫💫✨💫💫💫💫")
@@ -16118,6 +16121,9 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
+{text = '• العاب التسليه •', data = IdUser..'/normgm'}, 
+},
+{
 {text = 'العاب متطورة ', data = IdUser..'/degm'}, 
 },
 {
@@ -16168,6 +16174,41 @@ data = {
 local TextHelp = [[*
 • مرحبا بك في الالعاب المتطورة الخاص بسورس سيلفا 
 • اختر اللعبه ثم اختار المحادثة التي تريد اللعب بها
+*]]
+LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/normgm') then
+local UserId = Text:match('(%d+)/normgm')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '• القائمه الرئيسيه •', data = IdUser..'/help6'},
+},
+{
+{text = '◌͜͡ 𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ', url = 't.me/SO_SELVA'}, 
+},
+}
+}
+local TextHelp = [[*
+ ⌯ قائمه الالعاب البوت
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+ ⌯ لعبة المختلف  ⇜ المختلف
+ ⌯ لعبة الامثله  ⇜ امثله
+ ⌯ لعبة العكس  ⇜ العكس
+ ⌯ لعبة الحزوره  ⇜ حزوره
+ ⌯ لعبة المعاني  ⇜ معاني
+ ⌯ لعبة البات  ⇜ بات
+ ⌯ لعبة التخمين  ⇜ خمن
+ ⌯ لعبه الاسرع  ⇜ الاسرع
+ ⌯ لعبة السمايلات  ⇜ سمايلات
+ ⌯ لعبة الاسئلة  ⇜ كت تويت
+ ⌯ لعبة الاعلام والدول  ⇜ اعلام
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⌯ نقاطي  ⇜ لعرض عدد الارباح
+⌯ بيع نقاطي العدد 
+⌯ لبيع كل نقطه مقابل 50 رساله
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
