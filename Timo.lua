@@ -4549,7 +4549,7 @@ local Info_Members = Redis:smembers(Timo.."Timo:Distinguished:Group"..msg_chat_i
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ لا يوجد مميزين في البوت *","md",true)  
 end
-ListMembers = '\n* ⌯ قائمه المميزين في البوت ⇧⇩*\n⩹┉┉┉┉⊶❲𖥳 𝐒𝐀??𝐃𝐈 𖥳❳⊷┉┉┉┉⩺\n'
+ListMembers = '\n* ⌯ قائمه المميزين في البوت ⇧⇩*\n𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘\n'
 for k, v in pairs(Info_Members) do
 local ban = LuaTele.getUser(v)
 if ban and ban.username and ban.username ~= "" then
@@ -4568,7 +4568,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Timo.."twhd:Group"..msg_chat_id) 
+local Info_Members = Redis:smembers(Timo.."twhd:Distinguished:Group"..msg_chat_id) 
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد المتوحدين في الجروب *","md",true)  
 end
