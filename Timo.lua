@@ -10983,33 +10983,21 @@ Creat = " Developers Timo\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SO_SELVA"}
-},
-{
-{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/asdsobot"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_4"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = " 𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = " 𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. ban.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𓄼•ɢʀᴏ𝗎ᴘ•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹', url = "https://t.me/SO_SELVA"}
-},
-{
-{text = '𓄼•ʙᴏᴛ ѕᴇʟᴠᴀ•𓄹',url="t.me/asdsobot"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_4"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11038,7 +11026,7 @@ local TestText = "𓄼•dev tito•𓄹\n— — — — — — — — —\n 
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹', url = "https://t.me/XXX_xx_XXX0"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐭𝐨•𓄹', url = "https://t.me/XXX_xx_XXX0"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11048,7 +11036,7 @@ local TestText = " 𓄼•dev tito•𓄹\n— — — — — — — — —\n
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹', url = "https://t.me/XXX_xx_XXX0"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐭𝐨•𓄹', url = "https://t.me/XXX_xx_XXX0"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11069,7 +11057,7 @@ end
 if ban.first_name then
 Creat = " "..ban.first_name.." "
 else
-Creat = " Developers tito\n"
+Creat = " Developers lido\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
@@ -11077,7 +11065,7 @@ local TestText = "𓄼•dev lido•𓄹\n— — — — — — — — —\n 
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹', url = "https://t.me/J0KER7x"}
+{text = '𓄼•𝐃𝐞𝐯 𝐋𝐢𝐝𝐨•𓄹', url = "https://t.me/J0KER7x"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11087,7 +11075,7 @@ local TestText = " 𓄼•dev lido•𓄹\n— — — — — — — — —\n
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ•ᴛɪᴍᴏ•𓄹', url = "https://t.me/J0KER7x"}
+{text = '𓄼•𝐃𝐞𝐯 𝐋𝐢𝐝𝐨•𓄹', url = "https://t.me/J0KER7x"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
