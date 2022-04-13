@@ -5853,10 +5853,10 @@ end
 if StatusSilent(msg_chat_id,selva.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على𓄼 "..Controller(msg_chat_id,selva.id).." 𓄹*","md",true)  
 end
-if Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,selva.id) then
+if Redis:sismember(Timo.."Timo:SilentGroup:Group"..msg_chat_id,selva.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selva.id," ⌯ تم كتمه في الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."SilentGroup:Group"..msg_chat_id,selva.id) 
+Redis:sadd(Timo.."Timo:SilentGroup:Group"..msg_chat_id,selva.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(selva.id," ⌯ تم كتمه في الجروب  ").Reply,"md",true)  
 end
 end
@@ -6111,7 +6111,7 @@ end
 if GetInfoBot(msg).selvaUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Status:selvaId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:selvaId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local bain = LuaTele.getUser(msg.sender.user_id)
@@ -6162,10 +6162,10 @@ end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المطور الاساسي' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
-if Redis:sismember(Timo.."selvaAll:Groups",Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:selvaAll:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."selvaAll:Groups",Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:selvaAll:Groups",Message_Reply.sender.user_id) 
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'selvaned',0)
 if selva.first_name then
 selvaiusername = '*الـعـضـو ↫ *['..selva.first_name..'](tg://user?id='..selva.id..' )*\n ⌯ تـم حـظـره عـام مـن الـمـجـمـوعـات\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
@@ -6222,10 +6222,10 @@ end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
-if Redis:sismember(Timo.."ktmAll:Groups",Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:ktmAll:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."ktmAll:Groups",Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:ktmAll:Groups",Message_Reply.sender.user_id) 
 if selva.first_name then
 selvaiusername = '*الـعـضـو ↫ *['..selva.first_name..'](tg://user?id='..selva.id..' )*\nتـم كـتـمـه فـي الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
@@ -6253,10 +6253,10 @@ end
 if selva and selva.type and selva.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."ktmAll:Groups",Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:ktmAll:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."ktmAll:Groups",Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:ktmAll:Groups",Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء كتمه عام من المجموعات  ").Reply,"md",true)  
 end
 end
@@ -6290,10 +6290,10 @@ end
 if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
-if Redis:sismember(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم حظره من الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'selvaned',0)
 if selva.first_name then
 selvaiusername = '*الـعـضـو ↫ *['..selva.first_name..'](tg://user?id='..selva.id..' )*\n ⌯ تـم حـظـره مـن الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
@@ -6330,10 +6330,10 @@ end
 if selva and selva.type and selva.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء حظره من الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:srem(Timo.."selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:selvaGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء حظره من الجروب  ").Reply,"md",true)  
 end
@@ -6363,10 +6363,10 @@ end
 if StatusSilent(msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على( "..Controller(msg_chat_id,Message_Reply.sender.user_id).." )*","md",true)  
 end
-if Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if Redis:sismember(Timo.."Timo:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم كتمه في الجروب مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:sadd(Timo.."Timo:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 if selva.first_name then
 selvaiusername = '*الـعـضـو ↫ *['..selva.first_name..'](tg://user?id='..selva.id..' )*\nتـم كـتـمـه فـي الـجـروب\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' )*\n*'
 else
@@ -6399,10 +6399,10 @@ end
 if selva and selva.type and selva.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if not Redis:sismember(Timo.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+if not Redis:sismember(Timo.."Timo:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء كتمه من الجروب ").Reply,"md",true)  
 else
-Redis:srem(Timo.."SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(Timo.."Timo:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ⌯ تم الغاء كتمه من الجروب ").Reply,"md",true)  
 end
 end
@@ -6495,7 +6495,7 @@ end
 if GetInfoBot(msg).selvaUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
-if not msg.Originators and not Redis:get(Timo.."Status:selvaId"..msg_chat_id) then
+if not msg.Originators and not Redis:get(Timo.."Timo:Status:selvaId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"⌯ تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -6551,7 +6551,7 @@ end
 if Redis:sismember(Timo.."selvaAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(Timo.."selvaAll:Groups",UserId) 
+Redis:sadd(Timo.."Timo:selvaAll:Groups",UserId) 
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'selvaned',0)
 if selva.first_name then
 selvaiusername = '*الـعـضـو ↫ *['..selva.first_name..'](tg://user?id='..selva.id..')*\n⌯ تـم حـظـره عـام مـن الـمـجمـوعـات\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\n*'
