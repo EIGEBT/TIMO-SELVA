@@ -6542,11 +6542,11 @@ end
 if UserId == "1918693330" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
-elseif UserId == "5018147636" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+if UserId == "5018147636" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيتو*","md",true)  
 end
-elseif UserId == "776886547" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+if UserId == "776886547" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو*","md",true)  
 end
 if Redis:sismember(Timo.."BanAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
@@ -6594,11 +6594,11 @@ end
 if UserId == "1918693330" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
-elseif UserId == "5018147636" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+if UserId == "5018147636" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيتو*","md",true)  
 end
-elseif UserId == "776886547" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+if UserId == "776886547" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو*","md",true)  
 end
 local ban = LuaTele.getUser(UserId)
 local bain = LuaTele.getUser(msg.sender.user_id)
@@ -11422,7 +11422,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•❶•𓄹 ', data = msg.sender.user_id..'/help1'}, {text = '𓄼•❷•𓄹 ', data = msg.sender.user_id..'/help2'}, 
+{text = '??•❶•𓄹 ', data = msg.sender.user_id..'/help1'}, {text = '𓄼•❷•𓄹 ', data = msg.sender.user_id..'/help2'}, 
 },
 {
 {text = '𓄼•❸•𓄹 ', data = msg.sender.user_id..'/help3'}, {text = '𓄼•❹•𓄹 ', data = msg.sender.user_id..'/help4'}, 
@@ -15858,7 +15858,7 @@ local TextHelp = [[*
 𓄼• المدراء •𓄹
 𓄼• الادمنيه •𓄹
 𓄼• المميزين •𓄹
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞??𝐯𝐚•𓄹⊷┉┉┉⊰
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼• رفع + تنزيل •𓄹
 𓄼• مالك •𓄹
 𓄼• منشئ اساسي •𓄹
