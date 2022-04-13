@@ -4935,54 +4935,54 @@ return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, fa
 end
 if text == 'المحظورين عام' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Timo.."selva:Groups") 
+local Info_Members = Redis:smembers(Timo.."Timo:BanAll:Groups") 
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ لا يوجد محظورين عام في البوت *","md",true)  
 end
-ListMembers = '\n* ⌯ قائمه المحظورين عام ⍖*\n𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘\n'
+ListMembers = '\n* ⌯ قائمه المحظورين عام ⇧⇩*\n𖣘┉┉┉⊶𓄼•𝐒𝐄𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n'
 for k, v in pairs(Info_Members) do
-local selva = LuaTele.getUser(v)
-if selva and selva.username and selva.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..selva.username.."](tg://user?id="..v..")\n"
+local ban = LuaTele.getUser(v)
+if ban and ban.username and ban.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..ban.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '• مسح المحظورين عام •', data = msg.sender.user_id..'/selvaAll'},},}}
+data = {{{text = '⌯ مسح المحظورين عام ⌯', data = msg.sender.user_id..'/BanAll'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'المكتومين عام' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❨ '..Controller_Num(1)..' ❩* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SU_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Timo.."ktmAll:Groups") 
+local Info_Members = Redis:smembers(Timo.."Timo:ktmAll:Groups") 
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ لا يوجد مكتومين عام في البوت ","md",true)  
 end
-ListMembers = '\n* ⌯ قائمه المكتومين عام ⍖*\n𖣘┉┉┉⊶❨•𝘴​ꪮꪊ𝘳​ᥴ​ꫀ 𝘴​ꫀꪶ​ꪜꪖ•❩⊷┉┉┉𖣘\n'
+ListMembers = '\n* ⌯ قائمه المكتومين عام ⇧⇩*\n𖣘┉┉┉⊶𓄼•𝐒𝐄𝐋𝐕𝐀•𓄹⊷┉┉┉𖣘\n'
 for k, v in pairs(Info_Members) do
-local selva = LuaTele.getUser(v)
-if selva and selva.username and selva.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..selva.username.."](tg://user?id="..v..")\n"
+local ban = LuaTele.getUser(v)
+if ban and ban.username and ban.username ~= "" then
+ListMembers = ListMembers.."*"..k.." - *[@"..ban.username.."](tg://user?id="..v..")\n"
 else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '• مسح المكتومين عام •', data = msg.sender.user_id..'/ktmAll'},},}}
+data = {{{text = '⌯ مسح المكتومين عام ⌯', data = msg.sender.user_id..'/ktmAll'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'المحظورين' then
