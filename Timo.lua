@@ -5176,13 +5176,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ تم تفعيل التواصل
 end
 
 end
-if text == "تفعيل سمسم" or text == "تفعيل سمسمي" then
-if not msg.Admin then
-LuaTele.sendText(msg_chat_id,msg_id,'\n• هذا الامر يخص • ↤𓆩*'..Controller_Num(7)..'*𓆪بس',"md",true)  
-end
-Redis:set(Timo.."smsm"..msg_chat_id,"off")
-LuaTele.sendText(msg_chat_id,msg_id,'\n*• تم تفعيل امر سمسمي * ',"md",true)  
-end
 if text and text:match("^(.*)$") then
 if Redis:get(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "true" then
 Redis:set(Timo.."Timo1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id, "true1")
@@ -5622,13 +5615,6 @@ Redis:del(Timo.."Timo:TwaslBot")
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ تم تعطيل التواصل داخل البوت *","md",true)
 end
 
-end
-if text == "تعطيل سمسمي" or text == "تعطيل سمسم" then
-if not msg.Admin then
-LuaTele.sendText(msg_chat_id,msg_id,'\n• هذا الامر يخص • ↤𓆩*'..Controller_Num(7)..'*𓆪بس',"md",true)  
-end
-Redis:del(Timo.."smsm"..msg_chat_id)
-LuaTele.sendText(msg_chat_id,msg_id,'\n*• تم تعطيل امر سمسمي * ',"md",true)  
 end
 if text and text:match('^حظر عام @(%S+)$') then
 local UserName = text:match('^حظر عام @(%S+)$')
@@ -10754,7 +10740,7 @@ else
 Creat = " Developers Bot \n"
 end
 if photo.total_count > 0 then
-local TestText = "  ❲ ??𝘄𝗻𝗲𝗿 𝗴𝗿𝗼𝘂𝗽 ❳\n— — — — — — — — —\n ⌯*Owner Name* :  [".. selva.first_name.."](tg://user?id=".. selva.id..")\n⌯ *Owner Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ 𝗼𝘄𝗻𝗲𝗿 𝗴𝗿𝗼𝘂𝗽 ❳\n— — — — — — — — —\n ⌯*Owner Name* :  [".. selva.first_name.."](tg://user?id=".. selva.id..")\n⌯ *Owner Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -15221,18 +15207,6 @@ local TextMahibesAgane = [[*
 ╝•احدى العضمات في الازرار ⌯
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
-end
-if text then
-if Redis:get(Timo.."smsm"..msg_chat_id) == "off" then
-if tonumber(msg.reply_to_message_id) ~= 0 then
-msg_user_id = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id).sender.user_id
-if tonumber(msg_user_id) == tonumber(Timo) then  
-u,res = https.request("https://xxxxTimo.ml/api/Simsmy.php?text="..text)
-JsonSInfo = JSON.decode(u)
-LuaTele.sendText(msg.chat_id,msg.id,"["..JsonSInfo['success'].."]","md",true)
-end
-end
-end
 end
 if Text and Text:match('(%d+)/Haiw7') then
 local UserId = Text:match('(%d+)/Haiw7')
