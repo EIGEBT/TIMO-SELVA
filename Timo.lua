@@ -6542,6 +6542,12 @@ end
 if UserId == "1918693330" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
+elseif UserId == "5018147636" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+end
+elseif UserId == "776886547" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+end
 if Redis:sismember(Timo.."BanAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
@@ -6586,6 +6592,12 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص( '..Controller_Num(1)..' )* ',"md",true)  
 end
 if UserId == "1918693330" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+end
+elseif UserId == "5018147636" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
+end
+elseif UserId == "776886547" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 local ban = LuaTele.getUser(UserId)
@@ -11433,42 +11445,6 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
 https://t.me/SO_SELVA
 *]],"md",false, false, false, false, reply_markup)
-elseif text == 'اوامر المسح' or text == 'مسح' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/belalelshayals'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '𓄼• المنشئين الاساسيين •𓄹', data = IdUser..'/TheBasics'}, {text = '𓄼• مسح المالكين •𓄹', data = IdUser..'/TheBasicsQ'}, 
-},
-{
-{text = '𓄼• مسح الثانوين •𓄹', data = IdUser..'/DevelopersQ'}, {text = '𓄼• مسح المطورين •𓄹', data = IdUser..'/Developers'}, 
-},
-{
-{text = '𓄼• مسح المميزين •𓄹', data = IdUser..'/DelDistinguished'}, {text = '𓄼• مسح المنشئين •𓄹', data = IdUser..'/Originators'}, 
-},
-{
-{text = '𓄼• مسح المدراء •𓄹', data = IdUser..'/Managers'}, {text = '𓄼• مسح الادمنيه •𓄹', data = IdUser..'/Addictive'}, 
-},
-{
-{text = '𓄼• مسح المكتومين •𓄹', data = IdUser..'/SilentGroupGroup'}, {text = '𓄼• مسح المحظورين •𓄹', data = IdUser..'/BanGroup'}, 
-},
-{
-{text = '𓄼• مسح المكتومين عام •𓄹', data = IdUser..'/SASAII'}, {text = '𓄼• مسح المحظورين عام •𓄹', data = IdUser..'/Redisa'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-🖥️╗•اليك اوامر 𓄼
-🎧╣•مسح الرتب 𓄼
-💎╝•الخاصه بالمطور الاساسي 𓄼
-*]],"md",false, false, false, false, reply_markup)
 elseif text == 'تحكم الردود' or text == 'الردود' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 〘 '..Controller_Num(7)..' 〙* ',"md",true)  
@@ -15882,7 +15858,7 @@ local TextHelp = [[*
 𓄼• المدراء •𓄹
 𓄼• الادمنيه •𓄹
 𓄼• المميزين •𓄹
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞??𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼• رفع + تنزيل •𓄹
 𓄼• مالك •𓄹
 𓄼• منشئ اساسي •𓄹
