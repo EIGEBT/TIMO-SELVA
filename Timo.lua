@@ -11144,10 +11144,13 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 photo = "http://t.me/selva_so/4"
 local T =[[
-[مطورين ومبرمجين سورس سيلفا](http://t.me/SO_SELVA)
+مطورين ومبرمجين سورس سيلفا
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
 {
 {text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/tt_t_4"}
 },
@@ -16098,7 +16101,7 @@ data = {
 {text = '𓄼•❶•𓄹', data = IdUser..'/help1'}, {text = '𓄼•❷•𓄹', data = IdUser..'/help2'}, 
 },
 {
-{text = '𓄼•❸•𓄹', data = IdUser..'/help3'}, {text = '𓄼•❹•𓄹', data = IdUser..'/help4'}, 
+{text = '𓄼•❸•??', data = IdUser..'/help3'}, {text = '𓄼•❹•𓄹', data = IdUser..'/help4'}, 
 },
 {
 {text = '𓄼•❺•𓄹', data = IdUser..'/listallAddorrem'}, {text = '𓄼•❻•𓄹', data = IdUser..'/NoNextSeting'}, 
