@@ -11139,18 +11139,13 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-if text == 'مطورين السورس' or text == 'المطورين' or text == 'المبرمجين' or text == 'مبرمجين السورس' then
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
+elseif text == 'مطورين السورس' or text == 'المطورين' or text == 'المبرمجين' or text == 'مبرمجين السورس' then
 photo = "http://t.me/selva_so/4"
 local T =[[
-مطورين ومبرمجين سورس سيلفا
+[مطورين ومبرمجين سورس سيلفا](http://t.me/SO_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
 {
 {text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/tt_t_4"}
 },
@@ -16101,7 +16096,7 @@ data = {
 {text = '𓄼•❶•𓄹', data = IdUser..'/help1'}, {text = '𓄼•❷•𓄹', data = IdUser..'/help2'}, 
 },
 {
-{text = '𓄼•❸•??', data = IdUser..'/help3'}, {text = '𓄼•❹•𓄹', data = IdUser..'/help4'}, 
+{text = '𓄼•❸•𓄹', data = IdUser..'/help3'}, {text = '𓄼•❹•𓄹', data = IdUser..'/help4'}, 
 },
 {
 {text = '𓄼•❺•𓄹', data = IdUser..'/listallAddorrem'}, {text = '𓄼•❻•𓄹', data = IdUser..'/NoNextSeting'}, 
