@@ -11108,7 +11108,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'مطورين السورس' then
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 photo = "http://t.me/selva_so/2"
@@ -11140,7 +11140,7 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'مطورين السورس' or text == 'المطورين' or text == 'المبرمجين' or text == 'مبرمجين السورس' then
-photo = "http://t.me/selva_so/4"
+photo = "http://t.me/selva_so/2"
 local T =[[
 [مطورين ومبرمجين سورس سيلفا](http://t.me/SO_SELVA)
 ]]
@@ -11188,7 +11188,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SO_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/asdsobot"}
+{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/Timo8Bot"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -13622,7 +13622,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/asdsobot"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
@@ -13645,7 +13645,7 @@ data = {
 {text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/asdsobot"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
@@ -14103,7 +14103,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SO_SELVA"}
 },
 {
-{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/asdsobot"}
+{text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/Timo8Bot"}
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -14139,7 +14139,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•صـاحـب الـتـيـم•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/asdsobot"}
+{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
 {text = '𓄼•جـروب التـيـم•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•قـنـاه الـتـيـم•𓄹', url = "https://t.me/postat_selva"}
