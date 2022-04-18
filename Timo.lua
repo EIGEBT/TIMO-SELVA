@@ -2300,20 +2300,17 @@ return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم تفعيل المغادر�
 end
 if (Redis:get(Timo.."Timo:AddSudosNew"..msg_chat_id) == 'true') then
 if text == "الغاء" or text == '𓄼 الغاء الامر 𓄹' then   
-Redis:del(Timo.."Timo:AddSudosNew"..msg_chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id, "\n ⌯ تم الغاء امر تغيير المطور الاساسي","md",true)    
+Redis:del(Timo.."AddSudosNew"..msg_chat_id)
+return LuaTele.sendText(msg_chat_id,msg_id, "\n⌯ تم الغاء امر تغيير المطور الاساسي","md",true)    
 end 
-Redis:del(Timo.."Timo:AddSudosNew"..msg_chat_id)
+Redis:del(Timo.."AddSudosNew"..msg_chat_id)
 if text and text:match("^@[%a%d_]+$") then
 local UserId_Info = LuaTele.searchPublicChat(text)
 if not UserId_Info.id then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرآ لا يوجد حساب بهاذا المعرف ","md",true)  
 end
 if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
-end
-if UserName and UserName[2]:match('(%S+)[Bb][Oo][Tt]') then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ عذرآ لا تستطيع استخدام معرف قناة او جروب ","md",true)  
 end
 local Informationlua = io.open("Information.lua", 'w')
 Informationlua:write([[
@@ -2325,7 +2322,8 @@ SudoId = ]]..UserId_Info.id..[[
 }
 ]])
 Informationlua:close()
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ تم تغيير المطور الاساسي اصبح على : [@"..text:gsub('@','').."]","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ تم تغيير المطور الاساسي اصبح على : [@"..text:gsub('@','').."]","md",true)  
+dofile('Timo.lua')  
 end
 end
 if text == 'تغيير المطور الاساسي' or text == 'تغيير المطور الاساسي ⌯' then
