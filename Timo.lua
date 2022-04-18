@@ -2328,12 +2328,19 @@ Informationlua:close()
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ تم تغيير المطور الاساسي اصبح على : [@"..text:gsub('@','').."]","md",true)  
 end
 end
-if text == 'تغيير المطور الاساسي' or text == '𓄼 تغيير المطور الاساسي 𓄹' then
+if text == 'تغيير المطور الاساسي' or text == 'تغيير المطور الاساسي ⌯' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص⦘'..Controller_Num(1)..' ⦘* ',"md",true)  
 end
-Redis:set(Timo.."Timo:AddSudosNew"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id," ⌯ ارسل معرف المطور الاساسي مع @","md",true)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'نعم', data = msg.sender.user_id..'/yaaaaa'}, {text = 'لا', data = msg.sender.user_id..'/Noooo'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*\n⌯سوف يتم تغير المطور الاساسي\nهل  انت  متأكد من هذا التغير ؟*',"md",false, false, false, false, reply_markup)
 end
 if text == '𓄼 جلب النسخه 𓄹' or text == 'جلب النسخه' then
 if not msg.ControllerBot then 
@@ -16145,6 +16152,25 @@ LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل الكلمه لزخرفته
 Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
 end 
 
+
+if Text and Text:match('(%d+)/yaaaaa') then
+local UserId = Text:match('(%d+)/yaaaaa')
+if tonumber(IdUser) == tonumber(UserId) then
+LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل معرف المطور الاساسي مع @*","md",true) 
+Redis:set(Timo.."AddSudosNew"..ChatId,true)
+end
+end
+
+
+
+
+if Text and Text:match('(%d+)/Noooo') then
+local UserId = Text:match('(%d+)/Noooo')
+if tonumber(IdUser) == tonumber(UserId) then
+Redis:del(Timo.."AddSudosNew"..ChatId)
+LuaTele.editMessageText(ChatId,Msg_id,"*⌯ تم الغاء امر تغيير المطور الاساسي*","md",true) 
+end
+end
 if Text and Text:match('(%d+)/lock_link') then
 local UserId = Text:match('(%d+)/lock_link')
 if tonumber(IdUser) == tonumber(UserId) then
