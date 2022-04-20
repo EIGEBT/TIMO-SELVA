@@ -11218,7 +11218,7 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 elseif text == 'تخ' or text == 'تخخ' or text == 'اقتله' or text == 'قتل' then
 local selva = LuaTele.getUser(msg.sender.user_id)
 if selva.first_name then
-selvaiusername = '*تم قتل ↫ *['..selva.first_name..'](tg://user?id='..selva.id..' 」*\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..' 」*\n*'
+selvaiusername = '*تم قتل ↫ *['..selva.first_name..'](tg://user?id='..selva.id..')*\nبـواسـطـه ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*'
 else
 selvaiusername = 'لا يوجد'
 end
