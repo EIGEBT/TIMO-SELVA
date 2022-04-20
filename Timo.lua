@@ -11416,35 +11416,6 @@ local rd_tlaq = {
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
 end
 end
-if text == "تخ" or text == "تخخ" and msg.reply_to_message_id ~= 0 then
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*الحق الود تعبان عايز يموت نفسه 😂*","md",true)  
-end
-if tonumber(Message_Reply.sender.user_id) == tonumber(Timo) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*شوفلك حد غير البوت يبنوسخه 😒*","md",true)  
-end
-if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
-local rd_mtzwga = {
-"مااااتتتت خلااااصصصص😹💔 ",
-"ده اتدفن يعم شوف حد تاني نقتلو🥲",
-"هو دهه في روحح عشان نقتلو اصلا😹💔",
-"ربنا يرحمو كان طيب🥲",
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
-else
-local rd_zwag = {
-"تم القتل بنجاح😈",
-"تم القتل بنجاح😈",
-}
-if Redis:sismember(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
-Redis:srem(Timo..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
-end
-Redis:sadd(Timo..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
-end
-end
 -- time & date
 if text == "الوقت" then
 local date = os.date('*t')
