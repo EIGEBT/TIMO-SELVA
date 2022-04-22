@@ -2207,16 +2207,16 @@ Redis:del(Timo.."Game:Riddles"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد خسرت حضا اوفر في المره القادمه\n ⌯ اللعب مره اخره وارسل - حزوره","md",true)  
 end
 end
-if Redis:get(Timo.."Game:Countrygof"..msg.chat_id) then
-if text == Redis:get(Timo.."Game:Countrygof"..msg.chat_id) then
-Redis:incrby(Timo.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
-Redis:del(Timo.."Game:Riddles"..msg.chat_id)
+if Redis:get(Timo.."Timo:Game:Countrygof"..msg.chat_id) then
+if text == Redis:get(Timo.."Timo:Game:Countrygof"..msg.chat_id) then
+Redis:del(Timo.."Timo:Game:Countrygof"..msg.chat_id)
+Redis:incrby(Timo.."Timo:Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد فزت في اللعبه \n ⌯ اللعب مره اخره وارسل - اعلام","md",true)  
 else
-Redis:del(Timo.."Game:Riddles"..msg.chat_id)
+Redis:del(Timo.."Timo:Game:Countrygof"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد خسرت حضا اوفر في المره القادمه\n ⌯ اللعب مره اخره وارسل - اعلام","md",true)  
 end
-end
+end 
 if Redis:get(Timo.."Game:Meaningof"..msg.chat_id) then
 if text == Redis:get(Timo.."Game:Meaningof"..msg.chat_id) then
 Redis:incrby(Timo.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
@@ -10646,7 +10646,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"["..text.."]","md",true)
 end
 if text == "اضف رد" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص?? '..Controller_Num(7)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
@@ -13117,11 +13117,10 @@ return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
 if text == "اعلام" or text == "اعلام ودول" or text == "اعلام و دول" or text == "دول" then
-if Redis:get(Mezo.."Status:Games"..msg.chat_id) then
-Redis:del(Mezo.."Set:Country"..msg.chat_id)
-Country_Rand = {"مصر","العراق","السعوديه","المانيا","تونس","الجزائر","فلسطين","اليمن","المغرب","البحرين","فرنسا","سويسرا","تركيا","انجلترا","الولايات المتحده","كندا","الكويت","ليبيا","السودان","سوريا"}
-name = Country_Rand[math.random(#Country_Rand)]
-Redis:set(Mezo.."Game:Countrygof"..msg.chat_id,name)
+if Redis:get(Timo.."Timo:Status:Games"..msg.chat_id) then
+KlamSpeed = {"مصر","العراق","السعوديه","المانيا","تونس","الجزائر","فلسطين","اليمن","المغرب","البحرين","فرنسا","سويسرا","تركيا","انجلترا","الولايات المتحده","كندا","الكويت","ليبيا","السودان","سوريا"}
+name = KlamSpeed[math.random(#KlamSpeed)]
+Redis:set(Timo.."Timo:Game:Countrygof"..msg.chat_id,name)
 name = string.gsub(name,"مصر","🇪🇬")
 name = string.gsub(name,"العراق","🇮🇶")
 name = string.gsub(name,"السعوديه","🇸🇦")
@@ -13142,7 +13141,7 @@ name = string.gsub(name,"الكويت","🇰🇼")
 name = string.gsub(name,"ليبيا","🇱🇾")
 name = string.gsub(name,"السودان","🇸🇩")
 name = string.gsub(name,"سوريا","🇸🇾")
-return LuaTele.sendText(msg_chat_id,msg_id," ● اسرع واحد يرسل اسم الدولة ~  𓆩 "..name.." 𓆪","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id," ⌯ اسرع واحد يرسل اسم الدولة ~  𓄼 "..name.." 𓄹","md",true)  
 end
 end
 if text == "الاسرع" or tect == "ترتيب" then
@@ -13520,7 +13519,7 @@ selvaiusername = '*['..bain.first_name..'](tg://user?id='..bain.id..')*'
 else
 selvaiusername = 'لا يوجد'
 end
-local CmdStart = '*\n 🤖 ╖اهلا انا بوت اسمي '..(Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")..
+local CmdStart = '*\n 🤖 ╖اهلا انا بوت اسمي '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
 '\n 👻╢ وظيفتي حماية المجموعات'..
 '\n ♻️╢ لتفعيل البوت عليك اتباع مايلي'.. 
 '\n ➕╢ أضِف البوت إلى مجموعتك..'..
