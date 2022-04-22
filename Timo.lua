@@ -1205,7 +1205,7 @@ for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
 print(v)
 if v == tonumber(Timo) then
-local N = (Redis:get(Timo.."Name:Bot") or "تيمو")
+local N = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 photo = LuaTele.getUserProfilePhotos(Timo)
 local bot = '* ╗ مـرحـبــا انا بــوت '..N..'\n╣ اخـتصـاصـي  ادارة الجـروبــات\n╣ مـن السـب والشـتيمـه والابــاحـه\n╣ لتفعيل البــوت اتبــاع الخـطـوات\n╣❶ ارفع البــوت مـشـرف في مـجـمـوعه\n╣ وارسـل تفعيل في مـجـمـوعه\n╣❷ لو ارت تفعيل ردود السـورس\n╣ اكتب تفعيل ردود السـورس\n╝ مـطـور الـبــوت𓄼 @'..UserSudo..' 𓄹\n*'
 if photo.total_count > 0 then
@@ -2207,10 +2207,10 @@ Redis:del(Timo.."Game:Riddles"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد خسرت حضا اوفر في المره القادمه\n ⌯ اللعب مره اخره وارسل - حزوره","md",true)  
 end
 end
-if Redis:get(Timo.."Game:Countrygof"..msg.chat_id) then
-if text == Redis:get(Timo.."Game:Countrygof"..msg.chat_id) then
-Redis:del(Timo.."Game:Countrygof"..msg.chat_id)
-Redis:incrby(Timo.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
+if Redis:get(Timo.."Timo:Game:Countrygof"..msg.chat_id) then
+if text == Redis:get(Timo.."Timo:Game:Countrygof"..msg.chat_id) then
+Redis:del(Timo.."Timo:Game:Countrygof"..msg.chat_id)
+Redis:incrby(Timo.."Timo:Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
 return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد فزت في اللعبه \n ⌯ اللعب مره اخره وارسل - اعلام","md",true)  
 else
 Redis:del(Timo.."Timo:Game:Countrygof"..msg.chat_id)
@@ -2667,7 +2667,7 @@ for Name_User in string.gmatch(selva.first_name, "[^%s]+" ) do
 selva.first_name = Name_User
 break
 end 
-Namebot = (Redis:get(Timo.."Name:Bot") or "تيمو")
+Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
@@ -12284,7 +12284,7 @@ end
 if text == 'بوت' or text == 'البوت' then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local ban = LuaTele.getUser(Timo)
-local Namebot = (Redis:get(Timo.."Name:Bot") or "تيمو")
+local Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local BotName = {
 'اسمي  '..Namebot..' يا قلبي 😍💜',
 'اسمي '..Namebot..' يا روحي 🙈❤️',
@@ -12312,10 +12312,10 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NameBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == (Redis:get(Timo.."Name:Bot") or "تيمو") then
+if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local ban = LuaTele.getUser(Timo)
-local Namebot = (Redis:get(Timo.."Name:Bot") or "تيمو")
+local Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local BotName = {
 'نعم يروحي 🌝💙',
 'نعم يا قلب '..Namebot..'',
@@ -12353,7 +12353,7 @@ end
 if not msg.ControllerBot and not Redis:set(Timo.."Left:selva:Bot") then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ امر المغادره معطل من قبل الاساسي *',"md",true)  
 end
-local Mostafa = (Redis:get(Timo.."Name:Bot") or "تيمو")
+local Mostafa = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local selva = LuaTele.getUser(Timo)
 local bain = LuaTele.getUser(msg.sender.user_id)
 if ChannelJoin(msg) == false then
@@ -13117,11 +13117,10 @@ return LuaTele.sendText(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
 end
 end
 if text == "اعلام" or text == "اعلام ودول" or text == "اعلام و دول" or text == "دول" then
-if Redis:get(Timo.."Status:Games"..msg.chat_id) then
-Redis:del(Timo.."Set:Country"..msg.chat_id)
-Country_Rand = {"مصر","العراق","السعوديه","المانيا","تونس","الجزائر","فلسطين","اليمن","المغرب","البحرين","فرنسا","سويسرا","تركيا","انجلترا","الولايات المتحده","كندا","الكويت","ليبيا","السودان","سوريا"}
-name = Country_Rand[math.random(#Country_Rand)]
-Redis:set(Timo.."Game:Countrygof"..msg.chat_id,name)
+if Redis:get(Timo.."Timo:Status:Games"..msg.chat_id) then
+KlamSpeed = {"مصر","العراق","السعوديه","المانيا","تونس","الجزائر","فلسطين","اليمن","المغرب","البحرين","فرنسا","سويسرا","تركيا","انجلترا","الولايات المتحده","كندا","الكويت","ليبيا","السودان","سوريا"}
+name = KlamSpeed[math.random(#KlamSpeed)]
+Redis:set(Timo.."Timo:Game:Countrygof"..msg.chat_id,name)
 name = string.gsub(name,"مصر","🇪🇬")
 name = string.gsub(name,"العراق","🇮🇶")
 name = string.gsub(name,"السعوديه","🇸🇦")
@@ -14141,7 +14140,7 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا") then
+if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
 local user_info = LuaTele.getUser(msg.sender.user_id)
