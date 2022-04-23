@@ -2455,8 +2455,8 @@ UserInfo.first_name = Name_User
 break
 end 
 NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
-Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
 local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
@@ -2495,8 +2495,8 @@ UserInfo.first_name = Name_User
 break
 end 
 NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
-Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
 local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
@@ -2531,8 +2531,8 @@ UserInfo.first_name = Name_User
 break
 end 
 NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
-Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
 local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
@@ -15711,7 +15711,7 @@ local TextHelp = [[*
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼• نسبه الحب •𓄹
 𓄼• نسبه الكره •𓄹
-𓄼• نسبه الرجوله •𓄹
+𓄼• نسبه الرجوله •??
 𓄼• نسبه الانوثه •𓄹
 𓄼• صلاحياتي •𓄹
 𓄼• جهاتي •𓄹
