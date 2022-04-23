@@ -10746,7 +10746,7 @@ else
 Creat = " Developers Bot \n"
 end
 if photo.total_count > 0 then
-local TestText = "  ❲ 𝗼𝘄𝗻𝗲𝗿 𝗴𝗿𝗼𝘂𝗽 ❳\n— — — — — — — — —\n ⌯*Owner Name* :  [".. selva.first_name.."](tg://user?id=".. selva.id..")\n⌯ *Owner Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ 𝗼𝘄𝗻𝗲𝗿 𝗴𝗿𝗼𝘂𝗽 ❳\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Owner Name* :  [".. selva.first_name.."](tg://user?id=".. selva.id..")\n⌯ *Owner Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10796,7 +10796,7 @@ Creat = " Developers Bot \n"
 end
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
-local TestText = "الاول هو مطور السورس \n والتاني هو مطور البوت \n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : ["..Bio.." ]\n"
+local TestText = "الاول هو مطور السورس \n والتاني هو مطور البوت \n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10809,7 +10809,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "  ❲ Developers Timo  ❳\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ❲ Developers Timo  ❳\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..Sudo_Id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
@@ -10832,7 +10832,7 @@ Creat = " Developers Timo\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10842,7 +10842,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = " 𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = " 𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10871,7 +10871,7 @@ Creat = " Developers tito\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "𓄼•dev tito•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "𓄼•dev tito•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10881,7 +10881,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = " 𓄼•dev tito•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = " 𓄼•dev tito•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10910,7 +10910,7 @@ Creat = " Developers lido\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "𓄼•dev lido•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "𓄼•dev lido•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10920,7 +10920,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = " 𓄼•dev lido•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = " 𓄼•dev lido•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10933,41 +10933,6 @@ end
 end
 end
 
-if text == 'المساعد' or text == 'مساعد' then   
-local id = Redis:get(Timo.."id:selva:Groups")
-urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
-local selvayt = JSON.decode(urrl)
-local bains = LuaTele.getUser(selvayt)
-local name = ' '..selvayt.result.first_name..' '
-if selvayt.result.username then
-apapiy = ' '..selvayt.result.username..' '
-else
-apapiy = 'SO_SELVA'
-end
-if selvayt.result.first_name then
-klajq = ' '..selvayt.result.first_name..' '
-else
-klajq = 'لا يوجد'
-end
-local abnj = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..selvayt.result.first_name.." \n"
-keyselvayt = {} 
-keyselvayt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..selvayt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_id.."&photo=t.me/"..selvayt.result.username.."&caption="..URL.escape(abnj).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyselvayt))
-local TestT = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..selvayt.result.first_name.." \n"
-keyboardd = {} 
-keyselvayt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..selvayt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
 if text == 'المطور' or text == 'مطور' or text == 'مطور' then   
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
@@ -11876,7 +11841,7 @@ keyboard.inline_keyboard = {
 {text = Creator, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = '✅ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -11912,7 +11877,7 @@ keyboard.inline_keyboard = {
 {text = Creator, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = '✅ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -12755,7 +12720,7 @@ name = string.gsub(name,"🕒","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
 name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
 name = string.gsub(name,"📅","📆📆📆📆📆📆📅📆📆")
-return LuaTele.sendText(msg_chat_id,msg_id,"𖥔 اسرع واحد يدز الاختلاف ~ {"..name.."}","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"⌯ اسرع واحد يدز الاختلاف ~ {"..name.."}","md",true)  
 end
 end
 if text == "امثله" then
@@ -12783,7 +12748,7 @@ name = string.gsub(name,"شهر","امشي__ولا تعبر نهر")
 name = string.gsub(name,"شكه","يامن تعب يامن__يا من على الحاضر لكة")
 name = string.gsub(name,"القرد","__بعين امه غزال")
 name = string.gsub(name,"يكحله","اجه___عماها")
-return LuaTele.sendText(msg_chat_id,msg_id,"𖥔 اسرع واحد يكمل المثل ~ {"..name.."}","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"⌯ اسرع واحد يكمل المثل ~ {"..name.."}","md",true)  
 end
 end
 if text == "الاسرع" or tect == "ترتيب" then
@@ -13040,7 +13005,7 @@ end
 
 if text == 'ترتيب الاوامر' then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*𖥔 هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
@@ -13064,28 +13029,32 @@ Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح س
 Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
 Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
 Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','تفعيل ردود السورس')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ردي','تعطيل ردود السورس')
 
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
-𖥔 تم ترتيب الاوامر بالشكل التالي ~
-— — — — — — — — —
-𖥔  ايدي - ا .
-𖥔  رفع مميز - م .
-𖥔 رفع ادمن - اد .
-𖥔  رفع مدير - مد . 
-𖥔  رفع منشى - من . 
-𖥔  رفع منشئ الاساسي - اس  .
-𖥔  رفع مطور - مط .
-𖥔 رفع مطور ثانوي - ثانوي .
-𖥔  تنزيل الكل - تك .
-𖥔  تعطيل الايدي بالصوره - تعط .
-𖥔  تفعيل الايدي بالصوره - تفع .
-𖥔  الرابط - ر .
-𖥔  الردود - رر .
-𖥔  مسح المكتومين - ،، .
-𖥔  اضف رد - رد .
-𖥔  مسح سحكاتي - سح .
-𖥔  مسح رسائلي - رس .
-𖥔  غنيلي - غ .
+⌯ تم ترتيب الاوامر بالشكل التالي ~
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⌯  ايدي - ا .
+⌯  رفع مميز - م .
+⌯ رفع ادمن - اد .
+⌯  رفع مدير - مد . 
+⌯  رفع منشى - من . 
+⌯  رفع منشئ الاساسي - اس  .
+⌯  رفع مطور - مط .
+⌯ رفع مطور ثانوي - ثانوي .
+⌯  تنزيل الكل - تك .
+⌯  تعطيل الايدي بالصوره - تعط .
+⌯  تفعيل الايدي بالصوره - تفع .
+⌯  الرابط - ر .
+⌯  الردود - رر .
+⌯  مسح المكتومين - ،، .
+⌯  اضف رد - رد .
+⌯  مسح سحكاتي - سح .
+⌯  مسح رسائلي - رس .
+⌯  غنيلي - غ .
+⌯. تعطيل ردود السورس - ردي .
+⌯.تفعيل ردود السورس - رد .
 *]],"md")
 end
 
@@ -13258,7 +13227,7 @@ data = {
 {text = '𓄼 اذاعه بالتوجيه 𓄹',type = 'text'},{text = '𓄼 اذاعه بالتوجيه خاص 𓄹', type = 'text'},
 },
 {
-{text = '𓄼 اذاعه بالتثبيت 𓄹',type = 'text'},
+{text = '?? اذاعه بالتثبيت 𓄹',type = 'text'},
 },
 {
 {text = '𓄼 القائمه الرئيسيه 𓄹',type = 'text'},
@@ -13402,40 +13371,6 @@ end
  ]]):read('*all')
 LuaTele.sendText(msg_chat_id,msg_id,ioserver,"md",true)
 end
-if text == '𓄼 المساعد 𓄹' or text == '𓄼 مساعد 𓄹' or text == 'المساعد' or text == 'مساعد' then   
-local id = Redis:get(Timo.."id:selva:Groups")
-urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
-local banyt = JSON.decode(urrl)
-local name = ' '..banyt.result.first_name..' '
-if banyt.result.username then
-apapiy = ' '..banyt.result.username..' '
-else
-apapiy = 'SO_SELVA'
-end
-if banyt.result.first_name then
-klajq = ' '..banyt.result.first_name..' '
-else
-klajq = 'لا يوجد'
-end
-local abnj = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..banyt.result.first_name.." \n"
-keybanyt = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_id.."&photo=t.me/"..banyt.result.username.."&caption="..URL.escape(abnj).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keybanyt))
-local abnj = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..banyt.result.first_name.." \n"
-keyboardd = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
 if text == 'المطور' or text == 'مطور' then   
 local  selva = LuaTele.getUser(Sudo_Id) 
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
@@ -13536,7 +13471,7 @@ Creat = " Developers tito\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "𓄼•𝐃??𝐯 𝐓𝐢𝐭𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "𓄼•𝐃??𝐯 𝐓𝐢𝐭𝐨•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -13546,7 +13481,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = " 𓄼•dev tito•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = " 𓄼•dev tito•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -13575,7 +13510,7 @@ Creat = " Developers tito\n"
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "𓄼•𝐃𝐞𝐯 𝐋𝐢𝐝𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "𓄼•𝐃𝐞𝐯 𝐋𝐢𝐝𝐨•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -13585,7 +13520,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = " 𓄼•𝐃𝐞𝐯 𝐋𝐢𝐝𝐨•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = " 𓄼•𝐃𝐞𝐯 𝐋𝐢𝐝𝐨•𓄹\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -13736,7 +13671,7 @@ keyboard.inline_keyboard = {
 {text = Creator, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = '✅ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -13772,7 +13707,7 @@ keyboard.inline_keyboard = {
 {text = Creator, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = '✅ اضفني لمجموعتك', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
