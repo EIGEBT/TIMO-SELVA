@@ -7115,41 +7115,6 @@ local msg_id = msg.id/2097152/0.5
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
 end
-if text == 'المساعد' or text == 'مساعد' then   
-local id = Redis:get(Timo.."id:selva:Groups")
-urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
-local selvayt = JSON.decode(urrl)
-local bains = LuaTele.getUser(selvayt)
-local name = ' '..selvayt.result.first_name..' '
-if selvayt.result.username then
-apapiy = ' '..selvayt.result.username..' '
-else
-apapiy = 'SO_SELVA'
-end
-if selvayt.result.first_name then
-klajq = ' '..selvayt.result.first_name..' '
-else
-klajq = 'لا يوجد'
-end
-local abnj = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..selvayt.result.first_name.." \n"
-keyselvayt = {} 
-keyselvayt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..selvayt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_id.."&photo=t.me/"..selvayt.result.username.."&caption="..URL.escape(abnj).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyselvayt))
-local TestT = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..selvayt.result.first_name.." \n"
-keyboardd = {} 
-keyselvayt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..selvayt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
-end
 if text == 'المطور' or text == 'مطور البوت' or text == 'مطور' then   
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
@@ -13985,40 +13950,6 @@ end
  echo '*⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n*⌯  { مـده تـشغيـل الـسـيـرفـر } ⊰• \n*↵↵ '"$uptime"'*'
  ]]):read('*all')
 LuaTele.sendText(msg_chat_id,msg_id,ioserver,"md",true)
-end
-if text == '𓄼 المساعد 𓄹' or text == '𓄼 مساعد 𓄹' or text == 'المساعد' or text == 'مساعد' then   
-local id = Redis:get(Timo.."id:selva:Groups")
-urrl = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..id)
-local banyt = JSON.decode(urrl)
-local name = ' '..banyt.result.first_name..' '
-if banyt.result.username then
-apapiy = ' '..banyt.result.username..' '
-else
-apapiy = 'SO_SELVA'
-end
-if banyt.result.first_name then
-klajq = ' '..banyt.result.first_name..' '
-else
-klajq = 'لا يوجد'
-end
-local abnj = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..banyt.result.first_name.." \n"
-keybanyt = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..msg_id.."&photo=t.me/"..banyt.result.username.."&caption="..URL.escape(abnj).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keybanyt))
-local abnj = " \n*⌯ ɴᴀᴍᴇ ⇜ * "..banyt.result.first_name.." \n"
-keyboardd = {} 
-keybanyt.inline_keyboard = {
-{
-{text = name, url = "https://t.me/"..banyt.result.username..""},
-},
-}
-local msg_id = msg.id/2097152/0.5 
- https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestT).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 end
 if text == 'المطور' or text == 'مطور' then   
 local  selva = LuaTele.getUser(Sudo_Id) 
