@@ -2657,124 +2657,6 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك ف
 end
 Redis:set(Timo..'Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
 LuaTele.sendText(msg_chat_id,msg_id,'* ⌯  تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *',"md",true)  
-elseif text == 'الاحصائيات' or text == '𓄼 الاحصائيات 𓄹' then
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
-end
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
-local photo = LuaTele.getUserProfilePhotos(Timo)
-local UserInfo = LuaTele.getUser(Timo)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
-Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
-if photo.total_count > 0 then
-local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
-local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
-local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = selva, url = 't.me/SO_SELVA'}, 
-},
-{
-{text = Grosupsw, url = 't.me/SO_SELVA'}, 
-},
-{
-{text = Usperos, url = 't.me/SO_SELVA'}, 
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-elseif text == 'الجروبات' or text == '𓄼 الجروبات 𓄹' then
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
-end
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
-local photo = LuaTele.getUserProfilePhotos(Timo)
-local UserInfo = LuaTele.getUser(Timo)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
-Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
-if photo.total_count > 0 then
-local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
-local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = selva, url = 't.me/SO_SELVA'}, 
-},
-{
-{text = Grosupsw, url = 't.me/SO_SELVA'}, 
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-elseif text == 'المشتركين' or text == '𓄼 المشتركين 𓄹' then
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
-end
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
-local photo = LuaTele.getUserProfilePhotos(Timo)
-local UserInfo = LuaTele.getUser(Timo)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
-Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
-if photo.total_count > 0 then
-local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
-local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = selva, url = 't.me/SO_SELVA'}, 
-},
-{
-{text = Usperos, url = 't.me/SO_SELVA'}, 
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-end
-if text == "𓄼 جلب التوكن 𓄹" then 
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
-end
-return LuaTele.sendText(msg_chat_id,msg_id,Token,"html",true)  
 end
 if text == 'تفعيل' and msg.Developers then
 if msg.can_be_deleted_for_all_users == false then
@@ -4868,7 +4750,7 @@ end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "http://t.me/SO_SELVA"}, },}}
+data = {{{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒??𝐥𝐯𝐚', url = "http://t.me/SO_SELVA"}, },}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'البقرات' or text == 'تاك للبقرات' then
@@ -9274,7 +9156,7 @@ local list = Redis:smembers(Timo.."List:Filter"..msg_chat_id)
 if #list == 0 then  
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ لا يوجد كلمات ممنوعه هنا *","md",true)   
 end  
-Filter = '\n* ⌯ قائمه المنع \n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
+Filter = '\n* ⌯ قائمه المنع \n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯??•𓄹⊷┉┉┉⊰*\n'
 for k,v in pairs(list) do  
 print(v)
 if v:match('photo:(.*)') then
@@ -11648,6 +11530,118 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
+elseif text == 'الاحصائيات' or text == '𓄼 الاحصائيات 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+if photo.total_count > 0 then
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
+local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
+{
+{text = selva, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Grosupsw, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Usperos, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+elseif text == 'الجروبات' or text == '𓄼 الجروبات 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+if photo.total_count > 0 then
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
+{
+{text = selva, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Grosupsw, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+elseif text == 'المشتركين' or text == '𓄼 المشتركين 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+if photo.total_count > 0 then
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
+{
+{text = selva, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Usperos, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 local user_info = LuaTele.getUser(msg.sender.user_id)
@@ -13855,7 +13849,119 @@ if text == "جلب التوكن" or text == "𓄼 جلب التوكن 𓄹" then
   return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
   end
   return LuaTele.sendText(msg_chat_id,msg_id,Token,"html",true)  
-  end
+elseif text == 'الاحصائيات' or text == '𓄼 الاحصائيات 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+if photo.total_count > 0 then
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
+local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
+{
+{text = selva, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Grosupsw, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Usperos, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+elseif text == 'الجروبات' or text == '𓄼 الجروبات 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+if photo.total_count > 0 then
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
+{
+{text = selva, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Grosupsw, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+elseif text == 'المشتركين' or text == '𓄼 المشتركين 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
+if photo.total_count > 0 then
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
+{
+{text = selva, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Usperos, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end  
 if text == 'السيرفر' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص⦗ '..Controller_Num(1)..' ⦘* ',"md",true)  
