@@ -14650,7 +14650,7 @@ if tonumber(IdUser) == tonumber(UserId) then
 local photo = LuaTele.getUserProfilePhotos(IdUser)
 local selva = LuaTele.getUser(IdUser)
 if photo.total_count > 1 then
-local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
