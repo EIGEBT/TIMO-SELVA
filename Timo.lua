@@ -2454,11 +2454,11 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
-Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
+NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
 if photo.total_count > 0 then
-local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local selvaaa = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
 keyboard = {} 
@@ -2467,7 +2467,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SO_SELVA"}
 },
 {
-{text = selva, url = 't.me/SO_SELVA'}, 
+{text = selvaaa, url = 't.me/SO_SELVA'}, 
 },
 {
 {text = Grosupsw, url = 't.me/SO_SELVA'}, 
@@ -2498,7 +2498,7 @@ NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
-local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local selvaaa = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -2506,7 +2506,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SO_SELVA"}
 },
 {
-{text = selva, url = 't.me/SO_SELVA'}, 
+{text = selvaaa, url = 't.me/SO_SELVA'}, 
 },
 {
 {text = Grosupsw, url = 't.me/SO_SELVA'}, 
@@ -2534,7 +2534,7 @@ NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
-local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local selvaaa = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -2542,7 +2542,7 @@ keyboard.inline_keyboard = {
 {text =first_name, url = "https://t.me/SO_SELVA"}
 },
 {
-{text = selva, url = 't.me/SO_SELVA'}, 
+{text = selvaaa, url = 't.me/SO_SELVA'}, 
 },
 {
 {text = Usperos, url = 't.me/SO_SELVA'}, 
