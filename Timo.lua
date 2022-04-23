@@ -2265,10 +2265,10 @@ if Redis:get(Timo.."Game:Difference"..msg.chat_id) then
 if text == Redis:get(Timo.."Game:Difference"..msg.chat_id) then 
 Redis:del(Timo.."Game:Difference"..msg.chat_id)
 Redis:incrby(Timo.."Num:Add:Games"..msg.chat_id..msg.sender.user_id, 1)  
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد فزت في اللعبه \n ⌯ اللعب مره اخره وارسل - المختلف","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ لقد فزت في اللعبه \n⌯ اللعب مره اخره وارسل - المختلف","md",true)  
 else
 Redis:del(Timo.."Game:Difference"..msg.chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⌯ لقد خسرت حضا اوفر في المره القادمه\n ⌯ اللعب مره اخره وارسل - المختلف","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n⌯ لقد خسرت حضا اوفر في المره القادمه\n⌯ اللعب مره اخره وارسل - المختلف","md",true)  
 end
 end
 if Redis:get(Timo.."Game:Example"..msg.chat_id) then
@@ -3419,7 +3419,7 @@ end
 end
 if UserName[1] == "مميز" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(7)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ?? '..Controller_Num(7)..' 𓄹* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
@@ -13399,30 +13399,30 @@ Redis:set(Timo.."Game:Difference"..msg.chat_id,name)
 name = string.gsub(name,"😸","😹😹😹😹😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠💀💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻👻👻👻👻👻")
-name = string.gsub(name,"🐇","🕊??🕊🕊🕊🐇🕊🕊🕊🕊")
+name = string.gsub(name,"🐇","🕊🕊🕊🕊🕊🐇🕊🕊🕊🕊")
 name = string.gsub(name,"🌑","🌚🌚🌚🌚🌚🌑🌚🌚🌚")
 name = string.gsub(name,"🌚","🌑🌑🌑🌑🌑🌚🌑🌑🌑")
-name = string.gsub(name,"⭐️","??🌟🌟🌟🌟🌟🌟🌟⭐️🌟🌟🌟")
-name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫??")
+name = string.gsub(name,"⭐️","🌟🌟🌟🌟🌟🌟🌟🌟⭐️🌟🌟🌟")
+name = string.gsub(name,"✨","💫💫💫💫💫✨💫💫💫💫")
 name = string.gsub(name,"⛈","🌨🌨🌨🌨🌨⛈🌨🌨🌨🌨")
 name = string.gsub(name,"🌥","⛅️⛅️⛅️⛅️⛅️⛅️🌥⛅️⛅️⛅️⛅️")
 name = string.gsub(name,"⛄️","☃☃☃☃☃☃⛄️☃☃☃☃")
-name = string.gsub(name,"👨‍🔬","??‍??👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍🔬👩‍🔬")
-name = string.gsub(name,"👨‍💻","👩‍💻👩‍‍💻👩‍‍💻👨‍💻💻👩‍💻👩‍💻")
+name = string.gsub(name,"👨‍🔬","👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👩‍🔬👨‍🔬👩‍🔬👩‍🔬👩‍🔬")
+name = string.gsub(name,"👨‍💻","👩‍💻👩‍??👩‍‍💻👩‍‍??👩‍‍💻👨‍💻??‍💻👩‍💻👩‍💻")
 name = string.gsub(name,"👨‍🔧","👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👩‍🔧👨‍🔧👩‍🔧")
-name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍🍳??‍🍳👩‍🍳👨‍🍳👨‍🍳👨‍🍳")
+name = string.gsub(name,"👩‍🍳","👨‍🍳👨‍🍳👨‍🍳👨‍🍳👨‍🍳👩‍🍳👨‍🍳👨‍🍳👨‍🍳")
 name = string.gsub(name,"🧚‍♀","🧚‍♂🧚‍♂🧚‍♂🧚‍♂🧚‍♀🧚‍♂🧚‍♂")
 name = string.gsub(name,"🧜‍♂","🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧜‍♀🧚‍♂🧜‍♀🧜‍♀🧜‍♀")
-name = string.gsub(name,"🧝‍♂","🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♂??‍♀🧝‍♀🧝‍♀")
+name = string.gsub(name,"??‍♂","🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝‍♂🧝‍♀🧝‍♀🧝‍♀")
 name = string.gsub(name,"🙍‍♂️","🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙍‍♂️🙎‍♂️🙎‍♂️🙎‍♂️")
-name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️♀️🧖‍♀️🧖‍♀️🧖‍♂️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️")
-name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭👭")
-name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧👨‍??‍👦??‍👨‍👦")
-name = string.gsub(name,"??","??🕒🕒🕒🕒🕒🕓🕒🕒🕒")
+name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️??‍♀️🧖‍♀️🧖‍♀️🧖‍♂️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️")
+name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭??")
+name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧👨‍👨‍👦👨‍👨‍👦")
+name = string.gsub(name,"🕒","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
 name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
-name = string.gsub(name,"??","📆📆📆📆📆📆📅📆📆")
-return LuaTele.sendText(msg_chat_id,msg_id," ⌯ اسرع واحد يدز الاختلاف ~ 𓄼 "..name.." 𓄹","md",true)  
+name = string.gsub(name,"📅","📆📆📆📆📆📆📅📆📆")
+return LuaTele.sendText(msg_chat_id,msg_id,"⌯ اسرع واحد يدز الاختلاف ~ {"..name.."}","md",true)  
 end
 end
 if text == "امثله" then
@@ -13519,10 +13519,10 @@ end
 
 if text == 'ترتيب الاوامر' then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
@@ -13533,16 +13533,42 @@ Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع �
 Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
 Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
 Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تنزيل الكل')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','الردود')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','تفعيل ردود السورس')
+Redis:set(Timo.."Get:Reides:Commands:Group"..msg_chat_id..":"..'ردي','تعطيل ردود السورس')
+
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
-تم ترتيب الاوامر بالشكل التالي ⌯ 
-𓄼 ايدي = ا 𓄹
-𓄼 مميز = م 𓄹
-𓄼 ادمن = اد 𓄹
-𓄼 مدير = مد 𓄹
-𓄼 منشى = من 𓄹
-𓄼 المنشئ الاساسي = اس 𓄹
-𓄼 تعطيل الايدي بالصوره = تعط 𓄹
-𓄼 تفعيل الايدي بالصوره = تفع 𓄹
+⌯ تم ترتيب الاوامر بالشكل التالي ~
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⌯  ايدي - ا .
+⌯  رفع مميز - م .
+⌯ رفع ادمن - اد .
+⌯  رفع مدير - مد . 
+⌯  رفع منشى - من . 
+⌯  رفع منشئ الاساسي - اس  .
+⌯  رفع مطور - مط .
+⌯ رفع مطور ثانوي - ثانوي .
+⌯  تنزيل الكل - تك .
+⌯  تعطيل الايدي بالصوره - تعط .
+⌯  تفعيل الايدي بالصوره - تفع .
+⌯  الرابط - ر .
+⌯  الردود - رر .
+⌯  مسح المكتومين - ،، .
+⌯  اضف رد - رد .
+⌯  مسح سحكاتي - سح .
+⌯  مسح رسائلي - رس .
+⌯  غنيلي - غ .
+⌯. تعطيل ردود السورس - ردي .
+⌯.تفعيل ردود السورس - رد .
 *]],"md")
 end
 
