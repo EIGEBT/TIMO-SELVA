@@ -2458,22 +2458,22 @@ NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
 if photo.total_count > 0 then
-local selvaaa = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text =first_name, url = "https://t.me/SO_SELVA"}
+{text =first_name, url = "https://t.me/SU_SELVA"}
 },
 {
-{text = selvaaa, url = 't.me/SO_SELVA'}, 
+{text = selva, url = 't.me/SU_SELVA'}, 
 },
 {
-{text = Grosupsw, url = 't.me/SO_SELVA'}, 
+{text = Grosupsw, url = 't.me/SU_SELVA'}, 
 },
 {
-{text = Usperos, url = 't.me/SO_SELVA'}, 
+{text = Usperos, url = 't.me/SU_SELVA'}, 
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -2482,7 +2482,7 @@ keyboard.inline_keyboard = {
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-elseif text == 'الجروبات' or text == '𓄼 الجروبات 𓄹' then
+if text == 'الجروبات' or text == '𓄼 الجروبات 𓄹' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
@@ -2518,7 +2518,7 @@ keyboard.inline_keyboard = {
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-elseif text == 'المشتركين' or text == '𓄼 المشتركين 𓄹' then
+if text == 'المشتركين' or text == '𓄼 المشتركين 𓄹' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
 end
