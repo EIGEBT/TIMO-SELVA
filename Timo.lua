@@ -2567,9 +2567,6 @@ data = {
 {text = '𓄼• قفل جميع الاوامر •𓄹', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
 },
 {
-{text = '- تفعيل الحمايه ', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},{text = '- تعطيل الحمايه ', data =msg.sender.user_id..'/OPENAllGroup@'..msg_chat_id},
-},
-{
 {text = '𓄼• فتح جميع الاوامر •𓄹', data =msg.sender.user_id..'/openorders@'..msg_chat_id},
 },
 {
@@ -2651,9 +2648,6 @@ data = {
 },
 {
 {text = '𓄼• قفل جميع الاوامر •𓄹', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
-},
-{
-{text = '- تفعيل الحمايه ', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},{text = '- تعطيل الحمايه ', data =msg.sender.user_id..'/OPENAllGroup@'..msg_chat_id},
 },
 {
 {text = '𓄼• فتح جميع الاوامر •𓄹', data =msg.sender.user_id..'/openorders@'..msg_chat_id},
@@ -16572,28 +16566,6 @@ if Text and Text:match('(%d+)/groupNumseteng//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNumseteng//(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
 return GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id)
-end
-end
-if Text and Text:match('(%d+)/LockAllGroup@(.*)') then
-local UserId = {Text:match('(%d+)/LockAllGroup@(.*)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:set(Timo.."Lock:tagservrbot"..UserId[2],true)   
-list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
-for i,lock in pairs(list) do 
-Redis:set(Timo..''..lock..UserId[2],"del")    
-end
-LuaTele.answerCallbackQuery(data.id, "⌯ تم قفل جميع الاوامر بنجاح  ", true)
-end
-end
-if Text and Text:match('(%d+)/OPENAllGroup@(.*)') then
-local UserId = {Text:match('(%d+)/OPENAllGroup@(.*)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:del(Timo.."Lock:tagservrbot"..UserId[2],true)   
-list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
-for i,lock in pairs(list) do 
-Redis:del(Timo..''..lock..UserId[2],"del")    
-end
-LuaTele.answerCallbackQuery(data.id, "⌯ تم قفل جميع الاوامر بنجاح  ", true)
 end
 end
 if Text and Text:match('(%d+)/groupNum1//(%d+)') then
