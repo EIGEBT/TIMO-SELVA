@@ -2790,8 +2790,8 @@ if photo.total_count > 0 then
 local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
-local mahz = 'المحظورين عام' = 𓄼 '..banalls..' 𓄹'
-local meso = 'المكتومين عام' = 𓄼 '..makto..' 𓄹'
+local mahz = 'المحظورين عام = 𓄼 '..banalls..' 𓄹'
+local meso = 'المكتومين عام = 𓄼 '..makto..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
