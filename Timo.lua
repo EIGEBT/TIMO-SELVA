@@ -2769,6 +2769,56 @@ keyboard.inline_keyboard = {
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
+elseif text == 'الاحصائيات' or text == '𓄼 الاحصائيات 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local UserInfo = LuaTele.getUser(Timo)
+for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
+UserInfo.first_name = Name_User
+break
+end 
+NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
+Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
+banalls = (Redis:smembers(Timo.."banalll:Groups") or 0) 
+makto = (Redis:smembers(Timo.."ktmAll:Groups") or 0)
+if photo.total_count > 0 then
+local selva = 'اسم بوت = 𓄼 '..NamesBot..' 𓄹'
+local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
+local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
+local mahz = 'المحظورين عام' = 𓄼 '..banalls..' 𓄹'
+local meso = 'المكتومين عام' = 𓄼 '..makto..' 𓄹'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text =first_name, url = "https://t.me/SO_SELVA"}
+},
+{
+{text = selva, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Grosupsw, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = Usperos, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = mahz, url = 't.me/SO_SELVA'},
+},
+{
+{text = meso, url = 't.me/SO_SELVA'},
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
 end
 if text == 'تفعيل' and msg.Developers then
 if msg.can_be_deleted_for_all_users == false then
@@ -5069,7 +5119,7 @@ end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '𝚂𝙾??𝚁𝙲𝙴 𝙱𝙾𝙳𝚈', url = "http://t.me/SO_SELVA"}, },}}
+data = {{{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "http://t.me/SO_SELVA"}, },}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 -----------تسلية-------
@@ -5081,7 +5131,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Timo.."selva:Groups") 
+local Info_Members = Redis:smembers(Timo.."banalll:Groups") 
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ لا يوجد محظورين عام في البوت *","md",true)  
 end
@@ -5096,7 +5146,7 @@ end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '⌯ مسح المحظورين عام ⌯', data = msg.sender.user_id..'/selvaAll'},},}}
+data = {{{text = '⌯ مسح المحظورين عام ⌯', data = msg.sender.user_id..'/Redisa'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'المكتومين عام' then
@@ -10518,11 +10568,11 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Timo.."selva:Groups") 
+local Info_Members = Redis:smembers(Timo.."banalll:Groups") 
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ لا يوجد محظورين عام في البوت ","md",true)  
 end
-Redis:del(Timo.."selva:Groups") 
+Redis:del(Timo.."Redisa:Groups") 
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ تم مسح 𓄼 "..#Info_Members.." 𓄹 من المحظورين عام *","md",true)
 end
 if TextMsg == 'المكتومين عام' then
@@ -14749,7 +14799,7 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-local Info_Members = Redis:smembers(Timo.."BanAll:Groups") 
+local Info_Members = Redis:smembers(Timo.."banalll:Groups") 
 if #Info_Members == 0 then
 return LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ لا يوجد محظورين عام في البوت *","md",true)  
 end
@@ -14765,7 +14815,7 @@ end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '⌯ مسح المحظورين عام ⌯', data = msg.sender.user_id..'/selvaAll'},},}}
+data = {{{text = '⌯ مسح المحظورين عام ⌯', data = msg.sender.user_id..'/Redisa'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == '𓄼 المطورين 𓄹' then
