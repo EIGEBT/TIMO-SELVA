@@ -7256,6 +7256,48 @@ data = {
 LuaTele.sendText(Sudo_Id,0,'*\n⌯ مرحبا سيدي المطور \n⌯ شخص ما يحتاج الي مساعده\n⌯ اسمه ⇜ '..klajq..' \n⌯ ايديه ⇜ '..msg.sender.user_id..'\n⌯ معرفة ⇜ '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 
+if text == "صورتي" then
+if Redis:get(Timo.."Status:photo"..msg.chat_id) then
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
+local selva = LuaTele.getUser(msg.sender.user_id)
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+if photo.total_count > 0 then
+data = {} 
+data.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data = msg.sender.user_id..'/selva88'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹', callback_data= msg.sender.user_id..'/selva1'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
+end
+
+if text == "تست" then
+if Redis:get(Timo.."Status:photo"..msg.chat_id) then
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
+local selva = LuaTele.getUser(msg.sender.user_id)
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+if photo.total_count > 0 then
+data = {} 
+data.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data = msg.sender.user_id..'/selva88'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹', callback_data= msg.sender.user_id..'/selva89'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
+end
+
 if text == 'كشف البوتات' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
@@ -14997,6 +15039,212 @@ Redis:set(Timo.."Set:Rd"..IdUser..":"..ChatId,true)
 LuaTele.editMessageText(ChatId,Msg_id," ⌯  ارسل لي الرد الان", 'md', true)
 end
 end
+if Text and Text:match('(%d+)/selva0') then
+local UserId = Text:match('(%d+)/selva0')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 0 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva1'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+if Text and Text:match('(%d+)/selva89') then
+local UserId = Text:match('(%d+)/selva89')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+if photo.total_count > 1 then
+GH = '* '..photo.photos[2].sizes[#photo.photos[1].sizes].photo.remote.id..'* '
+selva = JSON.encode(GH)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+}
+https.request("https://api.telegram.org/bot"..Token.."/editMessageMedia?chat_id="..ChatId.."&reply_to_message_id=0&media="..selva.."&caption=".. URL.escape(selva_ns).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+if Text and Text:match('(%d+)/selva1') then
+local UserId = Text:match('(%d+)/selva1')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 1 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva2'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/selva0'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[2].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+if Text and Text:match('(%d+)/selva2') then
+local UserId = Text:match('(%d+)/selva2')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 1 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva3'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/selva1'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[3].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+if Text and Text:match('(%d+)/selva3') then
+local UserId = Text:match('(%d+)/selva3')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 1 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva4'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/selva2'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[4].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+if Text and Text:match('(%d+)/selva4') then
+local UserId = Text:match('(%d+)/selva4')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 1 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva5'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/selva3'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[5].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+if Text and Text:match('(%d+)/selva5') then
+local UserId = Text:match('(%d+)/selva5')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 1 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva6'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/selva4'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[6].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+if Text and Text:match('(%d+)/selva6') then
+local UserId = Text:match('(%d+)/selva6')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 1 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva7'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/selva5'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[7].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+
+if Text and Text:match('(%d+)/selva7') then
+local UserId = Text:match('(%d+)/selva7')
+if tonumber(IdUser) == tonumber(UserId) then
+local photo = LuaTele.getUserProfilePhotos(IdUser)
+local selva = LuaTele.getUser(IdUser)
+if photo.total_count > 1 then
+local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+},
+{
+{text = '𓄼 صورتك السابقه 𓄹 ', callback_data =IdUser..'/selva0'}, 
+},
+}
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ChatId .. "&photo="..photo.photos[8].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(selva_ns).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+else
+return LuaTele.sendText(ChatId,Msg_id,'*⌯ لا توجد صوره ف حسابك*',"md",true) 
+end
+end
+end
+
 if Text and Text:match('/Mahibes(%d+)') then
 local GetMahibes = Text:match('/Mahibes(%d+)') 
 local NumMahibes = math.random(1,6)
@@ -16168,7 +16416,7 @@ data = {
 {text = ' 𓄼 ❺ 𓄹', data = IdUser..'/listallAddorrem'}, {text = ' 𓄼 ❻ 𓄹', data = IdUser..'/NoNextSeting'}, 
 },
 {
-{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
+{text = '𝐒𝐨𝐮𝐫𝐜𝐞 ??𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
 },
 }
 }
