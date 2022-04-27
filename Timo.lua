@@ -11840,7 +11840,6 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
 https://t.me/SO_SELVA
 *]],"md",false, false, false, false, reply_markup)
-*]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص⦗ '..Controller_Num(7)..' ⦘* ',"md",true)  
