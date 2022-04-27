@@ -13595,81 +13595,79 @@ LuaTele.sendText(msg_chat_id,msg_id, "* ⌯ تم تحديث الملفات *","m
 dofile('Timo.lua')  
 end
 if text == '/start' then
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local selva = LuaTele.getUser(Timo)
+local bain = LuaTele.getUser(msg.sender.user_id)
 Redis:sadd(Timo..'Num:User:Pv',msg.sender.user_id)  
-if not msg.DevelopersQ then
-if not Redis:get(Timo.."start:Bot") then
-local CmdStart = '*\n ● أهلا بك في بوت '..(Redis:get(Timo.."Name:Bot") or "ميزو")..
-'\n ● اختصاص البوت حماية المجموعات'..
-'\n ● لتفعيل البوت عليك اتباع مايلي'..
-'\n ● اضف البوت الى مجموعتك'..
-'\n ● ارفعه ادمن مشرف'..
-'\n ● ارسل كلمة تفعيل ليتم تفعيل المجموعه'..
-'\n ● مطور البوت ←𓆩 @'..UserSudo..' 𓆪*'
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
-data = {
-{
-{text = 'المطور',type = 'text'},
-},
-{
-{text = 'رتبتي',type = 'text'},{text = 'اسمي',type = 'text'},
-},
-{
-{text = 'ايديي',type = 'text'},{text = 'يوزري',type = 'text'},
-},
-{
-{text = 'بايو',type = 'text'},
-},
-{
-{text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
-},
-{
-{text = 'تويت بالصور',type = 'text'},{text = 'لو خيروك بالصور', type = 'text'},
-},
-{
-{text = 'صور ولاد',type = 'text'},{text = 'صور بنات',type = 'text'},
-},
-{
-{text = 'استوري',type = 'text'},{text = 'غنيلي',type = 'text'},
-},
-{
-{text = 'متحركه',type = 'text'},{text = 'رومانسي',type = 'text'},
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
+if not msg.ControllerBot then
+if not Redis:get(Timo.."Start:Bot") then
+if bain.username then
+selvausername = '[@'..bain.username..']'
 else
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+selvausername = 'لا يوجد'
+end
+if bain.first_name then
+selvaiusername = '*['..bain.first_name..'](tg://user?id='..bain.id..')*'
+else
+selvaiusername = 'لا يوجد'
+end
+local CmdStart = '*\n 🤖 ╖اهلا انا بوت اسمي '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
+'\n 👻╢ وظيفتي حماية المجموعات'..
+'\n ♻️╢ لتفعيل البوت عليك اتباع مايلي'.. 
+'\n ➕╢ أضِف البوت إلى مجموعتك..'..
+'\n 🦸🏻‍♂️╢ ارفعهُ » مشرف'..
+'\n ♻️╢  سيتم ترقيتك مالك في البوت'..
+'\n 💻╜ مـطـور الـبــوت𓄼 @'..UserSudo..' 𓄹*'
+if photo.total_count > 0 then
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
+},
+{
+{text = '𓄼•تـيـتـو•𓄹', url = "https://t.me/XXX_xx_XXX0"},{text = '𓄼•لـيـدو•𓄹', url = "https://t.me/J0KER7x"}
+}, 
+{
+{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
+},
+{
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
+},
+{
+{text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+LuaTele.sendText(Sudo_Id,0,'*\n دخل شخص إلى البوت \n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n اسمه :- '..selvaiusername..' \n ايديه :-  : '..msg.sender.user_id..'\n - معرفة '..selvausername..' \n*',"md")
+else
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
 data = {
 {
-{text = 'المطور',type = 'text'},
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = 'رتبتي',type = 'text'},{text = 'اسمي',type = 'text'},
+{text = '𓄼•تـيـتـو•𓄹', url = "https://t.me/XXX_xx_XXX0"},{text = '𓄼•لـيـدو•𓄹', url = "https://t.me/J0KER7x"}
+}, 
+{
+{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
 },
 {
-{text = 'ايديي',type = 'text'},{text = 'يوزري',type = 'text'},
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
-{text = 'بايو',type = 'text'},
+{text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
-},
-{
-{text = 'تويت بالصور',type = 'text'},{text = 'لو خيروك بالصور', type = 'text'},
-},
-{
-{text = 'صور ولاد',type = 'text'},{text = 'صور بنات',type = 'text'},
-},
-{
-{text = 'استوري',type = 'text'},{text = 'غنيلي',type = 'text'},
-},
-{
-{text = 'متحركه',type = 'text'},{text = 'رومانسي',type = 'text'},
+{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(VAN.."VAN:Start:Bot"),"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Timo.."Start:Bot"),"md",false, false, false, false, reply_markup)
 end
 end
 else
@@ -13884,6 +13882,83 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر اضف', 'md', false, false, false, false, reply_markup)
+end
+if text == '/selva' then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender.user_id)  
+if not msg.DevelopersQ then
+if not Redis:get(Timo.."selva:Bot") then
+local CmdStart = '*\n ● أهلا بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
+'\n ● اختصاص البوت حماية المجموعات'..
+'\n ● لتفعيل البوت عليك اتباع مايلي'..
+'\n ● اضف البوت الى مجموعتك'..
+'\n ● ارفعه ادمن مشرف'..
+'\n ● ارسل كلمة تفعيل ليتم تفعيل المجموعه'..
+'\n ● مطور البوت ←𓆩 @'..UserSudo..' 𓆪*'
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'المطور',type = 'text'},
+},
+{
+{text = 'رتبتي',type = 'text'},{text = 'اسمي',type = 'text'},
+},
+{
+{text = 'ايديي',type = 'text'},{text = 'يوزري',type = 'text'},
+},
+{
+{text = 'بايو',type = 'text'},
+},
+{
+{text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
+},
+{
+{text = 'تويت بالصور',type = 'text'},{text = 'لو خيروك بالصور', type = 'text'},
+},
+{
+{text = 'صور ولاد',type = 'text'},{text = 'صور بنات',type = 'text'},
+},
+{
+{text = 'استوري',type = 'text'},{text = 'غنيلي',type = 'text'},
+},
+{
+{text = 'متحركه',type = 'text'},{text = 'رومانسي',type = 'text'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
+else
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'المطور',type = 'text'},
+},
+{
+{text = 'رتبتي',type = 'text'},{text = 'اسمي',type = 'text'},
+},
+{
+{text = 'ايديي',type = 'text'},{text = 'يوزري',type = 'text'},
+},
+{
+{text = 'بايو',type = 'text'},
+},
+{
+{text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
+},
+{
+{text = 'تويت بالصور',type = 'text'},{text = 'لو خيروك بالصور', type = 'text'},
+},
+{
+{text = 'صور ولاد',type = 'text'},{text = 'صور بنات',type = 'text'},
+},
+{
+{text = 'استوري',type = 'text'},{text = 'غنيلي',type = 'text'},
+},
+{
+{text = 'متحركه',type = 'text'},{text = 'رومانسي',type = 'text'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(VAN.."VAN:Start:Bot"),"md",false, false, false, false, reply_markup)
 end
 if text == "جلب التوكن" or text == "𓄼 جلب التوكن 𓄹" then    
   if not msg.ControllerBot then 
