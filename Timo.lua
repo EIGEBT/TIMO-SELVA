@@ -11637,8 +11637,6 @@ UserInfousername = '@'..ban.username..''
 else
 UserInfousername = 'لا يوجد'
 end
-local selvaa = {'〈 جمالك ده طبيعي يولا 🙈💗 〉',"〈 غير بقاا صورتك يا قمر 😻💖 〉 ","〈 يخرشي علي العسل ده 🥺💔 〉","〈 صورتك ولا صورت القمر 🌙💕 〉","〈 صورتك عثل ينوحيي 🙈?? 〉",}
-local mostafa = Texting[math.random(#selvaa)]
 local UserId = msg.sender.user_id
 local RinkBot = msg.Name_Controller
 local TotalMsg = Redis:get(Mezo..'Num:Message:User'..msg_chat_id..':'..msg.sender.user_id) or 0
@@ -11680,7 +11678,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
-  ╭───── •⌯• ─────╮
+╭───── •⌯• ─────╮
 [𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](http://t.me/SO_SELVA)
 
 [𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
@@ -11688,7 +11686,7 @@ local T =[[
 [𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
 
 [𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
-  ╰───── • ⌯ • ─────╯
+╰───── • ⌯ • ─────╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11819,13 +11817,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'اوامر المطورين 🔰', data = msg.sender.user_id..'/help1'}, {text = 'اوامر التسليه 🎉', data = msg.sender.user_id..'/help2'}, 
+{text = '𓄼•❶•𓄹 ', data = msg.sender.user_id..'/help1'}, {text = '𓄼•❷•𓄹 ', data = msg.sender.user_id..'/help2'}, 
 },
 {
-{text = 'اوامر الاعضاء 🤷', data = msg.sender.user_id..'/help3'}, {text = 'اوامر المسح ♻️', data = msg.sender.user_id..'/help4'}, 
+{text = '𓄼•❸•𓄹 ', data = msg.sender.user_id..'/help3'}, {text = '𓄼•❹•𓄹 ', data = msg.sender.user_id..'/help4'}, 
 },
 {
-{text = 'التفعيل والتعطيل ⚙', data = msg.sender.user_id..'/listallAddorrem'}, {text = 'الفتح والقفل 🔓', data = msg.sender.user_id..'/NoNextSeting'}, 
+{text = '𓄼•❺•𓄹 ', data = msg.sender.user_id..'/listallAddorrem'}, {text = '𓄼•❻•𓄹 ', data = msg.sender.user_id..'/NoNextSeting'}, 
 },
 {
 {text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
@@ -11833,9 +11831,15 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
-مـرحـبـا بـك 🔍
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
-فـي قـائـمـه الاوامـر 🔏
+╗•❶• ‹ اوامر المطورين ›
+╣•❷• ‹ اوامر التسليه ›
+╣•❸• ‹ اوامر الاعضاء ›
+╣•❹• ‹ اوامر المسح ›
+╣•❺• ‹ اوامر التفعيل والتعطيل ›
+╝•❻• ‹ اوامر الفتح والقفل ›
+𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
+https://t.me/SO_SELVA
+*]],"md",false, false, false, false, reply_markup)
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
@@ -13770,6 +13774,9 @@ end
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
+{text = 'المطور',type = 'text'},
+},
+{
 {text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
 },
 {
@@ -13800,7 +13807,7 @@ data = {
 {text = '𓄼 مطورين السورس 𓄹',type = 'text'},
 },
 {
-{text = '𓄼 تغيير اسم البوت 𓄹',type = 'text'},{text = '𓄼 حذف اسم البوت 𓄹', type = 'text'},
+{text = '𓄼 اوامر البوت 𓄹',type = 'text'},
 },
 {
 {text = '𓄼 الاحصائيات 𓄹',type = 'text'},
@@ -14073,7 +14080,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
-  ╭───── •⌯• ─────╮
+╭───── •⌯• ─────╮
 [𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](http://t.me/SO_SELVA)
 
 [𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
@@ -14081,7 +14088,7 @@ local T =[[
 [𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
 
 [𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
-  ╰───── • ⌯ • ─────╯
+╰───── • ⌯ • ─────╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -15882,7 +15889,7 @@ data = {
 {text = ' اوامر المطور الاساسي 🛡', data = IdUser..'/helpo3'}, 
 },
 {
-{text = 'القائمه الرئيسيه 🚦', data = IdUser..'/helpall'}, 
+{text = 'القائمه الرئيسيه', data = IdUser..'/helpall'}, 
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
@@ -15907,7 +15914,7 @@ data = {
 {text = ' اوامر المطور الاساسي 🛡', data = IdUser..'/helpo3'}, 
 },
 {
-{text = 'القائمه الرئيسيه 🚦', data = IdUser..'/helpall'}, 
+{text = 'القائمه الرئيسيه', data = IdUser..'/helpall'}, 
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
@@ -15976,7 +15983,7 @@ data = {
 {text = ' اوامر المطور الاساسي 🛡', data = IdUser..'/helpo3'}, 
 },
 {
-{text = 'القائمه الرئيسيه 🚦', data = IdUser..'/helpall'}, 
+{text = 'القائمه الرئيسيه', data = IdUser..'/helpall'}, 
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
@@ -16034,7 +16041,7 @@ data = {
 {text = ' اوامر المطور الاساسي 🛡', data = IdUser..'/helpo3'}, 
 },
 {
-{text = 'القائمه الرئيسيه 🚦', data = IdUser..'/helpall'}, 
+{text = 'القائمه الرئيسيه', data = IdUser..'/helpall'}, 
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
@@ -16371,23 +16378,26 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'اوامر المطورين 🔰', data = msg.sender.user_id..'/help1'}, {text = 'اوامر التسليه 🎉', data = msg.sender.user_id..'/help2'}, 
+{text = ' 𓄼 ❶ 𓄹', data = IdUser..'/help1'}, {text = ' 𓄼 ❷ 𓄹', data = IdUser..'/help2'}, 
 },
 {
-{text = 'اوامر الاعضاء 🤷', data = msg.sender.user_id..'/help3'}, {text = 'اوامر المسح ♻️', data = msg.sender.user_id..'/help4'}, 
+{text = ' 𓄼 ❸ 𓄹', data = IdUser..'/help3'}, {text = ' 𓄼 ❹ 𓄹', data = IdUser..'/help4'}, 
 },
 {
-{text = 'التفعيل والتعطيل ⚙', data = msg.sender.user_id..'/listallAddorrem'}, {text = 'الفتح والقفل 🔓', data = msg.sender.user_id..'/NoNextSeting'}, 
+{text = ' 𓄼 ❺ 𓄹', data = IdUser..'/listallAddorrem'}, {text = ' 𓄼 ❻ 𓄹', data = IdUser..'/NoNextSeting'}, 
 },
 {
-{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
+{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
 },
 }
 }
 local TextHelp = [[*
-مـرحـبـا بـك 🔍
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
-فـي قـائـمـه الاوامـر 🔏
+╗•❶• ‹ اوامر المطورين ›
+╣•❷• ‹ اوامر التسليه ›
+╣•❸• ‹ اوامر الاعضاء ›
+╣•❹• ‹ اوامر المسح ›
+╣•❺• ‹ اوامر التفعيل والتعطيل ›
+╝•❻• ‹ اوامر الفتح والقفل ›
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
