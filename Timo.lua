@@ -11680,6 +11680,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
+  ╭───── •⌯• ─────╮
 [𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](http://t.me/SO_SELVA)
 
 [𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
@@ -11687,6 +11688,7 @@ local T =[[
 [𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
 
 [𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
+  ╰───── • ⌯ • ─────╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12351,8 +12353,6 @@ end
 if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
@@ -12378,12 +12378,6 @@ keyboard.inline_keyboard = {
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
 },
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
 }
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -12392,8 +12386,6 @@ end
 if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
@@ -12421,12 +12413,6 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
-},
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -13698,7 +13684,7 @@ data = {
 {text = '𓄼 مطورين السورس 𓄹',type = 'text'},
 },
 {
-{text = '𓄼 تغيير اسم البوت 𓄹',type = 'text'},{text = '𓄼 حذف اسم البوت 𓄹', type = 'text'},
+{text = '𓄼 اوامر البوت 𓄹',type = 'text'},
 },
 {
 {text = '𓄼 الاحصائيات 𓄹',type = 'text'},
@@ -13770,6 +13756,33 @@ data = {
 },
 {
 {text = '𓄼 اذاعه بالتثبيت 𓄹',type = 'text'},
+},
+{
+{text = '𓄼 القائمه الرئيسيه 𓄹',type = 'text'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر الاذاعه', 'md', false, false, false, false, reply_markup)
+elseif text == '𓄼 اوامر البوت 𓄹' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*هاذا الامر يخص⦗ '..Controller_Num(1)..' ⦘* ',"md",true)  
+end
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
+},
+{
+{text = 'تويت بالصور',type = 'text'},{text = 'لو خيروك بالصور', type = 'text'},
+},
+{
+{text = 'صور ولاد',type = 'text'},{text = 'صور بنات',type = 'text'},
+},
+{
+{text = 'استوري',type = 'text'},{text = 'غنيلي',type = 'text'},
+},
+{
+{text = 'متحركه',type = 'text'},{text = 'رومانسي',type = 'text'},
 },
 {
 {text = '𓄼 القائمه الرئيسيه 𓄹',type = 'text'},
@@ -14060,6 +14073,7 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
+  ╭───── •⌯• ─────╮
 [𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](http://t.me/SO_SELVA)
 
 [𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
@@ -14067,6 +14081,7 @@ local T =[[
 [𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
 
 [𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
+  ╰───── • ⌯ • ─────╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -14180,8 +14195,6 @@ end
 if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
@@ -14207,12 +14220,6 @@ keyboard.inline_keyboard = {
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
 },
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
 }
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -14221,8 +14228,6 @@ end
 if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local UserInfo = LuaTele.getUser(Timo)
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
@@ -14250,12 +14255,6 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
-},
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -14303,7 +14302,27 @@ local m = "https://t.me/lo_khyarok/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-
+if text == "متحركه" or text == "المتحركه" then
+local t = "مرحبا اليك المتحركه 🌝💜"
+Rrr = math.random(4,50)
+local m = "https://t.me/moth_so/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
+if text == "صور ولاد" or text == "رمزيات ولاد" or text == "رمزيات شباب" then
+local t = "مرحبا اليك صور شباب 🌝💜"
+Rrr = math.random(4,50)
+local m = "https://t.me/shapap_so/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
+if text == "صور بنات" or text == "رمزيات بنات" then
+local t = "مرحبا اليك صور شباب 🌝💜"
+Rrr = math.random(4,50)
+local m = "https://t.me/banat_so/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
 
 if text == '𓄼 تنظيف المشتركين 𓄹' then
 if not msg.ControllerBot then 
@@ -16361,17 +16380,14 @@ data = {
 {text = 'التفعيل والتعطيل ⚙', data = msg.sender.user_id..'/listallAddorrem'}, {text = 'الفتح والقفل 🔓', data = msg.sender.user_id..'/NoNextSeting'}, 
 },
 {
-{text = '𓄼•𝐒𝐨𝐮𝐫??𝐞 ??𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
+{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
 },
 }
 }
 local TextHelp = [[*
-╗•❶• ‹ اوامر المطورين ›
-╣•❷• ‹ اوامر التسليه ›
-╣•❸• ‹ اوامر الاعضاء ›
-╣•❹• ‹ اوامر المسح ›
-╣•❺• ‹ اوامر التفعيل والتعطيل ›
-╝•❻• ‹ اوامر الفتح والقفل ›
+مـرحـبـا بـك 🔍
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+فـي قـائـمـه الاوامـر 🔏
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
