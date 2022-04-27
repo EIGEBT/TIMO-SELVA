@@ -13883,6 +13883,83 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر اضف', 'md', false, false, false, false, reply_markup)
 end
+if text == '/selva' then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender.user_id)  
+if not msg.DevelopersQ then
+if not Redis:get(Timo.."selva:Bot") then
+local CmdStart = '*\n ● أهلا بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
+'\n ● اختصاص البوت حماية المجموعات'..
+'\n ● لتفعيل البوت عليك اتباع مايلي'..
+'\n ● اضف البوت الى مجموعتك'..
+'\n ● ارفعه ادمن مشرف'..
+'\n ● ارسل كلمة تفعيل ليتم تفعيل المجموعه'..
+'\n ● مطور البوت ←𓆩 @'..UserSudo..' 𓆪*'
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'المطور',type = 'text'},
+},
+{
+{text = 'رتبتي',type = 'text'},{text = 'اسمي',type = 'text'},
+},
+{
+{text = 'ايديي',type = 'text'},{text = 'يوزري',type = 'text'},
+},
+{
+{text = 'بايو',type = 'text'},
+},
+{
+{text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
+},
+{
+{text = 'تويت بالصور',type = 'text'},{text = 'لو خيروك بالصور', type = 'text'},
+},
+{
+{text = 'صور ولاد',type = 'text'},{text = 'صور بنات',type = 'text'},
+},
+{
+{text = 'استوري',type = 'text'},{text = 'غنيلي',type = 'text'},
+},
+{
+{text = 'متحركه',type = 'text'},{text = 'رومانسي',type = 'text'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
+else
+local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'المطور',type = 'text'},
+},
+{
+{text = 'رتبتي',type = 'text'},{text = 'اسمي',type = 'text'},
+},
+{
+{text = 'ايديي',type = 'text'},{text = 'يوزري',type = 'text'},
+},
+{
+{text = 'بايو',type = 'text'},
+},
+{
+{text = 'سورس',type = 'text'},{text = 'بوت', type = 'text'},
+},
+{
+{text = 'تويت بالصور',type = 'text'},{text = 'لو خيروك بالصور', type = 'text'},
+},
+{
+{text = 'صور ولاد',type = 'text'},{text = 'صور بنات',type = 'text'},
+},
+{
+{text = 'استوري',type = 'text'},{text = 'غنيلي',type = 'text'},
+},
+{
+{text = 'متحركه',type = 'text'},{text = 'رومانسي',type = 'text'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(VAN.."VAN:Start:Bot"),"md",false, false, false, false, reply_markup)
+end
 if text == "جلب التوكن" or text == "𓄼 جلب التوكن 𓄹" then    
   if not msg.ControllerBot then 
   return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
@@ -14075,6 +14152,43 @@ end
 end
 end
 
+if text == 'رتبتي' then
+local selva = LuaTele.getUser(msg.sender.user_id)
+local news = '🌝🖤 رتبتك في البوت ⇜ '..msg.Name_Controller
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{{text =news,url = "https://t.me/"..selva.username..""}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
+end
+if text == 'اسمي' then
+local selva = LuaTele.getUser(msg.sender.user_id)
+if selva.first_name then
+news = " `"..selva.first_name.."` "
+else
+news = " لا يوجد"
+end
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{{text = selva.first_name, url = "https://t.me/"..selva.username..""}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, 'اسمك ⇜ '..news, 'md', false, false, false, false, reply_markup)
+end
+if text == "معرفي" or text == "يوزري" then
+local selva = LuaTele.getUser(msg.sender.user_id)
+if selva.username then
+selvausername = '𓄼 @'..selva.username..' 𓄹'
+else
+selvausername = 'لا يوجد'
+end
+return LuaTele.sendText(msg_chat_id,msg_id,selvausername,"md",true) 
+end
+if text == "نبذتي" or text == "البايو" or text == "بايو" then
+local selva = LuaTele.getUser(msg.sender.user_id)
+local news = 'ʙɪᴏ ⇜ '..getbio(msg.sender.user_id)
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{{text =news,url = "https://t.me/"..selva.username..""}, },}}
+return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
+end
+if text == 'ايديي' then
+return LuaTele.sendText(msg_chat_id,msg_id,'\nايديك ⇜ '..msg.sender.user_id,"md",true)  
+end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
@@ -14172,26 +14286,6 @@ keyboard.inline_keyboard = {
 },
 {
 {text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'سيلفا' or text == 'تيم سيلفا' or text == 'تيم' or text == 'التيم' then
-photo = "https://t.me/sorcy/6"
-local Name = '𓄼•ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴛᴇᴀᴍ ѕᴇʟᴠᴀ•𓄹'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼•صـاحـب الـتـيـم•𓄹', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𓄼•بـوت الـتـيـم•𓄹', url = "https://t.me/Timo8Bot"}
-},
-{
-{text = '𓄼•جـروب التـيـم•𓄹', url = "https://t.me/br_selva"},{text = '𓄼•قـنـاه الـتـيـم•𓄹', url = "https://t.me/postat_selva"}
-},
-{
-{text = '𓄼•™ʽ𝐓𝐄𝐀𝐌❲𝑻•𝑺❳𝐒𝐄𝐋𝐕𝐀✘⃟🎌•𓄹', url = "https://t.me/br_selva"}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -14327,43 +14421,6 @@ Rrr = math.random(4,50)
 local m = "https://t.me/banat_so/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
-end
-if text == 'رتبتي' then
-local selva = LuaTele.getUser(msg.sender.user_id)
-local news = '🌝🖤 رتبتك في البوت ⇜ '..msg.Name_Controller
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =news,url = "https://t.me/"..selva.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
-end
-if text == 'اسمي' then
-local selva = LuaTele.getUser(msg.sender.user_id)
-if selva.first_name then
-news = " `"..selva.first_name.."` "
-else
-news = " لا يوجد"
-end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text = selva.first_name, url = "https://t.me/"..selva.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, 'اسمك ⇜ '..news, 'md', false, false, false, false, reply_markup)
-end
-if text == "معرفي" or text == "يوزري" then
-local selva = LuaTele.getUser(msg.sender.user_id)
-if selva.username then
-selvausername = '𓄼 @'..selva.username..' 𓄹'
-else
-selvausername = 'لا يوجد'
-end
-return LuaTele.sendText(msg_chat_id,msg_id,selvausername,"md",true) 
-end
-if text == "نبذتي" or text == "البايو" or text == "بايو" then
-local selva = LuaTele.getUser(msg.sender.user_id)
-local news = 'ʙɪᴏ ⇜ '..getbio(msg.sender.user_id)
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text =news,url = "https://t.me/"..selva.username..""}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
-end
-if text == 'ايديي' then
-return LuaTele.sendText(msg_chat_id,msg_id,'\nايديك ⇜ '..msg.sender.user_id,"md",true)  
 end
 
 if text == '𓄼 تنظيف المشتركين 𓄹' then
@@ -16188,7 +16245,7 @@ local TextHelp = [[*
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼 رفع + تنزيل ⇜ خول 𓄹
 𓄼 تاك للخولات 𓄹
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⊱┉┉┉⊶𓄼•𝐒??𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼 رفع + تنزيل ⇜ حمار 𓄹
 𓄼 تاك للحمير 𓄹
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
@@ -16217,16 +16274,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'اوامر المطورين 🔰', data = msg.sender.user_id..'/help1'}, {text = 'اوامر التسليه 🎉', data = msg.sender.user_id..'/help2'}, 
+{text = ' 𓄼 ❶ 𓄹', data = IdUser..'/help1'}, {text = ' 𓄼 ❷ 𓄹', data = IdUser..'/help2'}, 
 },
 {
-{text = 'اوامر الاعضاء 🤷', data = msg.sender.user_id..'/help3'}, {text = 'اوامر المسح ♻️', data = msg.sender.user_id..'/help4'}, 
+{text = ' 𓄼 ❸ 𓄹', data = IdUser..'/help3'}, {text = ' 𓄼 ❹ 𓄹', data = IdUser..'/help4'}, 
 },
 {
-{text = 'التفعيل والتعطيل ⚙', data = msg.sender.user_id..'/listallAddorrem'}, {text = 'الفتح والقفل 🔓', data = msg.sender.user_id..'/NoNextSeting'}, 
+{text = ' 𓄼 ❺ 𓄹', data = IdUser..'/listallAddorrem'}, {text = ' 𓄼 ❻ 𓄹', data = IdUser..'/NoNextSeting'}, 
 },
 {
-{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
+{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
 },
 }
 }
