@@ -15904,7 +15904,7 @@ local TextHelp = [[*
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
-if Text and Text:match('(%d+)/sorceaa') then
+elseif Text and Text:match('(%d+)/sorceaa') then
 local UserId = Text:match('(%d+)/sorceaa')
 if tonumber(IdUser) == tonumber(UserId) then
 local reply_markup = LuaTele.replyMarkup{
@@ -15922,6 +15922,7 @@ local TextHelp = [[*
 مرحبا اليك مطورين السورس
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
 elseif Text and Text:match('(%d+)/helpo1') then
 local UserId = Text:match('(%d+)/helpo1')
 if tonumber(IdUser) == tonumber(UserId) then
