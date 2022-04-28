@@ -11238,6 +11238,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text ='نسبه جمالك يا قمر '..rdbhoto..' 🖤🌝',url = "https://t.me/"..selva.username..""},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, Timo, 'md', false, false, false, false, reply_markup)
 end
+end
 if text == 'المالك' or text == 'المنشئ' then
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرآ البوت ليس ادمن في  الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
