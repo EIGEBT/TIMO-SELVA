@@ -11663,6 +11663,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
 photo = "http://t.me/selva_so/2"
 local T =[[
 ╭───── •⌯• ─────╮
@@ -11674,7 +11678,8 @@ local T =[[
 ╰───── • ⌯ • ─────╯
 ]]
 keyboard = {} 
-keyboard.inline_keyboard = {
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
 {
 {text = '𓄼•مطورين السورس•𓄹 ', data = msg.sender.user_id..'/sorceaa'},{text = '𓄼•قنوات السورس•𓄹 ', data = msg.sender.user_id..'/chnalk'},
 },
@@ -12285,7 +12290,7 @@ echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•�
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 موقـع الـسـيـرفـر 𓄹 ⇦\n𓄼*‹-‹- '`curl http://th3boss.com/ip/location`'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 الـمــعــالــج 𓄹  ⇦\n𓄼* '"`grep -c processor /proc/cpuinfo`""Core ~ 𓄼$CPUPer%𓄹 "'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 الــدخــول 𓄹  ⇦\n𓄼* '`whoami`'*𓄹'
-echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 مـده تـشغيـل الـسـيـرفـر 𓄹 ⇦\n𓄼* '"$uptime"'*𓄹'
+echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯??•𓄹⊷┉┉┉⊰ \n 🌐𓄼 مـده تـشغيـل الـسـيـرفـر 𓄹 ⇦\n𓄼* '"$uptime"'*𓄹'
  ]]):read('*all')
 LuaTele.sendText(msg_chat_id,msg_id,ioserver,"md",true)
 end
@@ -14763,7 +14768,7 @@ return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, fa
 end
 if text == '𓄼 الثانوين 𓄹' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص𓄼 '..Controller_Num(1)..' ??* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
