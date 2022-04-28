@@ -1212,7 +1212,7 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -2691,7 +2691,7 @@ keyboard.inline_keyboard = {
 {text = Usperos, url = 't.me/SO_SELVA'}, 
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -2727,7 +2727,7 @@ keyboard.inline_keyboard = {
 {text = Grosupsw, url = 't.me/SO_SELVA'}, 
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -2763,7 +2763,7 @@ keyboard.inline_keyboard = {
 {text = Usperos, url = 't.me/SO_SELVA'}, 
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -6170,7 +6170,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6249,7 +6249,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6287,7 +6287,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6346,7 +6346,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6415,7 +6415,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6487,7 +6487,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6558,7 +6558,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6631,7 +6631,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6795,7 +6795,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6864,7 +6864,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6929,7 +6929,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -6996,7 +6996,7 @@ end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -11222,24 +11222,21 @@ LuaTele.sendText(msg_chat_id,msg_id,t,"md",true)
 Redis:del(Timo.."zhrfa"..msg.sender.user_id) 
 end
 
-if text == 'جمالي' or text == 'نسبه جمالي' then
+if text == 'نسبة جمالي' or text == "نسبه جمالي" then
 if not Redis:get(Timo.."Status:gamle"..msg_chat_id) then
 return false
 end
 local selva = LuaTele.getUser(msg.sender.user_id)
-local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local nspp = {"1000","829","102","738","700","900","300","600","400","267","383","643","232","839","890","3728","99","98","738","100","738","729","500","102",}
 local rdbhoto = nspp[math.random(#nspp)]
-if photo.total_count > 0 then
-data = {} 
-data.inline_keyboard = {
-{
-{text ='نسبه جمالك يا قمر '..rdbhoto..' 🖤🌝',url = "https://t.me/"..selva.username..""}, 
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(rdbhoto).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+if selva.first_name then
+Timo = '*جمالك يا = *['..selva.first_name..'](tg://user?id='..selva.id..')*\n*'
+else
+Timo = " لا يوجد"
 end
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{{text ='نسبه جمالك يا قمر '..rdbhoto..' 🖤🌝',url = "https://t.me/"..selva.username..""},},}}
+return LuaTele.sendText(msg_chat_id, msg_id, Timo, 'md', false, false, false, false, reply_markup)
 end
 if text == 'المالك' or text == 'المنشئ' then
 if msg.can_be_deleted_for_all_users == false then
@@ -11669,19 +11666,19 @@ if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
 ╭───── •⌯• ─────╮
-[𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](http://t.me/SO_SELVA)
+⚙ [𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](http://t.me/SO_SELVA)
 
-[𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
+🛡[𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
 
-[𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
+🎯[𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
 
-[𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
+🎖[𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
 ╰───── • ⌯ • ─────╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -11719,7 +11716,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ʙᴏᴛ•𓄹', url = "https://t.me/hazf_timo_bot"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -11738,7 +11735,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/Timo8Bot"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -11757,7 +11754,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹',url="t.me/SO_SELVA"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -11777,24 +11774,6 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/selva_so/6&caption=".. URL.escape(selvaiusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-if text == '😂' or text == '😂😂' or text == '😂😂😂' or text == '😂😂😂😂' then
-local user_info = LuaTele.getUser(msg.sender.user_id)
-local first_name = user_info.first_name
-video = "http://t.me/sorcetimo/4"
-local T =[[
-[ضـحـتـك عـثـل زيـك يـنـوحـي😂🖤](http://t.me/SO_SELVA)
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
-},
-}
-local msgg = msg_id/2097152/0.5
 elseif text == 'الاوامر' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❴ '..Controller_Num(7)..' ❵* ',"md",true)  
@@ -11829,6 +11808,36 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ╝•❻• ‹ اوامر الفتح والقفل ›
 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
 https://t.me/SO_SELVA
+*]],"md",false, false, false, false, reply_markup)
+elseif text == 'سورس' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❴ '..Controller_Num(7)..' ❵* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼•مطورين السورس•𓄹 ', data = msg.sender.user_id..'/sorceaa'},
+},
+{
+{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+╭───── •⌯• ─────╮
+⚙ [𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](http://t.me/SO_SELVA)
+
+🛡[𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
+
+🎯[𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
+
+🎖[𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
+╰───── • ⌯ • ─────╯
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
@@ -13637,7 +13646,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -13663,7 +13672,7 @@ data = {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
 }
@@ -14128,7 +14137,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -14147,7 +14156,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ʙᴏᴛ•𓄹 ', url = "https://t.me/hazf_timo_bot"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -14170,7 +14179,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼 المطور تيتو 𓄹',url = "https://t.me/XXX_xx_XXX0"},{text = '𓄼 المطور ليدو 𓄹',url = "https://t.me/J0KER7x"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -14189,7 +14198,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ʙᴏᴛ•𓄹',url="t.me/Timo8Bot"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -14208,7 +14217,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ᴄʜᴀɴɴᴇʟ•𓄹',url="t.me/SO_SELVA"}
 },
 {
-{text = 'اضف البوت لمجموعتك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -15913,6 +15922,25 @@ data = {
 }
 local TextHelp = [[*
  مرحبا بك في قسم اوامر اصحاب الرتب
+*]]
+LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+if Text and Text:match('(%d+)/sorceaa') then
+local UserId = Text:match('(%d+)/sorceaa')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/tt_t_4"}
+},
+{
+{text = '𝐃𝐞𝐯 𝐓𝐢𝐭𝐨', url = "https://t.me/XXX_xx_XXX0"},{text = '𝐃𝐞𝐯 𝐋𝐢𝐝𝐨', url = "https://t.me/J0KER7x"}
+},
+}
+}
+local TextHelp = [[*
+مرحبا اليك مطورين السورس
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
