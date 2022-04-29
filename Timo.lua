@@ -11222,21 +11222,29 @@ LuaTele.sendText(msg_chat_id,msg_id,t,"md",true)
 Redis:del(Timo.."zhrfa"..msg.sender.user_id) 
 end
 
-if text == 'نسبة جمالي' or text == "نسبه جمالي" then
+if text == 'جمالي' or text == 'نسبه جمالي' then
 if not Redis:get(Timo.."Status:gamle"..msg_chat_id) then
 return false
 end
-local selva = LuaTele.getUser(msg.sender.user_id)
-local nspp = {"1000","829","102","738","700","900","300","600","400","267","383","643","232","839","890","3728","99","98","738","100","738","729","500","102",}
-local rdbhoto = nspp[math.random(#nspp)]
 if selva.first_name then
 Timo = '*جمالك يا = *['..selva.first_name..'](tg://user?id='..selva.id..')*\n*'
 else
 Timo = " لا يوجد"
 end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text ='نسبه جمالك يا قمر '..rdbhoto..' 🖤🌝',url = "https://t.me/"..selva.username..""},},}}
-return LuaTele.sendText(msg_chat_id, msg_id, Timo, 'md', false, false, false, false, reply_markup)
+local selva = LuaTele.getUser(msg.sender.user_id)
+local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
+local nspp = {"1000","829","102","738","700","900","300","600","400","267","383","643","232","839","890","3728","99","98","738","100","738","729","500","102",}
+local rdbhoto = nspp[math.random(#nspp)]
+if photo.total_count > 0 then
+data = {} 
+data.inline_keyboard = {
+{
+{text ='نسبه جمالك يا قمر '..rdbhoto..' 🖤🌝',url = "https://t.me/"..selva.username..""}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(rdbhoto).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
 end
 if text == 'المالك' or text == 'المنشئ' then
 if msg.can_be_deleted_for_all_users == false then
@@ -11563,15 +11571,6 @@ local m = "https://t.me/mmsst13/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == 'بيقول اي' or text == "قال اي" or text == "يقول اي" or text == "وش يقول" then  
-if tonumber(msg.reply_to_message_id) > 0 then 
-local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id) 
-if result.content.voice_note then  
-local rep = msg.id/2097152/0.5 
-https.request("https://api.medooo.ml/leomedo/voiceRecognise?token="..Token.."&chat_id="..msg_chat_id.."&file_id="..result.content.voice_note.voice.remote.id.."&msg_id="..rep) 
-end 
-end 
-end
 if text == "استوري" or text == 'فيديوهات' then
 local t = "مرحبا اليك استوري عشوائي 🌝💜"
 Rrr = math.random(4,50)
@@ -11843,6 +11842,26 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'⌯  عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
+end
+if text and text:match('^جماله (%d+)$') then
+local UserId = text:match('^جماله (%d+)$')
+local ban = LuaTele.getUser(UserId)
+if ban.first_name then
+news = '*نسبه جمال الشخص -> *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
+else
+news = " لا يوجد"
+end
+local Jeka = {"10","20","30","35","75","34","66","82","23","19","55","80","63","32","27","89","99","98","79","100","8","3","6","0",}
+local rdbhoto = Jeka[math.random(#Jeka)]
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text ='نسبه الجمال هي '..rdbhoto..' 🌝💖',url = "https://t.me/"..ban.username..""},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,news,"md",false, false, false, false, reply_markup)
 end
 if text and text:match("^زخرفه (.*)$") then
 local TextZhrfa = text:match("^زخرفه (.*)$")
