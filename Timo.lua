@@ -11226,16 +11226,16 @@ if text == 'جمالي' or text == 'نسبه جمالي' then
 if not Redis:get(Timo.."Status:gamle"..msg_chat_id) then
 return false
 end
-if ban.first_name then
-news = '*جمالك يا -> *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
-else
-news = " لا يوجد"
-end
 local selva = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 local nspp = {"1000","829","102","738","700","900","300","600","400","267","383","643","232","839","890","3728","99","98","738","100","738","729","500","102",}
 local rdbhoto = nspp[math.random(#nspp)]
 if photo.total_count > 0 then
+if selva.first_name then
+source = '*جمالك يا -> *['..selva.first_name..'](tg://user?id='..selva.id..')*\n*'
+else
+source = " لا يوجد"
+end
 data = {} 
 data.inline_keyboard = {
 {
@@ -13337,7 +13337,7 @@ name = string.gsub(name,"عقرب","🦂")
 name = string.gsub(name,"زرافه","🦒")
 name = string.gsub(name,"قنفذ","🦔")
 name = string.gsub(name,"تفاحه","🍎")
-name = string.gsub(name,"باذنجان","🍆")
+name = string.gsub(name,"باذنجان","??")
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ اسرع واحد يدز معنى السمايل ~ 𓄼 "..name.." 𓄹","md",true)  
 end
 end
@@ -14120,7 +14120,7 @@ end
 if text == 'ايديي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\nايديك ⇜ '..msg.sender.user_id,"md",true)  
 end
-if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا')..'السورس' or text == 'سورس' or text == 'يا سورس' then
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
 ╭───── •⌯• ─────╮
