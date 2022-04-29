@@ -6255,7 +6255,7 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendvideo?chat_id=" .. msg_chat_id .. "&video=https://t.me/apqiy/89&caption=".. URL.escape(baniusername).."&photo="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا').."احظرو عام" or text == (Redis:get(Timo.."Name:Bot") or 'تيمو').." حظر عام" or text == 'حظر عام' and msg.reply_to_message_id ~= 0 then
+if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا').."احظرو عام" or text == (Redis:get(Timo.."Name:Bot") or 'سيلفا').." حظر عام" or text == 'حظر عام' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
@@ -11226,10 +11226,10 @@ if text == 'جمالي' or text == 'نسبه جمالي' then
 if not Redis:get(Timo.."Status:gamle"..msg_chat_id) then
 return false
 end
-if selva.first_name then
-Timo = '*جمالك يا = *['..selva.first_name..'](tg://user?id='..selva.id..')*\n*'
+if ban.first_name then
+news = '*جمالك يا -> *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
 else
-Timo = " لا يوجد"
+news = " لا يوجد"
 end
 local selva = LuaTele.getUser(msg.sender.user_id)
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
@@ -12307,7 +12307,7 @@ HardDisk=`df -lh ⇜ awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
 CPUPer=`top -b -n1 ⇜ grep "Cpu(s)" ⇜ awk '{print $2 + $4}'`
 uptime=`uptime ⇜ awk -F'( ⇜,⇜:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
 echo '⌯𓄼 نظام التشغيل 𓄹⌯\n* '"$linux_version"'*' 
-echo '⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 الذاكره العشوائيه 𓄹  ⇦\n𓄼* '"$memUsedPrc"'*𓄹'
+echo '⊱┉┉┉⊶𓄼•𝐒??𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 الذاكره العشوائيه 𓄹  ⇦\n𓄼* '"$memUsedPrc"'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 وحـده الـتـخـزيـن 𓄹  ⇦\n𓄼* '"$HardDisk"'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 موقـع الـسـيـرفـر 𓄹 ⇦\n𓄼*‹-‹- '`curl http://th3boss.com/ip/location`'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 الـمــعــالــج 𓄹  ⇦\n𓄼* '"`grep -c processor /proc/cpuinfo`""Core ~ 𓄼$CPUPer%𓄹 "'*𓄹'
@@ -14120,7 +14120,7 @@ end
 if text == 'ايديي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\nايديك ⇜ '..msg.sender.user_id,"md",true)  
 end
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' then
+if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا')..'السورس' or text == 'سورس' or text == 'يا سورس' then
 photo = "http://t.me/selva_so/2"
 local T =[[
 ╭───── •⌯• ─────╮
@@ -15752,7 +15752,7 @@ local texting = {" مرة واحد مصري دخل سوبر ماركت في ال
 "بنت حبت تشتغل مع رئيس عصابة شغلها في غسيل الأموال 😂",
 "مره واحد اشترى فراخ علشان يربيها فى قفص صدره 😂",
 "مرة واحد من الفيوم مات اهله صوصوا عليه 😂",
-"ﻣﺮه واﺣﺪ ﻣﺴﻄﻮل ﻣﺎﺷﻰ ﻓﻰ اﻟﺸﺎرع ﻟﻘﻰ مذﻳﻌﻪ ﺑﺘﻘﻮﻟﻪ ﻟﻮ ﺳﻤﺤﺖ ﻓﻴﻦ اﻟﻘﻤﺮ ﻗﺎﻟﻬﺎ اﻫﻮه ﻗﺎﻟﺘﻠﻮ ﻣﺒﺮوك ﻛﺴﺒﺖ ﻋﺸﺮﻳﻦ ﺟﻨﻴﻪ ﻗﺎﻟﻬﺎ ﻓﻰ واﺣﺪ ﺗﺎﻧﻰ ﻫﻨﺎك اﻫﻮه 😂",
+"ﻣﺮه واﺣﺪ ﻣﺴﻄﻮل ﻣﺎﺷﻰ ﻓﻰ اﻟﺸﺎرع ﻟﻘﻰ مذﻳﻌﻪ ﺑﺘﻘﻮﻟﻪ ﻟﻮ ﺳﻤﺤﺖ ﻓﻴﻦ اﻟﻘﻤﺮ ﻗﺎﻟﻬﺎ اﻫﻮه ﻗﺎﻟﺘﻠﻮ ﻣﺒﺮوك ﻛﺴﺒﺖ ﻋﺸﺮﻳﻦ ﺟﻨﻴﻪ ﻗﺎﻟﻬﺎ ﻓﻰ واﺣﺪ ﺗﺎﻧﻰ ﻫﻨﺎك اﻫﻮه ??",
 "مره واحد شاط كرة فى المقص اتخرمت. 😂",
 "مرة واحد رايح لواحد صاحبهفا البواب وقفه بيقول له انت طالع لمين قاله طالع أسمر شوية لبابايا قاله يا أستاذ طالع لمين في العماره 😂",
 } 
