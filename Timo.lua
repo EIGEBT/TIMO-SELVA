@@ -11617,6 +11617,7 @@ keyboard.inline_keyboard = {
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
 if text == "استوري" then
+photo = "http://t.me/selva_so/2"
 local Text ='*مرحبا اليك استوري*'
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -11630,7 +11631,8 @@ keyboard.inline_keyboard = {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
 },
 }
-return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'معلوماتي' or text == 'انا مين' then
 local selva = LuaTele.getUser(msg.sender.user_id)
