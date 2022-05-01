@@ -11615,8 +11615,7 @@ keyboard.inline_keyboard = {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
 },
 }
-local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/faioo8/'..Timo..'&caption=' .. URL.escape(Jabwaiusername).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
 if text == "استوري" then
 Timo = math.random(3,42); 
@@ -11633,8 +11632,7 @@ keyboard.inline_keyboard = {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
 },
 }
-local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendvideo?chat_id=' .. msg.chat_id .. '&video=https://t.me/faioo8/'..Timo..'&caption=' .. URL.escape(Jabwaiusername).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
 if text == 'معلوماتي' or text == 'انا مين' then
 local selva = LuaTele.getUser(msg.sender.user_id)
