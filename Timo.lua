@@ -11623,10 +11623,10 @@ local Text ='*مرحبا اليك استوري*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '• استوري • ', callback_data = IdUser..'/tstser@'},{text = '• استوري حب •', callback_data = IdUser..'/tstser2@'},
+{text = '• استوري • ', callback_data = msg.sender.user_id..'/tstser@'},{text = '• استوري حب •', callback_data = msg.sender.user_id..'/tstser2@'},
 },
 {
-{text = '• استوري قران •', callback_data = IdUser..'/tstser3@'},{text = '• استوري مضحك •', callback_data = IdUser..'/tstser4@'},
+{text = '• استوري قران •', callback_data = msg.sender.user_id..'/tstser3@'},{text = '• استوري مضحك •', callback_data = msg.sender.user_id..'/tstser4@'},
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
