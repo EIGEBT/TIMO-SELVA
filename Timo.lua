@@ -11580,36 +11580,35 @@ local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == "غنيلي" or text == "قائمه غنيلي" then
-Timo = math.random(3,42); 
 local Text ='*• اختار اغنيه من قائمة غنيلي •*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '• غنيلي • ', callback_data = IdUser..'/selvatss@'},{text = '• غنيلي تامر حسني •', callback_data = IdUser..'/selvatss2@'},
+{text = '• غنيلي • ', callback_data = msg.sender.user_id..'/selvatss@'},{text = '• غنيلي تامر حسني •', callback_data = msg.sender.user_id..'/selvatss2@'},
 },
 {
-{text = '• غنيلي عمرو دياب •', callback_data = IdUser..'/selvatss3@'},{text = '• غنيلي تامر عاشور •', callback_data = IdUser..'/selvatss4@'},
+{text = '• غنيلي عمرو دياب •', callback_data = msg.sender.user_id..'/selvatss3@'},{text = '• غنيلي تامر عاشور •', callback_data = msg.sender.user_id..'/selvatss4@'},
 },
 {
-{text = '• غنيلي محمد فؤاد •', callback_data = IdUser..'/selvatss5@'},{text = '• غنيلي حماقي •', callback_data = IdUser..'/selvatss6@'},
+{text = '• غنيلي محمد فؤاد •', callback_data = msg.sender.user_id..'/selvatss5@'},{text = '• غنيلي حماقي •', callback_data = msg.sender.user_id..'/selvatss6@'},
 },
 {
-{text = '• غنيلي ابو الانوار •', callback_data = IdUser..'/selvatss7@'},{text = '• غنيلي رامي صبري •', callback_data = IdUser..'/selvatss8@'},
+{text = '• غنيلي ابو الانوار •', callback_data = msg.sender.user_id..'/selvatss7@'},{text = '• غنيلي رامي صبري •', callback_data = msg.sender.user_id..'/selvatss8@'},
 },
 {
-{text = '• غنيلي مسلم •', callback_data = IdUser..'/selvatss9@'},{text = '• غنيلي ويجز •', callback_data = IdUser..'/selvatss10@'},
+{text = '• غنيلي مسلم •', callback_data = msg.sender.user_id..'/selvatss9@'},{text = '• غنيلي ويجز •', callback_data = msg.sender.user_id..'/selvatss10@'},
 },
 {
-{text = '• غنيلي عمار حسني •', callback_data = IdUser..'/selvatss11@'},{text = '• غنيلي عنبه •', callback_data = IdUser..'/selvatss12@'},
+{text = '• غنيلي عمار حسني •', callback_data = msg.sender.user_id..'/selvatss11@'},{text = '• غنيلي عنبه •', callback_data = msg.sender.user_id..'/selvatss12@'},
 },
 {
-{text = '• غنيلي مهرجانات  •', callback_data = IdUser..'/selvatss13@'},{text = '• غنيلي اصاله •', callback_data = IdUser..'/selvatss14@'},
+{text = '• غنيلي مهرجانات  •', callback_data = msg.sender.user_id..'/selvatss13@'},{text = '• غنيلي اصاله •', callback_data = msg.sender.user_id..'/selvatss14@'},
 },
 {
-{text = '• غنيلي اليسا  •', callback_data = IdUser..'/selvatss15@'},{text = '• غنيلي كايروكي •', callback_data = IdUser..'/selvatss16@'},
+{text = '• غنيلي اليسا  •', callback_data = msg.sender.user_id..'/selvatss15@'},{text = '• غنيلي كايروكي •', callback_data = msg.sender.user_id..'/selvatss16@'},
 },
 {
-{text = '• غنيلي بابلو •', callback_data = IdUser..'/selvatss17@'},{text = '• غنيلي محمد منير •', callback_data = IdUser..'/selvatss18@'},
+{text = '• غنيلي بابلو •', callback_data = msg.sender.user_id..'/selvatss17@'},{text = '• غنيلي محمد منير •', callback_data = msg.sender.user_id..'/selvatss18@'},
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
@@ -11618,7 +11617,6 @@ keyboard.inline_keyboard = {
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
 if text == "استوري" then
-Timo = math.random(3,42); 
 local Text ='*مرحبا اليك استوري*'
 keyboard = {} 
 keyboard.inline_keyboard = {
