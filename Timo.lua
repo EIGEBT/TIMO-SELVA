@@ -11612,7 +11612,7 @@ keyboard.inline_keyboard = {
 {text = '• غنيلي بابلو •', callback_data = IdUser..'/selvatss17@'},{text = '• غنيلي محمد منير •', callback_data = IdUser..'/selvatss18@'},
 },
 {
-{text = '𓄼• sᴏᴜʀᴄᴇ sᴀɪᴅɪ •𓄹', url = "http://t.me/S_a_i_d_i"}
+{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -11628,6 +11628,9 @@ keyboard.inline_keyboard = {
 },
 {
 {text = '• استوري قران •', callback_data = IdUser..'/tstser3@'},{text = '• استوري مضحك •', callback_data = IdUser..'/tstser4@'},
+},
+{
+{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
 },
 }
 local msg_id = msg.id/2097152/0.5
