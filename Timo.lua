@@ -11579,13 +11579,6 @@ local m = "https://t.me/banat_so/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == "استوري" or text == 'فيديوهات' then
-local t = "مرحبا اليك استوري عشوائي 🌝💜"
-Rrr = math.random(4,50)
-local m = "https://t.me/Qapplu/"..Rrr..""
-local rep = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
-end
 if text == "فيديوهات رومانسيه" or text == 'رومانسي' then
 local t = "مرحبا اليك فيديوهات رومانسيه 🌝💜"
 Rrr = math.random(4,50)
@@ -11642,6 +11635,57 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
+end
+if text == "غنيلي" or text == "قائمه غنيلي" then
+Rrr = math.random(3,42); 
+local Text ='*• اختار اغنيه من قائمة غنيلي •*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '• غنيلي • ', data = msg.sender.user_id..'/selvatss@'},{text = '• غنيلي تامر حسني •', data = msg.sender.user_id..'/selvatss2@'},
+},
+{
+{text = '• غنيلي عمرو دياب •', data = msg.sender.user_id..'/selvatss3@'},{text = '• غنيلي تامر عاشور •', data = msg.sender.user_id..'/selvatss4@'},
+},
+{
+{text = '• غنيلي محمد فؤاد •', data = msg.sender.user_id..'/selvatss5@'},{text = '• غنيلي حماقي •', data = msg.sender.user_id..'/selvatss6@'},
+},
+{
+{text = '• غنيلي ابو الانوار •', data = msg.sender.user_id..'/selvatss7@'},{text = '• غنيلي رامي صبري •', data = msg.sender.user_id..'/selvatss8@'},
+},
+{
+{text = '• غنيلي مسلم •', data = msg.sender.user_id..'/selvatss9@'},{text = '• غنيلي ويجز •', data = msg.sender.user_id..'/selvatss10@'},
+},
+{
+{text = '• غنيلي عمار حسني •', data = msg.sender.user_id..'/selvatss11@'},{text = '• غنيلي عنبه •', data = msg.sender.user_id..'/selvatss12@'},
+},
+{
+{text = '• غنيلي مهرجانات  •', data = msg.sender.user_id..'/selvatss13@'},{text = '• غنيلي اصاله •', data = msg.sender.user_id..'/selvatss14@'},
+},
+{
+{text = '• غنيلي اليسا  •', data = msg.sender.user_id..'/selvatss15@'},{text = '• غنيلي كايروكي •', data = msg.sender.user_id..'/selvatss16@'},
+},
+{
+{text = '• غنيلي بابلو •', data = msg.sender.user_id..'/selvatss17@'},{text = '• غنيلي محمد منير •', data = msg.sender.user_id..'/selvatss18@'},
+},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/faioo8/'..Timo..'&caption=' .. URL.escape(Jabwaiusername).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text == "استوري" or text == "الاستوري" then
+Rrr = math.random(3,42); 
+local Text ='*• اختار اغنيه من قائمة غنيلي •*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '• استوري • ', data = msg.sender.user_id..'/tstser@'},{text = '• استوري حب •', data = msg.sender.user_id'/tstser2@'},
+},
+{
+{text = '• استوري قران •', data = msg.sender.user_id..'/tstser3@'},{text = '• استوري مضحك •', data = msg.sender.user_id..'/tstser4@'},
+},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/faioo8/'..Timo..'&caption=' .. URL.escape(Jabwaiusername).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
@@ -11796,65 +11840,6 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ♻️╝•❻• ‹ اوامر الفتح والقفل ›
 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
 https://t.me/SO_SELVA
-*]],"md",false, false, false, false, reply_markup)
-elseif text == 'غنيلي' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• غنيلي • ', data = msg.sender.user_id..'/selvatss@'},{text = '• غنيلي تامر حسني •', data = msg.sender.user_id..'/selvatss2@'},
-},
-{
-{text = '• غنيلي عمرو دياب •', data = msg.sender.user_id..'/selvatss3@'},{text = '• غنيلي تامر عاشور •', data = msg.sender.user_id..'/selvatss4@'},
-},
-{
-{text = '• غنيلي محمد فؤاد •', data = msg.sender.user_id..'/selvatss5@'},{text = '• غنيلي حماقي •', data = msg.sender.user_id..'/selvatss6@'},
-},
-{
-{text = '• غنيلي ابو الانوار •', data = msg.sender.user_id..'/selvatss7@'},{text = '• غنيلي رامي صبري •', data = msg.sender.user_id..'/selvatss8@'},
-},
-{
-{text = '• غنيلي مسلم •', data = msg.sender.user_id..'/selvatss9@'},{text = '• غنيلي ويجز •', data = msg.sender.user_id..'/selvatss10@'},
-},
-{
-{text = '• غنيلي عمار حسني •', data = msg.sender.user_id..'/selvatss11@'},{text = '• غنيلي عنبه •', data = msg.sender.user_id..'/selvatss12@'},
-},
-{
-{text = '• غنيلي مهرجانات  •', data = msg.sender.user_id..'/selvatss13@'},{text = '• غنيلي اصاله •', data = msg.sender.user_id..'/selvatss14@'},
-},
-{
-{text = '• غنيلي اليسا  •', data = msg.sender.user_id..'/selvatss15@'},{text = '• غنيلي كايروكي •', data = msg.sender.user_id..'/selvatss16@'},
-},
-{
-{text = '• غنيلي بابلو •', data = msg.sender.user_id..'/selvatss17@'},{text = '• غنيلي محمد منير •', data = msg.sender.user_id..'/selvatss18@'},
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-مرحبا اليك غنيلي
-*]],"md",false, false, false, false, reply_markup)
-elseif text == 'استوري' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• استوري • ', data = msg.sender.user_id..'/tstser@'},{text = '• استوري حب •', data = msg.sender.user_id'/tstser2@'},
-},
-{
-{text = '• استوري قران •', data = msg.sender.user_id..'/tstser3@'},{text = '• استوري مضحك •', data = msg.sender.user_id..'/tstser4@'},
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-مرحبا اليك استوري
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
