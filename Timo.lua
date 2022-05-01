@@ -11579,60 +11579,19 @@ local m = "https://t.me/banat_so/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == "غنيلي" or text == "قائمه غنيلي" then
-local Text ='*• اختار اغنيه من قائمة غنيلي •*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '• غنيلي • ', callback_data = msg.sender.user_id..'/selvatss@'},{text = '• غنيلي تامر حسني •', callback_data = msg.sender.user_id..'/selvatss2@'},
-},
-{
-{text = '• غنيلي عمرو دياب •', callback_data = msg.sender.user_id..'/selvatss3@'},{text = '• غنيلي تامر عاشور •', callback_data = msg.sender.user_id..'/selvatss4@'},
-},
-{
-{text = '• غنيلي محمد فؤاد •', callback_data = msg.sender.user_id..'/selvatss5@'},{text = '• غنيلي حماقي •', callback_data = msg.sender.user_id..'/selvatss6@'},
-},
-{
-{text = '• غنيلي ابو الانوار •', callback_data = msg.sender.user_id..'/selvatss7@'},{text = '• غنيلي رامي صبري •', callback_data = msg.sender.user_id..'/selvatss8@'},
-},
-{
-{text = '• غنيلي مسلم •', callback_data = msg.sender.user_id..'/selvatss9@'},{text = '• غنيلي ويجز •', callback_data = msg.sender.user_id..'/selvatss10@'},
-},
-{
-{text = '• غنيلي عمار حسني •', callback_data = msg.sender.user_id..'/selvatss11@'},{text = '• غنيلي عنبه •', callback_data = msg.sender.user_id..'/selvatss12@'},
-},
-{
-{text = '• غنيلي مهرجانات  •', callback_data = msg.sender.user_id..'/selvatss13@'},{text = '• غنيلي اصاله •', callback_data = msg.sender.user_id..'/selvatss14@'},
-},
-{
-{text = '• غنيلي اليسا  •', callback_data = msg.sender.user_id..'/selvatss15@'},{text = '• غنيلي كايروكي •', callback_data = msg.sender.user_id..'/selvatss16@'},
-},
-{
-{text = '• غنيلي بابلو •', callback_data = msg.sender.user_id..'/selvatss17@'},{text = '• غنيلي محمد منير •', callback_data = msg.sender.user_id..'/selvatss18@'},
-},
-{
-{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
-},
-}
-return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
+if text == "استوري" or text == 'فيديوهات' then
+local t = "مرحبا اليك استوري عشوائي 🌝💜"
+Rrr = math.random(4,50)
+local m = "https://t.me/Qapplu/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == "استوري" then
-photo = "http://t.me/selva_so/2"
-local Text ='*مرحبا اليك استوري*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '• استوري • ', callback_data = msg.sender.user_id..'/tstser@'},{text = '• استوري حب •', callback_data = msg.sender.user_id..'/tstser2@'},
-},
-{
-{text = '• استوري قران •', callback_data = msg.sender.user_id..'/tstser3@'},{text = '• استوري مضحك •', callback_data = msg.sender.user_id..'/tstser4@'},
-},
-{
-{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+if text == "فيديوهات رومانسيه" or text == 'رومانسي' then
+local t = "مرحبا اليك فيديوهات رومانسيه 🌝💜"
+Rrr = math.random(4,50)
+local m = "https://t.me/romansy_selva/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == 'معلوماتي' or text == 'انا مين' then
 local selva = LuaTele.getUser(msg.sender.user_id)
@@ -11837,6 +11796,49 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ♻️╝•❻• ‹ اوامر الفتح والقفل ›
 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
 https://t.me/SO_SELVA
+*]],"md",false, false, false, false, reply_markup)
+elseif text == 'غنيلي' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❴ '..Controller_Num(7)..' ❵* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '• غنيلي • ', callback_data = IdUser..'/selvatss@'},{text = '• غنيلي تامر حسني •', callback_data = IdUser..'/selvatss2@'},
+},
+{
+{text = '• غنيلي عمرو دياب •', callback_data = IdUser..'/selvatss3@'},{text = '• غنيلي تامر عاشور •', callback_data = IdUser..'/selvatss4@'},
+},
+{
+{text = '• غنيلي محمد فؤاد •', callback_data = IdUser..'/selvatss5@'},{text = '• غنيلي حماقي •', callback_data = IdUser..'/selvatss6@'},
+},
+{
+{text = '• غنيلي ابو الانوار •', callback_data = IdUser..'/selvatss7@'},{text = '• غنيلي رامي صبري •', callback_data = IdUser..'/selvatss8@'},
+},
+{
+{text = '• غنيلي مسلم •', callback_data = IdUser..'/selvatss9@'},{text = '• غنيلي ويجز •', callback_data = IdUser..'/selvatss10@'},
+},
+{
+{text = '• غنيلي عمار حسني •', callback_data = IdUser..'/selvatss11@'},{text = '• غنيلي عنبه •', callback_data = IdUser..'/selvatss12@'},
+},
+{
+{text = '• غنيلي مهرجانات  •', callback_data = IdUser..'/selvatss13@'},{text = '• غنيلي اصاله •', callback_data = IdUser..'/selvatss14@'},
+},
+{
+{text = '• غنيلي اليسا  •', callback_data = IdUser..'/selvatss15@'},{text = '• غنيلي كايروكي •', callback_data = IdUser..'/selvatss16@'},
+},
+{
+{text = '• غنيلي بابلو •', callback_data = IdUser..'/selvatss17@'},{text = '• غنيلي محمد منير •', callback_data = IdUser..'/selvatss18@'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+مرحبا اليك غنيلي
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
