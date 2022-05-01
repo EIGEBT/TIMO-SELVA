@@ -11798,9 +11798,6 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 https://t.me/SO_SELVA
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'غنيلي' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❴ '..Controller_Num(7)..' ❵* ',"md",true)  
-end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
@@ -11839,6 +11836,25 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[*
 مرحبا اليك غنيلي
+*]],"md",false, false, false, false, reply_markup)
+elseif text == 'استوري' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '• استوري • ', data = msg.sender.user_id..'/tstser@'},{text = '• استوري حب •', data = msg.sender.user_id'/tstser2@'},
+},
+{
+{text = '• استوري قران •', data = msg.sender.user_id..'/tstser3@'},{text = '• استوري مضحك •', data = msg.sender.user_id..'/tstser4@'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+مرحبا اليك استوري
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
@@ -14604,7 +14620,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(Timo.."Send:Fwd:Grops" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
-LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ ارسل لي التوجيه الان*\n* ⌯ ليتم نشره في المجموعات*\n* ⌯ للخروج من الامر ارسل𓄼الغاء𓄹*","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"* ⌯ ارسل لي التوجيه الان*\n* ⌯ ليتم نشره في المجموعات*\n* ⌯ للخروج من الامر ارسل𓄼الغاء??*","md",true)  
 return false
 end
 if text=='𓄼 اذاعه بالتوجيه خاص 𓄹' then 
