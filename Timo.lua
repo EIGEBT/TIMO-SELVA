@@ -11662,9 +11662,18 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
+{
+{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/u_ou_u"}
+},
+{
+{text = 'ᴅᴇᴠ ᴛɪᴛᴏ', url = "https://t.me/UlU_Xx"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
+},
+{
+{text = 'ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ', url = "https://t.me/SO_SELVA"}
+},
 {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
@@ -14119,9 +14128,18 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
+{
+{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/u_ou_u"}
+},
+{
+{text = 'ᴅᴇᴠ ᴛɪᴛᴏ', url = "https://t.me/UlU_Xx"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
+},
+{
+{text = 'ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ', url = "https://t.me/SO_SELVA"}
+},
 {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
