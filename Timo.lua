@@ -144,7 +144,7 @@ Managers = Redis:sismember(Timo.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 1918693330 then
+if tonumber(UserId) == 5320252951 then
 Status = 'المبرمج تيمو'
 elseif UserId == 5018147636 then  
 Status = 'المطور تيتو'
@@ -735,7 +735,7 @@ Managers = Redis:sismember(Timo.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 1918693330 then
+if tonumber(UserId) == 5320252951 then
 Status = true
 elseif UserId == 5018147636 then  
 Status = true
@@ -779,7 +779,7 @@ Managers = Redis:sismember(Timo.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 1918693330 then
+if tonumber(UserId) == 5320252951 then
 Status = true
 elseif UserId == 5018147636 then  
 Status = true
@@ -936,7 +936,7 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 1918693330 then
+if tonumber(msg.sender.user_id) == 5320252951 then
 msg.Name_Controller = 'المبرمج تيمو'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 5018147636 then
@@ -2669,7 +2669,7 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
@@ -2709,7 +2709,7 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
 if photo.total_count > 0 then
@@ -2745,7 +2745,7 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'Timo:ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Timo:Num:User:Pv') or 0)
 if photo.total_count > 0 then
@@ -6651,7 +6651,7 @@ end
 if Controller(msg_chat_id,UserId) == 'المطور الاساسي' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على𓄼 "..Controller(msg_chat_id,UserId).." 𓄹*","md",true)  
 end
-if UserId == "1918693330" then
+if UserId == "5320252951" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 if UserId == "5018147636" then
@@ -6703,7 +6703,7 @@ local UserId = text:match('^كتم عام (%d+)$')
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
-if UserId == "1918693330" then
+if UserId == "5320252951" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 if UserId == "5018147636" then
@@ -11321,7 +11321,7 @@ local TestText = "الاول هو مطور السورس \n والتاني هو �
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/u_ou_u"}
 },
 {
 {text = Creat, url = "https://t.me/"..selva.username..""},
@@ -11337,7 +11337,7 @@ end
 end
  
 if text == 'المبرمج تيمو' or text == 'تيمو' or text == 'مبرمج السورس' or text == '𓄼 المبرمج تيمو 𓄹' then    
-local UserId_Info = LuaTele.searchPublicChat("tt_t_4")
+local UserId_Info = LuaTele.searchPublicChat("u_ou_u")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -11357,7 +11357,7 @@ local TestText = "𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — �
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/u_ou_u"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11367,7 +11367,7 @@ local TestText = " 𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — 
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/u_ou_u"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11508,7 +11508,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(1918693330,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(5320252951,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == "تتجوزيني"  then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -11543,6 +11543,26 @@ local m = text:match("^قول (.*)$")
 if Redis:get(Timo.."Status:kool"..msg.chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,m,"md",true) 
 end
+end
+if text == "غنيلي" then
+local t = "اليك اغنيه عشوائيه من البوت"
+Num = math.random(8,83)
+Mhm = math.random(108,143)
+Mhhm = math.random(166,179)
+Mmhm = math.random(198,216)
+Mhmm = math.random(257,626)
+local Texting = {Num,Mhm,Mhhm,Mmhm,Mhmm}
+local Rrr = Texting[math.random(#Texting)]
+local m = "https://t.me/mmsst13/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
+if text == "استوري" or text == 'فيديوهات' then
+local t = "مرحبا اليك استوري عشوائي 🌝💜"
+Rrr = math.random(4,50)
+local m = "https://t.me/Qapplu/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == "تويت بالصور" then
 local t = "مرحبا اليك تويت بالصور 🌝💜"
@@ -11642,18 +11662,9 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ->* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• ᴅᴇᴠ ᴛɪᴍᴏ(t.me/u_ou_u)*\n*𓄼• ᴅᴇᴠ ᴛɪᴛᴏ(t.me/UlU_Xx)*\n*𓄼• ᴅᴇᴠ ʟᴇᴅᴏ(t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ(t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𝐃𝐞𝐯 𝐓𝐢𝐭𝐨', url = "https://t.me/XXX_xx_XXX0"},{text = '𝐃𝐞𝐯 𝐋𝐢𝐝𝐨', url = "https://t.me/J0KER7x"}
-},
-{
-{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
-},
 {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
@@ -11672,7 +11683,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/tt_t_4"}
+{text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/u_ou_u"}
 },
 {
 {text = '𝐃𝐞𝐯 𝐓𝐢𝐭𝐨', url = "https://t.me/XXX_xx_XXX0"},{text = '𝐃𝐞𝐯 𝐋𝐢𝐝𝐨', url = "https://t.me/J0KER7x"}
@@ -11684,6 +11695,7 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بوت حذف' or text == 'بوت الحذف' or text == 'بووت حذف' then
+local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 photo = "https://t.me/sorcy/2"
@@ -11697,7 +11709,7 @@ keyboard.inline_keyboard = {
 {text = '𓄼•ʙᴏᴛ•𓄹', url = "https://t.me/hazf_timo_bot"}
 },
 {
-{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف بوت '..timoo..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -11789,71 +11801,6 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ♻️╝•❻• ‹ اوامر الفتح والقفل ›
 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
 https://t.me/SO_SELVA
-*]],"md",false, false, false, false, reply_markup)
-elseif text == 'غنيلي' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• غنيلي • ', data = msg.sender.user_id..'/selvatss@'},{text = '• غنيلي تامر حسني •', data = msg.sender.user_id..'/selvatss2@'},
-},
-{
-{text = '• غنيلي عمرو دياب •', data = msg.sender.user_id..'/selvatss3@'},{text = '• غنيلي تامر عاشور •', data = msg.sender.user_id..'/selvatss4@'},
-},
-{
-{text = '• غنيلي محمد فؤاد •', data = msg.sender.user_id..'/selvatss5@'},{text = '• غنيلي حماقي •', data = msg.sender.user_id..'/selvatss6@'},
-},
-{
-{text = '• غنيلي ابو الانوار •', data = msg.sender.user_id..'/selvatss7@'},{text = '• غنيلي رامي صبري •', data = msg.sender.user_id..'/selvatss8@'},
-},
-{
-{text = '• غنيلي مسلم •', data = msg.sender.user_id..'/selvatss9@'},{text = '• غنيلي ويجز •', data = msg.sender.user_id..'/selvatss10@'},
-},
-{
-{text = '• غنيلي عمار حسني •', data = msg.sender.user_id..'/selvatss11@'},{text = '• غنيلي عنبه •', data = msg.sender.user_id..'/selvatss12@'},
-},
-{
-{text = '• غنيلي مهرجانات  •', data = msg.sender.user_id..'/selvatss13@'},{text = '• غنيلي اصاله •', data = msg.sender.user_id..'/selvatss14@'},
-},
-{
-{text = '• غنيلي اليسا  •', data = msg.sender.user_id..'/selvatss15@'},{text = '• غنيلي كايروكي •', data = msg.sender.user_id..'/selvatss16@'},
-},
-{
-{text = '• غنيلي بابلو •', data = msg.sender.user_id..'/selvatss17@'},{text = '• غنيلي محمد منير •', data = msg.sender.user_id..'/selvatss18@'},
-},
-{
-{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-مرحبا اليك غنيلي
-*]],"md",false, false, false, false, reply_markup)
-elseif text == 'استوري' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• استوري • ', data = msg.sender.user_id..'/tstser@'},{text = '• استوري حب •', data = msg.sender.user_id'/tstser2@'},
-},
-{
-{text = '• استوري قران •', data = msg.sender.user_id..'/tstser3@'},{text = '• استوري مضحك •', data = msg.sender.user_id..'/tstser4@'},
-},
-{
-{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-مرحبا اليك استوري
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
@@ -12388,73 +12335,76 @@ end
 Redis:del(Timo.."Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف اسم البوت ","md",true)   
 end
-if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
+if text == 'بوت' or text == 'البوت' then
 local photo = LuaTele.getUserProfilePhotos(Timo)
-local UserInfo = LuaTele.getUser(Timo)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+local ban = LuaTele.getUser(Timo)
+local Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local BotName = {
-'اسمي '..NamesBot..' يا قلبي 😍💜',
-'اسمي '..NamesBot..' يا روحي 🙈❤️',
-'اسمي '..NamesBot..' يا عمري 🥰🤍',
-'اسمي '..NamesBot..' يا قمر 🐼💚',
-'اسمي بوت '..NamesBot..' 😻❤️',
-'اسمي '..NamesBot..' يا مزه 😘🍒',
-'اسمي '..NamesBot..' يعم 😒',
-'مقولت اسمي '..NamesBot..' في اي 🙄',
-'اسمي '..NamesBot..' الكيوت 🌝💙',
-'اسمي '..NamesBot..' يا حياتي 🌚❤️',
-'اسمي '..NamesBot..' يوتكه 🙈💔',
+'اسمي  '..Namebot..' يا قلبي 🤤💚',
+'اسمي '..Namebot..' يا روحي🙈❤️',
+'اسمي  '..Namebot..' يعمري🌚🌹',
+'اسمي  '..Namebot..' يا قمر 🐭🤍',
+'اسمي  '..Namebot..' يامزه 🥺❤️',
+'اسمي  '..Namebot..' يعم 😒',
+'مقولت اسمي '..Namebot..' في اي 🙄',
+'اسمي الكيوت '..Namebot..' 🌝💘',
+'اسمي  '..Namebot..' ياحياتي🧸♥️',
 }
-NamesBots = BotName[math.random(#BotName)]
+NameBots = BotName[math.random(#BotName)]
+if ban.username then
+Creator = " "..ban.first_name.." "
+else
+Creator = " سيلفا\n"
+end
+local texxtt = ''..NameBots..''
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/SO_SELVA'}, 
+{text = Creator, url = 't.me/'..UserBot..'?start'}, 
+},
+{
+{text = 'اضف بوت '..Namebot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(NameBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
 local photo = LuaTele.getUserProfilePhotos(Timo)
-local UserInfo = LuaTele.getUser(Timo)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+local ban = LuaTele.getUser(Timo)
+local Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local BotName = {
-'نعم يروحي 🌝💙',
-'نعم يا قلب '..NamesBot..'',
-'عوز اي مني '..NamesBot..'',
-'موجود '..NamesBot..'',
-'بتشقط وجي ويت 🤪',
-'ايوا جاي 😹',
-'يعم هتسحر واجي 😾',
-'طب متصلي على النبي كدا 🙂💜',
-'تع اشرب شاي 🌝💙',
-'اي قمر انت 🌝💙',
-'اي قلبي 🤍😻',
-'ياض خش نام 😂',
-'انا '..NamesBot..' احسن البوتات 🌝💙',
-'نعم 🍒🤍'
+'اسمي  '..Namebot..' يا قلبي 🤤💚',
+'اسمي '..Namebot..' يا روحي🙈❤️',
+'اسمي  '..Namebot..' يعمري🌚🌹',
+'اسمي  '..Namebot..' يا قمر 🐭🤍',
+'اسمي  '..Namebot..' يامزه 🥺❤️',
+'اسمي  '..Namebot..' يعم 😒',
+'مقولت اسمي '..Namebot..' في اي 🙄',
+'اسمي الكيوت '..Namebot..' 🌝💘',
+'اسمي  '..Namebot..' ياحياتي🧸♥️',
 }
-NamesBots = BotName[math.random(#BotName)]
+NameBots = BotName[math.random(#BotName)]
+if ban.username then
+Creator = " "..ban.first_name.." "
+else
+Creator = " سيلفا\n"
+end
+local texxtt = ''..NameBots..''
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/SO_SELVA'}, 
+{text = Creator, url = 't.me/'..UserBot..'?start'}, 
+},
+{
+{text = 'اضف بوت '..Namebot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(NameBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا').." غادر" or text == 'غادر' or text == 'بوت غادر' then
@@ -13673,16 +13623,16 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/u_ou_u"}
 },
 {
 {text = '𓄼•تـيـتـو•𓄹', url = "https://t.me/XXX_xx_XXX0"},{text = '𓄼•لـيـدو•𓄹', url = "https://t.me/J0KER7x"}
 }, 
 {
-{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/u_ou_u"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/u_ou_u"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
@@ -13699,16 +13649,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/u_ou_u"}
 },
 {
 {text = '𓄼•تـيـتـو•𓄹', url = "https://t.me/XXX_xx_XXX0"},{text = '𓄼•لـيـدو•𓄹', url = "https://t.me/J0KER7x"}
 }, 
 {
-{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/u_ou_u"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/u_ou_u"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
@@ -14014,7 +13964,7 @@ end
 end
  
 if text == '𓄼 المبرمج تيمو 𓄹' or text == 'تيمو' or text == 'مبرمج السورس' or text == 'المبرمج' then  
-local UserId_Info = LuaTele.searchPublicChat("tt_t_4")
+local UserId_Info = LuaTele.searchPublicChat("u_ou_u")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
@@ -14029,7 +13979,7 @@ local TestText = "  ❲ 𝐃𝐞𝐯 𝐓𝐢𝐦𝐨 ❳\n⊱┉┉┉⊶𓄼�
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/u_ou_u"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -14039,7 +13989,7 @@ local TestText = "- معلومات عن مبرمج السورس : \\nn: name Dev
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_4"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/u_ou_u"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -14169,18 +14119,9 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ->* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• ᴅᴇᴠ ᴛɪᴍᴏ(t.me/u_ou_u)*\n*𓄼• ᴅᴇᴠ ᴛɪᴛᴏ(t.me/UlU_Xx)*\n*𓄼• ᴅᴇᴠ ʟᴇᴅᴏ(t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ(t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/tt_t_4"}
-},
-{
-{text = '𝐃𝐞𝐯 𝐓𝐢𝐭𝐨', url = "https://t.me/XXX_xx_XXX0"},{text = '𝐃𝐞𝐯 𝐋𝐢𝐝𝐨', url = "https://t.me/J0KER7x"}
-},
-{
-{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
-},
 {
 {text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
@@ -14212,7 +14153,7 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 elseif text == '𓄼 مطورين السورس 𓄹' then
 photo = "http://t.me/selva_so/8"
 local T =[[
-[𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_4)
+[𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/u_ou_u)
 
 [𝐃𝐞𝐯 𝐓𝐢𝐭𝐨](http://t.me/XXX_xx_XXX0)
 
@@ -14221,7 +14162,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼 المبرمج تيمو 𓄹',url = "https://t.me/tt_t_4"}
+{text = '𓄼 المبرمج تيمو 𓄹',url = "https://t.me/u_ou_u"}
 },
 {
 {text = '𓄼 المطور تيتو 𓄹',url = "https://t.me/XXX_xx_XXX0"},{text = '𓄼 المطور ليدو 𓄹',url = "https://t.me/J0KER7x"}
@@ -14271,73 +14212,76 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
+if text == 'بوت' or text == 'البوت' then
 local photo = LuaTele.getUserProfilePhotos(Timo)
-local UserInfo = LuaTele.getUser(Timo)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+local ban = LuaTele.getUser(Timo)
+local Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local BotName = {
-'اسمي '..NamesBot..' يا قلبي 😍💜',
-'اسمي '..NamesBot..' يا روحي 🙈❤️',
-'اسمي '..NamesBot..' يا عمري 🥰🤍',
-'اسمي '..NamesBot..' يا قمر 🐼💚',
-'اسمي بوت '..NamesBot..' 😻❤️',
-'اسمي '..NamesBot..' يا مزه 😘🍒',
-'اسمي '..NamesBot..' يعم 😒',
-'مقولت اسمي '..NamesBot..' في اي 🙄',
-'اسمي '..NamesBot..' الكيوت 🌝💙',
-'اسمي '..NamesBot..' يا حياتي 🌚❤️',
-'اسمي '..NamesBot..' يوتكه 🙈💔',
+'اسمي  '..Namebot..' يا قلبي 🤤💚',
+'اسمي '..Namebot..' يا روحي🙈❤️',
+'اسمي  '..Namebot..' يعمري🌚🌹',
+'اسمي  '..Namebot..' يا قمر 🐭🤍',
+'اسمي  '..Namebot..' يامزه 🥺❤️',
+'اسمي  '..Namebot..' يعم 😒',
+'مقولت اسمي '..Namebot..' في اي 🙄',
+'اسمي الكيوت '..Namebot..' 🌝💘',
+'اسمي  '..Namebot..' ياحياتي🧸♥️',
 }
-NamesBots = BotName[math.random(#BotName)]
+NameBots = BotName[math.random(#BotName)]
+if ban.username then
+Creator = " "..ban.first_name.." "
+else
+Creator = " سيلفا\n"
+end
+local texxtt = ''..NameBots..''
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/SO_SELVA'}, 
+{text = Creator, url = 't.me/'..UserBot..'?start'}, 
+},
+{
+{text = 'اضف بوت '..Namebot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(NameBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
 local photo = LuaTele.getUserProfilePhotos(Timo)
-local UserInfo = LuaTele.getUser(Timo)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-UserInfo.first_name = Name_User
-break
-end 
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+local ban = LuaTele.getUser(Timo)
+local Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local BotName = {
-'نعم يروحي 🌝💙',
-'نعم يا قلب '..NamesBot..'',
-'عوز اي مني '..NamesBot..'',
-'موجود '..NamesBot..'',
-'بتشقط وجي ويت 🤪',
-'ايوا جاي 😹',
-'يعم هتسحر واجي 😾',
-'طب متصلي على النبي كدا 🙂💜',
-'تع اشرب شاي 🌝💙',
-'اي قمر انت 🌝💙',
-'اي قلبي 🤍😻',
-'ياض خش نام 😂',
-'انا '..NamesBot..' احسن البوتات 🌝💙',
-'نعم 🍒🤍'
+'اسمي  '..Namebot..' يا قلبي 🤤💚',
+'اسمي '..Namebot..' يا روحي🙈❤️',
+'اسمي  '..Namebot..' يعمري🌚🌹',
+'اسمي  '..Namebot..' يا قمر 🐭🤍',
+'اسمي  '..Namebot..' يامزه 🥺❤️',
+'اسمي  '..Namebot..' يعم 😒',
+'مقولت اسمي '..Namebot..' في اي 🙄',
+'اسمي الكيوت '..Namebot..' 🌝💘',
+'اسمي  '..Namebot..' ياحياتي🧸♥️',
 }
-NamesBots = BotName[math.random(#BotName)]
+NameBots = BotName[math.random(#BotName)]
+if ban.username then
+Creator = " "..ban.first_name.." "
+else
+Creator = " سيلفا\n"
+end
+local texxtt = ''..NameBots..''
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = NamesBots, url = 't.me/SO_SELVA'}, 
+{text = Creator, url = 't.me/'..UserBot..'?start'}, 
+},
+{
+{text = 'اضف بوت '..Namebot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 }
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(NameBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == "غنيلي" then
@@ -15945,413 +15889,6 @@ local texting = {"اللَّهُمَّ أَعِنِّي عَلَى ذِكْرِ�
 }
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '⌯ اذكار اخرا ⌯', data = IdUser..'/Haiw5'}, },}}
 LuaTele.editMessageText(ChatId,Msg_id,texting[math.random(#texting)], 'md', true, false, reply_markup)
-end
-end
-
-if Text and Text:match('(%d+)/selvatss@') then
-local UserId = Text:match('(%d+)/selvatss@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(3,42); 
-local Text ='*مرحبا اليك اغنيه عشوائيه 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/faioo8/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss2@') then
-local UserId = Text:match('(%d+)/selvatss2@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(3,12); 
-local Text ='*مرحبا اليك اغنيه تامر حسني 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss2@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss3@') then
-local UserId = Text:match('(%d+)/selvatss3@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(20,23); 
-local Text ='*مرحبا اليك اغنيه عمرو دياب 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss3@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss4@') then
-local UserId = Text:match('(%d+)/selvatss4@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(25,28); 
-local Text ='*مرحبا اليك اغنيه تامر عاشور 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss4@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss5@') then
-local UserId = Text:match('(%d+)/selvatss5@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(30,38); 
-local Text ='*مرحبا اليك اغنيه محمد فؤاد 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss5@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss6@') then
-local UserId = Text:match('(%d+)/selvatss6@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(51,61); 
-local Text ='*مرحبا اليك اغنيه حماقي 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss6@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss7@') then
-local UserId = Text:match('(%d+)/selvatss7@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(63,67); 
-local Text ='*مرحبا اليك اغنيه ابو الانوار 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss7@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss8@') then
-local UserId = Text:match('(%d+)/selvatss8@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(69,73); 
-local Text ='*مرحبا اليك اغنيه رامي صبري 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss8@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss9@') then
-local UserId = Text:match('(%d+)/selvatss9@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(83,92); 
-local Text ='*مرحبا اليك اغنيه رامي مسلم 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss9@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss10@') then
-local UserId = Text:match('(%d+)/selvatss10@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(94,102); 
-local Text ='*مرحبا اليك اغنيه ويجز 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss10@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss11@') then
-local UserId = Text:match('(%d+)/selvatss11@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(104,110); 
-local Text ='*مرحبا اليك اغنيه عمار حسني 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss11@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss12@') then
-local UserId = Text:match('(%d+)/selvatss12@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(113,122); 
-local Text ='*مرحبا اليك اغنيه عنبه 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss12@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss13@') then
-local UserId = Text:match('(%d+)/selvatss13@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(124,133); 
-local Text ='*مرحبا اليك مهرجانات 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss13@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss14@') then
-local UserId = Text:match('(%d+)/selvatss14@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(135,147); 
-local Text ='*مرحبا اليك اغنيه اصاله 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss14@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss15@') then
-local UserId = Text:match('(%d+)/selvatss15@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(149,159); 
-local Text ='*مرحبا اليك اغنيه اليسا 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss15@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss16@') then
-local UserId = Text:match('(%d+)/selvatss16@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(161,175); 
-local Text ='*مرحبا اليك اغنيه كايروكي 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss16@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss17@') then
-local UserId = Text:match('(%d+)/selvatss17@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(177,183); 
-local Text ='*مرحبا اليك اغنيه بابلو 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss17@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/selvatss18@') then
-local UserId = Text:match('(%d+)/selvatss18@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(187,199); 
-local Text ='*مرحبا اليك اغنيه محمد منير 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/selvatss18@'},
-},
-{
-{text = '𓄼• القائمه الرئيسيه •𓄹', callback_data = IdUser..'/Back@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/emeuii/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/tstser@') then
-local UserId = Text:match('(%d+)/tstser@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(3,42); 
-local Text ='*مرحبا اليك استوري عشوائي 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/tstser@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendaudio?chat_id=' .. ChatId .. '&audio=https://t.me/Qapplu/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/tstser3@') then
-local UserId = Text:match('(%d+)/tstser3@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(3,42); 
-local Text ='*مرحبا اليك استوري قران 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/tstser3@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendaudio?chat_id=' .. ChatId .. '&audio=https://t.me/JABWA7/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/tstser2@') then
-local UserId = Text:match('(%d+)/tstser2@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(3,42); 
-local Text ='*مرحبا اليك استوري رومانسي 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/tstser2@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendaudio?chat_id=' .. ChatId .. '&audio=https://t.me/Qapplu/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/tstser4@') then
-local UserId = Text:match('(%d+)/tstser4@')
-if tonumber(IdUser) == tonumber(UserId) then
-Timo = math.random(3,42); 
-local Text ='*مرحبا اليك استوري مضحك 🌝🖤*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '𓄼• مره اخرى •𓄹', callback_data = IdUser..'/tstser4@'},
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendaudio?chat_id=' .. ChatId .. '&audio=https://t.me/JABWA6/'..Timo..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end
 end
 
