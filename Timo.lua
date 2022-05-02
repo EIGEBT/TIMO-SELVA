@@ -2726,7 +2726,7 @@ keyboard.inline_keyboard = {
 },
 }
 msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(Namebots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo="..Timo.."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 elseif text == 'المشتركين' or text == '𓄼 المشتركين 𓄹' then
 if not msg.ControllerBot then 
@@ -2762,7 +2762,7 @@ keyboard.inline_keyboard = {
 },
 }
 msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(Namebots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo="..Timo.."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == 'تفعيل' and msg.Developers then
@@ -10662,7 +10662,7 @@ end
 
 if text == "مسح الردود" or text == "حذف ردود" or text == "مسح ردود" then
 if not msg.Managers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص𓄼 '..Controller_Num(6)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص𓄼 '..Controller_Num(6)..' ??* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
@@ -11657,7 +11657,7 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](https://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](https://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](https://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](https://t.me/SO_SELVA)*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -12290,7 +12290,7 @@ echo '⊱┉┉┉⊶𓄼•𝐒??𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹�
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮??𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 وحـده الـتـخـزيـن 𓄹  ⇦\n𓄼* '"$HardDisk"'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 موقـع الـسـيـرفـر 𓄹 ⇦\n𓄼*‹-‹- '`curl http://th3boss.com/ip/location`'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯??•𓄹⊷┉┉┉⊰ \n 🌐𓄼 الـمــعــالــج 𓄹  ⇦\n𓄼* '"`grep -c processor /proc/cpuinfo`""Core ~ 𓄼$CPUPer%𓄹 "'*𓄹'
-echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐𓄼 الــدخــول 𓄹  ⇦\n𓄼* '`whoami`'*𓄹'
+echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰ \n 🌐?? الــدخــول 𓄹  ⇦\n𓄼* '`whoami`'*𓄹'
 echo ' ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯??•𓄹⊷┉┉┉⊰ \n 🌐𓄼 مـده تـشغيـل الـسـيـرفـر 𓄹 ⇦\n𓄼* '"$uptime"'*𓄹'
  ]]):read('*all')
 LuaTele.sendText(msg_chat_id,msg_id,ioserver,"md",true)
@@ -14114,7 +14114,7 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](https://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](https://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](https://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](https://t.me/SO_SELVA)*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -14603,7 +14603,7 @@ db = "اغنيه 🎵"
 elseif Redis:get(Timo.."Add:Rd:Sudo:video_note"..v) then
 db = "بصمه فيديو 🎥"
 end
-text = text..""..k.." =𓄼 "..v.." 𓄹=𓄼 "..db.." 𓄹\n"
+text = text..""..k.." =𓄼 "..v.." 𓄹=?? "..db.." 𓄹\n"
 end
 if #list == 0 then
 text = " ⌯ لا توجد ردود عامه"
