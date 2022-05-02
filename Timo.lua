@@ -11662,16 +11662,7 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local T =[[
-𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')
-𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ
-───── •⌯• ─────
-𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)
-𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)
-𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)
-───── •⌯• ─────
-𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)
-]]
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -14128,16 +14119,7 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local T =[[
-𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')
-𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ
-───── •⌯• ─────
-𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)
-𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)
-𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)
-───── •⌯• ─────
-𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)
-]]
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](http://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](http://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](http://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](http://t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -16156,7 +16138,7 @@ data = {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
+{text = '??•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
 },
 }
 }
