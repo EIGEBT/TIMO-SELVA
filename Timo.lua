@@ -2659,7 +2659,7 @@ Redis:set(Timo..'Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$"
 LuaTele.sendText(msg_chat_id,msg_id,'* ⌯  تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *',"md",true)  
 elseif text == 'الاحصائيات' or text == '𓄼 الاحصائيات 𓄹' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
@@ -2669,20 +2669,15 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-Namebot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 Groups = (Redis:scard(Timo..'ChekBotAdd') or 0)
 Users = (Redis:scard(Timo..'Num:User:Pv') or 0)
 if photo.total_count > 0 then
-local selva = 'اسم بوت = 𓄼 '..Namebot..' 𓄹'
 local Grosupsw = 'الجروبات = 𓄼 '..Groups..' 𓄹'
 local Usperos = 'المشتركين = 𓄼 '..Users..' 𓄹'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
 {text =first_name, url = "https://t.me/SO_SELVA"}
-},
-{
-{text = selva, url = 't.me/SO_SELVA'}, 
 },
 {
 {text = Grosupsw, url = 't.me/SO_SELVA'}, 
@@ -2695,7 +2690,7 @@ keyboard.inline_keyboard = {
 },
 }
 msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(Namebots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo="..Timo.."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 elseif text == 'الجروبات' or text == '𓄼 الجروبات 𓄹' then
 if not msg.ControllerBot then 
@@ -11662,7 +11657,7 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](t.me/SO_SELVA)*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](https://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](https://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](https://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](https://t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -14119,7 +14114,7 @@ local user_info = LuaTele.getUser(msg.sender.user_id)
 local first_name = user_info.first_name
 local RinkBot = msg.Name_Controller
 photo = "http://t.me/selva_so/2"
-local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](t.me/SO_SELVA)*\n'
+local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user?id='..user_info.id..')\n*𓄼• ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*\n*───── •⌯• ─────*\n*𓄼• [ᴅᴇᴠ ᴛɪᴍᴏ](https://t.me/u_ou_u)*\n*𓄼• [ᴅᴇᴠ ᴛɪᴛᴏ](https://t.me/UlU_Xx)*\n*𓄼• [ᴅᴇᴠ ʟᴇᴅᴏ](https://t.me/J0KER7x)*\n*───── •⌯• ─────*\n*𓄼• [ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ](https://t.me/SO_SELVA)*\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
