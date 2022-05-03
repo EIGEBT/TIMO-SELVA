@@ -14876,8 +14876,8 @@ end -- File_Bot_Run
 
 function CallBackLua(data) --- هذا الكالباك بي الابديت
 --var(data)
-end --UserBot
-end -- File_Bot_Run
+--UserBot
+-- File_Bot_Run
 function CallBackLua(data) 
 if data and data.luatele and data.luatele == "updateNewInlineQuery" then
 local Text = data.query 
@@ -14934,6 +14934,7 @@ https.request("https://api.telegram.org/bot"..Token.."/answerCallbackQuery?callb
 end
 if tonumber(mk[1]) ~= tonumber(data.sender_user_id) or tonumber(mk[2]) ~= tonumber(data.sender_user_id) then
 https.request("https://api.telegram.org/bot"..Token.."/answerCallbackQuery?callback_query_id="..data.id.."&text="..URL.escape("الهمسه ليست لك").."&show_alert=true")
+end
 end
 end
 if data and data.luatele and data.luatele == "updateSupergroup" then
