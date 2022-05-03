@@ -14876,9 +14876,6 @@ end -- File_Bot_Run
 
 function CallBackLua(data) --- هذا الكالباك بي الابديت
 --var(data)
---UserBot
--- File_Bot_Run
-function CallBackLua(data) 
 if data and data.luatele and data.luatele == "updateNewInlineQuery" then
 local Text = data.query 
 if Text == '' then
