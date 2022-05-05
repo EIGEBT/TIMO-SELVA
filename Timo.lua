@@ -14034,7 +14034,7 @@ local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/tt_t_4"}{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
+{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/tt_t_4"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
 },
 {
 {text = 'ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ', url = "https://t.me/SO_SELVA"}
