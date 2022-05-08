@@ -11614,13 +11614,12 @@ local t = "*اضغط علي الزر لاختيار استوري أخر 🌝🖤
 Rrr = math.random(4,50)
 local m = "https://t.me/Qapplu/"..Rrr..""
 keyboard = {} 
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
+keyboard.inline_keyboard = {
 {
-{text = ' • استوري  •', data = msg.sender.user_id.."/story"},{text = ' • استوري حب  •', data = msg.sender.user_id.."/story2"},
+{text = ' • استوري  •', callback_data=msg.sender.user_id.."/storyy"},{text = ' • استوري حب  •', callback_data=msg.sender.user_id.."/storyy2"},
 },
 {
-{text = ' • استوري مضحك  •', data = msg.sender.user_id.."/story4"},{text = ' • استوري قران  •', data = msg.sender.user_id.."/story3"},
+{text = ' • استوري مضحك  •', callback_data=msg.sender.user_id.."/storyy4"},{text = ' • استوري قران  •', callback_data=msg.sender.user_id.."/storyy3"},
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
@@ -13903,7 +13902,7 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر الاذاعه', 'md', false, false, false, false, reply_markup)
-elseif text == '𓄼 القائمه الرئيسيه 𓄹' then
+elseif text == '?? القائمه الرئيسيه 𓄹' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*هاذا الامر يخص⦗ '..Controller_Num(1)..' ⦘* ',"md",true)  
 end
@@ -15405,51 +15404,6 @@ end
 end
 end
 
-if Text and Text:match('(%d+)/story') then
-local UserId = Text:match('(%d+)/story')
-if tonumber(IdUser) == tonumber(UserId) then
-Rrr = math.random(2,22)
-au ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري 🌝🖤*\n',parse_mode = "Markdown"}     
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/story"},},}
-local mm = Msg_id/2097152/0.5
-https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
-end 
-end
-if Text and Text:match('(%d+)/story2') then
-local UserId = Text:match('(%d+)/story2')
-if tonumber(IdUser) == tonumber(UserId) then
-Rrr = math.random(4,74)
-au ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري حب 🌝🖤*\n',parse_mode = "Markdown"}     
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/story2"},},}
-local mm = Msg_id/2097152/0.5
-https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
-end 
-end
-if Text and Text:match('(%d+)/story3') then
-local UserId = Text:match('(%d+)/story3')
-if tonumber(IdUser) == tonumber(UserId) then
-Rrr = math.random(4,74)
-au ={type = "audio",media = "https://t.me/L120N7/"..Rrr.."",caption = '*مرحبا اليك استوري قرأن 🌝🖤*\n',parse_mode = "Markdown"}     
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/story3"},},}
-local mm = Msg_id/2097152/0.5
-https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
-end 
-end
-if Text and Text:match('(%d+)/story4') then
-local UserId = Text:match('(%d+)/story4')
-if tonumber(IdUser) == tonumber(UserId) then
-Rrr = math.random(4,74)
-au ={type = "audio",media = "https://t.me/L120N6/"..Rrr.."",caption = '*مرحبا اليك استوري مضحك 🌝🖤*\n',parse_mode = "Markdown"}     
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/story4"},},}
-local mm = Msg_id/2097152/0.5
-https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
-end 
-end
-
 if Text and Text:match('/Mahibes(%d+)') then
 local GetMahibes = Text:match('/Mahibes(%d+)') 
 local NumMahibes = math.random(1,6)
@@ -16668,6 +16622,50 @@ LuaTele.editMessageText(ChatId,Msg_id,"*⌯ ارسل الكلمه لزخرفته
 Redis:set(Timo.."zhrfa"..IdUser,"sendzh") 
 end 
 
+if Text and Text:match('(%d+)/storyy') then
+local UserId = Text:match('(%d+)/storyy')
+if tonumber(IdUser) == tonumber(UserId) then
+Rrr = math.random(2,22)
+au ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري 🌝🖤*\n',parse_mode = "Markdown"}     
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyy"},},}
+local mm = Msg_id/2097152/0.5
+https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
+end 
+end
+if Text and Text:match('(%d+)/storyy2') then
+local UserId = Text:match('(%d+)/storyy2')
+if tonumber(IdUser) == tonumber(UserId) then
+Rrr = math.random(4,74)
+au ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري حب 🌝🖤*\n',parse_mode = "Markdown"}     
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyy2"},},}
+local mm = Msg_id/2097152/0.5
+https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
+end 
+end
+if Text and Text:match('(%d+)/storyy3') then
+local UserId = Text:match('(%d+)/storyy3')
+if tonumber(IdUser) == tonumber(UserId) then
+Rrr = math.random(4,74)
+au ={type = "audio",media = "https://t.me/L120N7/"..Rrr.."",caption = '*مرحبا اليك استوري قرأن 🌝🖤*\n',parse_mode = "Markdown"}     
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyy3"},},}
+local mm = Msg_id/2097152/0.5
+https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
+end 
+end
+if Text and Text:match('(%d+)/storyy4') then
+local UserId = Text:match('(%d+)/storyy4')
+if tonumber(IdUser) == tonumber(UserId) then
+Rrr = math.random(4,74)
+au ={type = "audio",media = "https://t.me/L120N6/"..Rrr.."",caption = '*مرحبا اليك استوري مضحك 🌝🖤*\n',parse_mode = "Markdown"}     
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyy4"},},}
+local mm = Msg_id/2097152/0.5
+https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
+end 
+end
 if Text and Text:match('(%d+)/lock_link') then
 local UserId = Text:match('(%d+)/lock_link')
 if tonumber(IdUser) == tonumber(UserId) then
