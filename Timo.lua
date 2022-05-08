@@ -11616,10 +11616,10 @@ local m = "https://t.me/Qapplu/"..Rrr..""
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ' • استوري  •', callback_data=msg.sender.user_id.."/story"},{text = ' • استوري حب  •', callback_data=msg.sender.user_id.."/story2"},
+{text = ' • استوري  •', data = msg.sender.user_id."/story"},{text = ' • استوري حب  •', data = msg.sender.user_id.."/story2"},
 },
 {
-{text = ' • استوري مضحك  •', callback_data=msg.sender.user_id.."/story4"},{text = ' • استوري قران  •', callback_data=msg.sender.user_id.."/story3"},
+{text = ' • استوري مضحك  •', data = msg.sender.user_id.."/story4"},{text = ' • استوري قران  •', data = msg.sender.user_id.."/story3"},
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
