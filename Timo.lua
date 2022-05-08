@@ -12415,6 +12415,7 @@ if text == 'بوت' or text == 'البوت' then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local selva = LuaTele.getUser(Timo)
 local first_name = user_info.first_name
+local RinkBot = msg.Name_Controller
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
 local selvaname = "نعم حبيبي"..news.."🌝🖤"
