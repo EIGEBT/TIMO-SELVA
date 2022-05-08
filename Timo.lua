@@ -11701,6 +11701,19 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
+if text == "صورص" then
+local t = "*ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ ѕᴇʟᴠᴀ*"
+Rrr = math.random(4,50)
+local m = "https://t.me/selva_so/2/"..Rrr..""
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = ' • مطورين السورس  •', callback_data=msg.sender.user_id.."/gdmxis"},{text = ' • قناوات السورس  •', callback_data=msg.sender.user_id.."/story2"},
+},
+}
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown&reply_markup="..JSON.encode(keyboard))
+end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local user_info = LuaTele.getUser(msg.sender.user_id)
@@ -15168,7 +15181,7 @@ if Text and Text:match('(%d+)/storyy') then
 local UserId = Text:match('(%d+)/storyy')
 if tonumber(IdUser) == tonumber(UserId) then
 Rrr = math.random(2,22)
-au ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري 🌝🖤*\n',parse_mode = "Markdown"}     
+mm ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري 🌝🖤*\n',parse_mode = "Markdown"}     
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyy"},},}
 local mm = Msg_id/2097152/0.5
@@ -15179,7 +15192,7 @@ if Text and Text:match('(%d+)/storyyy') then
 local UserId = Text:match('(%d+)/storyyy')
 if tonumber(IdUser) == tonumber(UserId) then
 Rrr = math.random(4,74)
-au ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري حب 🌝🖤*\n',parse_mode = "Markdown"}     
+mm ={type = "audio",media = "https://t.me/L120N8/"..Rrr.."",caption = '*مرحبا اليك استوري حب 🌝🖤*\n',parse_mode = "Markdown"}     
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyyy"},},}
 local mm = Msg_id/2097152/0.5
@@ -15190,7 +15203,7 @@ if Text and Text:match('(%d+)/storyyyy') then
 local UserId = Text:match('(%d+)/storyyyy')
 if tonumber(IdUser) == tonumber(UserId) then
 Rrr = math.random(4,74)
-au ={type = "audio",media = "https://t.me/L120N7/"..Rrr.."",caption = '*مرحبا اليك استوري قرأن 🌝🖤*\n',parse_mode = "Markdown"}     
+mm ={type = "audio",media = "https://t.me/L120N7/"..Rrr.."",caption = '*مرحبا اليك استوري قرأن 🌝🖤*\n',parse_mode = "Markdown"}     
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyyyy"},},}
 local mm = Msg_id/2097152/0.5
@@ -15201,9 +15214,27 @@ if Text and Text:match('(%d+)/storyyyyy') then
 local UserId = Text:match('(%d+)/storyyyyy')
 if tonumber(IdUser) == tonumber(UserId) then
 Rrr = math.random(4,74)
-au ={type = "audio",media = "https://t.me/L120N6/"..Rrr.."",caption = '*مرحبا اليك استوري مضحك 🌝🖤*\n',parse_mode = "Markdown"}     
+mm ={type = "audio",media = "https://t.me/L120N6/"..Rrr.."",caption = '*مرحبا اليك استوري مضحك 🌝🖤*\n',parse_mode = "Markdown"}     
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = ' • استوري أخري  • ', callback_data=IdUser.."/storyyyyy"},},}
+local mm = Msg_id/2097152/0.5
+https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
+end 
+end
+if Text and Text:match('(%d+)/gdmxis') then
+local UserId = Text:match('(%d+)/gdmxis')
+if tonumber(IdUser) == tonumber(UserId) then
+Rrr = math.random(2,22)
+mm ={type = "photo",media = "https://t.me/selva_so/2/"..Rrr.."",caption = '*مطورين السورس*\n',parse_mode = "Markdown"}     
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/tt_t_2"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
+},
+{
+{text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/boykaa6"}
+},
+}
 local mm = Msg_id/2097152/0.5
 https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
 end 
