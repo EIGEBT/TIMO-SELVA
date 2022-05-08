@@ -12412,9 +12412,10 @@ Redis:del(Timo.."Name:Bot")
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف اسم البوت ","md",true)   
 end
 if text == 'بوت' or text == 'البوت' then
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local selva = LuaTele.getUser(Timo)
-local first_name = user_info.first_name
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
 local selvaname = "نعم حبيبي"..news.."🌝🖤"
@@ -12442,7 +12443,7 @@ keyboard.inline_keyboard = {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
 },
 {
-{text =first_name,url = "t.me/SO_SELVA"}, 
+{text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
 {text = 'اضف بوت '..NamesBot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
