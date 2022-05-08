@@ -12395,9 +12395,23 @@ end
 if text == "بووت" then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local selva = LuaTele.getUser(Timo)
-local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
 local selvaname = "نعم حبيبي "..news.." 🌝💖"
+local BotName = {
+'اسمي '..NamesBot..' يا قلبي 😍💜',
+'اسمي '..NamesBot..' يا روحي 🙈❤️',
+'اسمي '..NamesBot..' يا عمري 🥰🤍',
+'اسمي '..NamesBot..' يا قمر 🐼💚',
+'اسمي بوت '..NamesBot..' 😻❤️',
+'اسمي '..NamesBot..' يا مزه 😘🍒',
+'اسمي '..NamesBot..' يعم 😒',
+'مقولت اسمي '..NamesBot..' في اي 🙄',
+'اسمي '..NamesBot..' الكيوت 🌝💙',
+'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+'اسمي '..NamesBot..' يوتكه 🙈💔',
+}
+NamesBots = BotName[math.random(#BotName)]
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -12405,7 +12419,10 @@ keyboard.inline_keyboard = {
 {text = selvaname, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = 'اضف بوت '..timoo..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = NamesBots, url = 't.me/SO_SELVA'}, 
+},
+{
+{text = 'اضف بوت '..NamesBot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
@@ -13496,7 +13513,7 @@ name = string.gsub(name,"??‍♂","🧝‍♀🧝‍♀🧝‍♀🧝‍♀🧝
 name = string.gsub(name,"🙍‍♂️","🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙎‍♂️🙍‍♂️🙎‍♂️🙎‍♂️🙎‍♂️")
 name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️??‍♀️🧖‍♀️🧖‍♀️🧖‍♂️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️")
 name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭??")
-name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧👨‍👨‍👦👨‍👨‍👦")
+name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧??‍👨‍👦👨‍👨‍👦")
 name = string.gsub(name,"🕒","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
 name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
