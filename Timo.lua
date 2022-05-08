@@ -11616,7 +11616,7 @@ local m = "https://t.me/Qapplu/"..Rrr..""
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ' • استوري  •', data = msg.sender.user_id."/story"},{text = ' • استوري حب  •', data = msg.sender.user_id.."/story2"},
+{text = ' • استوري  •', data = msg.sender.user_id.."/story"},{text = ' • استوري حب  •', data = msg.sender.user_id.."/story2"},
 },
 {
 {text = ' • استوري مضحك  •', data = msg.sender.user_id.."/story4"},{text = ' • استوري قران  •', data = msg.sender.user_id.."/story3"},
