@@ -5106,7 +5106,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك ف
 end
 local Info_Members = Redis:smembers(Timo.."abntimo:Group"..msg_chat_id) 
 if #Info_Members == 0 then
-return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد خاين في الجروب *","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*⌯ لا يوجد ابناء تيمو في الجروب *","md",true)  
 end
 ListMembers = '\n*⌯ ولاد تيمو ↑↓\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
@@ -12392,6 +12392,26 @@ end
 Redis:del(Timo.."Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف اسم البوت ","md",true)   
 end
+if text == "بووت" then
+local photo = LuaTele.getUserProfilePhotos(Timo)
+local TITO = LuaTele.getUser(Timo)
+local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+local news = ' '..msg.Name_Controller
+local TitoName = "نعم حبيبي "..news.." 🌝💖"
+if photo.total_count > 0 then
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = TitoName, url = 't.me/'..UserBot..'?start'}, 
+},
+{
+{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(TitoName).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
 if text == 'بوت' or text == 'البوت' then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local ban = LuaTele.getUser(Timo)
@@ -14290,7 +14310,7 @@ local BotName = {
 'اسمي  '..Namebot..' يعم 😒',
 'مقولت اسمي '..Namebot..' في اي 🙄',
 'اسمي الكيوت '..Namebot..' 🌝💘',
-'اسمي  '..Namebot..' ياحياتي??♥️',
+'اسمي  '..Namebot..' ياحياتي🧸♥️',
 }
 NameBots = BotName[math.random(#BotName)]
 if ban.username then
@@ -16361,7 +16381,7 @@ local TextHelp = [[*
 ⌯ المطور ⌯
 ⌯ كشف ⌯
 ⌯ الرابط ⌯
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮??𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⊱┉┉┉⊶𓄼•??𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 ⌯ بوت حذف ⌯
 ⌯ روابط حذف ⌯
 ⌯ رسائلي ⌯
