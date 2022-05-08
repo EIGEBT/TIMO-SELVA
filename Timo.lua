@@ -179,7 +179,7 @@ Status = 'ادمن المجموعه'
 elseif Distinguished then
 Status = Redis:get(Timo.."Vip:Group:Reply"..ChatId) or 'المميز'
 else
-Status = Redis:get(Timo.."Mempar:Group:Reply"..ChatId) or 'المستخدم'
+Status = Redis:get(Timo.."Mempar:Group:Reply"..ChatId) or 'العضو'
 end  
 return Status
 end 
@@ -982,7 +982,7 @@ elseif tonumber(msg.sender.user_id) == tonumber(Timo) then
 msg.The_Controller = 9
 else
 msg.The_Controller = 10
-msg.Name_Controller = Redis:get(Timo.."Mempar:Group:Reply"..msg.chat_id) or 'المستخدم '
+msg.Name_Controller = Redis:get(Timo.."Mempar:Group:Reply"..msg.chat_id) or 'العضو '
 end  
 if msg.The_Controller == 1 then  
 msg.ControllerBot = true
@@ -12414,9 +12414,10 @@ end
 if text == 'بوت' or text == 'البوت' then
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local selva = LuaTele.getUser(Timo)
+local first_name = user_info.first_name
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
-local selvaname = "نعم حبيبي "..news.."🌝🖤"
+local selvaname = "نعم حبيبي"..news.."🌝🖤"
 local BotName = {
 'اسمي '..NamesBot..' يا قلبي 😍💜',
 'اسمي '..NamesBot..' يا روحي 🙈❤️',
@@ -12439,6 +12440,9 @@ keyboard.inline_keyboard = {
 },
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
+},
+{
+{text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
 {text = 'اضف بوت '..NamesBot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -16331,7 +16335,7 @@ local TextHelp = [[*
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼 رفع + تنزيل = بنتي 𓄹
 𓄼 تاك لبناتي 𓄹
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜?? 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 𓄼 رفع + تنزيل = خاين 𓄹
 𓄼 تاك للخاينين 𓄹
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
