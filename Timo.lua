@@ -11638,43 +11638,6 @@ local m = "https://t.me/romansy_selva/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
-if text == "غنيلي" or text == "قائمه غنيلي" then
-local Text ='*• اختار اغنيه من قائمة غنيلي •*'
-Rrr = math.random(3,42); 
-local m = "https://t.me/faioo8/"..Rrr..""
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '• غنيلي • ', callback_data=msg.sender.user_id..'/Sinyly@'},{text = '• غنيلي تامر حسني •', callback_data=msg.sender.user_id..'/Sinyly2@'},
-},
-{
-{text = '• غنيلي عمرو دياب •', callback_data=msg.sender.user_id..'/Sinyly3@'},{text = '• غنيلي تامر عاشور •', callback_data=msg.sender.user_id..'/Sinyly4@'},
-},
-{
-{text = '• غنيلي محمد فؤاد •', callback_data=msg.sender.user_id..'/Sinyly5@'},{text = '• غنيلي حماقي •', callback_data=msg.sender.user_id..'/Sinyly6@'},
-},
-{
-{text = '• غنيلي ابو الانوار •', callback_data=msg.sender.user_id..'/Sinyly7@'},{text = '• غنيلي رامي صبري •', callback_data=msg.sender.user_id..'/Sinyly8@'},
-},
-{
-{text = '• غنيلي مسلم •', callback_data=msg.sender.user_id..'/Sinyly9@'},{text = '• غنيلي ويجز •', callback_data=msg.sender.user_id..'/Sinyly10@'},
-},
-{
-{text = '• غنيلي عمار حسني •', callback_data=msg.sender.user_id..'/Sinyly11@'},{text = '• غنيلي عنبه •', callback_data=msg.sender.user_id..'/Sinyly12@'},
-},
-{
-{text = '• غنيلي مهرجانات  •', callback_data=msg.sender.user_id..'/Sinyly13@'},{text = '• غنيلي اصاله •', callback_data=msg.sender.user_id..'/Sinyly14@'},
-},
-{
-{text = '• غنيلي اليسا  •', callback_data=msg.sender.user_id..'/Sinyly15@'},{text = '• غنيلي كايروكي •', callback_data=msg.sender.user_id..'/Sinyly16@'},
-},
-{
-{text = '• غنيلي بابلو •', callback_data=msg.sender.user_id..'/Sinyly17@'},{text = '• غنيلي محمد منير •', callback_data=msg.sender.user_id..'/Sinyly18@'},
-},
-}
-local rep = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&Voice="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown&reply_markup="..JSON.encode(keyboard))
-end
 if text == 'معلوماتي' or text == 'انا مين' then
 local selva = LuaTele.getUser(msg.sender.user_id)
 if selva.first_name then
@@ -11891,6 +11854,52 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ♻️╝•❻• ‹ اوامر الفتح والقفل ›
 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚
 https://t.me/SO_SELVA
+*]],"md",false, false, false, false, reply_markup)
+elseif text == 'غنيلي' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص ❴ '..Controller_Num(7)..' ❵* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '• غنيلي • ', callback_data=msg.sender.user_id..'/Sinyly@'},{text = '• غنيلي تامر حسني •', callback_data=msg.sender.user_id..'/Sinyly2@'},
+},
+{
+{text = '• غنيلي عمرو دياب •', callback_data=msg.sender.user_id..'/Sinyly3@'},{text = '• غنيلي تامر عاشور •', callback_data=msg.sender.user_id..'/Sinyly4@'},
+},
+{
+{text = '• غنيلي محمد فؤاد •', callback_data=msg.sender.user_id..'/Sinyly5@'},{text = '• غنيلي حماقي •', callback_data=msg.sender.user_id..'/Sinyly6@'},
+},
+{
+{text = '• غنيلي ابو الانوار •', callback_data=msg.sender.user_id..'/Sinyly7@'},{text = '• غنيلي رامي صبري •', callback_data=msg.sender.user_id..'/Sinyly8@'},
+},
+{
+{text = '• غنيلي مسلم •', callback_data=msg.sender.user_id..'/Sinyly9@'},{text = '• غنيلي ويجز •', callback_data=msg.sender.user_id..'/Sinyly10@'},
+},
+{
+{text = '• غنيلي عمار حسني •', callback_data=msg.sender.user_id..'/Sinyly11@'},{text = '• غنيلي عنبه •', callback_data=msg.sender.user_id..'/Sinyly12@'},
+},
+{
+{text = '• غنيلي مهرجانات  •', callback_data=msg.sender.user_id..'/Sinyly13@'},{text = '• غنيلي اصاله •', callback_data=msg.sender.user_id..'/Sinyly14@'},
+},
+{
+{text = '• غنيلي اليسا  •', callback_data=msg.sender.user_id..'/Sinyly15@'},{text = '• غنيلي كايروكي •', callback_data=msg.sender.user_id..'/Sinyly16@'},
+},
+{
+{text = '• غنيلي بابلو •', callback_data=msg.sender.user_id..'/Sinyly17@'},{text = '• غنيلي محمد منير •', callback_data=msg.sender.user_id..'/Sinyly18@'},
+},
+{
+{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id, [[*
+مرحبا اليك غنيلي
 *]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if ChannelJoin(msg) == false then
