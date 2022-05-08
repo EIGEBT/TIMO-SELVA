@@ -2892,6 +2892,9 @@ end
 end
 
 if text == 'تعطيل' and msg.Developers then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
 if not Redis:sismember(Timo.."ChekBotAdd",msg_chat_id) then
@@ -2918,6 +2921,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ المجموعه : {*['..Get
 end
 end
 if text == 'تعطيل' and not msg.Developers then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(2)..' 𓄹* ',"md",true)  
+end
 local StatusMember = LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele
 if (StatusMember == "chatMemberStatusCreator") then
 local AddedBot = true
