@@ -12394,22 +12394,22 @@ return LuaTele.sendText(msg_chat_id,msg_id," ⌯ تم حذف اسم البوت "
 end
 if text == "بووت" then
 local photo = LuaTele.getUserProfilePhotos(Timo)
-local TITO = LuaTele.getUser(Timo)
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+local selva = LuaTele.getUser(Timo)
+local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
-local TitoName = "نعم حبيبي "..news.." 🌝💖"
+local selvaname = "نعم حبيبي "..news.." 🌝💖"
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = TitoName, url = 't.me/'..UserBot..'?start'}, 
+{text = selvaname, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = 'أضغط لاضافه ألبوت لمجموعتك 𖠪', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = 'اضف بوت '..timoo..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(TitoName).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(selvaname).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == 'بوت' or text == 'البوت' then
@@ -16546,7 +16546,7 @@ data = {
 {text = ' 𓄼 ❸ 𓄹', data = IdUser..'/help3'}, {text = ' 𓄼 ❹ 𓄹', data = IdUser..'/help4'}, 
 },
 {
-{text = ' 𓄼 ❺ 𓄹', data = IdUser..'/listallAddorrem'}, {text = ' 𓄼 ❻ 𓄹', data = IdUser..'/NoNextSeting'}, 
+{text = ' 𓄼 ❺ 𓄹', data = IdUser..'/listallAddorrem'}, {text = ' ?? ❻ 𓄹', data = IdUser..'/NoNextSeting'}, 
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = 't.me/SO_SELVA'}, 
