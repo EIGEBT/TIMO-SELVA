@@ -12443,7 +12443,7 @@ keyboard.inline_keyboard = {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
 },
 {
-{text =first_name,url = "https://t.me/"..user_info.username..""}, 
+{text =first_name,url = "t.me/"..user_info.username..""}, 
 },
 {
 {text = 'اضف بوت '..NamesBot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
