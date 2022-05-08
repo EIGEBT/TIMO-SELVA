@@ -11596,6 +11596,19 @@ if Redis:get(Timo.."Status:kool"..msg.chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,m,"md",true) 
 end
 end
+if text == "غنيلي" then
+local t = "اليك اغنيه عشوائيه من البوت"
+Num = math.random(8,83)
+Mhm = math.random(108,143)
+Mhhm = math.random(166,179)
+Mmhm = math.random(198,216)
+Mhmm = math.random(257,626)
+local Texting = {Num,Mhm,Mhhm,Mmhm,Mhmm}
+local Rrr = Texting[math.random(#Texting)]
+local m = "https://t.me/mmsst13/"..Rrr..""
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendaudio?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&audio="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
+end
 if text == "تويت بالصور" then
 local t = "مرحبا اليك تويت بالصور 🌝💜"
 Rrr = math.random(4,50)
@@ -11738,49 +11751,6 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'غنيلي' then
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/SO_SELVA'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• غنيلي • ', callback_data=msg.sender.user_id..'/Sinyly@'},{text = '• غنيلي تامر حسني •', callback_data=msg.sender.user_id..'/Sinyly2@'},
-},
-{
-{text = '• غنيلي عمرو دياب •', callback_data=msg.sender.user_id..'/Sinyly3@'},{text = '• غنيلي تامر عاشور •', callback_data=msg.sender.user_id..'/Sinyly4@'},
-},
-{
-{text = '• غنيلي محمد فؤاد •', callback_data=msg.sender.user_id..'/Sinyly5@'},{text = '• غنيلي حماقي •', callback_data=msg.sender.user_id..'/Sinyly6@'},
-},
-{
-{text = '• غنيلي ابو الانوار •', callback_data=msg.sender.user_id..'/Sinyly7@'},{text = '• غنيلي رامي صبري •', callback_data=msg.sender.user_id..'/Sinyly8@'},
-},
-{
-{text = '• غنيلي مسلم •', callback_data=msg.sender.user_id..'/Sinyly9@'},{text = '• غنيلي ويجز •', callback_data=msg.sender.user_id..'/Sinyly10@'},
-},
-{
-{text = '• غنيلي عمار حسني •', callback_data=msg.sender.user_id..'/Sinyly11@'},{text = '• غنيلي عنبه •', callback_data=msg.sender.user_id..'/Sinyly12@'},
-},
-{
-{text = '• غنيلي مهرجانات  •', callback_data=msg.sender.user_id..'/Sinyly13@'},{text = '• غنيلي اصاله •', callback_data=msg.sender.user_id..'/Sinyly14@'},
-},
-{
-{text = '• غنيلي اليسا  •', callback_data=msg.sender.user_id..'/Sinyly15@'},{text = '• غنيلي كايروكي •', callback_data=msg.sender.user_id..'/Sinyly16@'},
-},
-{
-{text = '• غنيلي بابلو •', callback_data=msg.sender.user_id..'/Sinyly17@'},{text = '• غنيلي محمد منير •', callback_data=msg.sender.user_id..'/Sinyly18@'},
-},
-{
-{text = '𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹 ', url = 't.me/SO_SELVA'}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
-مرحبا اليك غنيلي
-*]],"md",false, false, false, false, reply_markup)
 elseif text == 'بوت حذف' or text == 'بوت الحذف' or text == 'بووت حذف' then
 local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local user_info = LuaTele.getUser(msg.sender.user_id)
