@@ -11614,7 +11614,8 @@ local t = "*اضغط علي الزر لاختيار استوري أخر 🌝🖤
 Rrr = math.random(4,50)
 local m = "https://t.me/Qapplu/"..Rrr..""
 keyboard = {} 
-keyboard.inline_keyboard = {
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
 {
 {text = ' • استوري  •', data = msg.sender.user_id.."/story"},{text = ' • استوري حب  •', data = msg.sender.user_id.."/story2"},
 },
@@ -15320,7 +15321,7 @@ local selva_ns = '⌯ ʜᴇʀᴇ ᴀʀᴇ ʏᴏ𝗎ʀ ᴘʜᴏᴛᴏѕ'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼 اخفاء الامر 𓄹 ', callback_data =IdUser..'/delAmr'}, 
+{text = '𓄼 اخفاء الامر ?? ', callback_data =IdUser..'/delAmr'}, 
 },
 {
 {text = '𓄼 صورتك القادمه 𓄹 ', callback_data =IdUser..'/selva5'},{text = '𓄼 صورتك السابقه𓄹 ', callback_data =IdUser..'/selva3'}, 
