@@ -11672,7 +11672,7 @@ keyboard.inline_keyboard = {
 {text = '• غنيلي بابلو •', callback_data=msg.sender.user_id..'/Sinyly17@'},{text = '• غنيلي محمد منير •', callback_data=msg.sender.user_id..'/Sinyly18@'},
 },
 }
-local msg_id = msg.id/2097152/0.5
+local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&Voice="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'معلوماتي' or text == 'انا مين' then
