@@ -11701,6 +11701,24 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
+if text == 'اية قرانيه' or text == 'الآية قرانية' or text == 'ايه قرانيه' or text == 'تيتو لهقر' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Eval..'Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '𓄼• آية قرانية•𓄹', data = msg.sender.user_id..'/Haiw5'},
+},
+{
+{text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/delAmr'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,' اليك قسم الاذكار ',"md",false, false, false, false, reply_markup)
+end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local user_info = LuaTele.getUser(msg.sender.user_id)
@@ -13491,7 +13509,7 @@ name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️??‍♀️�
 name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭??")
 name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧??‍👨‍👦👨‍👨‍👦")
 name = string.gsub(name,"🕒","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
-name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
+name = string.gsub(name,"🕤","🕥??🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
 name = string.gsub(name,"📅","📆📆📆📆📆📆📅📆📆")
 return LuaTele.sendText(msg_chat_id,msg_id,"⌯ اسرع واحد يدز الاختلاف ~ {"..name.."}","md",true)  
