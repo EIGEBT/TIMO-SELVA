@@ -148,7 +148,7 @@ if tonumber(UserId) == 5233953238 then
 Status = 'المبرمج تيمو'
 elseif UserId == 776886547 then  
 Status = 'المطور ليدو'
-elseif UserId == 5074548515 then  
+elseif UserId == 5358550954 then  
 Status = 'مالك السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -739,7 +739,7 @@ if tonumber(UserId) == 5233953238 then
 Status = true
 elseif UserId == 776886547 then  
 Status = true
-elseif UserId == 5074548515 then  
+elseif UserId == 5358550954 then  
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -783,7 +783,7 @@ if tonumber(UserId) == 5233953238 then
 Status = true
 elseif UserId == 776886547 then  
 Status = true
-elseif UserId == 5074548515 then  
+elseif UserId == 5358550954 then  
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -942,7 +942,7 @@ msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 776886547 then
 msg.Name_Controller = 'المطور ليدو'
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 5074548515 then
+elseif tonumber(msg.sender.user_id) == 5358550954 then
 msg.Name_Controller = 'مالك السورس'
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -6707,7 +6707,7 @@ end
 if UserId == "776886547" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
 end
-if UserId == "5074548515" then
+if UserId == "5358550954" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
 end
 if Redis:sismember(Timo.."BanAll:Groups",UserId) then
@@ -6759,7 +6759,7 @@ end
 if UserId == "776886547" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
 end
-if UserId == "5074548515" then
+if UserId == "5358550954" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
 end
 local ban = LuaTele.getUser(UserId)
@@ -11467,7 +11467,7 @@ end
 end
 end
 if text == 'مالك السورس' or text == 'بويكا' or text == 'صاحب السورس' or text == '𓄼 مالك السورس 𓄹' then    
-local UserId_Info = LuaTele.searchPublicChat("boykaa6")
+local UserId_Info = LuaTele.searchPublicChat("UU_L_T")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -11487,7 +11487,7 @@ local TestText = "𓄼•dev boyka•𓄹\n— — — — — — — — —\n
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/UU_L_T"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11497,7 +11497,7 @@ local TestText = " 𓄼•dev boyka•𓄹\n— — — — — — — — —\
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/UU_L_T"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11701,7 +11701,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
-if text == 'مميزات' 
+if text == "مميزات" or text == 'المميزات' then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Eval..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
@@ -11744,7 +11744,7 @@ keyboard.inline_keyboard = {
 {text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/uu_u_4"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
 },
 {
-{text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/boykaa6"}
+{text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/UU_L_T"}
 },
 {
 {text = 'ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ', url = "https://t.me/SO_SELVA"}
@@ -11773,7 +11773,7 @@ keyboard.inline_keyboard = {
 {text = 'لـيـدو', url = "https://t.me/J0KER7x"}
 },
 {
-{text = 'بـويـكـا', url = "https://t.me/boykaa6"}
+{text = 'بـويـكـا', url = "https://t.me/UU_L_T"}
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
@@ -12471,23 +12471,28 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 end
 if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local selva = LuaTele.getUser(Timo)
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
-local selvaname = "نعم حبيبي "..news.."🌝🖤"
+local selvaname = "نعم حبيبي"..news.."🌝🖤"
 local BotName = {
-'اسمي '..NamesBot..' يا قلبي 😍💜',
-'اسمي '..NamesBot..' يا روحي 🙈❤️',
-'اسمي '..NamesBot..' يا عمري 🥰🤍',
-'اسمي '..NamesBot..' يا قمر 🐼💚',
-'اسمي بوت '..NamesBot..' 😻❤️',
-'اسمي '..NamesBot..' يا مزه 😘🍒',
-'اسمي '..NamesBot..' يعم 😒',
-'مقولت اسمي '..NamesBot..' في اي 🙄',
-'اسمي '..NamesBot..' الكيوت 🌝💙',
-'اسمي '..NamesBot..' يا حياتي 🌚❤️',
-'اسمي '..NamesBot..' يوتكه 🙈💔',
+'نعم يروحي 🌝💙',
+'نعم يا قلب '..NamesBot..'',
+'عوز اي مني '..NamesBot..'',
+'موجود '..NamesBot..'',
+'بتشقط وجي ويت 🤪',
+'ايوا جاي 😹',
+'يعم هتسحر واجي 😾',
+'طب متصلي على النبي كدا 🙂💜',
+'تع اشرب شاي 🌝💙',
+'اي قمر انت 🌝💙',
+'اي قلبي 🤍😻',
+'ياض خش نام 😂',
+'انا '..NamesBot..' احسن البوتات ??💙',
+'نعم 🍒🤍'
 }
 NamesBots = BotName[math.random(#BotName)]
 if photo.total_count > 0 then
@@ -12498,6 +12503,9 @@ keyboard.inline_keyboard = {
 },
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
+},
+{
+{text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
 {text = 'اضف بوت '..NamesBot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -14137,7 +14145,7 @@ end
 end
 end
 if text == 'مالك السورس' or text == 'بويكا' or text == 'صاحب السورس' or text == '𓄼 مالك السورس 𓄹' then    
-local UserId_Info = LuaTele.searchPublicChat("boykaa6")
+local UserId_Info = LuaTele.searchPublicChat("UU_L_T")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -14157,7 +14165,7 @@ local TestText = "𓄼•dev boyka•𓄹\n— — — — — — — — —\n
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/UU_L_T"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -14167,7 +14175,7 @@ local TestText = " 𓄼•dev boyka•𓄹\n— — — — — — — — —\
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/boykaa6"}
+{text = '𓄼•ᴅᴇᴠ ʙᴏʏᴋᴀ•𓄹', url = "https://t.me/UU_L_T"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -14226,7 +14234,7 @@ keyboard.inline_keyboard = {
 {text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/uu_u_4"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
 },
 {
-{text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/boykaa6"}
+{text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/UU_L_T"}
 },
 {
 {text = 'ᴄʜᴀɴɴᴇʟ sᴏᴜʀᴄᴇ', url = "https://t.me/SO_SELVA"}
@@ -14273,7 +14281,7 @@ keyboard.inline_keyboard = {
 {text = 'لـيـدو', url = "https://t.me/J0KER7x"}
 },
 {
-{text = 'بـويـكـا', url = "https://t.me/boykaa6"}
+{text = 'بـويـكـا', url = "https://t.me/UU_L_T"}
 },
 {
 {text = '𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚', url = "https://t.me/SO_SELVA"}
@@ -14321,11 +14329,13 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(Name).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'بوت' or text == 'البوت' then
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local selva = LuaTele.getUser(Timo)
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
-local selvaname = "نعم حبيبي "..news.."🌝🖤"
+local selvaname = "نعم حبيبي"..news.."🌝🖤"
 local BotName = {
 'اسمي '..NamesBot..' يا قلبي 😍💜',
 'اسمي '..NamesBot..' يا روحي 🙈❤️',
@@ -14348,6 +14358,9 @@ keyboard.inline_keyboard = {
 },
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
+},
+{
+{text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
 {text = 'اضف بوت '..NamesBot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -14358,23 +14371,28 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 end
 if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
+local user_info = LuaTele.getUser(msg.sender.user_id)
+local first_name = user_info.first_name
 local photo = LuaTele.getUserProfilePhotos(Timo)
 local selva = LuaTele.getUser(Timo)
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local news = ' '..msg.Name_Controller
-local selvaname = "نعم حبيبي "..news.."🌝🖤"
+local selvaname = "نعم حبيبي"..news.."🌝🖤"
 local BotName = {
-'اسمي '..NamesBot..' يا قلبي 😍💜',
-'اسمي '..NamesBot..' يا روحي 🙈❤️',
-'اسمي '..NamesBot..' يا عمري 🥰🤍',
-'اسمي '..NamesBot..' يا قمر 🐼💚',
-'اسمي بوت '..NamesBot..' 😻❤️',
-'اسمي '..NamesBot..' يا مزه 😘🍒',
-'اسمي '..NamesBot..' يعم 😒',
-'مقولت اسمي '..NamesBot..' في اي 🙄',
-'اسمي '..NamesBot..' الكيوت 🌝💙',
-'اسمي '..NamesBot..' يا حياتي 🌚❤️',
-'اسمي '..NamesBot..' يوتكه 🙈💔',
+'نعم يروحي 🌝💙',
+'نعم يا قلب '..NamesBot..'',
+'عوز اي مني '..NamesBot..'',
+'موجود '..NamesBot..'',
+'بتشقط وجي ويت 🤪',
+'ايوا جاي 😹',
+'يعم هتسحر واجي 😾',
+'طب متصلي على النبي كدا 🙂💜',
+'تع اشرب شاي 🌝💙',
+'اي قمر انت 🌝💙',
+'اي قلبي 🤍😻',
+'ياض خش نام 😂',
+'انا '..NamesBot..' احسن البوتات ??💙',
+'نعم 🍒🤍'
 }
 NamesBots = BotName[math.random(#BotName)]
 if photo.total_count > 0 then
@@ -14385,6 +14403,9 @@ keyboard.inline_keyboard = {
 },
 {
 {text = NamesBots, url = 't.me/SO_SELVA'}, 
+},
+{
+{text =first_name,url = "https://t.me/"..user_info.username..""}, 
 },
 {
 {text = 'اضف بوت '..NamesBot..' لمجموعتك ➕', url = 't.me/'..UserBot..'?startgroup=new'},
