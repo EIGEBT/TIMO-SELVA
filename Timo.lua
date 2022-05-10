@@ -144,7 +144,7 @@ Managers = Redis:sismember(Timo.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 5317962649 then
+if tonumber(UserId) == 5233953238 then
 Status = 'المبرمج تيمو'
 elseif UserId == 776886547 then  
 Status = 'المطور ليدو'
@@ -735,7 +735,7 @@ Managers = Redis:sismember(Timo.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 5317962649 then
+if tonumber(UserId) == 5233953238 then
 Status = true
 elseif UserId == 776886547 then  
 Status = true
@@ -779,7 +779,7 @@ Managers = Redis:sismember(Timo.."Managers:Group"..ChatId,UserId)
 Addictive = Redis:sismember(Timo.."Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(Timo.."Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
-if tonumber(UserId) == 5317962649 then
+if tonumber(UserId) == 5233953238 then
 Status = true
 elseif UserId == 776886547 then  
 Status = true
@@ -936,7 +936,7 @@ return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberSt
 elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
-if tonumber(msg.sender.user_id) == 5317962649 then
+if tonumber(msg.sender.user_id) == 5233953238 then
 msg.Name_Controller = 'المبرمج تيمو'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 776886547 then
@@ -2409,7 +2409,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
 --os.execute('rm -rf Timo.lua')
---download('https://raw.githubusercontent.com/selva-Timo/JEKA/master/Timo.lua','Timo.lua')
+--download('https://raw.githubusercontent.com/EIGEBT/TIMO-SELVA/master/Timo.lua','Timo.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ تم تحديث السورس * ',"md",true)  
 end
 if text == '𓄼 تعطيل الاذاعه 𓄹' or text == 'تعطيل الاذاعه' then
@@ -6701,7 +6701,7 @@ end
 if Controller(msg_chat_id,UserId) == 'المطور الاساسي' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرا لا تستطيع استخدام الامر على𓄼 "..Controller(msg_chat_id,UserId).." 𓄹*","md",true)  
 end
-if UserId == "5317962649" then
+if UserId == "5233953238" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 if UserId == "776886547" then
@@ -6753,7 +6753,7 @@ local UserId = text:match('^كتم عام (%d+)$')
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*⌯هاذا الامر يخص𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
-if UserId == "5317962649" then
+if UserId == "5233953238" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ⌯ عذرا لا تستطيع استخدام الامر على المطور تيمو *","md",true)  
 end
 if UserId == "776886547" then
@@ -11373,7 +11373,7 @@ local TestText = "الاول هو مطور السورس \n والتاني هو �
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•ᴛɪᴍᴏ•𓄹', url = "https://t.me/uu_u_4"}
 },
 {
 {text = Creat, url = "https://t.me/"..selva.username..""},
@@ -11389,7 +11389,7 @@ end
 end
  
 if text == 'المبرمج تيمو' or text == 'تيمو' or text == 'مبرمج السورس' or text == '𓄼 المبرمج تيمو 𓄹' then    
-local UserId_Info = LuaTele.searchPublicChat("tt_t_2")
+local UserId_Info = LuaTele.searchPublicChat("uu_u_4")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -11409,7 +11409,7 @@ local TestText = "𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — �
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/uu_u_4"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11419,7 +11419,7 @@ local TestText = " 𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹\n— — — — 
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/uu_u_4"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -11560,7 +11560,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(5317962649,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
+LuaTele.sendText(5233953238,0,'*\n⌯ مرحباً عزيزي المبرمج تيمو \nشخص ما يحتاج الي مساعده\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n⌯ اسمه :- '..klajq..' \n⌯ ايديه :-  : '..msg.sender.user_id..'\n⌯ - معرفة '..basgk..' \n*',"md",false, false, false, false, reply_markup)
 end
 if text == "تتجوزيني"  then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -11701,7 +11701,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }
 return LuaTele.sendText(msg_chat_id, msg_id, again, 'md', false, false, false, false, reply_markup)
 end
-if text == 'اية قرانيه' or text == 'الآية قرانية' or text == 'ايه قرانيه' or text == 'تيتو لهقر' then
+if text == 'مميزات' 
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(Eval..'Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n ✧ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
@@ -11710,7 +11710,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼• آية قرانية•𓄹', data = msg.sender.user_id..'/Haiw5'},
+{text = '𓄼• اذكار•𓄹', data = msg.sender.user_id..'/Haiw5'},
+},
+{
+{text = '𓄼• تويت•𓄹', data = msg.sender.user_id..'/Haiw1'},
+},
+{
+{text = '𓄼• نكته•𓄹', data = msg.sender.user_id..'/Haiw3'},
+},
+{
+{text = '𓄼• كتابات•𓄹', data = msg.sender.user_id..'/Haiw2'},
+},
+{
+{text = '𓄼• لو خيروك•𓄹', data = msg.sender.user_id..'/Haiw4'},
 },
 {
 {text = '𓄼• الغاء الامر •𓄹', data = msg.sender.user_id..'/delAmr'}, 
@@ -11729,7 +11741,7 @@ local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/tt_t_2"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
+{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/uu_u_4"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
 },
 {
 {text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/boykaa6"}
@@ -11755,7 +11767,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'تـيـمـو', url = "https://t.me/tt_t_2"}
+{text = 'تـيـمـو', url = "https://t.me/uu_u_4"}
 },
 {
 {text = 'لـيـدو', url = "https://t.me/J0KER7x"}
@@ -11985,7 +11997,7 @@ end
 LuaTele.sendText(msg_chat_id,msg_id,t,"md",true) 
 end
 if text== "همسه"  or text == "همسة" then
-return LuaTele.sendText(msg.chat_id,msg.id,"⌯ اهلا بك عزيزي\n⌯ اكتب معرف البوت ثم الرساله ثم معرف الشخص\n⌯ مثال\n@Timo8Bot هاي @@tt_t_2")
+return LuaTele.sendText(msg.chat_id,msg.id,"⌯ اهلا بك عزيزي\n⌯ اكتب معرف البوت ثم الرساله ثم معرف الشخص\n⌯ مثال\n@Timo8Bot هاي @@uu_u_4")
 end
 if text and text:match("^قول (.*)$")then
 local m = text:match("^قول (.*)$")
@@ -13509,7 +13521,7 @@ name = string.gsub(name,"🧖‍♂️","🧖‍♀️🧖‍♀️??‍♀️�
 name = string.gsub(name,"👬","👭👭👭👭👭👬👭👭??")
 name = string.gsub(name,"👨‍👨‍👧","👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧??‍👨‍👦👨‍👨‍👦")
 name = string.gsub(name,"🕒","🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒")
-name = string.gsub(name,"🕤","🕥??🕥🕥🕥🕤🕥🕥🕥")
+name = string.gsub(name,"🕤","🕥🕥🕥🕥🕥🕤🕥🕥🕥")
 name = string.gsub(name,"⌛️","⏳⏳⏳⏳⏳⏳⌛️⏳⏳")
 name = string.gsub(name,"📅","📆📆📆📆📆📆📅📆📆")
 return LuaTele.sendText(msg_chat_id,msg_id,"⌯ اسرع واحد يدز الاختلاف ~ {"..name.."}","md",true)  
@@ -13711,16 +13723,16 @@ if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/uu_u_4"}
 },
 {
 {text = '𓄼•لـيـدو•𓄹', url = "https://t.me/J0KER7x"}
 }, 
 {
-{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/uu_u_4"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_2"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/uu_u_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
@@ -13737,16 +13749,16 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•تـيـمـو•𓄹', url = "https://t.me/uu_u_4"}
 },
 {
 {text = '𓄼•لـيـدو•𓄹', url = "https://t.me/J0KER7x"}
 }, 
 {
-{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•عـايز سـورس•𓄹', url = "https://t.me/uu_u_4"}
 },
 {
-{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/tt_t_2"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
+{text = '𓄼•عـايـز بـوت•𓄹', url = "https://t.me/uu_u_4"},{text = '𓄼•تـواصـل الـسـورس•𓄹', url = "https://t.me/Timo8Bot"}
 },
 {
 {text = '𓄼• قـنـاه الـسـورس •𓄹', url = 't.me/SO_SELVA'}, 
@@ -13884,7 +13896,7 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,' *اهلا بك عزيزي المطور الاساسي* اوامر الاذاعه', 'md', false, false, false, false, reply_markup)
-elseif text == '?? القائمه الرئيسيه 𓄹' then
+elseif text == '𓄼 القائمه الرئيسيه 𓄹' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*هاذا الامر يخص⦗ '..Controller_Num(1)..' ⦘* ',"md",true)  
 end
@@ -14052,7 +14064,7 @@ end
 end
  
 if text == '𓄼 المبرمج تيمو 𓄹' or text == 'تيمو' or text == 'مبرمج السورس' or text == 'المبرمج' then  
-local UserId_Info = LuaTele.searchPublicChat("tt_t_2")
+local UserId_Info = LuaTele.searchPublicChat("uu_u_4")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
@@ -14067,7 +14079,7 @@ local TestText = "  ❲ 𝐃𝐞𝐯 𝐓𝐢𝐦𝐨 ❳\n⊱┉┉┉⊶𓄼�
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/uu_u_4"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -14077,7 +14089,7 @@ local TestText = "- معلومات عن مبرمج السورس : \\nn: name Dev
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/tt_t_2"}
+{text = '𓄼•𝐃𝐞𝐯 𝐓𝐢𝐦𝐨•𓄹', url = "https://t.me/uu_u_4"}
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -14211,7 +14223,7 @@ local Name = '*𓄼• ᴡᴇʟᴄᴏᴍᴇ ʏᴀ ➥* ['..RinkBot..'](tg://user
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/tt_t_2"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
+{text = 'ᴅᴇᴠ ᴛɪᴍᴏ', url = "https://t.me/uu_u_4"},{text = 'ᴅᴇᴠ ʟᴇᴅᴏ', url = "https://t.me/J0KER7x"}
 },
 {
 {text = 'ᴅᴇᴠ ʙᴏʏᴋᴀ', url = "https://t.me/boykaa6"}
@@ -14255,7 +14267,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'تـيـمـو', url = "https://t.me/tt_t_2"}
+{text = 'تـيـمـو', url = "https://t.me/uu_u_4"}
 },
 {
 {text = 'لـيـدو', url = "https://t.me/J0KER7x"}
@@ -14973,7 +14985,7 @@ function CallBackLua(data) --- هذا الكالباك بي الابديت
 if data and data.luatele and data.luatele == "updateNewInlineQuery" then
 local Text = data.query 
 if Text == '' then
-local input_message_content = {message_text = " ⌯ اهلا بك\n ⌯ لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر العضو اللي هتعمله همسه \n ⌯ مثال @Timo8Bot  اهلا عزيزي  @tt_t_2"} 
+local input_message_content = {message_text = " ⌯ اهلا بك\n ⌯ لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر العضو اللي هتعمله همسه \n ⌯ مثال @Timo8Bot  اهلا عزيزي  @uu_u_4"} 
 local resuult = {{
 type = 'article',
 id = math.random(1,64),
