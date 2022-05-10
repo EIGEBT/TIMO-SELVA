@@ -11729,7 +11729,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,' اليك قسم الاذكار ',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,' اليك قسم المميزات ',"md",false, false, false, false, reply_markup)
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local timoo = (Redis:get(Timo.."Name:Bot") or "سيلفا")
@@ -13977,7 +13977,7 @@ data = {
 {text = '𓄼 اضف رد عام 𓄹',type = 'text'},{text = '𓄼 حذف رد عام 𓄹', type = 'text'},
 },
 {
-{text = '𓄼 اضف اسم البوت 𓄹',type = 'text'},{text = '𓄼 حذف اسم البوت 𓄹', type = 'text'},
+{text = '𓄼 تغيير اسم البوت 𓄹',type = 'text'},{text = '𓄼 حذف اسم البوت 𓄹', type = 'text'},
 },
 {
 {text = '𓄼 تغغير كليشه المطور 𓄹',type = 'text'},{text = '𓄼 حذف كليشه المطور 𓄹', type = 'text'},
@@ -14575,7 +14575,7 @@ end
 Redis:setex(Timo.."Change:Name:Bot"..msg.sender.user_id,300,true) 
 return LuaTele.sendText(msg_chat_id,msg_id," ⌯ ارسل لي الاسم الان ","md",true)  
 end
-if text == '𓄼 حذف اسم البوت ??' then 
+if text == '𓄼 حذف اسم البوت 𓄹' then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⌯ هاذا الامر يخص 𓄼 '..Controller_Num(1)..' 𓄹* ',"md",true)  
 end
