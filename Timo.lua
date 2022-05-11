@@ -11389,7 +11389,7 @@ end
 end
  
 if text == 'المبرمج تيمو' or text == 'تيمو' or text == 'مبرمج السورس' or text == '𓄼 المبرمج تيمو 𓄹' then    
-local UserId_Info = LuaTele.searchPublicChat("uu_u_4")
+local UserId_Info = LuaTele.searchPublicChat("jdjdjsjjssjajsjjsj/2")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -14072,7 +14072,7 @@ end
 end
  
 if text == '𓄼 المبرمج تيمو 𓄹' or text == 'تيمو' or text == 'مبرمج السورس' or text == 'المبرمج' then  
-local UserId_Info = LuaTele.searchPublicChat("uu_u_4")
+local UserId_Info = LuaTele.searchPublicChat("jdjdjsjjssjajsjjsj/2")
 if UserId_Info.id then
 local  selva = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(Sudo_Id)
