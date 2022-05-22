@@ -864,7 +864,14 @@ end
 if GetMemberStatus.can_promote_members then
 promote = true else promote = false
 end
-return{SetAdmin = promote,BanUser = restrict_members,Invite = invite_users,PinMsg = pin_messages,DelMsg = delete_messages,Info = change_info}
+return{
+SetAdmin = promote,
+selvaUser = restrict_members,
+Invite = invite_users,
+PinMsg = pin_messages,
+DelMsg = delete_messages,
+Info = change_info
+}
 end
 function download(url,name)
 if not name then
@@ -899,64 +906,16 @@ end
 end
 return JoinChannel
 end
-function editrtp(chat,user,msgid,useri)
-if Redis:sismember(Timo.."BanGroup:Group"..chat,useri) then
-BanGroupz = "✓"
-else
-BanGroupz = "✗"
-end
-if Redis:sismember(Timo.."SilentGroup:Group"..chat,useri) then
-SilentGroupz = "✓"
-else
-SilentGroupz = "✗"
-end
-if Redis:sismember(Timo.."Supcreator:Group"..chat,useri)  then
-TheBasicsz = "✓"
-else
-TheBasicsz = "✗"
-end
-if Redis:sismember(Timo.."Creator:Group"..chat,useri) then
-Originatorsz = "✓"
-else
-Originatorsz = "✗"
-end
-if Redis:sismember(Timo.."Manger:Group"..chat,useri) then
-Managersz = "✓"
-else
-Managersz = "✗"
-end
-if Redis:sismember(Timo.."Admin:Group"..chat,useri) then
-Addictivez = "✓"
-else
-Addictivez = "✗"
-end
-if Redis:sismember(Timo.."Special:Group"..chat,useri) then
-Distinguishedz = "✓"
-else
-Distinguishedz = "✗"
-end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text = 'رفع منشئ اساسي : '..TheBasicsz, data =user..'/statusTheBasicsz/'..useri},{text = 'رفع منشئ : '..Originatorsz, data =user..'/statusOriginatorsz/'..useri},},
-{{text = 'رفع مدير : '..Managersz, data =user..'/statusManagersz/'..useri},{text = 'رفع ادمن : '..Addictivez, data =user..'/statusAddictivez/'..useri},},
-{{text = 'رفع مميز : '..Distinguishedz, data =user..'/statusDistinguishedz/'..useri},},
-{{text = 'حظر العضو : '..BanGroupz, data =user..'/statusban/'..useri},{text = 'كتم العضو : '..SilentGroupz, data =user..'/statusktm/'..useri},},
-{{text = 'مسح الرتب : ', data =user..'/statusmem/'..useri},},
-{{text = '- اخفاء الامر ', data ='/delAmr1'}}}}
-return LuaTele.editMessageText(chat,msgid,'*\n• يمكنك تحكم بالعضو عن طريق الازرار . .*', 'md', true, false, reply_markup)
-end
 function File_Bot_Run(msg,data)  
 local msg_chat_id = msg.chat_id
 local msg_reply_id = msg.reply_to_message_id
 local msg_user_send_id = msg.sender.user_id
 local msg_id = msg.id
---var(msg.content)
+var(msg.content)
 if data.sender.luatele == "messageSenderChat" and Redis:get(Timo.."Lock:channell"..msg_chat_id) then
 print(Redis:get(Timo.."chadmin"..msg_chat_id))
 print(data.sender.chat_id)
-local m = Redis:get(Timo.."chadmin"..msg_chat_id) 
-if data.sender.chat_id == tonumber(m) then
-return false
-else
+if data.sender.chat_id ~= Redis:get(Timo.."chadmin"..msg_chat_id) then
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
 end
@@ -965,6 +924,7 @@ if msg.date and msg.date < tonumber(os.time() - 15) then
 print("->> Old Message End <<-")
 return false
 end
+
 if data.content.text then
 text = data.content.text.text
 else 
@@ -973,6 +933,15 @@ end
 if tonumber(msg.sender.user_id) == tonumber(Timo) then
 print('This is reply for Bot')
 return false
+end
+if Statusrestricted(msg.chat_id,msg.sender.user_id).banll == true then
+return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberStatus(msg.chat_id,msg.sender.user_id,'selvaned',0)
+elseif Statusrestricted(msg.chat_id,msg.sender.user_id).ktmall == true then
+return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
+elseif Statusrestricted(msg.chat_id,msg.sender.user_id).selvaGroup == true then
+return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}),LuaTele.setChatMemberStatus(msg.chat_id,msg.sender.user_id,'selvaned',0)
+elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
+return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
 if tonumber(msg.sender.user_id) == 5233953238 then
 msg.Name_Controller = 'المبرمج تيمو'
@@ -12497,7 +12466,7 @@ elseif sender == 5 then
     F = '4500'
 Redis:incrby(Timo.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(Timo.."nool:flotysb"..msg.sender.user_id) or 0
-local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." ريال 💵\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." ريال 💵"
+local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." ريال 💵\nوظيفتك : "..K.."\nنوع العملية : اضافة راتب\nرصيدك الآن : "..ballancee.." ريال ??"
 LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(Timo.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 6 then
@@ -16820,111 +16789,6 @@ if Text and Text:match('(%d+)/UnKed') then
     LuaTele.setChatMemberStatus(ChatId,UserId,'restricted',{1,1,1,1,1,1,1,1})
     return LuaTele.editMessageText(ChatId,Msg_id," ⌯ تم التحقق منك اجابتك صحيحه يمكنك الدردشه الان", 'md', false)
     end
-if Text and Text:match('(%d+)/statusTheBasicsz/(%d+)') and data.owner then
-local UserId = {Text:match('(%d+)/statusTheBasicsz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(Timo.."Supcreator:Group"..ChatId,UserId[2]) then
-Redis:srem(Timo.."Supcreator:Group"..ChatId,UserId[2])
-else
-Redis:sadd(Timo.."Supcreator:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusOriginatorsz/(%d+)') and data.Supcreator then
-local UserId = {Text:match('(%d+)/statusOriginatorsz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then 
-if Redis:sismember(Timo.."Creator:Group"..ChatId,UserId[2]) then
-Redis:srem(Timo.."Creator:Group"..ChatId,UserId[2])
-else
-Redis:sadd(Timo.."Creator:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusManagersz/(%d+)') and data.Creator then
-local UserId = {Text:match('(%d+)/statusManagersz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(Timo.."Manger:Group"..ChatId,UserId[2]) then
-Redis:srem(Timo.."Manger:Group"..ChatId,UserId[2])
-else
-Redis:sadd(Timo.."Manger:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusAddictivez/(%d+)') and data.Manger then
-local UserId = {Text:match('(%d+)/statusAddictivez/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(Timo.."Admin:Group"..ChatId,UserId[2]) then
-Redis:srem(Timo.."Admin:Group"..ChatId,UserId[2])
-else
-Redis:sadd(Timo.."Admin:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusDistinguishedz/(%d+)') and data.Admin then
-local UserId = {Text:match('(%d+)/statusDistinguishedz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(Timo.."Special:Group"..ChatId,UserId[2]) then
-Redis:srem(Timo.."Special:Group"..ChatId,UserId[2])
-else
-Redis:sadd(Timo.."Special:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusmem/(%d+)') and data.owner then
-local UserId ={ Text:match('(%d+)/statusmem/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:srem(Timo.."Supcreator:Group"..ChatId,UserId[2])
-Redis:srem(Timo.."Admin:Group"..ChatId,UserId[2])
-Redis:srem(Timo.."Manger:Group"..ChatId,UserId[2])
-Redis:srem(Timo.."Creator:Group"..ChatId,UserId[2])
-Redis:srem(Timo.."Special:Group"..ChatId,UserId[2])
-Redis:srem(Timo.."SilentGroup:Group"..ChatId,UserId[2])
-Redis:srem(Timo.."BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('/delAmr1') then
-local UserId = Text:match('/delAmr1')
-if data.Admin then
-return LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/statusban/(%d+)') and data.Admin then
-local UserId ={ Text:match('(%d+)/statusban/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if StatusCanOrNotCan(ChatId,UserId[2]) then
-return LuaTele.answerCallbackQuery(data.id,"\n•عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
-end
-if Redis:sismember(Timo.."BanGroup:Group"..ChatId,UserId[2]) then
-Redis:srem(Timo.."BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
-else
-Redis:sadd(Timo.."BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'banned',0)
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusktm/(%d+)') and data.Admin then
-local UserId ={ Text:match('(%d+)/statusktm/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if StatusSilent(ChatId,UserId[2]) then
-return LuaTele.answerCallbackQuery(data.id, "\n•عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
-end
-if Redis:sismember(Timo.."SilentGroup:Group"..ChatId,UserId[2]) then
-Redis:srem(Timo.."SilentGroup:Group"..ChatId,UserId[2])
-else
-Redis:sadd(Timo.."SilentGroup:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
 if Text and Text:match('(%d+)/delamrredis') then
 local listYt = Text:match('(%d+)/delamrredis')
 if tonumber(listYt) == tonumber(IdUser) then
@@ -20291,6 +20155,194 @@ local UserId = Text:match('(%d+)/SilentGroupGroup')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Timo.."SilentGroup:Group"..ChatId) 
 LuaTele.editMessageText(ChatId,Msg_id,"* ⌯ تم مسح المكتومين *", 'md', false)
+end
+end
+if Text and Text:match("(%d+)/toop5") then
+local UserId = Text:match("(%d+)/toop5")
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = "inline",
+data = {
+{
+{text = 'قناة السورس', url='https://t.me/SO_SELVA'},
+},
+}
+}
+local bank_users = Redis:smembers(Timo.."almtzog"..ChatId)
+top_mony = "توب اغنى 10 زوجات بالجروب :\n\n"
+mony_list = {}
+for k,v in pairs(bank_users) do
+local mony = Redis:get(Timo.."mznom"..ChatId..v)
+table.insert(mony_list, {tonumber(mony) , v})
+end
+table.sort(mony_list, function(a, b) return a[1] > b[1] end)
+num = 1
+emoji ={
+"🥇" ,
+"🥈" ,
+"🥉" ,
+"4" ,
+"5" ,
+"6" ,
+"7" ,
+"8" ,
+"9" ,
+"10"
+}
+for k,v in pairs(mony_list) do
+if num <= 10 then
+local zwga_id = Redis:get(Timo..ChatId..v[2].."rgalll2:")
+local user_name = LuaTele.getUser(v[2]).first_name
+local user_nambe = LuaTele.getUser(zwga_id).first_name
+local user_tag = '['..user_name..'](tg://user?id='..v[2]..')' or 'الاسم سبام'
+local user_zog = '['..user_nambe..'](tg://user?id='..zwga_id..')' or 'الاسم سبام'
+local mony = v[1]
+local emo = emoji[k]
+num = num + 1
+top_mony = top_mony..emo.." - "..user_tag.." 👫 "..user_zog.."  l "..mony.." 💵\n"
+end
+end
+LuaTele.editMessageText(ChatId,Msg_id,top_mony, "md", true, false, reply_markup)
+end
+end
+if Text and Text:match("(%d+)/toop2") then
+local UserId = Text:match("(%d+)/toop2")
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = "inline",
+data = {
+{
+{text = 'قناة السورس', url='https://t.me/SO_SELVA'},
+},
+}
+}
+local ban = LuaTele.getUser(IdUser)
+if ban.first_name then
+news = "["..ban.first_name.."]("..ban.first_name..")"
+else
+news = " لا يوجد"
+end
+ballancee = Redis:get(Timo.."zrffdcf"..IdUser) or 0
+local bank_users = Redis:smembers(Timo.."zrfffidtf")
+top_mony = "توب اكثر 25 شخص حرامية فلوس:\n\n"
+mony_list = {}
+for k,v in pairs(bank_users) do
+local mony = Redis:get(Timo.."zrffdcf"..v) or 0
+table.insert(mony_list, {tonumber(mony) , v})
+end
+table.sort(mony_list, function(a, b) return a[1] > b[1] end)
+num = 1
+emoji ={
+"🥇 )" ,
+"🥈 )",
+"🥉 )",
+"4 )",
+"5 )",
+"6 )",
+"7 )",
+"8 )",
+"9 )",
+"10 )",
+"11 )",
+"12 )",
+"13 )",
+"14 )",
+"15 )",
+"16 )",
+"17 )",
+"18 )",
+"19 )",
+"20 )",
+"21 )",
+"22 )",
+"23 )",
+"24 )",
+"25 )"
+}
+for k,v in pairs(mony_list) do
+if num <= 25 then
+fne = Redis:get(Timo..':toob:Name:'..v[2])
+tt =  "["..fne.."]("..fne..")"
+local mony = v[1]
+local emo = emoji[k]
+num = num + 1
+gflos =string.format("%d", mony):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
+top_mony = top_mony..emo.." *"..gflos.." 💰* l "..tt.." \n"
+gflous =string.format("%d", ballancee):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
+gg = " ⊱⋅ ────────────── ⋅⊰ |\n*• you)*  *"..gflous.." 💰* l "..news.." "
+end
+end
+LuaTele.editMessageText(ChatId,Msg_id,top_mony..gg, "md", true, false, reply_markup)
+end
+end
+if Text and Text:match("(%d+)/toop1") then
+local UserId = Text:match("(%d+)/toop1")
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = "inline",
+data = {
+{
+{text = 'قناة السورس', url='https://t.me/SO_SELVA'},
+},
+}
+}
+local ban = LuaTele.getUser(IdUser)
+if ban.first_name then
+news = "["..ban.first_name.."]("..ban.first_name..")"
+else
+news = " لا يوجد"
+end
+ballancee = Redis:get(Timo.."nool:flotysb"..IdUser) or 0
+local bank_users = Redis:smembers(Timo.."ttpppi")
+top_mony = "توب اغنى 25 شخص :\n\n"
+mony_list = {}
+for k,v in pairs(bank_users) do
+local mony = Redis:get(Timo.."nool:flotysb"..v) or 0
+table.insert(mony_list, {tonumber(mony) , v})
+end
+table.sort(mony_list, function(a, b) return a[1] > b[1] end)
+num = 1
+emoji ={
+"🥇 )" ,
+"🥈 )",
+"🥉 )",
+"4 )",
+"5 )",
+"6 )",
+"7 )",
+"8 )",
+"9 )",
+"10 )",
+"11 )",
+"12 )",
+"13 )",
+"14 )",
+"15 )",
+"16 )",
+"17 )",
+"18 )",
+"19 )",
+"20 )",
+"21 )",
+"22 )",
+"23 )",
+"24 )",
+"25 )"
+}
+for k,v in pairs(mony_list) do
+if num <= 25 then
+fne = Redis:get(Timo..':toob:Name:'..v[2])
+tt = "["..fne.."]("..fne..")"
+local mony = v[1]
+local emo = emoji[k]
+num = num + 1
+gflos =string.format("%d", mony):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
+top_mony = top_mony..emo.." *"..gflos.." 💰* l "..tt.." \n"
+gflous =string.format("%d", ballancee):reverse():gsub( "(%d%d%d)" , "%1," ):reverse():gsub("^,","")
+gg = " ⊱⋅ ────────────── ⋅⊰ |\n*• you)*  *"..gflous.." 💰* l "..news.." \n\n\n*ملاحظة : اي شخص مخالف للعبة بالغش او حاط يوزر بينحظر من اللعبه وتتصفر فلوسه*"
+end
+end
+LuaTele.editMessageText(ChatId,Msg_id,top_mony..gg, "md", true, false, reply_markup)
 end
 end
 end
