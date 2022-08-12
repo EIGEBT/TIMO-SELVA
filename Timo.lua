@@ -11636,7 +11636,7 @@ end
 
 
 if text == 'المطور ليدو' or text == 'ليدو' then  
-local UserId_Info = LuaTele.searchPublicChat("bar_lo0o0")
+local UserId_Info = LuaTele.searchPublicChat("J0KER7x")
 if UserId_Info.id then
 local  ban = LuaTele.getUser(UserId_Info.id)
 local  bain = LuaTele.getUserFullInfo(UserId_Info.id)
@@ -11678,7 +11678,7 @@ end
 
 
 
-if text == 'المبرمج ليدو' or text == 'ليدو' then  
+if text == 'المطور ليدو' or text == 'ليدو' then  
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)
 local bains = LuaTele.getUser(msg.sender.user_id)
@@ -12076,7 +12076,7 @@ end
 end
 if text == "انا مين" then
 if msg.sender.user_id == tonumber(5223565603) then
-send(msg_chat_id,msg_id,"⌯ انت تيمومطور السورس يقلبي🌚♥","md",true)
+send(msg_chat_id,msg_id,"⌯ انت تيمو مطور السورس يقلبي🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(776886547) then
 send(msg_chat_id,msg_id,"⌯ انت ليدو مطور السورس يقلبي🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(Sudo_Id) then
@@ -14849,7 +14849,7 @@ end
 if text == 'استثمار' then
 LuaTele.sendText(msg.chat_id,msg.id, "استعمل الامر كذا :\n\n`استثمار` المبلغ","md",true)
 end
-if text == "انطقي" then
+if text == "انطق" then
 requests = require('requests')
 response = requests.get('http://httpbin.org/get')
 LuaTele.sendText(msg.chat_id,msg.id, "Ok"..response.." ok","md",true)
@@ -15275,8 +15275,8 @@ LuaTele.sendText(msg.chat_id,msg.id, "⇜ معندكش حساب بنكي ارس�
 end
 end
 
-if text and text:match("^انطقي (.*)$") then
-Text = text:match("^انطقي (.*)$")
+if text and text:match("^انطق (.*)$") then
+Text = text:match("^انطق (.*)$")
 msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..
 "/sendaudio?chat_id="..msg.chat_id.."&caption=الكلمة "..
@@ -16728,7 +16728,7 @@ local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot
 '\n⌯ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n⌯ اضف البوت الى مجموعتك'..
 '\n⌯ ارفعه ادمن مشرف'..
-'\n⌯ ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
+'\n⌯لاضهار كيب العضو اضغط /selva '..
 '\n⌯ مطور البوت ← {'..UserSudo..'}*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -16851,9 +16851,6 @@ if not msg.ControllerBot then
 local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'قسـم الحمايـه 🛡',type = 'text'},
-},
-{
 {text = 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ',type = 'text'},
 },
 {
@@ -16892,45 +16889,6 @@ data = {
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي .. تصفح كيبورد خدمات البوت بالاسفل *', 'md', false, false, false, false, reply_markup)
-end
-end
-if text == 'قسـم الحمايـه 🛡' or text == 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ' then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
-if not msg.ControllerBot then
-if not Redis:get(Timo.."Timo:Start:Bot") then   
-local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
-'\n⌯ اختصاص البوت حماية المجموعات'..
-'\n⌯ لتفعيل البوت عليك اتباع مايلي ...'..
-'\n⌯ اضف البوت الى مجموعتك'..
-'\n⌯ ارفعه ادمن مشرف'..
-'\n⌯ ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
-'\n⌯ مطور البوت ← {'..UserSudo..'}*'
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'أضغط لاضافه البوت لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'}, 
-},
-{
-{text = 'مطـور البـوت ', url = 't.me/'..UserSudo}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,CmdStart,"md",false, false, false, false, reply_markup)
-else
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'أضغط لاضافه البوت لمجموعتك ', url = 't.me/'..UserBot..'?startgroup=new'}, 
-},
-{
-{text = 'مطـور البـوت ', url = 't.me/'..UserSudo}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(Timo.."Timo:Start:Bot"),"md",false, false, false, false, reply_markup)
-end
 end
 end
 if text == "تفعيل البوت بصوره ⌯" then
@@ -18909,7 +18867,7 @@ local TextHelp = [[*
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞??𝐯𝐚•𓄹⊷┉┉┉⊰
 ⌯ تفعيل ، تعطيل ←  الاوامر التاليه ↓
 ⌯ البوت الخدمي ، المغادرة ، الاذاعه
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥??𝐚•𓄹⊷┉┉┉⊰
 ⌯ اوامر المطور في البوت
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 ⌯ تفعيل ، تعطيل ، الاحصائيات
