@@ -16729,8 +16729,7 @@ local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot
 '\n⌯ اضف البوت الى مجموعتك'..
 '\n⌯ ارفعه ادمن مشرف'..
 '\n⌯ ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
-'\n⌯ مطور البوت ← {'..UserSudo..'}'
-'\n⌯ لاضهار كيب العضو اضغط ← /selva *'
+'\n⌯ مطور البوت ← {'..UserSudo..'}*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -16905,8 +16904,7 @@ local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot
 '\n⌯ اضف البوت الى مجموعتك'..
 '\n⌯ ارفعه ادمن مشرف'..
 '\n⌯ ارسل كلمة { تفعيل } ليتم تفعيل الجروب'..
-'\n⌯ مطور البوت ← {'..UserSudo..'}'
-'\n⌯ لاضهار كيب العضو اضغط ← /selva *'
+'\n⌯ مطور البوت ← {'..UserSudo..'}*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
