@@ -3046,11 +3046,6 @@ local chinfo = Redis:get("ch:admin:3am")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local Name_User = UserInfo.first_name
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
@@ -10127,11 +10122,6 @@ if text == "اضف رد انلاين" then
   if not msg.Admin then
   return send(msg_chat_id,msg_id,'\n*⌯ هاذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
   end
-  if otlop(msg) == false then
-local chinfo = Redis:get("ch:admin:3am")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
   Redis:set(Timo.."Set:Manager:rd:inline"..msg.sender.user_id..":"..msg_chat_id,true)
   local reply_markup = LuaTele.replyMarkup{
   type = 'inline',
@@ -10872,7 +10862,7 @@ if Text and Text:match('(.*)/next/(.*)') then
     local kit_list = Redis:smembers(Timo.."kit:")
     local Residual = #kit_list - num
     if tonumber(IdUser) == tonumber(UserId) and Residual > 30 then
-        local Listkit = '\n⌯ قائمه الاسأله  \n⌯ عدد الاسأله : '..#kit_list..'\n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n'
+        local Listkit = '\n⌯ قائمه الاسأله  \n⌯ عدد الاسأله : '..#kit_list..'\n ⊱┉┉┉⊶𓄼•𝐒𝐨??𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n'
     for i = num, anubis, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -13273,7 +13263,7 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'اوامري' then
+elseif text == 'الاوامر' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
 end
@@ -13315,144 +13305,6 @@ return send(msg_chat_id,msg_id, [[*
 ⌯ 5 ← اوامر مطورين البوت
 ⌯ 6 ← اوامر التسلية البوت
 *]],"md",false, false, false, false, reply_markup)
-elseif text == 'الاوامر' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '‹اوامر الحمايه›', data = msg.sender.user_id..'/help1'}, {text = '‹اوامر الادمنيه›', data = msg.sender.user_id..'/help2'}, 
-},
-{
-{text = '‹اوامر المدراء›', data = msg.sender.user_id..'/help3'}, {text = '‹اوامر المنشئين›', data = msg.sender.user_id..'/help4'}, 
-},
-{
-{text = '‹اوامر المطور›', data = msg.sender.user_id..'/help5'}, {text = '‹اوامر التسليه›', data = msg.sender.user_id..'/help7'}, 
-},
-{
-{text = 'الالعاب', data = msg.sender.user_id..'/help6'}, 
-},
-{
-{text = 'اوامر القفل', data = msg.sender.user_id..'/NoNextSeting'}, {text = 'اوامر التعطيل', data = msg.sender.user_id..'/listallAddorrem'}, 
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
-},
-}
-}
-return send(msg_chat_id,msg_id,'⌯ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
-elseif text == 'م2' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
-},
-}
-}
-return send(msg_chat_id,msg_id,'⌯ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
-elseif text == 'م3' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
-},
-}
-}
-return send(msg_chat_id,msg_id,'⌯ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
-elseif text == 'م4' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
-},
-}
-}
-return send(msg_chat_id,msg_id,'⌯ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
-elseif text == 'م5' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
-},
-}
-}
-return send(msg_chat_id,msg_id,'⌯ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
-elseif text == 'م6' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
-},
-}
-}
-return send(msg_chat_id,msg_id,'⌯ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -16737,7 +16589,7 @@ data = {
 {text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
 },
 {
-{text = '- اضف البوت لمجموعتك ♡,', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '- اضف البوت لمجموعتك ,', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
 {text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
@@ -16753,7 +16605,7 @@ data = {
 {text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
 },
 {
-{text = '- اضف البوت لمجموعتك ♡,', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '- اضف البوت لمجموعتك ,', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
 {text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
@@ -17485,7 +17337,7 @@ local Info_Members = Redis:smembers(Timo.."BanAll:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"⌯ لا يوجد محظورين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*⌯ قائمه المحظورين عام  \n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
+ListMembers = '\n*⌯ قائمه المحظورين عام  \n ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒??𝐥𝐯𝐚•𓄹⊷┉┉┉⊰*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 
