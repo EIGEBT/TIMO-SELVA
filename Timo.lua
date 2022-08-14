@@ -3041,11 +3041,6 @@ if msg.reply_to_message_id == 0 then
 if not Redis:get(Timo.."Status:Id"..msg_chat_id) then
 return false
 end
-if otlop(msg) == false then
-local chinfo = Redis:get("ch:admin:3am")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
 local UserInfo = LuaTele.getUser(msg.sender.user_id)
 local Name_User = UserInfo.first_name
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
@@ -13266,11 +13261,6 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 elseif text == 'الاوامر' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
