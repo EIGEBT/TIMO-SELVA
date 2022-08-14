@@ -13274,10 +13274,8 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'اوامري' then
-if otlop(msg) == false then
-local chinfo = Redis:get("ch:admin:3am")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+if not msg.Admin then
+return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
@@ -13330,7 +13328,19 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = ' قائمه الاوامر ', data = msg.sender.user_id..'/helpall'},
+{text = '‹اوامر الحمايه›', data = msg.sender.user_id..'/help1'}, {text = '‹اوامر الادمنيه›', data = msg.sender.user_id..'/help2'}, 
+},
+{
+{text = '‹اوامر المدراء›', data = msg.sender.user_id..'/help3'}, {text = '‹اوامر المنشئين›', data = msg.sender.user_id..'/help4'}, 
+},
+{
+{text = '‹اوامر المطور›', data = msg.sender.user_id..'/help5'}, {text = '‹اوامر التسليه›', data = msg.sender.user_id..'/help7'}, 
+},
+{
+{text = 'الالعاب', data = msg.sender.user_id..'/help6'}, 
+},
+{
+{text = 'اوامر القفل', data = msg.sender.user_id..'/NoNextSeting'}, {text = 'اوامر التعطيل', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
 {text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
