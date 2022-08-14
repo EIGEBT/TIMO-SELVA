@@ -216,7 +216,7 @@ return kk
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos ={Sudo_Id,5223565603,776886547}  
+local ListSudos ={Sudo_Id,5223565603,776886547,1577333828}  
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -239,6 +239,8 @@ if UserId == 5223565603 then
 Status = 'المبرمج تيمو'
 elseif UserId == 776886547 then
 Status = 'المطور ليدو'
+elseif UserId == 1577333828 then
+Status = 'المطور الديب'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == Timo then
@@ -818,6 +820,8 @@ if UserId == 5223565603then
 Status = true
 elseif UserId == 776886547 then
 Status = true
+elseif UserId == 1577333828 then
+Status = true
 elseif UserId == Sudo_Id then  
 Status = true
 elseif UserId == Timo then
@@ -859,6 +863,8 @@ StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 5223565603then
 Status = true
 elseif UserId == 776886547 then
+Status = true
+elseif UserId == 1577333828 then
 Status = true
 elseif UserId == Sudo_Id then    
 Status = true
@@ -1040,6 +1046,9 @@ if tonumber(msg.sender.user_id) == 5223565603then
 msg.Name_Controller = 'مبرمج السورس'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 776886547 then
+msg.Name_Controller = 'مطور السورس '
+msg.The_Controller = 1
+elseif tonumber(msg.sender.user_id) == 1577333828 then
 msg.Name_Controller = 'مطور السورس '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
@@ -6131,6 +6140,9 @@ end
 if UserId == "776886547" then
 return send(msg_chat_id,msg_id,"\n*⌯ عذرآ لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
 end
+if UserId == "1577333828" then
+return send(msg_chat_id,msg_id,"\n*⌯ عذرآ لا تستطيع استخدام الامر على المطور الديب *","md",true)  
+end
 if Redis:sismember(Timo.."BanAll:Groups",UserId) then
 return send(msg_chat_id,msg_id,Reply_Status(UserId,"⌯ تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
@@ -6167,6 +6179,9 @@ return send(msg_chat_id,msg_id,"\n*⌯ عذرآ لا تستطيع استخدام
 end
 if UserId == "776886547" then
 return send(msg_chat_id,msg_id,"\n*⌯ عذرآ لا تستطيع استخدام الامر على المطور ليدو *","md",true)  
+end
+if UserId == "1577333828" then
+return send(msg_chat_id,msg_id,"\n*⌯ عذرآ لا تستطيع استخدام الامر على المطور الديب*","md",true)  
 end
 local UserInfo = LuaTele.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -12060,6 +12075,8 @@ if msg.sender.user_id == tonumber(5223565603) then
 send(msg_chat_id,msg_id,"⌯ انت تيمو مطور السورس يقلبي🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(776886547) then
 send(msg_chat_id,msg_id,"⌯ انت ليدو مطور السورس يقلبي🌚♥","md",true)
+elseif msg.sender.user_id == tonumber(1577333828) then
+send(msg_chat_id,msg_id,"⌯ انت الديب مطور السورس يقلبي🌚♥","md",true)
 elseif msg.sender.user_id == tonumber(Sudo_Id) then
 send(msg_chat_id,msg_id,"⌯ انت المطور الاساسي يقلبي🌚♥","md",true)
 elseif msg.Devss then
@@ -13200,8 +13217,9 @@ local T =[[
 ⌯ [ٓ⁨𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](t.me/SO_SELVA)
 ⌯ [ٓ𝐓𝐡𝐞 𝐁𝐞𝐬𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦](t.me/SO_SELVA)
 ⌯ [ٓ𝐅𝐨𝐥𝐥𝐨𝐰 𝐓𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐁𝐞𝐥𝐨𝐰](t.me/SO_SELVA)
-⌯ [ٓٓٓ𝗧𝙸𝗛𝙾](t.me/uu_u_4)
-⌯ [ٓٓٓ𝗟𝙸𝗗𝙾](t.me/J0KER7x)
+⌯ [ٓٓٓ𝚃𝙸𝙼𝙾](t.me/uu_u_4)
+⌯ [ٓٓٓ𝙻𝙸𝙳𝙾](t.me/J0KER7x)
+⌯ [ٓٓٓ𝙴𝙻𝙳𝙴𝙱](t.me/DEEBEG)
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
  [ٓٓٓ⁨𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰](t.me/SO_SELVA)
 ]]
