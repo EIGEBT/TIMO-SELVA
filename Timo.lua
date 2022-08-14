@@ -13258,11 +13258,6 @@ elseif text == 'الاوامر' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
 end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n⌯ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -18886,6 +18881,44 @@ local TextHelp = [[*
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
+elseif Text and Text:match('(%d+)/helpall') then
+local UserId = Text:match('(%d+)/helpall')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '‹اوامر الحمايه›', data = IdUser..'/help1'}, {text = '‹اوامر الادمنيه›', data = IdUser..'/help2'}, 
+},
+{
+{text = '‹اوامر المدراء›', data = IdUser..'/help3'}, {text = '‹اوامر المنشئين›', data = IdUser..'/help4'}, 
+},
+{
+{text = '‹اوامر المطور›', data = IdUser..'/help5'}, {text = '‹اوامر التسليه›', data = IdUser..'/help7'}, 
+},
+{
+{text = 'الالعاب', data = IdUser..'/help6'},
+},
+{
+{text = 'اوامر القفل', data = IdUser..'/NoNextSeting'}, {text = 'اوامر التعطيل', data = IdUser..'/listallAddorrem'}, 
+},
+{
+{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
+},
+}
+}
+local TextHelp = [[*
+⌯ توجد ← 6 اوامر في البوت
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+⌯ 1 ← اوامر الحمايه
+⌯ 2 ← اوامر الادمنيه
+⌯ 3 ← اوامر المدراء
+⌯ 4 ← اوامر المنشئين
+⌯ 5 ← اوامر مطورين البوت
+⌯ 6 ← اوامر التسلية البوت
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
 elseif Text and Text:match('(%d+)/bank') then
 local UserId = Text:match('(%d+)/bank')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -18927,44 +18960,6 @@ local TextHelp = [[*
 
 ⌯ توب الحراميه ↢ يطلع لك اكتر ناس سرقو 😂
 كنز & الكنز 
-*]]
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-elseif Text and Text:match('(%d+)/helpall') then
-local UserId = Text:match('(%d+)/helpall')
-if tonumber(IdUser) == tonumber(UserId) then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '‹اوامر الحمايه›', data = IdUser..'/help1'}, {text = '‹اوامر الادمنيه›', data = IdUser..'/help2'}, 
-},
-{
-{text = '‹اوامر المدراء›', data = IdUser..'/help3'}, {text = '‹اوامر المنشئين›', data = IdUser..'/help4'}, 
-},
-{
-{text = '‹اوامر المطور›', data = IdUser..'/help5'}, {text = '‹اوامر التسليه›', data = IdUser..'/help7'}, 
-},
-{
-{text = 'الالعاب', data = IdUser..'/help6'},
-},
-{
-{text = 'اوامر القفل', data = IdUser..'/NoNextSeting'}, {text = 'اوامر التعطيل', data = IdUser..'/listallAddorrem'}, 
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
-},
-}
-}
-local TextHelp = [[*
-⌯ توجد ← 6 اوامر في البوت
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
-⌯ 1 ← اوامر الحمايه
-⌯ 2 ← اوامر الادمنيه
-⌯ 3 ← اوامر المدراء
-⌯ 4 ← اوامر المنشئين
-⌯ 5 ← اوامر مطورين البوت
-⌯ 6 ← اوامر التسلية البوت
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
