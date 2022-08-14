@@ -13254,7 +13254,7 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'اوامري' then
+elseif text == 'الاوامر' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
 end
