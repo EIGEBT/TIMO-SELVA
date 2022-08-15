@@ -11551,7 +11551,7 @@ if text == "زخرفه" or text == "زخرفة" then
     {{text = '▴ زخࢪفھـۃ انلاين ▴', data = msg.sender_id.user_id..'/inline_zk'},},
     }
     }
-return send(msg_chat_id,msg_id,"*⌯ اختار نوع الزخرفه الان*","md",false ,false ,false ,false ,reply_markup) 
+return LuaTele.sendText(msg.chat_id,msg.id,'*\nاليك القوائم الزخرف  اضفط وزخرف*',"md",false, false, false, false, reply_markup)
 end
 
 ---برج---
@@ -19916,7 +19916,7 @@ if Text and Text:match('(%d+)/normal_zk') then
 if Text and Text:match('(%d+)/inline_zk') then
   local UserId = Text:match('(%d+)/inline_zk')
   if tonumber(UserId) == tonumber(IdUser) then
-    local reply_markup = bot.replyMarkup{
+    local reply_markup = LuaTele.replyMarkup{
       type = 'inline',
       data = {
       {
@@ -19927,16 +19927,16 @@ if Text and Text:match('(%d+)/inline_zk') then
         },
       }
       }
-    edit(ChatId, Msg_id, "*⌯ مرحبا بك في الزخرفه الانلاين*", "md",true,false,reply_markup)
-  end
+    return edit(ChatId,Msg_id,'⌯ مرحبا بك في الزخرفه اولاين ', 'md', false, false, reply_markup)
+end
   end
 -- zeng call back
 if Text and Text:match('(%d+)/zeng') then
   local UserId = Text:match('(%d+)/zeng')
   if tonumber(UserId) == tonumber(IdUser) then
     Redis:set(Timo..ChatId..IdUser.."zkrf:", "zeng")
-    edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..!", "md",false)
-  end
+    return edit(ChatId,Msg_id,'⌯ ▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..! ', 'md', false, false, reply_markup)
+end
   end
 if Text and Text:match('(.*)/az(.*)') then
     local anubis = {Text:match('(.*)/az(.*)')}
@@ -19954,12 +19954,12 @@ if Text and Text:match('(.*)/az(.*)') then
     zk_by_anubis = v:gsub("###",zk)
     inline_anubis[k] = {{text = zk_by_anubis , data = UserId.."/bz"..k}}
     end
-    local reply_markup = bot.replyMarkup{
+    local reply_markup = LuaTele.replyMarkup{
         type = 'inline',
         data = inline_anubis
         }
-    edit(ChatId, Msg_id, "▾\n★ لقد اختࢪت \n▷ "..zk, "md",true,false,reply_markup)
-    end
+    return edit(ChatId,Msg_id,'\n★ لقد اختࢪت \n▷', 'md', false, false, reply_markup)
+end
     end
 if Text and Text:match('(.*)/bz(.*)') then
 local anubis = {Text:match('(.*)/bz(.*)')}
@@ -19973,7 +19973,7 @@ local zkrf = JSON.decode(api)
 local zk = zkrf['anubis'][z_save]
 local zk_list = Redis:smembers(Timo.."zk_list:")
 local zk_anubis = zk_list[z_num]:gsub("###",zk)
-edit(ChatId, Msg_id, "▾\n★ لقد اختࢪت \n▷ `"..zk_anubis.."`", "md",false)
+return edit(ChatId,Msg_id,'▾\n★ لقد اختࢪت \n▷ `"..zk_anubis.."`', 'md', false, false, reply_markup)
 Redis:del(Timo..ChatId..IdUser.."zkrf:text")
 Redis:del(Timo..ChatId..IdUser.."zkrf:num")
 end
@@ -19985,13 +19985,13 @@ local z_num = tonumber(anubis[2])
 if tonumber(UserId) == tonumber(IdUser) then
 local zk_list = Redis:smembers(Timo.."zk_list:")
 Redis:srem(Timo.."zk_list:", zk_list[z_num])
-local reply_markup = bot.replyMarkup{
+local reply_markup = LuaTele.replyMarkup{
     type = 'inline',
     data = {
         {{text = 'رجوع', data = UserId..'/home_z'}}
     }
 }
-edit(ChatId, Msg_id, "⌯ لقد قمت بحذف "..zk_list[z_num].."\n⌯ من قائمه الزخارف", "md",true,false,reply_markup)
+return edit(ChatId,Msg_id,'⌯ لقد قمت بحذف "..zk_list[z_num].."\n⌯ من قائمه الزخارف', 'md', false, false, reply_markup)
 end
 end
 if Text and Text:match('(%d+)/home_z') then
@@ -20002,11 +20002,11 @@ local inline_anubis = {data = {}}
 for k,v in pairs(zk_list) do
 inline_anubis[k] = {{text = v , data = UserId.."/delz"..k}}
 end
-local reply_markup = bot.replyMarkup{
+local reply_markup = LuaTele.replyMarkup{
   type = 'inline',
   data = inline_anubis
   }
-edit(ChatId, Msg_id, "⌯ اضغط علي الزخرفه لحذفها", "md",true,false,reply_markup)
+return edit(ChatId,Msg_id,'⌯ اضغط علي الزخرفه لحذفها', 'md', false, false, reply_markup)
 end
 end
 -- zk emo
@@ -20018,7 +20018,7 @@ if Text and Text:match('(%d+)/emo') then
     local api = https.request("https://ayad-12.xyz/anubis/zkhrfa.php?text="..URL.escape(z_text))
     local zkrf = JSON.decode(api)
     local zk = zkrf['anubis'][z_save]
-    edit(ChatId, Msg_id, "★ تمت الزخࢪفھـۃ بنجاح\n\n▷ `"..zk.." ¦✨❤️` \n\n▷ `"..zk.." “̯ 🐼💗`\n\n▷ `"..zk.." 🦋“`\n\n▷ `"..zk.."ّ ❥̚͢₎ 🐣`\n\n▷ `"..zk.." ℡ ̇ ✨🐯⇣✦`\n\n▷ `"..zk.." 😴🌸✿⇣`\n\n▷ `"..zk.." ⌯ 🙊💙`\n\n▷ `"..zk.." ❥┊⁽ ℡🦁🌸`\n\n▷ `"..zk.." ⌯ 💚“`\n\n▷ `"..zk.." ⚡️♛ֆ₎`\n\n▷ `"..zk.." ⁞♩⁽💎🌩₎⇣✿`\n\n▷ `"..zk.." 〄💖‘`\n\nاضغط علي الزخࢪفھـۃ للنسخ 🎀..!", "md",false)
+    return edit(ChatId,Msg_id,'★ تمت الزخࢪفھـۃ بنجاح\n\n▷ `"..zk.." ¦✨❤️` \n\n▷ `"..zk.." “̯ 🐼💗`\n\n▷ `"..zk.." 🦋“`\n\n▷ `"..zk.."ّ ❥̚͢₎ 🐣`\n\n▷ `"..zk.." ℡ ̇ ✨🐯⇣✦`\n\n▷ `"..zk.." 😴🌸✿⇣`\n\n▷ `"..zk.." ⌯ 🙊💙`\n\n▷ `"..zk.." ❥┊⁽ ℡🦁🌸`\n\n▷ `"..zk.." ⌯ 💚“`\n\n▷ `"..zk.." ⚡️♛ֆ₎`\n\n▷ `"..zk.." ⁞♩⁽💎🌩₎⇣✿`\n\n▷ `"..zk.." 〄💖‘`\n\nاضغط علي الزخࢪفھـۃ للنسخ 🎀..!', 'md', false, false, reply_markup)
     Redis:del(Timo..ChatId..IdUser.."zkrf:text")
     Redis:del(Timo..ChatId..IdUser.."zkrf:num")
   end
@@ -20028,7 +20028,8 @@ if Text and Text:match('(%d+)/zar') then
     local UserId = Text:match('(%d+)/zar')
     if tonumber(UserId) == tonumber(IdUser) then
       Redis:set(Timo..ChatId..IdUser.."zkrf:", "zar")
-      edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..!", "md",false)
+      return edit(ChatId,Msg_id,'▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..!', 'md', false, false, reply_markup)
+end
     end
     end
 
