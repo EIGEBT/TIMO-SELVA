@@ -19974,6 +19974,7 @@ local zk = zkrf['anubis'][z_save]
 local zk_list = Redis:smembers(Timo.."zk_list:")
 local zk_anubis = zk_list[z_num]:gsub("###",zk)
 return edit(ChatId,Msg_id,'▾\n★ لقد اختࢪت \n▷ `"..zk_anubis.."`', 'md', false, false, reply_markup)
+end
 Redis:del(Timo..ChatId..IdUser.."zkrf:text")
 Redis:del(Timo..ChatId..IdUser.."zkrf:num")
 end
