@@ -11544,7 +11544,7 @@ end
 end
 ---زخرفة ----
 if text == "زخرفه" or text == "زخرفة" then
-  local reply_markup = bot.replyMarkup{
+  local reply_markup = LuaTele.replyMarkup{
     type = 'inline',
     data = {
     {{text = '▴ زخࢪفھـۃ عادي ▴', data = msg.sender_id.user_id..'/normal_zk'},},
@@ -18069,8 +18069,9 @@ caption = '*\n🎤| أهلآ بك عزيزي أنا بوت '..(Redis:get(Timo.."
 parse_mode = "Markdown"                                                                                                                                                               
 }     
 keyboard = {} 
-keyboard.inline_keyboard = {
-{
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
 {text = '🎯 نبذه', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
 },
 {
@@ -19934,7 +19935,7 @@ if Text and Text:match('(%d+)/zeng') then
   local UserId = Text:match('(%d+)/zeng')
   if tonumber(UserId) == tonumber(IdUser) then
     Redis:set(Timo..ChatId..IdUser.."zkrf:", "zeng")
-    edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان ??..!", "md",false)
+    edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..!", "md",false)
   end
   end
 if Text and Text:match('(.*)/az(.*)') then
