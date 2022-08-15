@@ -11543,19 +11543,15 @@ local msg_id = msg.id/2097152/0.5
 end
 end
 ---زخرفة ----
-if text == "زخرفه" or text == "زخرف"  then
-if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*⌯ عذرآ البوت ليس ادمن في الجروب يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '🖌️ زخرفه ',  data ='/leftz@'},
-},
-}
-}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\nاليك القوائم الزخرف  اضفط وزخرف*',"md",false, false, false, false, reply_markup)
+if text == "زخرفه" or text == "زخرفة" then
+  local reply_markup = bot.replyMarkup{
+    type = 'inline',
+    data = {
+    {{text = '▴ زخࢪفھـۃ عادي ▴', data = msg.sender_id.user_id..'/normal_zk'},},
+    {{text = '▴ زخࢪفھـۃ انلاين ▴', data = msg.sender_id.user_id..'/inline_zk'},},
+    }
+    }
+return send(msg_chat_id,msg_id,"*⌯ اختار نوع الزخرفه الان*","md",false ,false ,false ,false ,reply_markup) 
 end
 
 ---برج---
@@ -13280,7 +13276,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
+{text = 'نبذه🕸️', data = msg.sender.user_id..'/zxhaut'},{text = 'ٓ♻️ حول ',  data = msg.sender.user_id..'/lhaui'},
 },
 }
 }
@@ -16605,7 +16601,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
+{text = 'نبذه🕸️', data = msg.sender.user_id..'/zxhaut'},{text = 'ٓ♻️ حول ',  data = msg.sender.user_id..'/lhaui'},
 },
 {
 {text = '- اضف البوت لمجموعتك ,', url = 't.me/'..UserBot..'?startgroup=new'}, 
@@ -19938,7 +19934,7 @@ if Text and Text:match('(%d+)/zeng') then
   local UserId = Text:match('(%d+)/zeng')
   if tonumber(UserId) == tonumber(IdUser) then
     Redis:set(Timo..ChatId..IdUser.."zkrf:", "zeng")
-    edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان 🎀..!", "md",false)
+    edit(ChatId, Msg_id, "▾ 𝙎𝙀𝙉𝘿 𝙐𝙍 𝙉𝘼𝙈𝙀 🎀..! \n \n✴ اࢪسل الاسم لتتم زخࢪفتھـۃ الان ??..!", "md",false)
   end
   end
 if Text and Text:match('(.*)/az(.*)') then
