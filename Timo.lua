@@ -1123,18 +1123,11 @@ end
 return JoinChannel
 end
 
-function File_Bot_Run(msg,data) 
-local msg_chat_id = msg.chat_id local msg_reply_id = msg.reply_to_message_id local msg_user_send_id = msg.sender_id.user_id 
-local msg_id = msg.id 
-local text = nil
-if msg.sender_id.luatele == "messageSenderChat" then 
-LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}) 
-return false 
-end
-if msg.date and msg.date < tonumber(os.time() - 15) then 
-print("->> Old Message End <<-") 
-return false 
-end
+function File_Bot_Run(msg,data)  
+local msg_chat_id = msg.chat_id
+local msg_reply_id = msg.reply_to_message_id
+local msg_user_send_id = msg.sender.user_id
+local msg_id = msg.id
 
 if data.content.text then
 text = data.content.text.text
