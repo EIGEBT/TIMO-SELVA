@@ -23674,7 +23674,7 @@ end
 if chat_type(msg.chat_id) == "UserBot" then 
 if text == 'تحديث الملفات  ◍' or text == 'تحديث' then
 if not msg.DevMain then 
-return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n•-› X').Warning,"md",true)    
+return sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n•-› X').Warning,"md",true)    
 end
 print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
 print('Chat Id : '..msg.chat_id)
@@ -23683,7 +23683,7 @@ print('User Id : '..msg.sender_id.user_id)
 local Text = [[
 *⌯︙تم تحديث الملفات ...✓*
 ]] 
-local reply_markup = LuaTele.replyMarkup{
+local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
@@ -23697,7 +23697,7 @@ end
 
 if text == "تحديث السورس" or text == "تحديث سورس" or text == " تحديث السورس ◍" then 
 if not msg.DevMain then 
-return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n•-› X').Warning,"md",true)    
+return sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n•-› X').Warning,"md",true)    
 end
 os.execute('rm -rf Timo.lua') 
 os.execute('curl -s https://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@raw.githubusercontent.com/s00f4/Timo/main/Timo.lua -o Timo.lua') 
@@ -23705,7 +23705,7 @@ print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;3
 local Text = [[
 *⌯︙تم تحديث السورس ...✓*
 ]] 
-local reply_markup = LuaTele.replyMarkup{
+local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
@@ -23719,7 +23719,7 @@ end
 
 if text == 'السيرفر' or text == 'سيرفر' or text == 'السيرفر ◍' then 
 if not msg.SecondSudo then 
-return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n•-› X').Warning,"md",true)    
+return sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n•-› X').Warning,"md",true)    
 end
 ioserver = io.popen([[
 LinuxVersion=`lsb_release -ds`
@@ -23735,21 +23735,10 @@ echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙الدخول ↫ ⤈\n`'`whoa
 echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
 echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙رقم اسكرين البوت ↫ ⤈\n'..ScreenBot()
 ]]):read('*all')
-LuaTele.sendText(msg.chat_id,msg.id,ioserver,"md",true)
+sendText(msg.chat_id,msg.id,ioserver,"md",true)
 end
 --     Source Timo     --
-if text =='القناة' or text =='قناة السورس' or text =='قناه السورس' or text =='قنات السورس' or text ==' قناة السورس ◍' then 
-Text = [[
-⌯︙[تحديثات السورس](https://t.me/SO_SELVA)
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {{{text='• قناة السورس •',url="t.me/SO_SELVA"}}}
-local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/SO_SELVA&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-return false
-end
---     Source Timo     --
-if text =='قناة التحديثات' or text =="التحديثات" or text =='قناة تحديثات السورس' or text =='قناه تحديثات السورس' or text =='قنات تحديث السورس' or text =='قنات تحديثات السورس' or text =='قناة التحديثات ◍' then 
+if text =='قناة التحديثات' or text =="قناة السورس ◍" or text =='قناة تحديثات السورس' or text =='قناه تحديثات السورس' or text =='قنات تحديث السورس' or text =='قنات تحديثات السورس' or text =='قناة التحديثات ◍' then 
 Text = [[
 ⌯︙قناة تحديثات سورس سيلفا
 ⌯︙قم بمتابعة القناة حتئ يمكنك 
@@ -23757,9 +23746,9 @@ Text = [[
 ⌯︙[تحديثات السورس](https://t.me/SO_SELVA)
 ]]
 keyboard = {} 
-keyboard.inline_keyboard = {{{text='• تحديثات السورس •',url="t.me/FiDRG"}}}
+keyboard.inline_keyboard = {{{text='• تحديثات السورس •',url="t.me/SO_SELVA"}}}
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/FiDRG&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/SO_SELVA&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 
@@ -23793,6 +23782,197 @@ return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_i
 end
 end
 
+if text == "اغاني قصيرة 🎶" then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,140); 
+local Text ='*𖥔┊تم اختيار المقطع الصوتي لك*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "حالات واتس 🎬" then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(296,400); 
+local Text ='*🎆┊حـالات واتـس قصيـرة ➧🧸♥️*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVideo?chat_id=' .. msg.chat_id .. '&video=https://t.me/RSHDO5/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "انمي ستوري 🎬" then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(6,641); 
+local Text ='*🎆┊ستـوريات آنمـي قصيـرة ➧ 🖤🧧*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVideo?chat_id=' .. msg.chat_id .. '&video=https://t.me/AA_Zll/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "بصمـات ميمـز 🦹🏻‍♂" then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Timoy = math.random(2,1201); 
+local zzzzl1l = '*𖥔┊اضغط الـزر لتغييـر مقطـع الميمـز*'
+data = {} 
+data.inline_keyboard = {
+{
+{text = 'ميمـز آخـر 🎙', callback_data= msg.sender.user_id..'/memz'}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id=" .. msg.chat_id .. "&voice=https://t.me/MemzDavid/"..Timoy.."&caption=" .. URL.escape(zzzzl1l).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
+end
+end
+if text == "عـروض الافـلام 🎞" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,82); 
+local Text ='*𖥔┊تم اختيار الفلم لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/TimoMoves/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "انمي بنت 👩‍🎤🎑" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(3,825); 
+local Text ='*🎆┊افتـارات آنمـي بنـات ➧🧚🏻‍♀◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/shhdhn/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "انمي ولد 👨‍🎤🎑" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(3,556); 
+local Text ='*🎆┊افتـارات آنمـي ولـد ➧🙇🏻◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/dnndxn/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "صـور 🎇" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(4,1171); 
+local Text ='*𖥔┊تم اختيار الافتـار لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "معلومات عامة 🧩" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(3,270); 
+local Text ='*𖥔┊صـورة ومعلومـة 🛤💡*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/A_l3l/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "افتار بنت 🙋🏻‍♀🌁" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,63); 
+local Text ='*🎆┊افتـارات بنـات تمبلـرࢪ ➧🧚🏻‍♀◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/banaaaat1/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "افتار ولد 🙋🏻‍♂🌁" or text == "رمادي ولد 🧝🏻🏙" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,131); 
+local Text ='*🎆┊افتـارات ولـد ࢪمـاديه ➧🙇🏻🖤◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/shababbbbR/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "رمادي بنت 🧝🏻‍♀🏙" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,131); 
+local Text ='*🎆┊افتـارات بنـات ࢪمـاديه ➧🙇🏻‍♀🖤◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/banatttR/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "بيست بنات 👯‍♀🎆" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,30); 
+local Text ='*🎆┊افتـارات بيست تطقيـم بنـات ➧🧚🏻‍♀🧚🏻‍♀◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/Tatkkkkkim/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "تطقيم حب ♥️🎆" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,58); 
+local Text ='*🎆┊افتـارات تطـقيم حـب تمبلـرࢪ ➧??♥️◟*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/tatkkkkkimh/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "متحـركـات 🎆" then 
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,1075); 
+local Text ='*𖥔┊تم اختيار متحركه لك*'
+local MsgId = msg.id/2097152/0.5
+local MSGID = string.gsub(MsgId,'.0','')
+https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+end
+end
+if text == "ريمكسات اغـاني 🎵" then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(2,612); 
+local Text ='*𖥔┊تم اختيار المقطع ريماكس لك 💞🎶*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "رقيـة شرعيـة 🕋" then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(5,121); 
+local Text ='*𖥔┊تم اختيار مقطـع الرقيـة الشـرعيـة 🕋🤍*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/Rqy_1/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
+if text == "اشعـار صوتيـة 🎙" then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+Abs = math.random(7,592); 
+local Text ='*𖥔┊تم اختيار المقطع شعر لك*'
+keyboard = {}  
+keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
+local msg_id = msg.id/2097152/0.5 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+end
 if text == '/start' then
 Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
 if not msg.Asasy then
@@ -23830,7 +24010,7 @@ data = {
 {text = '◍ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
 },
 {
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/uuu_4_bot '}, 
+{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
 },
 }
 }
@@ -23904,7 +24084,7 @@ data = {
 {text = ' الاحصائيات ◍',type = 'text'},
 },
 {
-{text = 'تنظيف المجموعات ◍',type = 'text'},{text = 'تنظيف المشتركين  ◍', type = 'text'},
+{text = 'تنظيف المجموعات ◍',type = 'text'},{text = 'تنظيف المشتركين ◍', type = 'text'},
 },
 {
 {text = 'جلب النسخه الاحتياطيه ◍',type = 'text'},{text = 'جلب نسخة الردود ◍',type = 'text'},
@@ -23933,7 +24113,7 @@ data = {
 {text = 'تغيير كليشه المطور ◍',type = 'text'},{text = 'حذف كليشه المطور ◍', type = 'text'},
 },
 {
-{text = 'الغاء الامر  ◍',type = 'text'},
+{text = 'الغاء الامر ◍',type = 'text'},
 },
 {
 {text = 'رجـوع ◍',type = 'text'},
@@ -23987,10 +24167,10 @@ if text == "العام 🔐" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'اضف رد عام  ◍',type = 'text'},{text = 'حذف رد عام  ◍', type = 'text'},
+{text = 'اضف رد عام ◍',type = 'text'},{text = 'حذف رد عام ◍', type = 'text'},
 },
 {
-{text = 'الردود العامه  ◍',type = 'text'},{text = 'مسح الردود العامه  ◍', type = 'text'},
+{text = 'الردود العامه ◍',type = 'text'},{text = 'مسح الردود العامه ◍', type = 'text'},
 },
 {
 {text = 'قائمه العام ◍', type = 'text'},{text = 'مسح قائمه العام ◍', type = 'text'},
@@ -23999,7 +24179,7 @@ data = {
 {text = 'اضف رد انلاين عام ◍', type = 'text'},{text = 'حذف رد انلاين عام ◍', type = 'text'},
 },
 {
-{text = 'الردود الانلاين العامه  ◍',type = 'text'},{text = 'مسح الردود الانلاين العامه  ◍', type = 'text'},
+{text = 'الردود الانلاين العامه ◍',type = 'text'},{text = 'مسح الردود الانلاين العامه ◍', type = 'text'},
 },
 {
 {text = 'الترحيب العام ◍',type = 'text'},
@@ -24054,6 +24234,52 @@ data = {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ببوتك المثبت علئ لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+end
+if text == '/selva' then
+Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ',type = 'text'},
+},
+{
+{text = 'انمي ولد 👨‍🎤🎑',type = 'text'},{text = 'انمي بنت 👩‍🎤🎑',type = 'text'},
+},
+{
+{text = 'افتار ولد 🙋🏻‍♂🌁',type = 'text'},{text = 'افتار بنت 🙋🏻‍♀🌁',type = 'text'},
+},
+{
+{text = 'رمادي ولد 🧝🏻🏙',type = 'text'},{text = 'رمادي بنت 🧝🏻‍♀🏙', type = 'text'},
+},
+{
+{text = 'تطقيم حب ♥️🎆',type = 'text'},{text = 'بيست بنات 👯‍♀🎆',type = 'text'},
+},
+{
+{text = 'انمي ستوري 🎬',type = 'text'},{text = 'حالات واتس 🎬',type = 'text'},
+},
+{
+{text = 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ',type = 'text'},
+},
+{
+{text = 'ريمكسات اغـاني 🎵',type = 'text'},{text = 'بصمـات ميمـز 🦹🏻‍♂', type = 'text'},
+},
+{
+{text = 'اشعـار صوتيـة 🎙',type = 'text'},{text = 'اغاني قصيرة 🎶', type = 'text'},
+},
+{
+{text = 'متحـركـات 🎆',type = 'text'},{text = 'صـور 🎇', type = 'text'},
+},
+{
+{text = 'رقيـة شرعيـة 🕋',type = 'text'},
+},
+{
+{text = 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ',type = 'text'},
+},
+}
+}
+return sendText(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي .. تصفح كيبورد خدمات البوت بالاسفل *', 'md', false, false, false, false, reply_markup)
+end
 end
 if Redis:get(Timo.."set:rmz"..msg.sender_id.user_id) then
 if text then
