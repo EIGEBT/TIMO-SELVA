@@ -20485,7 +20485,6 @@ local NameBots = {
       "يارب يكون موضوع مهم بس",
       "هو يوم مهبب انا عارف..عاوز اي ؟",
       "اسمي "..NamesBot.." يا كفيف",
-      "مش شايف اسمي ولا اي ؟"
 }
 return send(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end
@@ -20497,7 +20496,6 @@ local su = {
       "يارب يكون موضوع مهم بس",
       "هو يوم مهبب انا عارف..عاوز اي ؟",
       "اسمي "..NamesBot.." يا كفيف",
-      "مش شايف اسمي ولا اي ؟"
 send(msg_chat_id,msg_id,su[math.random(#su)],"md",true)   
 else
 local BotName = {
@@ -20505,7 +20503,6 @@ local BotName = {
       "يارب يكون موضوع مهم بس",
       "هو يوم مهبب انا عارف..عاوز اي ؟",
       "اسمي "..NamesBot.." يا كفيف",
-      "مش شايف اسمي ولا اي ؟"
 }
 return send(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
 end
@@ -23793,7 +23790,7 @@ return false
 else
 local bio = getbio(Sudo_Id)
 local TextDev = '◍︙*D𝐞𝐯 N𝐞𝐦𝐚* ↬ ['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')\n◍︙*D𝐞𝐯 U𝐬𝐞𝐫* ↬ @'..UserSudo..'\n◍︙*D𝐞𝐯 I𝐝* ↬ ( '..Sudo_Id..' )\n◍︙*D𝐞𝐯 B𝐢𝐨* ↬ ['..bio..']'
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• '..UserInfo.first_name..' •', url = 't.me/'..UserSudo}, },{{text = '• 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰 •', url = 't.me/SO_SELVA'},},}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• '..UserInfo.first_name..' •', url = 't.me/'..UserSudo}, },{{text = '• 𝚂𝙾??𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰 •', url = 't.me/SO_SELVA'},},}}
 LuaTele.sendText(msg.chat_id,msg.id,TextDev,"md", true, false, false, false, reply_markup)
 return false
 end
