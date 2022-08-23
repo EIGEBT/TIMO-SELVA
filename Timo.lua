@@ -23711,27 +23711,6 @@ data = {
 LuaTele.sendText(msg.chat_id,msg.id,Text,"md",true, false, false, false, reply_markup)
 dofile('Timo.lua')
 end
-
-if text == 'السيرفر' or text == 'سيرفر' or text == 'السيرفر ◍' then 
-if not msg.SecondSudo then 
-return sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n•-› X').Warning,"md",true)    
-end
-ioserver = io.popen([[
-LinuxVersion=`lsb_release -ds`
-MemoryUsage=`free -m | awk 'NR==2{printf "%s/%sMB {%.2f%%}\n", $3,$2,$3*100/$2 }'`
-HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
-Percentage=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
-UpTime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}'`
-echo '⌯︙نظام التشغيل ↫ ⤈\n`'"$LinuxVersion"'`' 
-echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙الذاكره العشوائيه ↫ ⤈\n`'"$MemoryUsage"'`'
-echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙وحدة التخزين ↫ ⤈\n`'"$HardDisk"'`'
-echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙المعالج ↫ ⤈\n`'"`grep -c processor /proc/cpuinfo`""Core ~ {$Percentage%} "'`'
-echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙الدخول ↫ ⤈\n`'`whoami`'`'
-echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
-echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙رقم اسكرين البوت ↫ ⤈\n'..ScreenBot()
-]]):read('*all')
-send(msg.chat_id,msg.id,ioserver,"md",true)
-end
 --     Source Timo     --
 if text =='قناة التحديثات' or text =="قناة السورس ◍" or text =='قناة تحديثات السورس' or text =='قناه تحديثات السورس' or text =='قنات تحديث السورس' or text =='قنات تحديثات السورس' or text =='قناة التحديثات ◍' then 
 Text = [[
@@ -23967,6 +23946,28 @@ keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+end
+if text == 'السورس ◍' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
+photo = "https://t.me/selva_so/2"
+local T =[[
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+◍ [ٓ⁨𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](t.me/SO_SELVA)
+◍ [ٓ𝐓𝐡𝐞 𝐁𝐞𝐬𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦](t.me/SO_SELVA)
+◍ [ٓ𝐅𝐨𝐥𝐥𝐨𝐰 𝐓𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐁𝐞𝐥𝐨𝐰](t.me/SO_SELVA)
+◍ [ٓٓٓ𝚃𝙸𝙼𝙾](t.me/uu_u_4)
+◍ [ٓٓٓ𝙻𝙸𝙳𝙾](t.me/J0KER7x)
+◍ [ٓٓٓ𝙴𝙻𝙳𝙴𝙱](t.me/DEEBEG)
+⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
+ [ٓٓٓ⁨𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰](t.me/SO_SELVA)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'أضـف البـوت الـي مجـموعـتـك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == '/start' then
 Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
@@ -24217,9 +24218,6 @@ data = {
 {text = 'تحديث السورس ◍',type = 'text'},{text = 'تحديث الملفات  ◍', type = 'text'},
 },
 {
-{text = 'السيرفر ◍',type = 'text'},
-},
-{
 {text = ' السورس ◍',type = 'text'},{text = 'مطور السورس ◍', type = 'text'},
 },
 {
@@ -24231,7 +24229,7 @@ data = {
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ببوتك المثبت علئ لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == '/selva' then
-Redis:sadd('Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
 if not msg.ControllerBot then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
