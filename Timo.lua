@@ -19800,7 +19800,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '«  𝚃𝙸𝙼𝙾 𝙱𝙰𝚂𝙷𝙰  »', url = 't.me/'uu_u_4'}, 
+{text = '«  𝚃𝙸𝙼𝙾 𝙱𝙰𝚂𝙷𝙰  »', url = 't.me/uu_u_4'}, 
 },
 {
 {text = ' «𝙱𝙾𝚃 𝚃𝙸𝙼𝙾 » ', url = 't.me/Timo8Bot'},
