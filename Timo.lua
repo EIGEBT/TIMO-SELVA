@@ -23757,7 +23757,7 @@ end
 end
 
 if text == "اغاني قصيرة 🎶" then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,140); 
 local Text ='*𖥔┊تم اختيار المقطع الصوتي لك*'
@@ -23768,7 +23768,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ms
 end
 end
 if text == "حالات واتس 🎬" then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(296,400); 
 local Text ='*🎆┊حـالات واتـس قصيـرة ➧🧸♥️*'
@@ -23779,7 +23779,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVideo?chat_id=' .. ms
 end
 end
 if text == "انمي ستوري 🎬" then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(6,641); 
 local Text ='*🎆┊ستـوريات آنمـي قصيـرة ➧ 🖤🧧*'
@@ -23790,7 +23790,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVideo?chat_id=' .. ms
 end
 end
 if text == "بصمـات ميمـز 🦹🏻‍♂" then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Timoy = math.random(2,1201); 
 local zzzzl1l = '*𖥔┊اضغط الـزر لتغييـر مقطـع الميمـز*'
@@ -23805,7 +23805,7 @@ https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id=" .. ms
 end
 end
 if text == "عـروض الافـلام 🎞" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,82); 
 local Text ='*𖥔┊تم اختيار الفلم لك*'
@@ -23815,7 +23815,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "انمي بنت 👩‍🎤🎑" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(3,825); 
 local Text ='*🎆┊افتـارات آنمـي بنـات ➧🧚🏻‍♀◟*'
@@ -23825,7 +23825,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "انمي ولد 👨‍🎤🎑" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(3,556); 
 local Text ='*🎆┊افتـارات آنمـي ولـد ➧🙇🏻◟*'
@@ -23835,7 +23835,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "صـور 🎇" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(4,1171); 
 local Text ='*𖥔┊تم اختيار الافتـار لك*'
@@ -23845,7 +23845,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "معلومات عامة 🧩" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(3,270); 
 local Text ='*𖥔┊صـورة ومعلومـة 🛤💡*'
@@ -23855,7 +23855,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "افتار بنت 🙋🏻‍♀🌁" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,63); 
 local Text ='*🎆┊افتـارات بنـات تمبلـرࢪ ➧🧚🏻‍♀◟*'
@@ -23865,7 +23865,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "افتار ولد 🙋🏻‍♂🌁" or text == "رمادي ولد 🧝🏻🏙" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,131); 
 local Text ='*🎆┊افتـارات ولـد ࢪمـاديه ➧🙇🏻🖤◟*'
@@ -23875,7 +23875,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "رمادي بنت 🧝🏻‍♀🏙" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,131); 
 local Text ='*🎆┊افتـارات بنـات ࢪمـاديه ➧🙇🏻‍♀🖤◟*'
@@ -23885,7 +23885,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "بيست بنات 👯‍♀🎆" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,30); 
 local Text ='*🎆┊افتـارات بيست تطقيـم بنـات ➧🧚🏻‍♀🧚🏻‍♀◟*'
@@ -23895,7 +23895,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "تطقيم حب ♥️🎆" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,58); 
 local Text ='*🎆┊افتـارات تطـقيم حـب تمبلـرࢪ ➧??♥️◟*'
@@ -23905,7 +23905,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 end
 if text == "متحـركـات 🎆" then 
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,1075); 
 local Text ='*𖥔┊تم اختيار متحركه لك*'
@@ -23915,7 +23915,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .
 end
 end
 if text == "ريمكسات اغـاني 🎵" then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,612); 
 local Text ='*𖥔┊تم اختيار المقطع ريماكس لك 💞🎶*'
@@ -23926,7 +23926,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ms
 end
 end
 if text == "رقيـة شرعيـة 🕋" then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(5,121); 
 local Text ='*𖥔┊تم اختيار مقطـع الرقيـة الشـرعيـة 🕋🤍*'
@@ -23937,7 +23937,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ms
 end
 end
 if text == "اشعـار صوتيـة 🎙" then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd(Timo..':Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(7,592); 
 local Text ='*𖥔┊تم اختيار المقطع شعر لك*'
@@ -23952,7 +23952,7 @@ photo = "https://t.me/selva_so/2"
 local T =[[
 ⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
 ◍ [ٓ⁨𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](t.me/SO_SELVA)
-◍ [ٓ𝐓𝐡𝐞 𝐁𝐞𝐬𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦](t.me/SO_SELVA)
+◍ [ٓ𝐓𝐡𝐞 𝐁𝐞𝐬𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐓??𝐥𝐞𝐠𝐫𝐚𝐦](t.me/SO_SELVA)
 ◍ [ٓ𝐅𝐨𝐥𝐥𝐨𝐰 𝐓𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐁𝐞𝐥𝐨𝐰](t.me/SO_SELVA)
 ◍ [ٓٓٓ𝚃𝙸𝙼𝙾](t.me/uu_u_4)
 ◍ [ٓٓٓ𝙻𝙸𝙳𝙾](t.me/J0KER7x)
@@ -24106,7 +24106,7 @@ data = {
 {text = 'تغيير المطور الاساسي ◍',type = 'text'} 
 },
 {
-{text = 'تغيير كليشه المطور ◍',type = 'text'},{text = 'حذف كليشه المطور ◍', type = 'text'},
+{text = 'تغيير كليشه المطور ◍',type = 'text'}
 },
 {
 {text = 'الغاء الامر ◍',type = 'text'},
@@ -24144,15 +24144,6 @@ data = {
 },
 {
 {text = 'تغيير الاشتراك الاجباري ◍',type = 'text'},{text = 'الاشتراك الاجباري ◍',type = 'text'},
-},
-{
-{text = 'تغير كليشه الاشتراك ◍',type = 'text'},
-},
-{
-{text = 'حذف كليشه الاشتراك ◍',type = 'text'},{text = 'كليشه الاشتراك ◍',type = 'text'},
-},
-{
-{text = 'اشتراك اجباري للكل ◍',type = 'text'},{text = 'اشتراك الاوامر البوت فقط ◍',type = 'text'},
 },
 {
 {text = 'رجـوع ◍',type = 'text'},
@@ -24196,9 +24187,6 @@ local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal
 data = {
 {
 {text = 'تغيير اسم البوت ◍',type = 'text'},{text = 'حذف اسم البوت ◍', type = 'text'},
-},
-{
-{text = 'مطور البوت ◍', type = 'text'},
 },
 {
 {text = 'تغيير كليشه ستارت ◍',type = 'text'},{text = 'حذف كليشه ستارت ◍', type = 'text'},
