@@ -23862,7 +23862,7 @@ return send(msg.chat_id,msg.id,'◍︙مرحبا عزيزي المطور \n◍�
 end
 end
 
-if text == "🎯 التفعيل والتعطيل" and msg.SecondSudo then
+if text == "🎯 التفعيل والتعطيل" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
