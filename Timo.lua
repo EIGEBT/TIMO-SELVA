@@ -23673,25 +23673,20 @@ end
 -- GroupBot
 if chat_type(msg.chat_id) == "UserBot" then 
 if text == 'تحديث الملفات  ◍' or text == 'تحديث' then
-if not msg.DevMain then 
-return sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌯︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n•-› X').Warning,"md",true)    
+if not msg.Asasy then 
+return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
-print("\27[31;47m\n        ( تم تحديث ملفات البوت )        \n\27[0;34;49m\n") 
-print('Chat Id : '..msg.chat_id)
-print('User Id : '..msg.sender_id.user_id)
-
-local Text = [[
-*⌯︙تم تحديث الملفات ...✓*
-]] 
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text='• 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰 •',url="t.me/SO_SELVA"},
-},
-}
-}
-LuaTele.sendText(msg.chat_id,msg.id,Text,"md",true, false, false, false, reply_markup)
+if ChannelJoinch(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
+return send(msg.chat_id,msg.id,'*\n⌯  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return send(msg.chat_id,msg.id,'*\n⌯  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+print('Chat Id : '..msg_chat_id)
+print('User Id : '..msg_user_send_id)
+send(msg_chat_id,msg_id, "⌯ تم تحديث الملفات ♻","md",true)
 dofile('Timo.lua')  
 end
 
@@ -23735,7 +23730,7 @@ echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙الدخول ↫ ⤈\n`'`whoa
 echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
 echo 'ꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n⌯︙رقم اسكرين البوت ↫ ⤈\n'..ScreenBot()
 ]]):read('*all')
-sendText(msg.chat_id,msg.id,ioserver,"md",true)
+send(msg.chat_id,msg.id,ioserver,"md",true)
 end
 --     Source Timo     --
 if text =='قناة التحديثات' or text =="قناة السورس ◍" or text =='قناة تحديثات السورس' or text =='قناه تحديثات السورس' or text =='قنات تحديث السورس' or text =='قنات تحديثات السورس' or text =='قناة التحديثات ◍' then 
@@ -23991,7 +23986,7 @@ data = {
 {text = '◍ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '◍ لتنصيب بوت .', url = 't.me/SO_SELVA /115'},
+{text = '◍ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -24236,7 +24231,7 @@ data = {
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ببوتك المثبت علئ لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == '/selva' then
-Redis:sadd(Timo..'Timo:Num:User:Pv',msg.sender.user_id)  
+Redis:sadd('Timo:Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
