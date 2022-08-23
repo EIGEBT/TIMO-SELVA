@@ -19844,7 +19844,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'SO_SELVA'}, 
+{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/SO_SELVA'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
