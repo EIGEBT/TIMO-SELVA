@@ -24271,7 +24271,7 @@ data = {
 },
 }
 }
-return sendText(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي .. تصفح كيبورد خدمات البوت بالاسفل *', 'md', false, false, false, false, reply_markup)
+return send(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي .. تصفح كيبورد خدمات البوت بالاسفل *', 'md', false, false, false, false, reply_markup)
 end
 end
 if Redis:get(Timo.."set:rmz"..msg.sender_id.user_id) then
