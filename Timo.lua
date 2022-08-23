@@ -23842,7 +23842,7 @@ data = {
 return send(msg_chat_id,msg_id,Redis:get(Timo.."Start:Bot"),"md",true, false, false, false, reply_markup)
 end
 else
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
     {
         {text = '👁 السورس ',type = 'text'},{text = '🤖 البوت',type = 'text'},
@@ -23863,7 +23863,7 @@ end
 end
 
 if text == "🎯 التفعيل والتعطيل" and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'تعطيل التواصل ◍', type = 'text'},{text = 'تفعيل التواصل ◍',type = 'text'},
@@ -23883,7 +23883,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "الاحصائيات 📊" and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = ' الاحصائيات ◍',type = 'text'},
@@ -23900,7 +23900,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب أحصائيات  سورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "المطورين 🔰" and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'المطور ◍',type = 'text'},
@@ -23926,7 +23926,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب المطورين لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "الاذاعه ⚙" and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'اذاعه بالتثبيت ◍',type = 'text'},
@@ -23946,7 +23946,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالاذاعه لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == 'الاشتراك الاجباري ⛓' and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'تعطيل الاشتراك الاجباري ◍', type = 'text'},{text = 'تفعيل الاشتراك الاجباري ◍',type = 'text'},
@@ -23969,7 +23969,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب الاشتراك الاجباري لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "العام 🔐" and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'اضف رد عام  ◍',type = 'text'},{text = 'حذف رد عام  ◍', type = 'text'},
@@ -24001,7 +24001,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالعام لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "🤖 البوت" and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'تغيير اسم البوت ◍',type = 'text'},{text = 'حذف اسم البوت ◍', type = 'text'},
@@ -24021,7 +24021,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "👁 السورس" and msg.SecondSudo then
-local reply_markup = LuaTele.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
 {text = 'تحديث السورس ◍',type = 'text'},{text = 'تحديث الملفات  ◍', type = 'text'},
