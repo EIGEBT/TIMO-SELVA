@@ -20478,34 +20478,73 @@ end
 Redis:del(Timo.."Name:Bot") 
 return send(msg_chat_id,msg_id,"◍ تم مسح اسم البوت ","md",true)   
 end
-if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-local NameBots = {
-      "اسمي "..NamesBot.." يبن العاميه",
-      "يارب يكون موضوع مهم بس",
-      "هو يوم مهبب انا عارف..عاوز اي ؟",
-      "اسمي "..NamesBot.." يا كفيف",
-}
-return send(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
-end
-if text == "بوت" then
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-if msg.Asasy then 
-local su = {
-      "اسمي "..NamesBot.." يبن العاميه",
-      "يارب يكون موضوع مهم بس",
-      "هو يوم مهبب انا عارف..عاوز اي ؟",
-      "اسمي "..NamesBot.." يا كفيف",
-}
-send(msg_chat_id,msg_id,su[math.random(#su)],"md",true)   
-else
+if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
+local photo = bot.getUserProfilePhotos(Timo)
+local selvaa = bot.getUser(Timo)
+local NamesBot = (Redis:get(Timo.."Name:Bot") or 'سيلفا')
 local BotName = {
-      "اسمي "..NamesBot.." يبن العاميه",
-      "يارب يكون موضوع مهم بس",
-      "هو يوم مهبب انا عارف..عاوز اي ؟",
-      "اسمي "..NamesBot.." يا كفيف",
+    'اسمي '..NamesBot..' يا قلبي 😍💜',
+    'اسمي '..NamesBot..' يا روحي 🙈❤️',
+    'اسمي '..NamesBot..' يا عمري 🥰🤍',
+   'اسمي '..NamesBot..' يا قمر 🖤🌿',
+    'اسمي بوت '..NamesBot..' 😻❤️',
+    'اسمي '..NamesBot..' يا مزه 😘🍒',
+    'اسمي '..NamesBot..' يعم 😒',
+    'مقولت اسمي '..NamesBot..' في اي 🙄',
+    'اسمي '..NamesBot..' الكيوت 🌝💙',
+    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+    'اسمي '..NamesBot..' يوتكه 🙈💔',
 }
-return send(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
+NamesBots = BotName[math.random(#BotName)]
+local first_n = selvaa.first_name
+if photo.total_count > 0 then
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
+},
+{
+{text = 'أضغط لاضافه ألبوت لمجموعتك 🍫', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا') then
+local photo = bot.getUserProfilePhotos(Timo)
+local selvaa = bot.getUser(Timo)
+local NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
+local BotName = {
+'نعم يروحي 🌝💙',
+'نعم يا قلب '..NamesBot..'',
+'عوز اي مني '..NamesBot..'',
+'موجود '..NamesBot..'',
+'بتشقط وجي ويت 🤪',
+'ايوا جاي 😹',
+'يعم هتسحر واجي 😾',
+'طب متصلي على النبي كدا 🙂💜',
+'تع اشرب شاي 🌝💙',
+'اي قمر انت 🌝💙',
+'اي قلبي 🤍😻',
+'ياض خش نام 😂',
+'انا '..NamesBot..' احسن البوتات ??💙',
+'نعم 🍒🤍'
+}
+NamesBots = BotName[math.random(#BotName)]
+local first_n = selvaa.first_name
+if photo.total_count > 0 then
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
+},
+{
+{text = 'أضغط لاضافه ألبوت لمجموعتك 🍫', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 if text == 'تنظيف المشتركين' then
