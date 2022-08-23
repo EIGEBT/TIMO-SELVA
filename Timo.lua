@@ -17470,7 +17470,7 @@ if text == "حذف قسم" then
   `#id` ↬ ايدي المستخدم
   `#stast` ↬ رتبة المستخدم
   • — — — — — — — — — •
-  تم صنع الكود بواسطه انوبيس
+  تم صنع الكود بواسطه تيمو
   ]],"md",true)  
   return false
   end
@@ -23773,28 +23773,23 @@ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.
 return false
 end
 --     Source Timo     --
-if (text == 'المطور' or text == 'مطور' or text =='↫ المطور ◍' or text =='↫ مطور البوت ◍') then
-local TextingDevTimo = Redis:get(Timo..'Texting:DevTimo')
-if TextingDevTimo then 
-LuaTele.sendText(msg.chat_id,msg.id,TextingDevTimo,"md",true)  
+if text == 'المطور ◍' or text == 'مطور البوت' then   
+local UserInfo = bot.getUser(Sudo_Id) 
+local InfoUser = bot.getUserFullInfo(Sudo_Id)
+if InfoUser.bio then
+Bio = InfoUser.bio
 else
-local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
-local UserInfo = LuaTele.getUser(Sudo_Id)
-for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
-end 
-if photo and photo.total_count and photo.total_count > 0 then
-local bio = getbio(Sudo_Id)
-local TextDev ="*◍︙D𝐞𝐯 N𝐞𝐦𝐚 ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*◍︙D𝐞𝐯 U𝐬𝐞𝐫 ↬* [@"..UserInfo.username.."]\n*◍︙D𝐞𝐯 I𝐝 ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*◍︙D𝐞𝐯 B𝐢𝐨 ↬* ["..bio.."]\nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ"
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• '..UserInfo.first_name..' •', url = 't.me/'..UserSudo}, },{{text = '• 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰 •', url = 't.me/SO_SELVA'},},}}
-LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, TextDev, "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup)
-return false
-else
-local bio = getbio(Sudo_Id)
-local TextDev = '◍︙*D𝐞𝐯 N𝐞𝐦𝐚* ↬ ['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')\n◍︙*D𝐞𝐯 U𝐬𝐞𝐫* ↬ @'..UserSudo..'\n◍︙*D𝐞𝐯 I𝐝* ↬ ( '..Sudo_Id..' )\n◍︙*D𝐞𝐯 B𝐢𝐨* ↬ ['..bio..']'
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '• '..UserInfo.first_name..' •', url = 't.me/'..UserSudo}, },{{text = '• 𝚂????𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰 •', url = 't.me/SO_SELVA'},},}}
-LuaTele.sendText(msg.chat_id,msg.id,TextDev,"md", true, false, false, false, reply_markup)
-return false
+Bio = ''
 end
+local photo = bot.getUserProfilePhotos(Sudo_Id)
+if photo.total_count > 0 then
+local TestText = "- معلومات المطور الاساسي : \n\n- ["..UserInfo.first_name.."](tg://user?id="..Sudo_Id..")\n\n ["..Bio.."]"
+local msg_id = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown')  
+else
+local TestText = "- معلومات المطور الاساسي : \\nn- ["..UserInfo.first_name.."](tg://user?id="..Sudo_Id..")\n\n ["..Bio.."]"
+local msg_id = msg.id/2097152/0.5 
+return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
 end
 
@@ -23832,10 +23827,10 @@ data = {
 {text = '◍ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '◍ لتنصيب بوت .', url = 't.me/SO_SELVA /115'},
+{text = '◍ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
 },
 {
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
+{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/uuu_4_bot '}, 
 },
 }
 }
@@ -23862,6 +23857,26 @@ return send(msg.chat_id,msg.id,'◍︙مرحبا عزيزي المطور \n◍�
 end
 end
 
+if text == "رجـوع ◍" then
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+    {
+        {text = '👁 السورس ',type = 'text'},{text = '🤖 البوت',type = 'text'},
+    },
+    {
+        {text = '🎯 التفعيل والتعطيل',type = 'text'},{text = 'الاحصائيات 📊',type = 'text'},
+    },
+    {
+        {text = 'الاذاعه ⚙',type = 'text'},{text = 'الاشتراك الاجباري ⛓',type = 'text'},
+    },
+    {
+        {text = 'المطورين 🔰',type = 'text'},{text = 'العام 🔐',type = 'text'},
+    },
+{
+{text = 'رجـوع ◍',type = 'text'},
+},}}
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+end
 if text == "🎯 التفعيل والتعطيل" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
@@ -23882,7 +23897,7 @@ data = {
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
-if text == "الاحصائيات 📊" and msg.SecondSudo then
+if text == "الاحصائيات 📊" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
@@ -23899,7 +23914,7 @@ data = {
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب أحصائيات  سورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
-if text == "المطورين 🔰" and msg.SecondSudo then
+if text == "المطورين 🔰" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
@@ -23925,7 +23940,7 @@ data = {
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب المطورين لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
-if text == "الاذاعه ⚙" and msg.SecondSudo then
+if text == "الاذاعه ⚙" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
@@ -23945,7 +23960,7 @@ data = {
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالاذاعه لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
-if text == 'الاشتراك الاجباري ⛓' and msg.SecondSudo then
+if text == 'الاشتراك الاجباري ⛓' then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
@@ -23968,7 +23983,7 @@ data = {
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب الاشتراك الاجباري لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
-if text == "العام 🔐" and msg.SecondSudo then
+if text == "العام 🔐" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
@@ -24000,7 +24015,7 @@ data = {
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالعام لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
-if text == "🤖 البوت" and msg.SecondSudo then
+if text == "🤖 البوت" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
@@ -24020,7 +24035,7 @@ data = {
 },}}
 return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
-if text == "👁 السورس" and msg.SecondSudo then
+if text == "👁 السورس" then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
@@ -24379,8 +24394,7 @@ if text == "تيمو" then
   local UserInfo = bot.getUser( 5223565603 ) 
   local photo = bot.getUserProfilePhotos(UserInfo.id)
   local ANUBIS = {
-      "معاك الحج انوبيس للسياحه",
-      "ايوا معاك انوبيس اهوو",
+      "ايوا معاك تيمو اهوو",
       "يارب تكون بتجيب سيرتي بالخير",
       "استر يارب هولي شيت"
   }
