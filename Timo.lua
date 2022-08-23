@@ -23858,7 +23858,7 @@ data = {
     },
 }
 }
-return sendText(msg.chat_id,msg.id,'◍︙مرحبا عزيزي المطور \n◍︙انت المطور الاساسي هنا \n◍︙اليك ازرار سورس تيمو \n◍︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙مرحبا عزيزي المطور \n◍︙انت المطور الاساسي هنا \n◍︙اليك ازرار سورس تيمو \n◍︙تستطيع التحكم بكل الاوامر فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 end
 
@@ -23880,7 +23880,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب التفعيل والتعطيل لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "الاحصائيات 📊" and msg.SecondSudo then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -23897,7 +23897,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب أحصائيات  سورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب أحصائيات  سورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "المطورين 🔰" and msg.SecondSudo then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -23923,7 +23923,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب المطورين لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب المطورين لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "الاذاعه ⚙" and msg.SecondSudo then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -23943,7 +23943,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالاذاعه لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالاذاعه لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == 'الاشتراك الاجباري ⛓' and msg.SecondSudo then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -23966,7 +23966,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب الاشتراك الاجباري لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ب الاشتراك الاجباري لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "العام 🔐" and msg.SecondSudo then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -23998,7 +23998,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالعام لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بالعام لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "🤖 البوت" and msg.SecondSudo then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -24018,7 +24018,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه بسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if text == "👁 السورس" and msg.SecondSudo then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
@@ -24038,7 +24038,7 @@ data = {
 {
 {text = 'رجـوع ◍',type = 'text'},
 },}}
-return sendText(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ببوتك المثبت علئ لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
+return send(msg.chat_id,msg.id,'◍︙اهلا بك مجددا عزيزي المطور \n◍︙اليك الازرار الخاصه ببوتك المثبت علئ لسورس تيمو فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
 if Redis:get(Timo.."set:rmz"..msg.sender_id.user_id) then
 if text then
