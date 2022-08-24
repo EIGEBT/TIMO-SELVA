@@ -18615,7 +18615,7 @@ elseif tonumber(Redis:get(Timo..msg_chat_id..Message_Reply.sender_id.user_id.."i
 return send(msg_chat_id,msg_id,"هو فقلبك اصلا عشان تنزلو ؟؟","md")
 end
 end
-if text == "منو بقلبي" then
+if text == "مين قلبي" then
 if not Redis:get(Timo..msg_chat_id..msg.sender_id.user_id.."in_heart:") then
 return send(msg_chat_id,msg_id,"اقعد يعم انت محدش طايقك","md")
 elseif Redis:get(Timo..msg_chat_id..msg.sender_id.user_id.."in_heart:") then
@@ -18624,7 +18624,7 @@ local heart_name = bot.getUser(in_heart_id).first_name
 return send(msg_chat_id,msg_id,"انت فقلب ["..heart_name.."](tg://user?id="..in_heart_id..")","md")
 end
 end
-if text == "تاك للبقلبي" or text == "تاك لحبيبتي" or text == "وين حبيبتي" then
+if text == "تاك لقلبي" or text == "تاك لحبيبتي" or text == "وين حبيبتي" then
 local heart_list = Redis:smembers(Timo..msg_chat_id..msg.sender_id.user_id.."my_heart:")
 if #heart_list == 0 then
 return send(msg_chat_id,msg_id,"قلبك فاضي محدش فيه","md")
@@ -18638,7 +18638,7 @@ end
 return send(msg_chat_id,msg_id,your_heart,"md")
 end
 end
-if text == "مسح للبقلبي" or text == "مسح حبيبتي" then 
+if text == "مسح قلبي" or text == "مسح حبيبتي" then 
 local list = Redis:smembers(Timo..msg_chat_id..msg.sender_id.user_id.."my_heart:")
 for k,v in pairs(list) do
 Redis:del(Timo..msg_chat_id..v.."in_heart:")
@@ -18789,7 +18789,7 @@ Redis:srem(Timo.."mtzwgen:", msg.sender_id.user_id)
 return send(msg_chat_id,msg_id,"تم طلاقكم وشوفو الجهال تبرعو بيهم لدار الايتام","md")
 end
 end
-if text == "انت طالك" and msg.reply_to_message_id ~= 0 then 
+if text == "انت طالق" and msg.reply_to_message_id ~= 0 then 
 local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 if tonumber(Message_Reply.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
 return send(msg_chat_id,msg_id,"انتي ثوله يحلوا تردين تطلكي نفسج ؟؟","md")
@@ -18805,7 +18805,7 @@ Redis:srem(Timo.."mtzwgen:", msg.sender_id.user_id)
 return send(msg_chat_id,msg_id,"تم طلاقكم وشوفو الجهال تبرعو بيهم لدار الايتام","md")
 end
 end
-if text == "بوت طلكني" then
+if text == "بوت طلقني" then
 if not Redis:get(Timo.."zwag:"..msg.sender_id.user_id.."mtzwga:") then 
 return send(msg_chat_id,msg_id,"انت ولا متجوز ولا متنيل عشان اطلقك","md")
 elseif Redis:get(Timo.."zwag:"..msg.sender_id.user_id.."mtzwga:") then
@@ -18887,7 +18887,7 @@ Redis:del(Timo.."youtube"..msg.sender_id.user_id..msg_chat_id)
 sleep(2)
 os.remove(""..title..".mp4")
 end
-if text == "ممممممممننننههخخخح" then
+if text == "يوتيوب" then
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -19774,20 +19774,15 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 photo = "https://t.me/selva_so/2"
 local T =[[
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
-◍ [ٓ⁨𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](t.me/SO_SELVA)
-◍ [ٓ𝐓𝐡𝐞 𝐁𝐞𝐬𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦](t.me/SO_SELVA)
-◍ [ٓ𝐅𝐨𝐥𝐥𝐨𝐰 𝐓𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐁𝐞𝐥𝐨𝐰](t.me/SO_SELVA)
-◍ [ٓٓٓ𝚃𝙸𝙼𝙾](t.me/uu_u_4)
-◍ [ٓٓٓ𝙻𝙸𝙳𝙾](t.me/J0KER7x)
-◍ [ٓٓٓ𝙴𝙻𝙳𝙴𝙱](t.me/DEEBEG)
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
- [ٓٓٓ⁨𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰](t.me/SO_SELVA)
+ [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'أضـف البـوت الـي مجـموعـتـك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = '𓂄𓆩ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
+},
+{
+{text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -19800,10 +19795,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '«  𝚃𝙸𝙼𝙾 𝙱𝙰𝚂𝙷𝙰  »', url = 't.me/uu_u_4'}, 
-},
-{
-{text = ' «𝙱𝙾𝚃 𝚃𝙸𝙼𝙾 » ', url = 't.me/Timo8Bot'},
+{text = '𓂄𓆩𝚃𝙸𝙼𝙾 𝙱𝙰𝚂𝙷𝙰 𓆪𓂁', url = 't.me/uu_u_4'}, 
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -19865,25 +19857,25 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = msg.sender_id.user_id..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = msg.sender_id.user_id..'/help2'}, 
+{text = '𓂄𓆩𝙤𝙣𝙚𓆪𓂁', data = msg.sender_id.user_id..'/help1'}, {text = '𓂄𓆩𝙩𝙬𝙤 𓆪𓂁', data = msg.sender_id.user_id..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = msg.sender_id.user_id..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = msg.sender_id.user_id..'/help4'}, 
+{text = '𓂄𓆩𝙩𝙝𝙧𝙚𝙚𓆪𓂁', data = msg.sender_id.user_id..'/help3'}, {text = '𓂄𓆩𝙛𝙤𝙪𝙧𓆪𓂁', data = msg.sender_id.user_id..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = msg.sender_id.user_id..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = msg.sender_id.user_id..'/helpp6'}, 
+{text = '𓂄𓆩𝙛𝙞𝙫𝙚𓆪𓂁', data = msg.sender_id.user_id..'/help5'}, {text = '𓂄𓆩𝙨𝙞𝙭𓆪𓂁', data = msg.sender_id.user_id..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = msg.sender_id.user_id..'/helpsudo'},{text = '{ الالعاب }', data = msg.sender_id.user_id..'/help6'}, 
+{text = '𓂄𓆩اوامر المطور𓆪𓂁', data = msg.sender_id.user_id..'/helpsudo'},{text = '𓂄𓆩الالعاب𓆪𓂁', data = msg.sender_id.user_id..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = msg.sender_id.user_id..'/helpts'},
+{text = '𓂄𓆩اوامر التسليه𓆪𓂁', data = msg.sender_id.user_id..'/helpts'},
 },
 {
-{text = '{ القفل / الفتح }', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = msg.sender_id.user_id..'/listallAddorrem'}, 
+{text = '𓂄𓆩القفل / الفتح𓆪𓂁', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '𓂄𓆩التعطيل / التفعيل𓆪𓂁', data = msg.sender_id.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
 },
 }
 }
@@ -22062,7 +22054,7 @@ Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "معلم شاورما 🌯" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 85)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 85 جنيه 💵\nوظيفتك : معلم شاورما 🌯\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 85 جنيه 💵\nوظيفتك : معلم شاورما ??\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "دكتور ولاده 👨" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 160)
@@ -24007,6 +23999,7 @@ if text == '/start' then
 Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
 if not msg.Asasy then
 if not Redis:get(Timo.."Start:Bot") then
+local photo = bot.getUserProfilePhotos(Timo)
 local CmdStart = '*\n◍  أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
 '\n◍ اختصاص البوت حماية المجموعات'..
 '\n◍ لتفعيل البوت عليك اتباع مايلي ...'..
@@ -24028,7 +24021,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,CmdStart,"md",true, false, false, false, reply_markup)
+return sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 else
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -28062,7 +28055,7 @@ local ph = photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id
 pph ={
 type = "photo",
 media = ph,
-caption = '*  *[ ☃️︙ٱهـــݪٱ بــک في سـۄرس سـيلفا » 🕷️🔥](t.me/SO_SELVA)*\n\n*[ 🎲| من اقـوي سورسات الحمايه بالتليجرام](t.me/SO_SELVA) *\n\n*[ 🎵| السورس بيه أغاني بٱۄٱمر بسيطـه ۄ جـۦـميݪه🔥](t.me/SO_SELVA/5291)*\n\n*[ 🎶| يوجد لدينا تنصيب بوتات أغاني](t.me/SO_SELVA/5293)*\n\n*[👾| السورس مزود بلالعاب](t.me/SO_SELVA) *\n\n*[ 🔰| شرۄحـۦـٱټ ٱݪسسۧۄرسسۧ ممْن ههنٱ يحـۦـټهه](t.me/K_Y_O_G_A) *\n\n*[ 🌍| ممْطـۄرين سسۧۄرسسۧ كيۄجـۦـٱ](t.me/J_G_A) *\n\nاااضغط للتواصل 🔃|\n*',
+caption = '*  *[ ☃️︙ٱهـــݪٱ بــک في سـۄرس سـيلفا » 🕷️🔥](t.me/SO_SELVA)*\n\n*[ 🎲| من اقـوي سورسات الحمايه بالتليجرام](t.me/SO_SELVA) *\n\n*[ 🎵| السورس بيه أغاني بٱۄٱمر بسيطـه ۄ جـۦـميݪه🔥](t.me/SO_SELVA/5291)*\n\n*[ 🎶| يوجد لدينا تنصيب بوتات أغاني](t.me/SO_SELVA/5293)*\n\n*[👾| السورس مزود بلالعاب](t.me/SO_SELVA) *\n\n*[ ??| شرۄحـۦـٱټ ٱݪسسۧۄرسسۧ ممْن ههنٱ يحـۦـټهه](t.me/K_Y_O_G_A) *\n\n*[ 🌍| ممْطـۄرين سسۧۄرسسۧ كيۄجـۦـٱ](t.me/J_G_A) *\n\nاااضغط للتواصل 🔃|\n*',
 parse_mode = "Markdown"                                                                                                                                                               
 }     
 keyboard = {} 
