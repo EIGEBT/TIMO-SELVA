@@ -19701,7 +19701,7 @@ end
 end
 ---
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/SO_SELVA"
+photo = "https://t.me/selvaa_3/2442"
 local T =[[
  [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
 ]]
@@ -19730,7 +19730,7 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بنك' or text == 'البنك' then
-photo = "https://t.me/SO_SELVA"
+photo = "https://t.me/selvaa_3/2442"
 local T =[[
 ✜ اوامر البنك
 
@@ -23677,7 +23677,7 @@ Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {{{text='• تحديثات السورس •',url="t.me/SO_SELVA"}}}
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/SO_SELVA&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/selvaa_3/2442&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 
@@ -23903,7 +23903,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ms
 end
 end
 if text == 'السورس ◍' or text == 'سورس' or text == 'يا سورس' or text == '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁' then
-photo = "https://t.me/SO_SELVA"
+photo = "https://t.me/selvaa_3/2442"
 local T =[[
  [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
 ]]
