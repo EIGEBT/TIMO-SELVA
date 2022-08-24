@@ -12603,7 +12603,7 @@ Redis:del(Timo.."mynames"..msg.chat_id)
 return send(msg_chat_id,msg_id,'◍ تم تفعيل معنى اسم\n ✓',"md")
 end
 end
-if text == "تعطيل كول" then
+if text == "تعطيل قول" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
@@ -12614,7 +12614,7 @@ Redis:del(Timo.."kolklma"..msg.chat_id)
 return send(msg_chat_id,msg_id,'◍ تم تعطيل كول\n ✓',"md")
 end
 end
-if text == "تفعيل كول" then
+if text == "تفعيل قول" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
@@ -12625,8 +12625,8 @@ Redis:set(Timo.."kolklma"..msg.chat_id,"true")
 return send(msg_chat_id,msg_id,'◍ تم تفعيل كول\n ✓',"md")
 end
 end
-if text and text:match("^كول (.*)$") and Redis:get(Timo..'kolklma'..msg.chat_id) then
-local txt = {string.match(text, "^(كول) (.*)$")}
+if text and text:match("^قول (.*)$") and Redis:get(Timo..'kolklma'..msg.chat_id) then
+local txt = {string.match(text, "^(قول) (.*)$")}
 return send(msg_chat_id,msg_id, txt[2], 'md')
 end
 
@@ -19701,7 +19701,7 @@ end
 end
 ---
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/selva_so/2"
+photo = "https://t.me/SO_SELVA"
 local T =[[
  [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
 ]]
@@ -19730,7 +19730,7 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بنك' or text == 'البنك' then
-photo = "https://t.me/selva_so/2"
+photo = "https://t.me/SO_SELVA"
 local T =[[
 ✜ اوامر البنك
 
@@ -23902,23 +23902,18 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 end
-if text == 'السورس ◍' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/selva_so/2"
+if text == 'السورس ◍' or text == 'سورس' or text == 'يا سورس' or text == '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁' then
+photo = "https://t.me/SO_SELVA"
 local T =[[
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
-◍ [ٓ⁨𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚](t.me/SO_SELVA)
-◍ [ٓ𝐓𝐡𝐞 𝐁𝐞𝐬𝐭 𝐒𝐨𝐮𝐫𝐜𝐞 𝐓??𝐥𝐞𝐠𝐫𝐚𝐦](t.me/SO_SELVA)
-◍ [ٓ𝐅𝐨𝐥𝐥𝐨𝐰 𝐓𝐡𝐞 𝐁𝐮𝐭𝐭𝐨𝐧𝐬 𝐁𝐞𝐥𝐨𝐰](t.me/SO_SELVA)
-◍ [ٓٓٓ𝚃𝙸𝙼𝙾](t.me/uu_u_4)
-◍ [ٓٓٓ𝙻𝙸𝙳𝙾](t.me/J0KER7x)
-◍ [ٓٓٓ𝙴𝙻𝙳𝙴𝙱](t.me/DEEBEG)
-⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰
- [ٓٓٓ⁨𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰](t.me/SO_SELVA)
+ [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'أضـف البـوت الـي مجـموعـتـك ✅', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = '𓂄𓆩ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
+},
+{
+{text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -23974,11 +23969,20 @@ data = {
         {text = '👁 السورس ',type = 'text'},{text = '🤖 البوت',type = 'text'},
     },
     {
+    {text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+    },
+    {
         {text = '🎯 التفعيل والتعطيل',type = 'text'},{text = 'الاحصائيات 📊',type = 'text'},
     },
     {
+   {text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+   },
+    {
         {text = 'الاذاعه ⚙',type = 'text'},{text = 'الاشتراك الاجباري ⛓',type = 'text'},
     },
+    {
+  {text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+   },
     {
         {text = 'المطورين 🔰',type = 'text'},{text = 'العام 🔐',type = 'text'},
     },
@@ -23995,11 +23999,20 @@ data = {
         {text = '👁 السورس ',type = 'text'},{text = '🤖 البوت',type = 'text'},
     },
     {
+    {text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+    },
+    {
         {text = '🎯 التفعيل والتعطيل',type = 'text'},{text = 'الاحصائيات 📊',type = 'text'},
     },
     {
+   {text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+   },
+    {
         {text = 'الاذاعه ⚙',type = 'text'},{text = 'الاشتراك الاجباري ⛓',type = 'text'},
     },
+    {
+  {text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+   },
     {
         {text = 'المطورين 🔰',type = 'text'},{text = 'العام 🔐',type = 'text'},
     },
@@ -24177,7 +24190,7 @@ if not msg.ControllerBot then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
-{text = 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ',type = 'text'},
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
 },
 {
 {text = 'انمي ولد 👨‍🎤🎑',type = 'text'},{text = 'انمي بنت 👩‍🎤🎑',type = 'text'},
@@ -24195,7 +24208,7 @@ data = {
 {text = 'انمي ستوري 🎬',type = 'text'},{text = 'حالات واتس 🎬',type = 'text'},
 },
 {
-{text = 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ',type = 'text'},
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
 },
 {
 {text = 'ريمكسات اغـاني 🎵',type = 'text'},{text = 'بصمـات ميمـز 🦹🏻‍♂', type = 'text'},
@@ -24210,7 +24223,7 @@ data = {
 {text = 'رقيـة شرعيـة 🕋',type = 'text'},
 },
 {
-{text = 'ٴ••┉┉┉┉┉┉••🝢••┉┉┉┉┉┉••ٴ',type = 'text'},
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
 },
 }
 }
