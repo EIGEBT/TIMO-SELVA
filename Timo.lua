@@ -23928,7 +23928,6 @@ if text == '/start' then
 Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
 if not msg.Asasy then
 if not Redis:get(Timo.."Start:Bot") then
-local photo = bot.getUserProfilePhotos(Timo)
 local CmdStart = '*\n◍  أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
 '\n◍ اختصاص البوت حماية المجموعات'..
 '\n◍ لتفعيل البوت عليك اتباع مايلي ...'..
@@ -23950,7 +23949,7 @@ data = {
 },
 }
 }
-return send Photo(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+return send(msg_chat_id,msg_id,CmdStart,"md",true, false, false, false, reply_markup)
 else
 local reply_markup = bot.replyMarkup{
 type = 'inline',
