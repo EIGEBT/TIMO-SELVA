@@ -10631,6 +10631,21 @@ end
 Redis:set(Timo.."Status:Reply"..msg_chat_id,true) 
 return send(msg_chat_id,msg_id,"◍ تم تفعيل الردود ","md",true)
 end
+if TextMsg == 'ردود السورس' then
+if not msg.Manger then
+return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
+end
+if ChannelJoinch(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+Redis:set(Timo.."rb:bna"..msg_chat_id,true) 
+return send(msg_chat_id,msg_id,"◍ تم تفعيل ردود السورس","md",true)
+end
 if TextMsg == 'الردود العامه' then
 if not msg.Creator then
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(5)..' }* ',"md",true)  
@@ -10919,6 +10934,21 @@ return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة 
 end
 Redis:del(Timo.."Status:Reply"..msg_chat_id) 
 return send(msg_chat_id,msg_id,"◍ تم تعطيل الردود ","md",true)
+end
+if TextMsg == 'ردود السورس' then
+if not msg.Manger then
+return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
+end
+if ChannelJoinch(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+Redis:del(Timo.."rb:bna"..msg_chat_id) 
+return send(msg_chat_id,msg_id,"◍ تم تعطيل ردود السورس","md",true)
 end
 if TextMsg == 'الردود العامه' then
 if not msg.Creator then
