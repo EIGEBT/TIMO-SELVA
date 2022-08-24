@@ -20407,6 +20407,7 @@ data = {
 local TextHelp = [[*
 ◍ قائمــه العــاب البــوت
 • — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
+◍ لـعـبـه الـبـنـك
 ◍ لعبة المختلف » المختلف
 ◍ لعبة الامثله » امثله
 ◍ لعبة العكس » العكس
@@ -20481,9 +20482,6 @@ end
 if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
 local photo = bot.getUserProfilePhotos(Timo)
 local selvaa = bot.getUser(Timo)
-local Name_User = UserInfo.first_name
-local Name_dev = bot.getUser(Sudo_Id).first_name
-local UName_dev = bot.getUser(Sudo_Id).username
 local NamesBot = (Redis:get(Timo.."Name:Bot") or 'سيلفا')
 local BotName = {
     'اسمي '..NamesBot..' يا قلبي 😍💜',
@@ -20506,12 +20504,6 @@ keyboard.inline_keyboard = {
 {
 {text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
 },
-{
-{text = Name_User, url = "t.me/"..UserInfo.username}
-},
-{
-{text = Name_dev, url = "t.me/"..UName_dev }
- }
 }
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -20520,9 +20512,6 @@ end
 if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا') then
 local photo = bot.getUserProfilePhotos(Timo)
 local selvaa = bot.getUser(Timo)
-local Name_User = UserInfo.first_name
-local Name_dev = bot.getUser(Sudo_Id).first_name
-local UName_dev = bot.getUser(Sudo_Id).username
 local NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
 local BotName = {
 'نعم يروحي 🌝💙',
@@ -20548,12 +20537,6 @@ keyboard.inline_keyboard = {
 {
 {text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
 },
-{
-{text = Name_User, url = "t.me/"..UserInfo.username}
-},
-{
-{text = Name_dev, url = "t.me/"..UName_dev }
- }
 }
 msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
