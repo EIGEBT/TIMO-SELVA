@@ -17674,39 +17674,6 @@ end
 Redis:del(Timo.."zk_deffult")
 return send(msg_chat_id,msg_id,"◍ تم حذف جميع الزخارف","md",true)  
 end
-if text == "اضف زخرفه" then 
-if not msg.Asasy then
-return send(msg_chat_id,msg_id,'\n*◍ هاذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)
-end
-Redis:set(Timo.."add_zk"..msg.sender_id.user_id, true)
-return send(msg_chat_id,msg_id,"◍ ارسل الزخرفه الان بهذا الشكل :\n▷ 𓂄𓆩###𓆪𓂁 \n◍ هاذه مثال حبيبي جرب اسم ","md",true) 
-end
-if text and Redis:get(Timo.."add_zk"..msg.sender_id.user_id) then
-if not msg.Asasy then
-return send(msg_chat_id,msg_id,'\n*◍ هاذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)
-end
-if not text:match("(.*)###(.*)") then
-return send(msg_chat_id,msg_id," حبيبي انته من اول ادري بيك اثول ومدبرها دزها هيج \n▷ 𓂄𓆩###𓆪𓂁 ","md",true)
-end
-Redis:del(Timo.."add_zk"..msg.sender_id.user_id)
-Redis:sadd(Timo.."zk_list:", text)
-return send(msg_chat_id,msg_id,"◍ تم حفظ الزخرفه بنجاح","md",true) 
-end
-if text == "حذف زخرفه" then 
-if not msg.Asasy then
-return send(msg_chat_id,msg_id,'\n*◍ هاذا الامر يخص  '..Controller_Num(1)..' * ',"md",true)
-end
-local zk_list = Redis:smembers(Timo.."zk_list:")
-local inline_anubis = {data = {}}
-for k,v in pairs(zk_list) do
-inline_anubis[k] = {{text = v , data = msg.sender_id.user_id.."/delz"..k}}
-end
-local reply_markup = bot.replyMarkup{
-  type = 'inline',
-  data = inline_anubis
-  }
-send(msg_chat_id,msg_id,"◍ اضغط علي الزخرفه لحذفها", "md",true,false,false,false,reply_markup)
-end
 -- سب وهينه 
 if text == "اشتمه" then 
   local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -18863,11 +18830,80 @@ if text == "زخرفه" or text == "زخرفة" then
   local reply_markup = bot.replyMarkup{
     type = 'inline',
     data = {
-    {{text = '▴ زخࢪفھـۃ عادي ▴', data = msg.sender_id.user_id..'/normal_zk'},},
     {{text = '▴ زخࢪفھـۃ انلاين ▴', data = msg.sender_id.user_id..'/inline_zk'},},
     }
     }
-return send(msg_chat_id,msg_id,"*◍ اختار نوع الزخرفه الان*","md",false ,false ,false ,false ,reply_markup) 
+return send(msg_chat_id,msg_id,"*⌯ اختار نوع الزخرفه الان*","md",false ,false ,false ,false ,reply_markup) 
+end
+if Redis:get(Timo.."youtube"..msg.sender_id.user_id..msg_chat_id) == "mp3" then
+Redis:del(Timo.."youtube"..msg.sender_id.user_id..msg_chat_id)
+local rep = msg.id/2097152/0.5
+local m = bot.sendText(msg_chat_id,msg_id,"انتظر قليلا يتم التحميل ...").id
+var(m)
+local se = http.request("http://159.223.13.231/oda/yt?tx="..URL.escape(text))
+local j = JSON.decode(se)
+local link = "http://www.youtube.com/watch?v="..j[1].id
+local title = j[1].title 
+local title = title:gsub("/","-") 
+local title = title:gsub("\n","-") 
+local title = title:gsub("|","-") 
+local title = title:gsub("'","-") 
+local title = title:gsub('"',"-") 
+local d = tostring(j[1].duration)
+local p = j[1].channel
+local p = p:gsub("/","-") 
+local p = p:gsub("\n","-") 
+local p = p:gsub("|","-") 
+local p = p:gsub("'","-") 
+local p = p:gsub('"',"-") 
+print(link)
+print(d)
+os.execute("yt-dlp "..link.." -f 251 -o '"..title..".mp3'")
+bot.sendAudio(msg_chat_id,msg_id,'./'..title..'.mp3',"["..title.."]("..link..")","md",nil,title,p)
+bot.deleteMessages(msg.chat_id,{[1]= m})
+Redis:del(Timo.."youtube"..msg.sender_id.user_id..msg_chat_id)
+sleep(2)
+os.remove(""..title..".mp3")
+end
+if Redis:get(Timo.."youtube"..msg.sender_id.user_id..msg_chat_id) == "mp4" then
+local rep = msg.id/2097152/0.5
+local m = bot.sendText(msg_chat_id,msg_id,"انتظر قليلا يتم التحميل ...").id
+local se = http.request("http://159.223.13.231/oda/yt?tx="..URL.escape(text))
+local j = JSON.decode(se)
+local link = "http://www.youtube.com/watch?v="..j[1].id
+local title = j[1].title 
+local title = title:gsub("/","-") 
+local title = title:gsub("\n","-") 
+local title = title:gsub("|","-") 
+local title = title:gsub("'","-") 
+local title = title:gsub('"',"-") 
+local d = tostring(j[1].duration)
+local p = j[1].channel
+local p = p:gsub("/","-") 
+local p = p:gsub("\n","-") 
+local p = p:gsub("|","-") 
+local p = p:gsub("'","-") 
+local p = p:gsub('"',"-") 
+print(d)
+os.execute("yt-dlp "..link.." -f 18 -o '"..title..".mp4'")
+local s = bot.sendVideo(msg_chat_id,msg_id,'./'..title..'.mp4',"["..title.."]("..link..")","md")
+bot.deleteMessages(msg.chat_id,{[1]= m})
+Redis:del(Timo.."youtube"..msg.sender_id.user_id..msg_chat_id)
+sleep(2)
+os.remove(""..title..".mp4")
+end
+if text == "يوتيوب" then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تحميل صوت', data = msg.sender_id.user_id..'/mp3'..msg_id}, {text = 'تحميل فيديو', data = msg.sender_id.user_id..'/mp4'..msg_id}, 
+},
+}
+}
+return send(msg_chat_id,msg_id, [[*
+⌯ اختر كيف تريد التحميل
+*]],"md",false, false, false, false, reply_markup)
 end
 ------الردود--- 
 if text == ("مسح الردود الانلاين") then
@@ -20992,7 +21028,7 @@ Redis:set(Timo.."boballban"..creditvi,text)
 Redis:set(Timo.."boballid"..creditvi,banid)
 Redis:sadd(Timo.."booob",msg.sender_id.user_id)
 Redis:del(Timo.."booobb" .. msg.chat_id .. ":" .. msg.sender_id.user_id) 
-bot.sendText(msg.chat_id,msg.id, "\n• وعملنا لك حساب في بنك سيلفا 🏦\n• وشحنالك 50 جنيه 💵 هدية\n\n⇜ رقم حسابك ↢ ( `"..creditvi.."` )\n⇜ نوع البطاقة ↢ ( فيزا 💳 )\n⇜ فلوسك ↢ ( 50 جنيه 💵 )  ","md",true)   
+bot.sendText(msg.chat_id,msg.id, "\n• وعملنا لك حساب في بنك سيلفا 🏦\n• وشحنالك 50 جنيه 💵 هدية\n\n⇜ رقم حسابك ↢ ( `"..creditvi.."` )\n⇜ نوع البطاقة ↢ ( فيزا 💳 )\n⇜ فلوسك ↢ ( 50 جنيه ?? )  ","md",true)   
 end 
 if text == "اكسبرس" then
 local ban = bot.getUser(msg.sender_id.user_id)
@@ -23451,7 +23487,7 @@ if Redis:get(Timo.."Status:Games"..msg.chat_id) then
 mktlf = {"??","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","⛄️","👨‍🔬","👨‍💻","??‍🔧","??‍♀","??‍♂","🧝‍♂","🙍‍♂","🧖‍♂","👬","??","🕤","⌛️","📅",};
 name = mktlf[math.random(#mktlf)]
 Redis:set(Timo.."Game:Difference"..msg.chat_id,name)
-name = string.gsub(name,"😸","😹??????😹😹😹😹😸😹😹😹😹")
+name = string.gsub(name,"😸","????????😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠??💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻??👻👻👻👻")
 name = string.gsub(name,"🐇","🕊🕊🕊🕊🕊🐇🕊🕊🕊🕊")
