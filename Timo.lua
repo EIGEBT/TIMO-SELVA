@@ -23711,7 +23711,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. ms
 return false
 end
 
-if text == "مطور السورس" or text == "مطور تيمو" or text == "وين المطور السورس" or text == "مطور سورس" or text == "مطور السورس ◍" then 
+if text == "مبرمج السورس" or text == "المبرمج تيمو" or text == "وين المطور السورس" or text == "مبرمج سورس" or text == "مطور السورس ◍" then 
 Text = "• *The developer of this source is* : [𝚃𝙸𝙼𝙾 || تـيمو](https://t.me/uu_u_4)."
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -23720,8 +23720,26 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/uu_u_4&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
+if text == "المطور ليدو" then 
+Text = "• *The developer of this source is* : [𝙻𝙸𝙳𝙾 || لـيدو](https://t.me/J0KER7x)."
+keyboard = {} 
+keyboard.inline_keyboard = {
+    {{text='• 𝙻𝙸𝙳𝙾 || لـيدو •',url="t.me/J0KER7x"},},}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/J0KER7x&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
+end
+if text == "المطور الديب" then 
+Text = "• *The developer of this source is* : [𝙴𝙻𝙳𝙴𝙱 || الـديب](https://t.me/DEEBEG)."
+keyboard = {} 
+keyboard.inline_keyboard = {
+    {{text='• 𝙴𝙻𝙳𝙴𝙱 || الـديب •',url="t.me/DEEBEG"},},}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/DEEBEG&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
+end
 --     Source Timo     --
-if text == 'المطور ◍' or text == 'مطور البوت' then   
+if text == 'المطور ◍' or text == 'المطور' then   
 local UserInfo = bot.getUser(Sudo_Id) 
 local InfoUser = bot.getUserFullInfo(Sudo_Id)
 if InfoUser.bio then
@@ -23932,7 +23950,51 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 end
-if text == 'السورس ◍' or text == 'سورس' or text == 'يا سورس' or text == '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁' then
+if text == 'اسمي' then
+local UserInfo = bot.getUser(msg.sender_id.user_id)
+return send(msg_chat_id,msg_id,'\n◍  اسمك : *❪'..UserInfo.first_name..'❫*', "md")
+end
+if text == 'بايو' then
+local InfoUser = bot.getUserFullInfo(msg.sender_id.user_id)
+if InfoUser.bio then
+Bio = InfoUser.bio
+else
+Bio = 'لا يوجد'
+end
+
+send(msg_chat_id, msg_id, '◍ البايو : ['..FlterBio(Bio)..']', 'md')
+end
+if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
+local photo = bot.getUserProfilePhotos(Timo)
+local selvaa = bot.getUser(Timo)
+local NamesBot = (Redis:get(Timo.."Name:Bot") or 'سيلفا')
+local BotName = {
+    'اسمي '..NamesBot..' يا قلبي 😍💜',
+    'اسمي '..NamesBot..' يا روحي 🙈❤️',
+    'اسمي '..NamesBot..' يا عمري 🥰🤍',
+   'اسمي '..NamesBot..' يا قمر 🖤🌿',
+    'اسمي بوت '..NamesBot..' 😻❤️',
+    'اسمي '..NamesBot..' يا مزه 😘🍒',
+    'اسمي '..NamesBot..' يعم 😒',
+    'مقولت اسمي '..NamesBot..' في اي 🙄',
+    'اسمي '..NamesBot..' الكيوت 🌝💙',
+    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
+    'اسمي '..NamesBot..' يوتكه 🙈💔',
+}
+NamesBots = BotName[math.random(#BotName)]
+local first_n = selvaa.first_name
+if photo.total_count > 0 then
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
+},
+}
+msgg = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+if ext == 'السورس ◍' or text == 'سورس' or text == 'يا سورس' or text == '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁' then
 photo = "https://t.me/selvaa_3/2442"
 local T =[[
  [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
@@ -23941,6 +24003,40 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = '𓂄𓆩ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
+},
+{
+{text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == 'جروب الدعم ◍' or text == 'لطلب سورس ◍' then
+photo = "https://t.me/selvaa_3/2442"
+local T =[[
+ [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓂄𓆩𝙶𝚁𝙾𝚄𝙿𓆪𓂁', url = 't.me/SELVA_GROUP'},
+},
+{
+{text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == 'مصنع التنصيب ◍' then
+photo = "https://t.me/selvaa_3/2442"
+local T =[[
+ [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '𓂄𓆩 𝙱𝙾𝚃ـ𓆪𓂁', url = 't.me/uuu_4_bot'},
 },
 {
 {text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -24220,6 +24316,118 @@ if not msg.ControllerBot then
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
 data = {
 {
+{text = '🕹︙قسم التسليه',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = '🌐︙قسم السورس',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = '🤖︙قسم البوت',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = '👨🏻‍💻︙قسم المطورين',type = 'text'},
+},
+}
+}
+return send(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي .. تصفح كيبورد خدمات البوت بالاسفل *', 'md', false, false, false, false, reply_markup)
+end
+end
+if text == '🌐︙قسم السورس' then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
+if not msg.ControllerBot then
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'قناة السورس ◍',type = 'text'},
+},
+{
+{text = 'السورس ◍',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = 'مصنع التنصيب ◍',type = 'text'},
+},
+{
+{text = 'جروب الدعم ◍',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = 'لطلب سورس ◍',type = 'text'},
+},
+}
+}
+return send(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي في قسم السورس 🍂🧡. *', 'md', false, false, false, false, reply_markup)
+end
+end
+if text == '🤖︙قسم البوت' then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
+if not msg.ControllerBot then
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'المطور',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = 'بوت',type = 'text'}
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = 'اسمي',type = 'text'},{text = 'بايو',type = 'text'}
+},
+}
+}
+return send(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي في قسم البوت 🌨️🤍.*', 'md', false, false, false, false, reply_markup)
+end
+end
+if text == '👨🏻‍💻︙قسم المطورين' then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
+if not msg.ControllerBot then
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
+{text = 'المبرمج تيمو',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = 'المطور ليدو',type = 'text'},
+},
+{
+{text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
+},
+{
+{text = 'المطور الديب',type = 'text'},
+},
+}
+}
+return send(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي في قسم المطورين ❤️☁️. *', 'md', false, false, false, false, reply_markup)
+end
+end
+if text == '🕹︙قسم التسليه' then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
+if not msg.ControllerBot then
+local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
+data = {
+{
 {text = '𓂄𓆩 •┉┉┉┉┉┉••🝢••┉┉┉┉┉┉• 𓆪𓂁',type = 'text'},
 },
 {
@@ -24257,7 +24465,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,'* ⦁ اهلا بك عزيزي .. تصفح كيبورد خدمات البوت بالاسفل *', 'md', false, false, false, false, reply_markup)
+return send(msg_chat_id,msg_id,'* ⦁اهلا بك عزيزي في قسم التسليه 💝🥂. *', 'md', false, false, false, false, reply_markup)
 end
 end
 if Redis:get(Timo.."set:rmz"..msg.sender_id.user_id) then
