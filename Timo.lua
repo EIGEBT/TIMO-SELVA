@@ -24375,6 +24375,7 @@ local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot
 '\n⌯ ارفعه ادمن مشرف'..
 '\n⌯لاضهار كيب العضو اضغط /selva '..
 '\n⌯ مطور البوت ← {'..UserSudo..'}*'
+if photo.total_count > 0 then
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -24390,7 +24391,7 @@ data = {
 }
 }
 local msgg = msg_id/2097152/0.5
-return send.photo(msg_chat_id,msg_id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
 local reply_markup = bot.replyMarkup{
 type = 'inline',
