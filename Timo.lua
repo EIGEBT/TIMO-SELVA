@@ -18892,7 +18892,7 @@ Redis:del(Timo.."youtube"..msg.sender_id.user_id..msg_chat_id)
 sleep(2)
 os.remove(""..title..".mp4")
 end
-if text == "يوتيوب" then
+if text == "ممممممممننننههخخخح" then
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -21028,7 +21028,7 @@ Redis:set(Timo.."boballban"..creditvi,text)
 Redis:set(Timo.."boballid"..creditvi,banid)
 Redis:sadd(Timo.."booob",msg.sender_id.user_id)
 Redis:del(Timo.."booobb" .. msg.chat_id .. ":" .. msg.sender_id.user_id) 
-bot.sendText(msg.chat_id,msg.id, "\n• وعملنا لك حساب في بنك سيلفا 🏦\n• وشحنالك 50 جنيه 💵 هدية\n\n⇜ رقم حسابك ↢ ( `"..creditvi.."` )\n⇜ نوع البطاقة ↢ ( فيزا 💳 )\n⇜ فلوسك ↢ ( 50 جنيه ?? )  ","md",true)   
+bot.sendText(msg.chat_id,msg.id, "\n• وعملنا لك حساب في بنك سيلفا 🏦\n• وشحنالك 50 جنيه 💵 هدية\n\n⇜ رقم حسابك ↢ ( `"..creditvi.."` )\n⇜ نوع البطاقة ↢ ( فيزا 💳 )\n⇜ فلوسك ↢ ( 50 جنيه 💵 )  ","md",true)   
 end 
 if text == "اكسبرس" then
 local ban = bot.getUser(msg.sender_id.user_id)
@@ -23487,7 +23487,7 @@ if Redis:get(Timo.."Status:Games"..msg.chat_id) then
 mktlf = {"??","☠","🐼","🐇","🌑","🌚","⭐️","✨","⛈","🌥","⛄️","👨‍🔬","👨‍💻","??‍🔧","??‍♀","??‍♂","🧝‍♂","🙍‍♂","🧖‍♂","👬","??","🕤","⌛️","📅",};
 name = mktlf[math.random(#mktlf)]
 Redis:set(Timo.."Game:Difference"..msg.chat_id,name)
-name = string.gsub(name,"😸","????????😹😹😹😹😸😹😹😹😹")
+name = string.gsub(name,"😸","😹??????😹😹😹😹😸😹😹😹😹")
 name = string.gsub(name,"☠","💀💀💀💀💀💀💀☠??💀💀💀💀")
 name = string.gsub(name,"🐼","👻👻👻🐼👻👻??👻👻👻👻")
 name = string.gsub(name,"🐇","🕊🕊🕊🕊🕊🐇🕊🕊🕊🕊")
@@ -27163,7 +27163,7 @@ data = {
 {text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '{ 𝙩𝙝𝙧??𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
 },
 {
 {text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
@@ -28601,7 +28601,7 @@ local ph = photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id
 pph ={
 type = "photo",
 media = ph,
-caption = '* *⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n*🤖┇[⁨𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰](t.me/SO_SELVA)⦒ *\n*⚙️┇[𝐆𝐑𝐎𝐔𝐏 𝐓𝐖𝐒](t.me/bar_lo0o)⦒*\n*🏑┇[𝐅𝐈𝐋𝐄𝐒 𝐊𝐘𝐎𝐔𝐆𝐀](t.me/K_Y_O_G_A)⦒*\n*🏅┇[𝐃𝐄𝐕 𝐒𝐎𝐔𝐑𝐂𝐄](t.me/J_G_A)⦒ *\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n𖥔 𝑻𝑯𝑬 𝑩𝑬𝑺𝑻  𝑺𝑶𝑼𝑹𝑪𝑬 ⏎* ',
+caption = '* *⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 ??𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n*🤖┇[⁨𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰](t.me/SO_SELVA)⦒ *\n*⚙️┇[𝐆𝐑𝐎𝐔𝐏 𝐓𝐖𝐒](t.me/bar_lo0o)⦒*\n*🏑┇[𝐅𝐈𝐋𝐄𝐒 𝐊𝐘𝐎𝐔𝐆𝐀](t.me/K_Y_O_G_A)⦒*\n*🏅┇[𝐃𝐄𝐕 𝐒𝐎𝐔𝐑𝐂𝐄](t.me/J_G_A)⦒ *\n⊱┉┉┉⊶𓄼•𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚•𓄹⊷┉┉┉⊰\n𖥔 𝑻𝑯𝑬 𝑩𝑬𝑺𝑻  𝑺𝑶𝑼𝑹𝑪𝑬 ⏎* ',
 parse_mode = "Markdown"                                                                                                                                                               
 }     
 keyboard = {} 
