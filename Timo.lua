@@ -24364,11 +24364,11 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == '/start' then
-local photo = bot.getUserProfilePhotos(Timo)
-Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
-if not msg.Asasy then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender.user_id)  
+if not msg.ControllerBot then
 if not Redis:get(Timo.."Start:Bot") then
-local CmdStart = '*\n⌯  أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "اڪادِا")..
+local photo = bot.getUserProfilePhotos(Timo)
+local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
 '\n⌯ اختصاص البوت حماية المجموعات'..
 '\n⌯ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n⌯ اضف البوت الى مجموعتك'..
@@ -24389,8 +24389,7 @@ data = {
 },
 }
 }
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 else
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -24406,7 +24405,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,Redis:get(Timo.."Start:Bot"),"md",true, false, false, false, reply_markup)
+return send(msg_chat_id,msg_id,Redis:get(Timo.."Start:Bot"),"md",false, false, false, false, reply_markup)
 end
 else
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
