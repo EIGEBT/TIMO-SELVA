@@ -19777,6 +19777,35 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+elseif text == 'الالعاب' then
+if not msg.Admin then
+return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+if ChannelJoinch(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/🤤'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+},
+}
+}
+return send(msg_chat_id,msg_id, [[*
+اهــلا عـــزيــزي فــي قـســم الالـــعـــاب 🏓
+*]],"md",false, false, false, false, reply_markup)
 elseif text == 'الاوامر' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -20314,52 +20343,8 @@ local TextHelp = [[*
 ◍ زواج ~ طلاك
 *]]
 return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
+end
 
-elseif text == 'الالعاب' then
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-◍ قائمــه العــاب البــوت
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ لـعـبـه الـبـنـك
-◍ لعبة المختلف » المختلف
-◍ لعبة الامثله » امثله
-◍ لعبة العكس » العكس
-◍ لعبة الحزوره » حزوره
-◍ لعبة المعاني » معاني
-◍ لعبة البات » بات
-◍ لعبة التخمين » خمن
-◍ لعبه الاسرع » الاسرع، ترتيب
-◍ لعبة السمايلات » سمايلات
-◍ اسئله » اسئله منوعه
-◍ اسالني » اسئله عامه متجدده
-◍ لغز  » الغاز الذكاء متجدده
-◍ روليت » الروليت بالمعرفات 
-◍ الروليت » الروليت بالانضمام
-◍ رياضيات » مسائل رياضيه 
-◍ انكليزي » معاني الكلمات 
-◍ كت تويت ،كت » اسئله ترفيهيه
-• — — — — — — — — — •
-◍ نقاطي ← لعرض عدد النقاط 
-◍ بيع نقاطي + { العدد } 
-لبيع كل نقطه مقابل {50} رساله
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-end
 if text == 'تحديث' then
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
@@ -20827,7 +20812,7 @@ if text == 'شكرا' or text == 'مرسي' then
 if not Redis:get(Timo.."rb:bna"..msg_chat_id) then
 return bot.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
-return bot.sendText(msg_chat_id,msg_id,'*العفو ياروحي 🙈🌝*',"md",true)  
+return bot.sendText(msg_chat_id,msg_id,'*العفو ياروحي ??🌝*',"md",true)  
 end
 if text == 'حلوه' or text == 'حلو' then
 if not Redis:get(Timo.."rb:bna"..msg_chat_id) then
@@ -26751,6 +26736,143 @@ local TextHelp = [[*
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
+elseif Text and Text:match('(%d+)/lido3') then
+local UserId = Text:match('(%d+)/lido3')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+},
+}
+}
+local TextHelp = [[*
+✜ اوامر البنك
+
+◍ انشاء حساب بنكي  ↢ تعمل حساب وتقدر تحول فلوس 
+
+◍ مسح حساب بنكي  ↢ تلغي حسابك البنكي
+
+◍ تحويل ↢ تطلب رقم حساب الشخص وتحول له فلوس
+
+◍ حسابي  ↢ يطلع لك رقم حسابك 
+
+◍ فلوسي ↢ يعلمك كم فلوسك
+◍ كنز ↢ البحث عن كنزك
+
+◍ راتبي ↢ يعطيك راتبك كل ٢٠ دقيقة
+
+◍ بخشيش ↢ يعطيك بخشيش كل ١٠ دقايق
+
+◍ زرف ↢ تزرف فلوس اشخاص كل ١٠ دقايق
+
+◍ استثمار ↢ تستثمر بالمبلغ اللي تبيه مع نسبة ربح مضمونه من ١٪؜ الى ١٥٪؜
+
+◍ حظ ↢ تلعبها بأي مبلغ ياتكسب يا تخسر
+
+◍ مضاربه ↢ تضارب بأي مبلغ انت عاوزو والنسبة من ٩٠٪؜ الى -٩٠٪؜ انت وحظك
+
+◍ توب الفلوس ↢ يطلع توب اكتر ناس معهم فلوس في كل الجروبات
+
+◍ توب الحراميه ↢ يطلع لك اكتر ناس سرقو 😂
+◍ كنز او الكنز ↢ عمليه البحث عن كنزك
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/lido1') then
+local UserId = Text:match('(%d+)/lido1')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+},
+}
+}
+local TextHelp = [[*
+◍ اوامر الحمايه كالاتي ...
+◍ قائمــه العــاب البــوت
+• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
+◍ لـعـبـه الـبـنـك
+◍ لعبة المختلف » المختلف
+◍ لعبة الامثله » امثله
+◍ لعبة العكس » العكس
+◍ لعبة الحزوره » حزوره
+◍ لعبة المعاني » معاني
+◍ لعبة البات » بات
+◍ لعبة التخمين » خمن
+◍ لعبه الاسرع » الاسرع، ترتيب
+◍ لعبة السمايلات » سمايلات
+◍ اسئله » اسئله منوعه
+◍ اسالني » اسئله عامه متجدده
+◍ لغز  » الغاز الذكاء متجدده
+◍ روليت » الروليت بالمعرفات 
+◍ الروليت » الروليت بالانضمام
+◍ رياضيات » مسائل رياضيه 
+◍ انكليزي » معاني الكلمات 
+◍ كت تويت ،كت » اسئله ترفيهيه
+• — — — — — — — — — •
+◍ نقاطي ← لعرض عدد النقاط 
+◍ بيع نقاطي + { العدد } 
+لبيع كل نقطه مقابل {50} رساله
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/.lido2') then
+local UserId = Text:match('(%d+)/lido2')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '- فلابي بيرد', url = 'http://t.me/awesomebot?game=FlappyBird'}, 
+},
+{
+{text = '- تبديل النجوم ', url = 'http://t.me/gamee?game=Switchy'}, {text = '- موتسيكلات', url = 'http://t.me/gamee?game=motofx'}, 
+},
+{
+{text = '- اطلاق النار ', url = 'http://t.me/gamee?game=NeonBlaster'}, {text = '- كره القدم', url = 'http://t.me/gamee?game=Footballstar'}, 
+},
+{
+{text = '- تجميع الوان ', url = 'http://t.me/awesomebot?game=Hextris'}, {text = '- المجوهرات', url = 'http://t.me/gamee?game=DiamondRows'}, 
+},
+{
+{text = '- ركل الكرة ', url = 'http://t.me/gamee?game=KeepitUP'}, {text = '- بطولة السحق', url = 'http://t.me/gamee?game=SmashRoyale'}, 
+},
+{
+{text = '- 2048', url = 'http://t.me/awesomebot?game=g2048'}, 
+},
+{
+{text = '- كرة السلة ', url = 'http://t.me/gamee?game=BasketBoy'}, {text = '- القط المجنون', url = 'http://t.me/gamee?game=CrazyCat'}, 
+},
+{
+{text = 'القائمه الرئيسيه', data = IdUser..'/lido4'},
+},
+{
+{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
+},
+}
+}
+local TextHelp = [[*
+⌯ مرحبا بك في الالعاب المتطورة الخاص بسورس سيلفا 
+⌯ اختر اللعبه ثم اختار المحادثة التي تريد اللعب بها
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
 elseif Text and Text:match('(%d+)/help2') then
 local UserId = Text:match('(%d+)/help2')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -27196,6 +27318,28 @@ local TextHelp = [[*
 ◍ { م5 } ← اوامر المالكين
 ◍ { م6 } ← اوامر التسليه
 ◍ { اوامر المطور } ← اوامر المطور
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/lido4') then
+local UserId = Text:match('(%d+)/lido4')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+},
+}
+}
+local TextHelp = [[*
+اهــلا عـــزيــزي فــي قـســم الالـــعـــاب 🏓
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
