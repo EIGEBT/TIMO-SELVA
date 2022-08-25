@@ -2537,7 +2537,7 @@ Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n')
 else 
 Text = t:gsub('#all,','#all\n')
 end
-sendText(msg_chat_id,Text,0,'md') 
+send(msg_chat_id,Text,0,'md') 
 end 
 end 
 end 
