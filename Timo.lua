@@ -19796,7 +19796,7 @@ data = {
 {text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
 },
 {
-{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/🤤'}, 
+{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
 },
 {
 {text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
@@ -26743,13 +26743,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
-},
-{
-{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
-},
-{
-{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+{text = 'القائمه الرئيسيه', data = IdUser..'/lido4'},
 },
 }
 }
@@ -26793,13 +26787,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
-},
-{
-{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
-},
-{
-{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+{text = 'القائمه الرئيسيه', data = IdUser..'/lido4'},
 },
 }
 }
@@ -26861,9 +26849,6 @@ data = {
 },
 {
 {text = 'القائمه الرئيسيه', data = IdUser..'/lido4'},
-},
-{
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
 },
 }
 }
