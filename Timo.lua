@@ -18954,7 +18954,7 @@ return send(msg_chat_id,msg_id, [[*
 ᥫ᭡ اختر كيف تريد التحميل
 *]],"md",false, false, false, false, reply_markup)
 end
-
+end
 if text and text:match("^(.*)$") and tonumber(msg.sender_id.user_id) ~= tonumber(Timo) then
 if Redis:get(Timo.."Set:Manager:rd:inline"..msg.sender_id.user_id..":"..msg_chat_id) == "true" then
 Redis:set(Timo.."Set:Manager:rd:inline"..msg.sender_id.user_id..":"..msg_chat_id,"true1")
@@ -22051,7 +22051,7 @@ Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "موزع 🗺" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 100)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 100 جنيه 💵\nوظيفتك : موزع 🗺\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 100 جنيه ??\nوظيفتك : موزع 🗺\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "سكيورتي 👮" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 90)
