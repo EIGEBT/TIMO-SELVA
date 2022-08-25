@@ -26848,7 +26848,7 @@ data = {
 {text = '- كرة السلة ', url = 'http://t.me/gamee?game=BasketBoy'}, {text = '- القط المجنون', url = 'http://t.me/gamee?game=CrazyCat'}, 
 },
 {
-{text = '𝙱𝙰𝙲𝙺, data = IdUser..'/back_selva'},
+{text = '𝙱𝙰𝙲𝙺', data = IdUser..'/back_selva'},
 },
 }
 }
