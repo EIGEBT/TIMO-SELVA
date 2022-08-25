@@ -24364,10 +24364,10 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == '/start' then
-Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
+Redis:sadd(Timo..'Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 if not Redis:get(Timo.."Start:Bot") then
-local photo = bot.getUserProfilePhotos(Timo)
+local photo = LuaTele.getUserProfilePhotos(Timo)
 local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
 '\n⌯ اختصاص البوت حماية المجموعات'..
 '\n⌯ لتفعيل البوت عليك اتباع مايلي ...'..
@@ -24375,35 +24375,33 @@ local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot
 '\n⌯ ارفعه ادمن مشرف'..
 '\n⌯لاضهار كيب العضو اضغط /selva '..
 '\n⌯ مطور البوت ← {'..UserSudo..'}*'
-if photo.total_count > 0 then
-local reply_markup = bot.replyMarkup{
+local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '◍ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
 },
 {
-{text = '◍ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
+{text = '- اضف البوت لمجموعتك ,', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
+{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
 },
 }
 }
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 else
-local reply_markup = bot.replyMarkup{
+local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '◍ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
 },
 {
-{text = '◍ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
+{text = '- اضف البوت لمجموعتك ,', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
+{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
 },
 }
 }
