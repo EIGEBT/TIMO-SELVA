@@ -5179,7 +5179,7 @@ if text == 'مسح قائمه الكت' then
     return send(msg_chat_id,msg_id,"◍ تم مسح جميع الاسأله بنجاح","md",true)
 end
 -- kit tweet
-if text == "تويت" or text == "كت تويت" then
+if text == "كت" or text == "كت تويت" then
   if Redis:get(Timo.."Status:Games"..msg.chat_id) then
     local list = Redis:smembers(Timo.."kit:")
     randkk = list[math.random(#list)]
@@ -23110,7 +23110,7 @@ Redis:del(Timo..'bot:bkbk7'..msg.chat_id)
 Redis:incrby(Timo.."Num:Add:Games"..msg.chat_id..msg.sender_id.user_id, 1)  
 end
 
-if text == "تويت" or text == "كت تويت" then
+if text == "تويت" or text == "كتت" then
 if Redis:get(Timo.."Status:Games"..msg.chat_id) then
 local texting = {"اخر افلام شاهدتها", 
 "اخر افلام شاهدتها", 
@@ -23425,7 +23425,7 @@ local texting = {"اخر افلام شاهدتها",
   "عادي تتزوج من برا القبيلة؟ ",
   "أجمل شي بحياتك وش هو؟ ",
 } 
-return send(msg_chat_id,msg_id,texting[math.random(#texting)],'md')
+return send(msg_chat_id,msg_id,texting[math.random(#texting)],'md',true)
 end
 end
 if text == "المختلف" then
@@ -24364,16 +24364,18 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == '/start' then
+local photo = bot.getUserProfilePhotos(Timo)
 Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
 if not msg.Asasy then
 if not Redis:get(Timo.."Start:Bot") then
-local CmdStart = '*\n◍  أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
-'\n◍ اختصاص البوت حماية المجموعات'..
-'\n◍ لتفعيل البوت عليك اتباع مايلي ...'..
-'\n◍ اضف البوت الى مجموعتك'..
-'\n◍ ارفعه ادمن مشرف'..
-'\n◍لاضهار كيب العضو اضغط /selva '..
-'\n◍ مطور البوت ← {'..UserSudo..'}*'
+local CmdStart = ''*\n 🤖 ╖اهلا انا بوت اسمي '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
+'\n 👻╢ وظيفتي حماية المجموعات'..
+'\n ♻️╢ لتفعيل البوت عليك اتباع مايلي'.. 
+'\n 𐂡╢ أضِف البوت إلى مجموعتك..'..
+'\n 🦸🏻‍♂️╢ ارفعهُ » مشرف'..
+'\n ♻️╢  سيتم ترقيتك مالك في البوت'..
+'\n 💻╢ مـطـور الـبــوت❲ @'..UserSudo..' ❳*'
+'\n🔰╜لاضهار كيب العضو اضغط /selva '..
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -24388,7 +24390,8 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,CmdStart,"md",true, false, false, false, reply_markup)
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&caption=".. URL.escape(CmdStart).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
 local reply_markup = bot.replyMarkup{
 type = 'inline',
@@ -24599,6 +24602,9 @@ local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal
 data = {
 {
 {text = 'تغيير اسم البوت ◍',type = 'text'},{text = 'مسح اسم البوت ◍', type = 'text'},
+},
+{
+{text = 'تعيين رمز السورس ◍',type = 'text'},{text = 'حذف رمز السورس ◍', type = 'text'},
 },
 {
 {text = 'تغيير كليشه ستارت ◍',type = 'text'},{text = 'مسح كليشه ستارت ◍', type = 'text'},
