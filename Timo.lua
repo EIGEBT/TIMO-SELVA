@@ -2503,6 +2503,45 @@ bot.deleteMessages(msg.chat_id,{[1]= msg.id})
 return send(msg_chat_id,msg_id,"*◍ لقد تم منع هذه ( "..statusfilter.." ) هنا*\n◍  "..ReplyFilters,"md",true)   
 end
 end
+if text then
+if text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" then 
+local ttag = text:match("^all (.*)$") or text:match("^@all (.*)$") 
+if not msg.Manger then
+return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
+end
+if Redis:get(Timo.."lockalllll"..msg_chat_id) == "off" then
+return send(msg_chat_id,msg_id,'*⌯ تم تعطيل @all من قبل المدراء*',"md",true)  
+end
+local Info_Members = bot.searchChatMembers(msg_chat_id, "*", 10000)
+x = 0 
+tags = 0 
+local list = Info_Members.members
+for k, v in pairs(list) do 
+local data = bot.getUser(v.member_id.user_id)
+if x == 5 or x == tags or k == 0 then 
+tags = x + 5 
+if ttag then
+t = "#all "..ttag.."" 
+else
+t = "#all "
+end
+end 
+x = x + 1 
+tagname = data.first_name
+tagname = tagname:gsub("]","") 
+tagname = tagname:gsub("[[]","") 
+t = t..", ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
+if x == 5 or x == tags or k == 0 then 
+if ttag then
+Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
+else 
+Text = t:gsub('#all,','#all\n')
+end
+sendText(msg_chat_id,Text,0,'md') 
+end 
+end 
+end 
+end
 if text and Redis:get(Timo..msg.chat_id..msg.sender_id.user_id.."replace") == "true1" then
 Redis:del(Timo..msg.chat_id..msg.sender_id.user_id.."replace")
 local word = Redis:get(Timo..msg.sender_id.user_id.."word")
@@ -12315,63 +12354,53 @@ end
 send(msg_chat_id,msg_id,"*\n◍  تم مغادرة الجروب بامر من المطور *","md",true)  
 local Left_Bot = bot.leaveChat(msg.chat_id)
 end
-if text == "@all" or text == "تاك عام" or text == "all" then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+if msg.content.photo then
+if msg.content.caption.text then
+if msg.content.caption.text:match("^@all (.*)$") or msg.content.caption.text:match("^all (.*)$") or msg.content.caption.text == "@all" or msg.content.caption.text == "all" then
+local ttag = msg.content.caption.text:match("^@all (.*)$") or msg.content.caption.text:match("^all (.*)$") 
+if not msg.Manger then
+return send(msg_chat_id,msg_id,'\n*⌯ هذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
 end
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+if Redis:get(Timo.."tagall@all"..msg_chat_id) == "off" then
+return send(msg_chat_id,msg_id,'*⌯ تم تعطيل @all من قبل المدراء*',"md",true)  
 end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+if msg.content.photo.sizes[1].photo.remote.id then
+idPhoto = msg.content.photo.sizes[1].photo.remote.id
+elseif msg.content.photo.sizes[2].photo.remote.id then
+idPhoto = msg.content.photo.sizes[2].photo.remote.id
+elseif msg.content.photo.sizes[3].photo.remote.id then
+idPhoto = msg.content.photo.sizes[3].photo.remote.id
 end
-if Redis:get(Timo.."tagall@all"..msg_chat_id) == "open" then
 local Info_Members = bot.searchChatMembers(msg_chat_id, "*", 200)
-x = 0
-tags = 0
+x = 0 
+tags = 0 
 local list = Info_Members.members
-for k, v in pairs(list) do
-local UserInfo = bot.getUser(v.member_id.user_id)
-if x == 20 or x == tags or k == 0 then
-tags = x + 20
-listall = ""
-end
-x = x + 1
-if UserInfo.first_name ~= '' then
-listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id.."),"
-end
-if x == 20 or x == tags or k == 0 then
-send(msg_chat_id,msg_id,listall,"md",true)  
-end
-end
-end
-end
-if text == 'تاك' and (Redis:get(Timo..'tagallgroup'..msg.chat_id) == "open") then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = bot.searchChatMembers(msg_chat_id, "*", 200)
-local List_Members = Info_Members.members
-listall = '\n*◍ قائمه الاعضاء \n • — — — — — — — — — •*\n'
-for k, v in pairs(List_Members) do
-local UserInfo = bot.getUser(v.member_id.user_id)
-if UserInfo.username ~= "" then
-listall = listall.."*"..k.." - @"..UserInfo.username.."*\n"
+for k, v in pairs(list) do 
+local data = bot.getUser(v.member_id.user_id)
+if x == 5 or x == tags or k == 0 then 
+tags = x + 5 
+if ttag then
+t = "#all "..ttag.."" 
 else
-listall = listall.."*"..k.." -* ["..UserInfo.id.."](tg://user?id="..UserInfo.id..")\n"
+t = "#all "
+end
+end 
+x = x + 1 
+tagname = data.first_name
+tagname = tagname:gsub("]","") 
+tagname = tagname:gsub("[[]","") 
+t = t..", ["..tagname.."](tg://user?id="..v.member_id.user_id..")" 
+if x == 5 or x == tags or k == 0 then 
+if ttag then
+Text = t:gsub('#all '..ttag..',','#all '..ttag..'\n') 
+else 
+Text = t:gsub('#all,','#all\n')
+end
+bot.sendPhoto(msg.chat_id, 0, idPhoto,Text,"md")
+end 
+end 
 end
 end
-send(msg_chat_id,msg_id,listall,"md",true)  
 end
 
 if text == "قفل ارسال القناة" then 
