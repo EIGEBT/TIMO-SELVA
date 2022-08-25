@@ -26743,7 +26743,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'القائمه الرئيسيه', data = IdUser..'/lido4'},
+{text = 'القائمه الرئيسيه', data = IdUser..'/back_selva'},
 },
 }
 }
@@ -26787,7 +26787,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'القائمه الرئيسيه', data = IdUser..'/lido4'},
+{text = 'القائمه الرئيسيه', data = IdUser..'/back_selva'},
 },
 }
 }
@@ -26848,7 +26848,7 @@ data = {
 {text = '- كرة السلة ', url = 'http://t.me/gamee?game=BasketBoy'}, {text = '- القط المجنون', url = 'http://t.me/gamee?game=CrazyCat'}, 
 },
 {
-{text = 'القائمه الرئيسيه', data = IdUser..'/lido4'},
+{text = 'القائمه الرئيسيه', data = IdUser..'/back_selva'},
 },
 }
 }
@@ -27306,8 +27306,8 @@ local TextHelp = [[*
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
-elseif Text and Text:match('(%d+)/lido4') then
-local UserId = Text:match('(%d+)/lido4')
+elseif Text and Text:match('(%d+)/back_selva') then
+local UserId = Text:match('(%d+)/back_selva')
 if tonumber(IdUser) == tonumber(UserId) then
 local reply_markup = bot.replyMarkup{
 type = 'inline',
