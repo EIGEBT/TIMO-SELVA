@@ -12480,7 +12480,7 @@ Redis:del(Timo.."Lock:alkfr"..msg_chat_id)
 send(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"◍ تم فتح الكفر").unLock,"md",true)  
 return false
 end 
-if text == "قفل الانكليزيه" then 
+if text == "قفل الانجليزيه" then 
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 end
@@ -12493,10 +12493,10 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(Timo.."Lock:english"..msg_chat_id,true) 
-send(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"◍ تم قفـل الانكليزيه").Lock,"md",true)  
+send(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"◍ تم قفـل الانجليزيه").Lock,"md",true)  
 return false
 end 
-if text == "فتح الانكليزيه" then 
+if text == "فتح الانجليزيه" then 
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 end
@@ -12509,7 +12509,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(Timo.."Lock:english"..msg_chat_id) 
-send(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"◍ تم فتح الانكليزيه").unLock,"md",true)  
+send(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"◍ تم فتح الانجليزيه").unLock,"md",true)  
 return false
 end 
 if text == "تفعيل نزلني" then
@@ -26743,7 +26743,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'القائمه الرئيسيه', data = IdUser..'/back_selva'},
+{text = '𝙱𝙰𝙲𝙺', data = IdUser..'/back_selva'},
 },
 }
 }
@@ -26787,7 +26787,7 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'القائمه الرئيسيه', data = IdUser..'/back_selva'},
+{text = '𝙱𝙰𝙲𝙺', data = IdUser..'/back_selva'},
 },
 }
 }
@@ -26848,13 +26848,34 @@ data = {
 {text = '- كرة السلة ', url = 'http://t.me/gamee?game=BasketBoy'}, {text = '- القط المجنون', url = 'http://t.me/gamee?game=CrazyCat'}, 
 },
 {
-{text = 'القائمه الرئيسيه', data = IdUser..'/back_selva'},
+{text = '𝙱𝙰𝙲𝙺, data = IdUser..'/back_selva'},
 },
 }
 }
 local TextHelp = [[*
 ⌯ مرحبا بك في الالعاب المتطورة الخاص بسورس سيلفا 
 ⌯ اختر اللعبه ثم اختار المحادثة التي تريد اللعب بها
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/back_selva') then
+local UserId = Text:match('(%d+)/back_selva')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
+},
+}
+}
+local TextHelp = [[*
+• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
+اهــلا عـــزيــزي فــي قـســم الالـــعـــاب 🏓
+• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -27303,27 +27324,6 @@ local TextHelp = [[*
 ◍ { م5 } ← اوامر المالكين
 ◍ { م6 } ← اوامر التسليه
 ◍ { اوامر المطور } ← اوامر المطور
-*]]
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-elseif Text and Text:match('(%d+)/back_selva') then
-local UserId = Text:match('(%d+)/back_selva')
-if tonumber(IdUser) == tonumber(UserId) then
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
-},
-{
-{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
-},
-}
-}
-local TextHelp = [[*
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-اهــلا عـــزيــزي فــي قـســم الالـــعـــاب 🏓
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
