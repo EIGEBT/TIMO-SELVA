@@ -26820,7 +26820,7 @@ local TextHelp = [[*
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
-elseif Text and Text:match('(%d+)/.lido2') then
+elseif Text and Text:match('(%d+)/lido2') then
 local UserId = Text:match('(%d+)/lido2')
 if tonumber(IdUser) == tonumber(UserId) then
 local reply_markup = bot.replyMarkup{
@@ -27318,13 +27318,12 @@ data = {
 {
 {text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
 },
-{
-{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
-},
 }
 }
 local TextHelp = [[*
+• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
 اهــلا عـــزيــزي فــي قـســم الالـــعـــاب 🏓
+• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
