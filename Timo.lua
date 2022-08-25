@@ -24364,48 +24364,47 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == '/start' then
-Redis:sadd(Timo..'Num:User:Pv',msg.sender.user_id)  
-if not msg.ControllerBot then
+Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
+if not msg.Asasy then
 if not Redis:get(Timo.."Start:Bot") then
-local photo = LuaTele.getUserProfilePhotos(Timo)
-local CmdStart = '*\n⌯ أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "سيلفا")..
+local CmdStart = '*\n⌯  أهلآ بك في بوت '..(Redis:get(Timo.."Name:Bot") or "اڪادِا")..
 '\n⌯ اختصاص البوت حماية المجموعات'..
 '\n⌯ لتفعيل البوت عليك اتباع مايلي ...'..
 '\n⌯ اضف البوت الى مجموعتك'..
 '\n⌯ ارفعه ادمن مشرف'..
 '\n⌯لاضهار كيب العضو اضغط /selva '..
 '\n⌯ مطور البوت ← {'..UserSudo..'}*'
-local reply_markup = LuaTele.replyMarkup{
+local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
+{text = '⌯ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '- اضف البوت لمجموعتك ,', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '⌯ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
 },
 {
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
+{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
 },
 }
 }
-return sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,CmdStart,"md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+return send(msg_chat_id,msg_id,CmdStart,"md",true, false, false, false, reply_markup)
 else
-local reply_markup = LuaTele.replyMarkup{
+local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'نبذه🕸️', callback_data ='/zxhaut'},{text = 'ٓ♻️ حول ',  callback_data ='/lhaui'},
+{text = '⌯ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '- اضف البوت لمجموعتك ,', url = 't.me/'..UserBot..'?startgroup=new'}, 
+{text = '⌯ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
 },
 {
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/'..chsource..''}, 
+{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
 },
 }
 }
-return send(msg_chat_id,msg_id,Redis:get(Timo.."Start:Bot"),"md",false, false, false, false, reply_markup)
+return send(msg_chat_id,msg_id,Redis:get(Timo.."Start:Bot"),"md",true, false, false, false, reply_markup)
 end
 else
 local reply_markup = bot.replyMarkup{type = 'keyboard',resize = true,is_personal = true,
