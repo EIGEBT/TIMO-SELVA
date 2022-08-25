@@ -18466,6 +18466,76 @@ end
 Redis:del(Timo..'Texting:DevTimo')
 return send(msg_chat_id,msg_id,'◍ تم مسح كليشه المطور')
 end
+if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp3" then
+Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
+local rep = msg.id/2097152/0.5
+local m = json:decode(https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)).result.message_id
+local se = http.request("http://159.223.13.231/oda/yt?tx="..URL.escape(text))
+local j = JSON.decode(se)
+local link = "http://www.youtube.com/watch?v="..j[1].id
+local title = j[1].title 
+local title = title:gsub("/","-") 
+local title = title:gsub("\n","-") 
+local title = title:gsub("|","-") 
+local title = title:gsub("'","-") 
+local title = title:gsub('"',"-") 
+local d = tostring(j[1].duration)
+local p = j[1].channel
+local p = p:gsub("/","-") 
+local p = p:gsub("\n","-") 
+local p = p:gsub("|","-") 
+local p = p:gsub("'","-") 
+local p = p:gsub('"',"-") 
+print(link)
+print(d)
+os.execute("yt-dlp "..link.." -f 251 -o '"..title..".mp3'")
+bot.sendAudio(msg_chat_id,msg_id,'./'..title..'.mp3',"["..title.."]("..link..")","md",nil,title,p) 
+https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
+Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
+sleep(2)
+os.remove(""..title..".mp3")
+end
+if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp4" then
+local rep = msg.id/2097152/0.5
+local m = json:decode(https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)).result.message_id
+local se = http.request("http://159.223.13.231/oda/yt?tx="..URL.escape(text))
+local j = JSON.decode(se)
+local link = "http://www.youtube.com/watch?v="..j[1].id
+local title = j[1].title 
+local title = title:gsub("/","-") 
+local title = title:gsub("\n","-") 
+local title = title:gsub("|","-") 
+local title = title:gsub("'","-") 
+local title = title:gsub('"',"-") 
+local d = tostring(j[1].duration)
+local p = j[1].channel
+local p = p:gsub("/","-") 
+local p = p:gsub("\n","-") 
+local p = p:gsub("|","-") 
+local p = p:gsub("'","-") 
+local p = p:gsub('"',"-") 
+print(link)
+print(d)
+os.execute("yt-dlp "..link.." -f 18 -o '"..title..".mp4'")
+bot.sendVideo(msg_chat_id,msg_id,'./'..title..'.mp4',"["..title.."]("..link..")","md") 
+https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
+Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
+sleep(2)
+os.remove(""..title..".mp4")
+end
+if text == "يوتيوب" then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تحميل صوت', data = msg.sender.user_id..'/mp3'..msg_id}, {text = 'تحميل فيديو', data = msg.sender.user_id..'/mp4'..msg_id}, 
+},
+}
+}
+return send(msg_chat_id,msg_id, [[*
+ᥫ᭡ اختر كيف تريد التحميل
+*]],"md",false, false, false, false, reply_markup)
+end
 ---استبدال كلمه--
 if text == "استبدال كلمه" then
 if not msg.Devss then
@@ -18884,77 +18954,6 @@ data = {
 return send(msg_chat_id,msg_id,"◍ ارسل الان الكلمه لاضافتها في الردود ","md",false, false, false, false, reply_markup)
 end
 
-if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp3" then
-Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
-local rep = msg.id/2097152/0.5
-local m = json:decode(https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)).result.message_id
-local se = http.request("http://159.223.13.231/oda/yt?tx="..URL.escape(text))
-local j = JSON.decode(se)
-local link = "http://www.youtube.com/watch?v="..j[1].id
-local title = j[1].title 
-local title = title:gsub("/","-") 
-local title = title:gsub("\n","-") 
-local title = title:gsub("|","-") 
-local title = title:gsub("'","-") 
-local title = title:gsub('"',"-") 
-local d = tostring(j[1].duration)
-local p = j[1].channel
-local p = p:gsub("/","-") 
-local p = p:gsub("\n","-") 
-local p = p:gsub("|","-") 
-local p = p:gsub("'","-") 
-local p = p:gsub('"',"-") 
-print(link)
-print(d)
-os.execute("yt-dlp "..link.." -f 251 -o '"..title..".mp3'")
-bot.sendAudio(msg_chat_id,msg_id,'./'..title..'.mp3',"["..title.."]("..link..")","md",nil,title,p) 
-https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
-Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
-sleep(2)
-os.remove(""..title..".mp3")
-end
-if Redis:get(Timo.."youtube"..msg.sender.user_id..msg_chat_id) == "mp4" then
-local rep = msg.id/2097152/0.5
-local m = json:decode(https.request("https://api.telegram.org/bot"..Token.."/sendAnimation?chat_id="..msg_chat_id.."&animation=https://t.me/youtube7odabot/7951&reply_to_message_id="..rep)).result.message_id
-local se = http.request("http://159.223.13.231/oda/yt?tx="..URL.escape(text))
-local j = JSON.decode(se)
-local link = "http://www.youtube.com/watch?v="..j[1].id
-local title = j[1].title 
-local title = title:gsub("/","-") 
-local title = title:gsub("\n","-") 
-local title = title:gsub("|","-") 
-local title = title:gsub("'","-") 
-local title = title:gsub('"',"-") 
-local d = tostring(j[1].duration)
-local p = j[1].channel
-local p = p:gsub("/","-") 
-local p = p:gsub("\n","-") 
-local p = p:gsub("|","-") 
-local p = p:gsub("'","-") 
-local p = p:gsub('"',"-") 
-print(link)
-print(d)
-os.execute("yt-dlp "..link.." -f 18 -o '"..title..".mp4'")
-bot.sendVideo(msg_chat_id,msg_id,'./'..title..'.mp4',"["..title.."]("..link..")","md") 
-https.request("https://api.telegram.org/bot"..Token.."/deleteMessage?chat_id="..msg_chat_id.."&message_id="..m)
-Redis:del(Timo.."youtube"..msg.sender.user_id..msg_chat_id)
-sleep(2)
-os.remove(""..title..".mp4")
-end
-if text == "يوتيوب" then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'تحميل صوت', data = msg.sender.user_id..'/mp3'..msg_id}, {text = 'تحميل فيديو', data = msg.sender.user_id..'/mp4'..msg_id}, 
-},
-}
-}
-return send(msg_chat_id,msg_id, [[*
-ᥫ᭡ اختر كيف تريد التحميل
-*]],"md",false, false, false, false, reply_markup)
-end
-end
 if text and text:match("^(.*)$") and tonumber(msg.sender_id.user_id) ~= tonumber(Timo) then
 if Redis:get(Timo.."Set:Manager:rd:inline"..msg.sender_id.user_id..":"..msg_chat_id) == "true" then
 Redis:set(Timo.."Set:Manager:rd:inline"..msg.sender_id.user_id..":"..msg_chat_id,"true1")
