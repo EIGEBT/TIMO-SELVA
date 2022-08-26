@@ -19595,24 +19595,6 @@ keyboard.inline_keyboard = {
 }
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-if text == 'المصنع' or text == 'مصنع' or text == 'تنصيب بوت' or text == 'مصنع السورس' then
-photo = "https://t.me/selvaa_3/2442"
-local T =[[
-༺┉⊶﴾◍ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ ◍﴿⊷┉༻
-🌐︙◍ مرحبا بك في سورس سيلفا 🎭
-↩️︙◍ تستطيع الان تنصيب بوتك وتصبح المطور الاساسي ..↑↓
-⚡️︙◍ سرعة في اداء البوت ومميزات حصرية فقط لسورسنا ...↑↓
-⏬︙◍ لمعرفة المزيد عن سورساتنا زور قناتنا بالاسفل ....↓
-༺┉⊶﴾◍ ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ ◍﴿⊷┉༻
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/uuu_4_bot'},
-},
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بنك' or text == 'البنك' then
 if ChannelJoinch(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
