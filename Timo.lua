@@ -19574,23 +19574,23 @@ end
 ---
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 photo = "https://t.me/selvaa_3/2442"
-local NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
+local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local T =[[
  [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓂄𓆩ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
+{text = '👨🏻‍💻︙ᴅᴇᴠ', url = 't.me/DEVSELVA'},{text = '📢︙ᴄʜᴀɴɴᴇʟ', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = '𓂄𓆩لـتـنـصـيـب بـوت𓆪𓂁', url = 't.me/uuu_4_bot'},
+{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/uuu_4_bot'},
 },
 {
-{text = '𓂄𓆩اسم البوت ↜ '..NamesBot..' ❤️☁️𓆪𓂁', url = 't.me/uuu_4_bot'},
+{text = '🤖︙اسم البوت ↜ '..NamesBot..' ', url = 't.me/uuu_4_bot'},
 },
 {
-{text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = '𓂄𓆩 اضف بوت '..NamesBot..' لمجموعتك𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -19882,7 +19882,7 @@ end
 if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا') then
 local photo = bot.getUserProfilePhotos(Timo)
 local selvaa = bot.getUser(Timo)
-local NamesBot = (Redis:get(Timo.."Timo:Name:Bot") or "سيلفا")
+local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local BotName = {
 'نعم يروحي 🌝💙',
 'نعم يا قلب '..NamesBot..'',
