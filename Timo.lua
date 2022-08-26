@@ -19852,7 +19852,6 @@ end
 if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
 local photo = bot.getUserProfilePhotos(Timo)
 local selvaa = bot.getUser(Timo)
-local Name_User = UserInfo.first_name
 local Name_dev = bot.getUser(Sudo_Id).first_name
 local UName_dev = bot.getUser(Sudo_Id).username
 local NamesBot = (Redis:get(Timo.."Name:Bot") or 'سيلفا')
@@ -19878,9 +19877,6 @@ keyboard.inline_keyboard = {
 {text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
 },
 {
-{text = Name_User, url = "t.me/"..UserInfo.username}
-},
-{
 {text = Name_dev, url = "t.me/"..UName_dev }
 },
 }
@@ -19891,7 +19887,6 @@ end
 if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا') then
 local photo = bot.getUserProfilePhotos(Timo)
 local selvaa = bot.getUser(Timo)
-local Name_User = UserInfo.first_name
 local Name_dev = bot.getUser(Sudo_Id).first_name
 local UName_dev = bot.getUser(Sudo_Id).username
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
@@ -19918,9 +19913,6 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
-},
-{
-{text = Name_User, url = "t.me/"..UserInfo.username}
 },
 {
 {text = Name_dev, url = "t.me/"..UName_dev }
