@@ -18072,6 +18072,97 @@ send(msg_chat_id,msg_id,"◍ ارسل لي التوجيه الان\n◍  ليت�
 return false
 end
 
+time = os.date("*t")
+hour = time.hour
+min = time.min
+sec = time.sec
+local_time = hour..":"..min
+list_zkr = Redis:smembers(Timo.."Timo:ChekBotAdd")
+
+if local_time then
+if local_time == "0:0" and not Redis:get(Timo.."0:done") then -- الساعه 12 منتصف الليل 
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*- رسـالة تفـائـل*\n*اتركها تأتي كما كتبها الله لك ، لعلها تأتي كما تمناها قلبك . ❤️*","md",true)  
+end
+Redis:set(Timo.."0:done", true)
+for i = 1 , 23 ,1 do 
+Redis:del(Timo..i..":done")
+end
+end
+if local_time == "2:0" and not Redis:get(Timo.."2:done") then -- الساعه 2 بعد منتصف الليل
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*‏وقُل الحمد لله ❤️،*\n*حتى يتسع صدرُك للحياة،*\n*وقُل الحمدُلله فإنَ بِها تطيبُ الأحَوال.*","md",true)  
+end
+Redis:set(Timo.."2:done", true)
+end
+if local_time == "4:0" and not Redis:get(Timo.."4:done") then -- الساعه 4 بعد منتصف الليل
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*اللهم صل وسلم وبارك على سيدنا وحبيبنا محمد💕*","md",true)  
+end
+Redis:set(Timo.."4:done", true)
+end
+if local_time == "6:0" and not Redis:get(Timo.."6:done") then -- الساعه 6 صباحا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "‏*وإننِي يا الله ، أحِب أن تغرقنِي صلاحاً فـ تُحبنِي وتجعَل ملائكة السماء من حُبك تُحِبني فلاَ الأرض موطنِي ولا أهل الأرض غايتِي .*","md",true)  
+end
+Redis:set(Timo.."6:done", true)
+end
+if local_time == "8:0" and not Redis:get(Timo.."8:done") then -- الساعه 8 صباحا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*‏وذكُرالرسول ‌تُضاء بهِ ‌الحياة *\n*اللهم صل و سلم على رسول الله.. 💛*","md",true)  
+end
+Redis:set(Timo.."8:done", true)
+end
+if local_time == "9:0" and not Redis:get(Timo.."9:done") then -- الساعه 9 صباحا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*‌‎اللهم اكتب لنا من خشيتك ماتحولُ به بيننا وبين معصيتك ، ومن طاعتك ماتبلغنا به جنتك❤️*","md",true)  
+end
+Redis:set(Timo.."9:done", true)
+end
+if local_time == "11:0" and not Redis:get(Timo.."11:done") then -- الساعه 11 صباحا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*‏ يا مالك المُلك وكلتك أمري وأستودعتك همي فبشرني بما يفتح مداخل السعادة إلى قلبي ❤️*","md",true)  
+end
+Redis:set(Timo.."11:done", true)
+end
+if local_time == "13:0" and not Redis:get(Timo.."13:done") then -- الساعه 1 مسائا
+for k,v in pairs(list_zkr) do
+bot.sendText(v,0, "‏*سيفاجئك الله بلطفه من حيث لاتدري ، وتهدأ روحك وتنعم براحة البال ، ثق في الواحد اللطيف الخبير . واصبر لحكم ربك فإنك بأعيننا❤*","md",true)  
+end
+Redis:set(Timo.."13:done", true)
+end
+if local_time == "14:0" and not Redis:get(Timo.."14:done") and not Redis:get(Timo.."14:done") then -- الساعه 2 مسائا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*- اللَّهُـمَّ صلِّ وسَلِّم على نبيّنا مُحمَد ﷺ*","md",true)
+end
+Redis:set(Timo.."14:done", true)
+end
+if local_time == "15:0" and not Redis:get(Timo.."15:done") then -- الساعه 3 مسائا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*‏الُّلهم اجعل كل ما فقدتُه خيراً، وكل ما أحزنَنِي خيراً، وكل ما أبعدتهُ عنّي خيراً واجعل لي نصيباً من الرحمة والمغفرة والفرح والسعادة  والرزق والهداية.*","md",true)  
+end
+Redis:set(Timo.."15:done", true)
+end
+if local_time == "21:0" and not Redis:get(Timo.."21:done") then -- الساعه 9 مسائا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*‏الُّلهم اجعل كل ما فقدتُه خيراً، وكل ما أحزنَنِي خيراً، وكل ما أبعدتهُ عنّي خيراً واجعل لي نصيباً من الرحمة والمغفرة والفرح والسعادة  والرزق والهداية.*","md",true)  
+end
+Redis:set(Timo.."21:done", true)
+end
+if local_time == "22:0" and not Redis:get(Timo.."22:done") then -- الساعه 10 مسائا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "*”اللهُم إنا نسألك الخير الذي يُعانق حياتنا دائمًا وأبدًا” ❤️.*","md",true)  
+end
+Redis:set(Timo.."22:done", true)
+end
+if local_time == "23:0" and not Redis:get(Timo.."23:done") then -- الساعه 11 مسائا
+for k,v in pairs(list_zkr) do 
+bot.sendText(v,0, "‏*وهبْ لي يالله في حنايا قلبي نُوراً يُضئ بصيرتي و يبين لي دربي❤*","md",true)  
+end
+Redis:set(Timo.."23:done", true)
+end
+end
+
 if text=="اذاعه خاص بالتوجيه" then 
 if not msg.Asasy then 
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
