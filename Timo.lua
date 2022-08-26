@@ -19573,11 +19573,14 @@ end
 end
 ---
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/selvaa_3/2442"
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-local T =[[
- [ٓ⁨𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ᴛᴏ sᴏᴜʀᴄᴇ sᴇʟᴠᴀ𓆪𓂁](t.me/SO_SELVA)
-]]
+local ban = bot.getUser(Message_Reply.sender_id.user_id)
+local bain = bot.getUser(msg.sender_id.user_id)
+if ban.first_name then
+baniusername = '*𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ʏᴀ *['..bain.first_name..'](tg://user?id='..bain.id..')*'
+else
+baniusername = 'لا يوجد'
+end
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -19594,7 +19597,7 @@ keyboard.inline_keyboard = {
 },
 }
 local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo=https://t.me/selvaa_3/2442&caption=".. URL.escape(baniusername).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بنك' or text == 'البنك' then
 if ChannelJoinch(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
