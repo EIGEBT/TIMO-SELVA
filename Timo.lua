@@ -19572,7 +19572,7 @@ end
 end
 end
 ---
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'المصنع' then
 photo = "https://t.me/selvaa_3/2442"
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
 local T =[[
@@ -19584,7 +19584,7 @@ keyboard.inline_keyboard = {
 {text = '👨🏻‍💻︙ᴅᴇᴠ', url = 't.me/DEVSELVA'},{text = '📢︙ᴄʜᴀɴɴᴇʟ', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/uuu_4_bot'},
+{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/uuu_4_bot'},{text =  '🦹‍♂︙مـطـور الـبـوت' , url =  t.me/'..UserSudo}, 
 },
 {
 {text = '🤖︙اسم البوت ↜ '..NamesBot..' ', url = 't.me/'..UserBot..'?start'},
