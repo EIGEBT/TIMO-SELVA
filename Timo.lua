@@ -19849,68 +19849,107 @@ end
 Redis:del(Timo.."Name:Bot") 
 return send(msg_chat_id,msg_id,"◍ تم مسح اسم البوت ","md",true)   
 end
-if text == "بوت" or text == "البوت" or text == "bot" or text == "Bot" then
-local photo = bot.getUserProfilePhotos(Timo)
-local selvaa = bot.getUser(Timo)
-local NamesBot = (Redis:get(Timo.."Name:Bot") or 'سيلفا')
-local BotName = {
-    'اسمي '..NamesBot..' يا قلبي 😍💜',
-    'اسمي '..NamesBot..' يا روحي 🙈❤️',
-    'اسمي '..NamesBot..' يا عمري 🥰🤍',
-   'اسمي '..NamesBot..' يا قمر 🖤🌿',
-    'اسمي بوت '..NamesBot..' 😻❤️',
-    'اسمي '..NamesBot..' يا مزه ??🍒',
-    'اسمي '..NamesBot..' يعم 😒',
-    'مقولت اسمي '..NamesBot..' في اي 🙄',
-    'اسمي '..NamesBot..' الكيوت 🌝💙',
-    'اسمي '..NamesBot..' يا حياتي 🌚❤️',
-    'اسمي '..NamesBot..' يوتكه 🙈💔',
+if text == (Redis:get(Timo.."Name:Bot") or "سيلفا") then
+if Redis:get(Timo.."name bot type : ") == "photo" then
+  local photo = bot.getUserProfilePhotos(Timo)
+  local UserInfo = bot.getUser(Timo)
+  local Name_User = UserInfo.first_name
+  local Name_dev = bot.getUser(Sudo_Id).first_name
+  local UName_dev = bot.getUser(Sudo_Id).username
+  local reply_markup = bot.replyMarkup{type = 'inline',data = {
+    {
+      {text = Name_User, url = "t.me/"..UserInfo.username}
+    },
+    {
+      {text = Name_dev, url = "t.me/"..UName_dev }
+    }
+  }
+  }
+  
+  if photo.total_count > 0 then
+    local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+    local NameBots = {
+"قلب "..NamesBot ,
+"مين مزعلك بس يعيوني",
+"ثانيه واحده بسلك رقم واحده",
+"انا مش فاضي ريو مكاني اهو",
+"قلبه ودقاته وكل حياته"
 }
-NamesBots = BotName[math.random(#BotName)]
-local first_n = selvaa.first_name
-if photo.total_count > 0 then
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
-},
+  return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,NameBots[math.random(#NameBots)], "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+  else
+    local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+    local NameBots = {
+"قلب "..NamesBot ,
+"مين مزعلك بس يعيوني",
+"ثانيه واحده بسلك رقم واحده",
+"انا مش فاضي ريو مكاني اهو",
+"قلبه ودقاته وكل حياته"
 }
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+  return bot.sendText(msg_chat_id,msg_id,NameBots[math.random(#NameBots)],"md") 
+  end 
+  end
+      local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+    local NameBots = {
+"قلب "..NamesBot ,
+"مين مزعلك بس يعيوني",
+"ثانيه واحده بسلك رقم واحده",
+"انا مش فاضي ريو مكاني اهو",
+"قلبه ودقاته وكل حياته"
+}
+  return bot.sendText(msg_chat_id,msg_id,NameBots[math.random(#NameBots)],"md") 
+ 
 end
+----
+----
+if text == "بوت" then
+if Redis:get(Timo.."name bot type : ") == "photo" then
+  
+    local photo = bot.getUserProfilePhotos(Timo)
+    local UserInfo = bot.getUser(Timo)
+    local Name_User = UserInfo.first_name
+    local Name_dev = bot.getUser(Sudo_Id).first_name
+    local UName_dev = bot.getUser(Sudo_Id).username
+    local reply_markup = bot.replyMarkup{type = 'inline',data = {
+      {
+        {text = Name_User, url = "t.me/"..UserInfo.username}
+      },
+      {
+        {text = Name_dev, url = "t.me/"..UName_dev }
+      }
+    }
+    }
+    
+    if photo.total_count > 0 then
+      local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+      local BotName = {
+      "اسمي "..NamesBot.." يبن العاميه",
+      "يارب يكون موضوع مهم بس",
+      "هو يوم مهبب انا عارف..عاوز اي ؟",
+      "اسمي "..NamesBot.." يا كفيف",
+      "مش شايف اسمي ولا اي ؟"
+      }
+    return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,BotName[math.random(#BotName)], "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+    else
+      local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+      local BotName = {
+      "اسمي "..NamesBot.." يبن العاميه",
+      "يارب يكون موضوع مهم بس",
+      "هو يوم مهبب انا عارف..عاوز اي ؟",
+      "اسمي "..NamesBot.." يا كفيف",
+      "مش شايف اسمي ولا اي ؟"
+      }
+    https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-if text == (Redis:get(Timo.."Name:Bot") or 'سيلفا') then
-local photo = bot.getUserProfilePhotos(Timo)
-local selvaa = bot.getUser(Timo)
-local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-local BotName = {
-'نعم يروحي 🌝💙',
-'نعم يا قلب '..NamesBot..'',
-'عوز اي مني '..NamesBot..'',
-'موجود '..NamesBot..'',
-'بتشقط وجي ويت 🤪',
-'ايوا جاي 😹',
-'يعم هتسحر واجي 😾',
-'طب متصلي على النبي كدا 🙂💜',
-'تع اشرب شاي 🌝💙',
-'اي قمر انت 🌝💙',
-'اي قلبي 🤍😻',
-'ياض خش نام 😂',
-'انا '..NamesBot..' احسن البوتات ??💙',
-'نعم 🍒🤍'
-}
-NamesBots = BotName[math.random(#BotName)]
-local first_n = selvaa.first_name
-if photo.total_count > 0 then
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = NamesBots, url = 't.me/'..UserBot..'?start'}, 
-},
-}
-msgg = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
+    end
+          local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
+      local BotName = {
+      "اسمي "..NamesBot.." يبن العاميه",
+      "يارب يكون موضوع مهم بس",
+      "هو يوم مهبب انا عارف..عاوز اي ؟",
+      "اسمي "..NamesBot.." يا كفيف",
+      "مش شايف اسمي ولا اي ؟"
+      }
+    https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(first_n).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'تنظيف المشتركين' then
 if not msg.Asasy then 
