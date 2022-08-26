@@ -19584,7 +19584,7 @@ keyboard.inline_keyboard = {
 {text = '👨🏻‍💻︙ᴅᴇᴠ', url = 't.me/DEVSELVA'},{text = '📢︙ᴄʜᴀɴɴᴇʟ', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/uuu_4_bot'},{text = '🦹‍♂︙مـطـور الـبـوت', url = 't.me/'..UserSudo},
+{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/uuu_4_bot'},
 },
 {
 {text = '🤖︙اسم البوت ↜ '..NamesBot..' ', url = 't.me/'..UserBot..'?start'},
