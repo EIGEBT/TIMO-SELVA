@@ -26935,6 +26935,7 @@ if tonumber(IdUser) == tonumber(UserId) then
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
+{
 {text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
 },
 {
@@ -29287,7 +29288,70 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {
 }
 edit(ChatId,Msg_id,"◍ عليك اختيار نوع القفل او الفتح على امر التكرار", 'md', true, false, reply_markup)
 end
-
+if Text and Text:match('(%d+)/topzrf') then
+local UserId = Text:match('(%d+)/topzrf')
+if tonumber(IdUser) == tonumber(UserId) then
+local ty_users = Redis:smembers("rrfffid")
+if #ty_users == 0 then
+return send(ChatId,Msg_id,"⇜ لا يوجد احد","md",true)
+end
+ty_anubis = "توب 20 شخص بتسليب فلوس :\n\n"
+ty_list = {}
+for k,v in pairs(ty_users) do
+local mony = Redis:get("rrfff"..v)
+table.insert(ty_list, {tonumber(mony) , v})
+end
+table.sort(ty_list, function(a, b) return a[1] > b[1] end)
+num_ty = 1
+emojii ={ 
+"🥇" ,
+"🥈",
+"🥉",
+"4)",
+"5)",
+"6)",
+"7)",
+"8)",
+"9)",
+"10)",
+"11)",
+"12)",
+"13)",
+"14)",
+"15)",
+"16)",
+"17)",
+"18)",
+"19)",
+"20)"
+}
+for k,v in pairs(ty_list) do
+if num_ty <= 20 then
+local user_name = bot.getUser(v[2]).first_name or Redis:get(v[2].."first_name:") or "لا يوجد اسم"
+local mony = v[1]
+local convert_mony = string.format("%.0f",mony)
+local emoo = emojii[k]
+num_ty = num_ty + 1
+ty_anubis = ty_anubis..emoo.." "..convert_mony.." 💵 | "..user_name.."\n"
+end
+end
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
+},
+{
+{text = 'توب الحراميه 🥷', data = IdUser..'/topzrf'}, {text = 'توب الفلوس 💸', data = IdUser..'/topmon'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+},
+}
+}
+edit(ChatId,Msg_id,ty_anubis, 'html', true, false, reply_markup)
+end
+end
 if Text and Text:match('(%d+)/topmon') then
 local UserId = Text:match('(%d+)/topmon')
 if tonumber(data.sender_user_id) == tonumber(UserId) then
@@ -29338,6 +29402,7 @@ end
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
+{
 {text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
 },
 {
