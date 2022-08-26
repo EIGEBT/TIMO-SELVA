@@ -19727,46 +19727,34 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بنك' or text == 'البنك' then
-photo = "https://t.me/selvaa_3/2442"
-local T =[[
-✜ اوامر البنك
-
-◍ انشاء حساب بنكي  ↢ تعمل حساب وتقدر تحول فلوس 
-
-◍ مسح حساب بنكي  ↢ تلغي حسابك البنكي
-
-◍ تحويل ↢ تطلب رقم حساب الشخص وتحول له فلوس
-
-◍ حسابي  ↢ يطلع لك رقم حسابك 
-
-◍ فلوسي ↢ يعلمك كم فلوسك
-◍ كنز ↢ البحث عن كنزك
-
-◍ راتبي ↢ يعطيك راتبك كل ٢٠ دقيقة
-
-◍ بخشيش ↢ يعطيك بخشيش كل ١٠ دقايق
-
-◍ زرف ↢ تزرف فلوس اشخاص كل ١٠ دقايق
-
-◍ استثمار ↢ تستثمر بالمبلغ اللي تبيه مع نسبة ربح مضمونه من ١٪؜ الى ١٥٪؜
-
-◍ حظ ↢ تلعبها بأي مبلغ ياتكسب يا تخسر
-
-◍ مضاربه ↢ تضارب بأي مبلغ انت عاوزو والنسبة من ٩٠٪؜ الى -٩٠٪؜ انت وحظك
-
-◍ توب الفلوس ↢ يطلع توب اكتر ناس معهم فلوس في كل الجروبات
-
-◍ توب الحراميه ↢ يطلع لك اكتر ناس سرقو 😂
-◍ كنز او الكنز ↢ عمليه البحث عن كنزك
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
+if not msg.Admin then
+return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+if ChannelJoinch(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+if ChannelJoin(msg) == false then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
+return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
 {
-{text = '«  𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙴𝙻𝚅𝙰  »', url = 't.me/SO_SELVA'}, 
+{text = 'معلومات اللعبه 🏏', data = msg.sender_id.user_id..'/bank9'},{text = 'اوامر اللعبه 🪁', data = msg.sender_id.user_id..'/bank8'}, 
+},
+{
+{text = 'توب الحراميه 🥷', data = msg.sender_id.user_id..'/topzrf'},{text = 'توب الفلوس 💸', data = msg.sender_id.user_id..'/topmon'},
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
 },
 }
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+}
+return send(msg_chat_id,msg_id, [[*
+اهـلا عـزيـزي فـي لـعـبـه الـبـنـك 🏦
+*]],"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Admin then
 return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -21528,13 +21516,6 @@ end
 end
 end
 
-if text == 'توب' or text == 'التوب' then
-local reply_markup = bot.replyMarkup{
-type = 'inline',data = {
-{{text = 'توب الفلوس 🏦', data = msg.sender_id.user_id..'/top/flos'},{text = 'توب الحراميه 🏛️ ', data = msg.sender_id.user_id..'/top/zrf'},},
-}}
-return bot.sendText(msg.chat_id,msg.id,'*مـرحـبا بك في قائـمة التوب لهذا الاسبوع ᥫ᭡*',"md",false, false, false, false, reply_markup)
-end
 
 if text == "توب الاموال" or text == "توب الفلوس" then
 local bank_users = Redis:smembers(Timo.."booob")
@@ -21902,7 +21883,7 @@ Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "تاجر 💵" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 250)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 250 جنيه 💵\nوظيفتك : تاجر 💵\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 250 جنيه 💵\nوظيفتك : تاجر ??\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "دكتور 👨" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 250)
@@ -26892,6 +26873,101 @@ local TextHelp = [[*
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
+elseif Text and Text:match('(%d+)/bank8') then
+local UserId = Text:match('(%d+)/bank8')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
+},
+{
+{text = 'توب الحراميه 🥷', data = IdUser..'/topzrf'}, {text = 'توب الفلوس 💸', data = IdUser..'/topmon'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+},
+}
+}
+local TextHelp = [[*
+🎭انشاء حساب بنكي  -> تسوي حساب وتقدر تحول فلوس مع مزايا ثانيه
+
+🎭مسح حساب بنكي  -> تلغي حسابك البنكي
+
+🎭تحويل -> تطلب رقم حساب الشخص وتحول له فلوس
+
+🎭حسابي  -> يطلع لك رقم حسابك عشان تعطيه للشخص اللي بيحول لك
+
+🎭فلوسي -> يعلمك كم فلوسك
+
+🎭راتب -> يعطيك راتب كل ١٠ دقائق
+
+🎭بخشيش -> يعطيك بخشيش كل ١٠ دقايق
+
+🎭زرف -> تزرف فلوس اشخاص كل ١٠ دقايق
+
+🎭استثمار -> تستثمر بالمبلغ اللي تبيه مع نسبة ربح مضمونه من ١٪؜ الى ١٥٪؜
+
+🎭حظ -> تلعبها بأي مبلغ ياتدبله ياتخسره انت وحظك
+
+🎭مضاربه -> تضارب بأي مبلغ تبيه والنسبة من ٩٠٪؜ الى -٩٠٪؜ انت وحظك
+
+🎭كنز -> يعطيك كنز بسعر مختلف انتا وحظك
+
+🎭توب الفلوس -> يطلع توب اكثر ناس معهم فلوس بكل القروبات
+
+🎭توب الحراميه -> يطلع لك اكثر ناس زرفوا
+
+🎭زواج  -> تكتبه بالرد على رسالة شخص مع المهر ويزوجك
+
+🎭زواجي  -> يطلع وثيقة زواجك اذا متزوج
+
+🎭طلاق -> يطلقك اذا متزوج
+
+🎭اضف فلوس -> بالرد علي الشخص + المبلغ
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/bank9') then
+local UserId = Text:match('(%d+)/bank9')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
+},
+{
+{text = 'توب الحراميه 🥷', data = IdUser..'/topzrf'}, {text = 'توب الفلوس 💸', data = IdUser..'/topmon'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+},
+}
+}
+local TextHelp = [[*
+🎭 لعبه البنك هي لعبه تسليه
+
+🎭 تستطيع من خلالها تجميع الاموال
+
+🎭 وتسطيع تلعب مع شخص اخر
+
+🎭 مثال :: زرف تسرق فلوس الاخر
+
+🎭 مثال :: استثمار تستثمر فلوسك اما تكسب ام تخسر
+
+🎭 مثال :: حظ اما ان تكسب او تخسر
+
+🎭 توب الفلوس يظهر لك اعلي اجر في الجروب
+
+🎭 توب الحراميه يظهر لك اكتر واحد حرامي في الجروب
+
+🎭 كنز تسطيع ان تجد كنوز كل كنز باجر معين
+
+🎭 مثال :: زوجني او زوجي او زوجتي
+*]]
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
 elseif Text and Text:match('(%d+)/help2') then
 local UserId = Text:match('(%d+)/help2')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -29212,64 +29288,6 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {
 edit(ChatId,Msg_id,"◍ عليك اختيار نوع القفل او الفتح على امر التكرار", 'md', true, false, reply_markup)
 end
 
-if Text and Text:match('(%d+)/topzrf') then
-local UserId = Text:match('(%d+)/topzrf')
-if tonumber(IdUser) == tonumber(UserId) then
-local ty_users = Redis:smembers("rrfffid")
-if #ty_users == 0 then
-return send(ChatId,Msg_id,"⇜ لا يوجد احد","md",true)
-end
-ty_anubis = "توب 20 شخص بتسليب فلوس :\n\n"
-ty_list = {}
-for k,v in pairs(ty_users) do
-local mony = Redis:get("rrfff"..v)
-table.insert(ty_list, {tonumber(mony) , v})
-end
-table.sort(ty_list, function(a, b) return a[1] > b[1] end)
-num_ty = 1
-emojii ={ 
-"🥇" ,
-"🥈",
-"🥉",
-"4)",
-"5)",
-"6)",
-"7)",
-"8)",
-"9)",
-"10)",
-"11)",
-"12)",
-"13)",
-"14)",
-"15)",
-"16)",
-"17)",
-"18)",
-"19)",
-"20)"
-}
-for k,v in pairs(ty_list) do
-if num_ty <= 20 then
-local user_name = bot.getUser(v[2]).first_name or Redis:get(v[2].."first_name:") or "لا يوجد اسم"
-local mony = v[1]
-local convert_mony = string.format("%.0f",mony)
-local emoo = emojii[k]
-num_ty = num_ty + 1
-ty_anubis = ty_anubis..emoo.." "..convert_mony.." 💵 | "..user_name.."\n"
-end
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •',url="t.me/SO_SELVA "}, 
-},
-}
-}
-edit(ChatId,Msg_id,ty_anubis, 'html', true, false, reply_markup)
-end
-end
 if Text and Text:match('(%d+)/topmon') then
 local UserId = Text:match('(%d+)/topmon')
 if tonumber(data.sender_user_id) == tonumber(UserId) then
@@ -29320,8 +29338,13 @@ end
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
+{text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
+},
 {
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •',url="t.me/SO_SELVA "}, 
+{text = 'توب الحراميه 🥷', data = IdUser..'/topzrf'}, {text = 'توب الفلوس 💸', data = IdUser..'/topmon'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
 },
 }
 }
