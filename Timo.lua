@@ -19812,40 +19812,38 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '🔰︙اوامر الحمايه', data = msg.sender_id.user_id..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = msg.sender_id.user_id..'/help2'}, 
+{text = '{ 𝙤𝙣𝙚 }', data = msg.sender_id.user_id..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = msg.sender_id.user_id..'/help2'}, 
 },
 {
-{text = '👨🏻‍💼︙اوامر المدراء', data = msg.sender_id.user_id..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = msg.sender_id.user_id..'/help4'}, 
+{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = msg.sender_id.user_id..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = msg.sender_id.user_id..'/help4'}, 
 },
 {
-{text = '🤴🏻︙اوامر المالكين', data = msg.sender_id.user_id..'/help5'}, {text = '🎭︙اوامر تسليه', data = msg.sender_id.user_id..'/helpp6'}, 
+{text = '{ 𝙛𝙞𝙫𝙚 }', data = msg.sender_id.user_id..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = msg.sender_id.user_id..'/helpp6'}, 
 },
 {
-{text = '🧑🏼‍💻︙اوامر المطور', data = msg.sender_id.user_id..'/helpsudo'},
+{text = '{ اوامر المطور }', data = msg.sender_id.user_id..'/helpsudo'},{text = '{ الالعاب }', data = msg.sender_id.user_id..'/help6'}, 
 },
 {
-{text = '🎮︙الالعاب', data = msg.sender_id.user_id..'/help6'}, 
+{text = '{ اوامر التسليه }', data = msg.sender_id.user_id..'/helpts'},
 },
 {
-{text = '🔐︙القفل والفتح', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '🔃︙التفعيل والتعطيل', data = msg.sender_id.user_id..'/🔃︙التفعيل والتعطيل'}, 
+{text = '{ القفل / الفتح }', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = msg.sender_id.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
 },
 }
 }
 return send(msg_chat_id,msg_id, [[*
-🤖︙مرحبا اليك قائمة اوامر البوت
-༺┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉༻
-🔰︙⁩ ❬ م1 ❭ اوامر حماية المجموعه ⇊
-👮🏻‍♂️︙ ❬ م2 ❭ اوامر الادمنيه ⇊
-🦸🏻︙❬ م3 ❭ اوامر المدراء ⇊
-👷🏻‍♂️︙ ❬ م4 ❭ اوامر المنشئين ⇊
-🤴🏻︙ ❬ م5 ❭ اوامر المالكين ⇊
-🎭︙ ❬ م6 ❭ اوامر التسليه ⇊
-🧑🏼‍💻︙ ❬ اوامر المطور  ❭ اوامر المطور ⇊
-༺┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉༻
-⤵️︙قم باختيار الاوامر من الازرار
+⌯ اوامــر البــوت الرئيسيـة 
+• — — — — 𝐀𝐊𝐀𝐃𝐀 — — — — — •
+⌯ { م1 } ← اوامر الحمايه
+⌯ { م2 } ← اوامر الادمنيه
+⌯ { م3 } ← اوامر المدراء
+⌯ { م4 } ← اوامر المنشئين
+⌯ { م5 } ← اوامر المالكين
+⌯ { م6 } ← اوامر التسليه
+⌯ { اوامر المطور } ← اوامر المطور
 *]],"md",false, false, false, false, reply_markup)
 
 elseif text == 'اوامر المطور' then
@@ -24035,7 +24033,7 @@ if text == "اغاني قصيرة 🎶" then
 Redis:sadd(Timo..'Num:User:Pv',msg.sender_id.user_id)  
 if not msg.ControllerBot then
 Abs = math.random(2,140); 
-local Text ='*𖥔┊تم اختيار المقطع الصوتي لك*'
+local Text ='*??┊تم اختيار المقطع الصوتي لك*'
 keyboard = {}  
 keyboard.inline_keyboard = {{{text = '𖥔 مطـور البـوت 𖥔', url = 't.me/'..UserSudo}}} 
 local msg_id = msg.id/2097152/0.5 
@@ -27438,6 +27436,7 @@ local TextHelp = [[*
 ◍ تنزيل جميع الرتب
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
 end
 
 if Text and Text:match('(%d+)/lock_link') then
