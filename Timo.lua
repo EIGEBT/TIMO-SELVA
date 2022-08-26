@@ -19718,20 +19718,10 @@ keyboard.inline_keyboard = {
 {text = '𓂄𓆩ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
+{text = '𓂄𓆩لـتـنـصـيـب بـوت𓆪𓂁', url = 't.me/uuu_4_bot'},
 },
-}
-local msgg = msg_id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-elseif text == 'تيمو' or text == 'مبرمج السورس' then
-photo = "https://t.me/uu_u_4"
-local T =[[
-◍ [ٓ𝚃𝙸𝙼𝙾 𝙱𝙰𝚂𝙷𝙰 𝙺𝙸𝙽𝙶 𝙾𝙵 𝚂𝙾𝚄𝚁𝙲𝙴](t.me/uu_u_4)
-]]
-keyboard = {} 
-keyboard.inline_keyboard = {
 {
-{text = '𓂄𓆩𝚃𝙸𝙼𝙾 𝙱𝙰𝚂𝙷𝙰 𓆪𓂁', url = 't.me/uu_u_4'}, 
+{text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -19822,22 +19812,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𓂄𓆩𝙤𝙣𝙚𓆪𓂁', data = msg.sender_id.user_id..'/help1'}, {text = '𓂄𓆩𝙩𝙬𝙤 𓆪𓂁', data = msg.sender_id.user_id..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = msg.sender_id.user_id..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = msg.sender_id.user_id..'/help2'}, 
 },
 {
-{text = '𓂄𓆩𝙩𝙝𝙧𝙚𝙚𓆪𓂁', data = msg.sender_id.user_id..'/help3'}, {text = '𓂄𓆩𝙛𝙤𝙪𝙧𓆪𓂁', data = msg.sender_id.user_id..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = msg.sender_id.user_id..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = msg.sender_id.user_id..'/help4'}, 
 },
 {
-{text = '𓂄𓆩𝙛𝙞𝙫𝙚𓆪𓂁', data = msg.sender_id.user_id..'/help5'}, {text = '𓂄𓆩𝙨𝙞𝙭𓆪𓂁', data = msg.sender_id.user_id..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = msg.sender_id.user_id..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = msg.sender_id.user_id..'/helpp6'}, 
 },
 {
-{text = '𓂄𓆩اوامر المطور𓆪𓂁', data = msg.sender_id.user_id..'/helpsudo'},{text = '𓂄𓆩الالعاب𓆪𓂁', data = msg.sender_id.user_id..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = msg.sender_id.user_id..'/helpsudo'},{text = '🎮︙الالعاب', data = msg.sender_id.user_id..'/help6'}, 
 },
 {
-{text = '𓂄𓆩اوامر التسليه𓆪𓂁', data = msg.sender_id.user_id..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = msg.sender_id.user_id..'/helpts'},
 },
 {
-{text = '𓂄𓆩القفل / الفتح𓆪𓂁', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '𓂄𓆩التعطيل / التفعيل𓆪𓂁', data = msg.sender_id.user_id..'/listallAddorrem'}, 
+{text = '🔐︙القفل والفتح', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '𓂄𓆩التعطيل / التفعيل𓆪𓂁', data = msg.sender_id.user_id..'/🔃︙التفعيل والتعطيل'}, 
 },
 {
 {text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
@@ -19845,15 +19835,17 @@ data = {
 }
 }
 return send(msg_chat_id,msg_id, [[*
-◍ اوامــر البــوت الرئيسيـة 
-• — — — — 𝚂𝙴𝙻𝚅𝙰 — — — — — •
-◍ { م1 } ← اوامر الحمايه
-◍ { م2 } ← اوامر الادمنيه
-◍ { م3 } ← اوامر المدراء
-◍ { م4 } ← اوامر المنشئين
-◍ { م5 } ← اوامر المالكين
-◍ { م6 } ← اوامر التسليه
-◍ { اوامر المطور } ← اوامر المطور
+🤖︙مرحبا اليك قائمة اوامر البوت
+༺┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉༻
+🔰︙⁩ ❬ م1 ❭ اوامر حماية المجموعه ⇊
+👮🏻‍♂️︙ ❬ م2 ❭ اوامر الادمنيه ⇊
+🦸🏻︙❬ م3 ❭ اوامر المدراء ⇊
+👷🏻‍♂️︙ ❬ م4 ❭ اوامر المنشئين ⇊
+🤴🏻︙ ❬ م5 ❭ اوامر المالكين ⇊
+🎭︙ ❬ م6 ❭ اوامر التسليه ⇊
+🧑🏼‍💻︙ ❬ اوامر المطور  ❭ اوامر المطور ⇊
+༺┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉༻
+⤵️︙قم باختيار الاوامر من الازرار
 *]],"md",false, false, false, false, reply_markup)
 
 elseif text == 'اوامر المطور' then
@@ -24285,6 +24277,9 @@ keyboard.inline_keyboard = {
 {text = '𓂄𓆩ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
 },
 {
+{text = '𓂄𓆩لـتـنـصـيـب بـوت𓆪𓂁', url = 't.me/uuu_4_bot'},
+},
+{
 {text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
@@ -26683,22 +26678,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -26743,7 +26738,13 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝙱𝙰𝙲𝙺', data = IdUser..'/back_selva'},
+{text = 'العاب السورس 🏓', data = IdUser..'/lido1'},{text = 'العاب متطوره 🎖', data = IdUser..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = IdUser..'/lido3'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
 },
 }
 }
@@ -26787,7 +26788,13 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝙱𝙰𝙲𝙺', data = IdUser..'/back_selva'},
+{text = 'العاب السورس 🏓', data = IdUser..'/lido1'},{text = 'العاب متطوره 🎖', data = IdUser..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = IdUser..'/lido3'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
 },
 }
 }
@@ -26848,6 +26855,12 @@ data = {
 {text = '- كرة السلة ', url = 'http://t.me/gamee?game=BasketBoy'}, {text = '- القط المجنون', url = 'http://t.me/gamee?game=CrazyCat'}, 
 },
 {
+{text = 'العاب السورس 🏓', data = IdUser..'/lido1'},{text = 'العاب متطوره 🎖', data = IdUser..'/lido2'}, 
+},
+{
+{text = 'لعبه البنك 🎉', data = IdUser..'/lido3'}, 
+},
+{
 {text = '𝙱𝙰𝙲𝙺', data = IdUser..'/back_selva'},
 },
 }
@@ -26865,10 +26878,13 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'العاب السورس 🏓', data = msg.sender_id.user_id..'/lido1'},{text = 'العاب متطوره 🎖', data = msg.sender_id.user_id..'/lido2'}, 
+{text = 'العاب السورس 🏓', data = IdUser..'/lido1'},{text = 'العاب متطوره 🎖', data = IdUser..'/lido2'}, 
 },
 {
-{text = 'لعبه البنك 🎉', data = msg.sender_id.user_id..'/lido3'}, 
+{text = 'لعبه البنك 🎉', data = IdUser..'/lido3'}, 
+},
+{
+{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
 },
 }
 }
@@ -26886,22 +26902,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -26975,22 +26991,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -27060,22 +27076,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -27119,22 +27135,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -27163,22 +27179,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -27219,22 +27235,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -27292,22 +27308,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -27315,15 +27331,17 @@ data = {
 }
 }
 local TextHelp = [[*
-◍ اوامــر البــوت الرئيسيـة 
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ { م1 } ← اوامر الحمايه
-◍ { م2 } ← اوامر الادمنيه
-◍ { م3 } ← اوامر المدراء
-◍ { م4 } ← اوامر المنشئين
-◍ { م5 } ← اوامر المالكين
-◍ { م6 } ← اوامر التسليه
-◍ { اوامر المطور } ← اوامر المطور
+🤖︙مرحبا اليك قائمة اوامر البوت
+༺┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉༻
+🔰︙⁩ ❬ م1 ❭ اوامر حماية المجموعه ⇊
+👮🏻‍♂️︙ ❬ م2 ❭ اوامر الادمنيه ⇊
+🦸🏻︙❬ م3 ❭ اوامر المدراء ⇊
+👷🏻‍♂️︙ ❬ م4 ❭ اوامر المنشئين ⇊
+🤴🏻︙ ❬ م5 ❭ اوامر المالكين ⇊
+🎭︙ ❬ م6 ❭ اوامر التسليه ⇊
+🧑🏼‍💻︙ ❬ اوامر المطور  ❭ اوامر المطور ⇊
+༺┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉༻
+⤵️︙قم باختيار الاوامر من الازرار
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -27334,22 +27352,22 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -27455,25 +27473,25 @@ local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '{ 𝙤𝙣𝙚 }', data = IdUser..'/help1'}, {text = '{ 𝙩𝙬𝙤 }', data = IdUser..'/help2'}, 
+{text = '🔰︙اوامر الحمايه', data = IdUser..'/help1'}, {text = '👮🏻‍♂️︙اوامر الادمنيه', data = IdUser..'/help2'}, 
 },
 {
-{text = '{ 𝙩𝙝𝙧𝙚𝙚 }', data = IdUser..'/help3'}, {text = '{ 𝙛𝙤𝙪𝙧 }', data = IdUser..'/help4'}, 
+{text = '👨🏻‍💼︙اوامر المدراء', data = IdUser..'/help3'}, {text = '👷🏻‍♂️︙اوامر المنشئين', data = IdUser..'/help4'}, 
 },
 {
-{text = '{ 𝙛𝙞𝙫𝙚 }', data = IdUser..'/help5'}, {text = '{ 𝙨𝙞𝙭 }', data = IdUser..'/helpp6'}, 
+{text = '🤴🏻︙اوامر المالكين', data = IdUser..'/help5'}, {text = '🧑🏼‍💻︙اوامر المطور', data = IdUser..'/helpp6'}, 
 },
 {
-{text = '{ اوامر المطور }', data = IdUser..'/helpsudo'},{text = '{ الالعاب }', data = IdUser..'/help6'}, 
+{text = '🔃︙التفعيل والتعطيل', data = IdUser..'/helpsudo'},{text = '🎮︙الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = '{ اوامر التسليه }', data = IdUser..'/helpts'},
+{text = '🎭︙اوامر تسليه', data = IdUser..'/helpts'},
 },
 {
-{text = '{ القفل / الفتح }', data = IdUser..'/NoNextSeting'}, {text = '{ التعطيل / التفعيل }', data = IdUser..'/listallAddorrem'}, 
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
+{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 ??𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
 },
 }
 }
@@ -28508,7 +28526,7 @@ data = {
 {text = 'تعطيل تنبيه الاسماء', data = IdUser..'/'.. 'unmute_namemy'},{text = 'تفعيل تنبيه الاسماء', data = IdUser..'/'.. 'mute_namemy'},
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '- اخفاء الامر ', data ='/delAmr'}
@@ -28568,7 +28586,7 @@ data = {
 {text = '- الرجوع ... ', data =IdUser..'/'.. 'NoNextSeting'}
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '- اخفاء الامر ', data ='/delAmr'}
@@ -28637,7 +28655,7 @@ data = {
 {text = '- التالي ... ', data =IdUser..'/'.. 'NextSeting'}
 },
 {
-{text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},
+{text = '🛡︙القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '- اخفاء الامر ', data ='/delAmr'}
