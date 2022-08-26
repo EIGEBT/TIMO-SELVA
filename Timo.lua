@@ -790,7 +790,7 @@ MsgText = 'مــلــک 💯😻'
 elseif tonumber(Message) < 9500 then 
 MsgText = 'اسطورة التفاعل❤️'
 elseif tonumber(Message) < 10000000000 then 
-MsgText = 'ملك التلكرام 💖'
+MsgText = 'غبي التلكرام 💖'
 end 
 return MsgText 
 end
@@ -822,7 +822,7 @@ MsgText = 'مــلــک 💯😻'
 elseif tonumber(Message) < 3600 then 
 MsgText = 'اسطورة التفاعل❤️' 
 elseif tonumber(Message) < 10000000000 then 
-MsgText = 'ملك التلكرام 💖'  
+MsgText = 'غبي التلكرام 💖'  
 end 
 return MsgText 
 end
@@ -4873,7 +4873,7 @@ if Redis:get(Timo.."kit_defullt:") ~= "false" then
 "من محبّين الليل أو الصبح؟ ", 
 "حيوانك المفضل؟ ", 
 "كلمة غريبة ومعناها؟ ", 
-"كم تحتاج من وقت لتثق بشخص؟ ", 
+"كم تححمار من وقت لتثق بشخص؟ ", 
 "اشياء نفسك تجربها؟ ", 
 "يومك ضاع على؟ ", 
 "كل شيء يهون الا ؟ ", 
@@ -4882,7 +4882,7 @@ if Redis:get(Timo.."kit_defullt:") ~= "false" then
 "أقدم شيء محتفظ فيه من صغرك؟ ", 
 "كلمات ماتستغني عنها بسوالفك؟ ", 
 "وش الحب بنظرك؟ ", 
-"حب التملك في شخصِيـتك ولا ؟ ", 
+"حب التغبي في شخصِيـتك ولا ؟ ", 
 "تخطط للمستقبل ولا ؟ ", 
 "موقف محرج ماتنساه ؟ ", 
 "من طلاسم لهجتكم ؟ ", 
@@ -8735,76 +8735,52 @@ Redis:srem(Timo.."Special:Group"..msg_chat_id,Message_Reply.sender_id.user_id)
 return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من المميزبن ").Reply,"md",true)  
 end
 end
-if TextMsg == "مطي" then
+if TextMsg == "كلب" then
 if not Redis:sismember(Timo.."kholat:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم مطي بنجاح\n◍ تمت ازالته من قائمه المطايه 🦓😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم كلب بنجاح\n◍ تمت ازالته من قائمه الكلاب😹 ").Reply,"md",true)  
 else
 Redis:srem(Timo.."kholat:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم مطي بنجاح\n◍ تمت ازالته من قائمه المطايه 🦓😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم كلب بنجاح\n◍ تمت ازالته من قائمه الكلاب 🦓😹 ").Reply,"md",true)  
 end
 end
-if TextMsg == "تاج" then
+if TextMsg == "حمار" then
 if not Redis:sismember(Timo.."wtka:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل العضو المهتلف\n◍ من قائمة ألتـ👑ـاج بنجاح 😹💔 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من الحمير 😹💔 ").Reply,"md",true)  
 else
 Redis:srem(Timo.."wtka:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل العضو المهتلف\n◍ من قائمة ألتـ👑ـاج بنجاح 😹💔 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من الحمير 😹💔 ").Reply,"md",true)  
 end
 end
-if TextMsg == "ملك" then
+if TextMsg == "غبي" then
 if not Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل العضو المهتلف\n◍ من قائمة ألملـ👑ـوك بنجاح 😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍تم تنزيله من الاغبياء 😹 ").Reply,"md",true)  
 else
 Redis:srem(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل العضو المهتلف\n◍ من قائمة ألملـ👑ـوك بنجاح 😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ ◍تم تنزيله من الاغبياء 😹 ").Reply,"md",true)  
 end
 end
-if TextMsg == "ملكه" then
+if TextMsg == "وتكه" then
 if not Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل الجكمه🤵‍♀\n◍ من قائمة ألملكـ👑ـات بنجاح 😹?? ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍تم تنزيله من الوتكات").Reply,"md",true)  
 else
 Redis:srem(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل الجكمه🤵‍♀\n◍ من قائمة ألملكـ👑ـات بنجاح 😹?? ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ ◍تم تنزيله من الوتكات😹?? ").Reply,"md",true)  
 end
 end
-if TextMsg == "جلب" then
-if not Redis:sismember(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم جلب 🐶بنجاح\n◍ تمت إزالته من قائمه الجلاب🐕😹 ").Reply,"md",true)  
-else
-Redis:srem(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم جلب 🐶بنجاح\n◍ تمت إزالته من قائمه الجلاب🐕😹 ").Reply,"md",true)  
-end
-end
-if TextMsg == "طامس" then
-if not Redis:sismember(Timo.."mar:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من الطامسين👏😹 ").Reply,"md",true)  
-else
-Redis:srem(Timo.."mar:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من الطامسين👏😹 ").Reply,"md",true)  
-end
-end
-if TextMsg == "لوكي" then
+if TextMsg == "خنزير" then
 if not Redis:sismember(Timo.."smb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من اللوكيه😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من الخنزيره😹 ").Reply,"md",true)  
 else
 Redis:srem(Timo.."smb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من اللوكيه😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيله من الخنزيره😹 ").Reply,"md",true)  
 end
 end
-if TextMsg == "اثول" then
-if not Redis:sismember(Timo.."2rd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل العضو من ثولان الجروب\n◍ تمت الزاله من قامة الثولان😹 ").Reply,"md",true)  
-else
-Redis:srem(Timo.."2rd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل العضو من ثولان الجروب\n◍ تمت الزاله من قامة الثولان😹 ").Reply,"md",true)  
-end
-end
-if TextMsg == "زاحف" then
+if TextMsg == "مزه" then
 if not Redis:sismember(Timo.."3ra:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم زاحف بنجاح\n◍ تم ازالته من قائمه الزواحف🐊😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم مزه بنجاح\n◍ تم ازالته من قائمه الزواحف🐊😹 ").Reply,"md",true)  
 else
 Redis:srem(Timo.."3ra:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم زاحف بنجاح\n◍ تم ازالته من قائمه الزواحف🐊😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم تنزيل المتهم مزه بنجاح\n◍ تم ازالته من قائمه الزواحف🐊😹 ").Reply,"md",true)  
 end
 end
 if TextMsg == "غبي" then
@@ -9343,121 +9319,82 @@ Redis:sadd(Timo.."Special:Group"..msg_chat_id,Message_Reply.sender_id.user_id)
 return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم ترقيته مميز  ").Reply,"md",true)  
 end
 end
-if TextMsg == "مطي" then
+if TextMsg == "كلب" then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(Timo.."kholat:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع المتهم إلى مطي ??بنجاح\n◍ تمت إضافته إلى قائمه المطايه😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه كلب ينجاح 😹 ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."kholat:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع المتهم إلى مطي ??بنجاح\n◍ تمت إضافته إلى قائمه المطايه😹  ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه كلب بنجاح😹  ").Reply,"md",true)  
 end
 end
-if TextMsg == "تاج" then
+if TextMsg == "حمار" then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(Timo.."wtka:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع صديقك تـ👑ـاج بنجاح\n◍ اصبح خط احمر ❗️ ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه حمار بنجاح❗️ ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."wtka:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع صديقك تـ👑ـاج بنجاح\n◍ اصبح خط احمر ❗️  ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍  تم رفعه حمار بنجاح❗️  ").Reply,"md",true)  
 end
 end
-if TextMsg == "ملك" then
+if TextMsg == "غبي" then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع صديقك ملـ👑ـك بنجاح\n◍ اصبح ملك الجروب 👨‍🎨😍❗️ ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه غبي بنجاح👨‍🎨😍❗️ ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع صديقك ملـ👑ـك بنجاح\n◍ اصبح ملك الجروب 👨‍🎨😍❗️  ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه غبي بنجاح👨‍🎨😍❗️  ").Reply,"md",true)  
 end
 end
-if TextMsg == "ملكه" then
+if TextMsg == "وتكه" then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع صديقتك ملكـ🥰ــه بنجاح\n◍ اصبحت ملكة الجروب 💆‍♀😍❗️ ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه وتكه بنجاح 💆‍♀😍❗️ ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."twhd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع صديقتك ملكـ🥰ــه بنجاح\n◍ اصبحت ملكة الجروب 💆‍♀😍❗️  ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه وتكه بنجاح 💆‍♀😍❗️   ").Reply,"md",true)  
 end
 end
-if TextMsg == "جلب" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع المتهم إلى جلب 🐕 بنجاح\n◍ تمت إضافته إلى قائمه الجلاب😹 ").Reply,"md",true)  
-else
-Redis:sadd(Timo.."klb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع المتهم إلى جلب 🐕 بنجاح\n◍ تمت إضافته إلى قائمه الجلاب😹  ").Reply,"md",true)  
-end
-end
-if TextMsg == "طامس" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."mar:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع المتهم طامس الجروب ").Reply,"md",true)  
-else
-Redis:sadd(Timo.."mar:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع المتهم طامس الجروب  ").Reply,"md",true)  
-end
-end
-if TextMsg == "لوكي" then
+if TextMsg == "خنزير" then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(Timo.."smb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه ضمن اللوكيه👨‍🦯😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه خنزير بنجاح👨‍🦯😹 ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."smb:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه ضمن اللوكيه👨‍🦯😹  ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه خنزير بنجاح👨‍🦯😹  ").Reply,"md",true)  
 end
 end
-if TextMsg == "اثول" then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if Redis:sismember(Timo.."2rd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع العضو اثول الگروب🤪بنجاح\n◍ تمت إضافته إلى قائمه الثولان😹 ").Reply,"md",true)  
-else
-Redis:sadd(Timo.."2rd:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفع العضو اثول الگروب🤪بنجاح\n◍ تمت إضافته إلى قائمه الثولان😹  ").Reply,"md",true)  
-end
-end
-if TextMsg == "زاحف" then
+if TextMsg == "مزه" then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(Timo.."3ra:Group"..msg_chat_id,Message_Reply.sender_id.user_id) then
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه زاحف😹 بنجاح\n◍ تم اضافته الى قائمه الزواحف🐊😹 ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه مزه بنجاح 🐊😹 ").Reply,"md",true)  
 else
 Redis:sadd(Timo.."3ra:Group"..msg_chat_id,Message_Reply.sender_id.user_id) 
-return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه زاحف😹 بنجاح\n◍ تم اضافته الى قائمه الزواحف🐊😹  ").Reply,"md",true)  
+return send(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender_id.user_id,"◍ تم رفعه مزه بنجاح 🐊😹  ").Reply,"md",true)  
 end
 end
 if TextMsg == "غبي" then
@@ -10259,7 +10196,7 @@ type = 'inline',
 data = {{{text = '- مسح المميزين', data = msg.sender_id.user_id..'/DelSpecial'},},}}
 return send(msg_chat_id, msg_id, ListMembers, 'md')
 end
-if text == 'المطايه' then
+if text == 'الكلاب' then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
@@ -10283,7 +10220,7 @@ type = 'inline',
 data = {{{text = '- مسح المطايه', data = msg.sender_id.user_id..'/Delkholat'},},}}
 return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
-if text == 'قائمه التاج' then
+if text == 'قائمه الحمار' then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
@@ -10291,9 +10228,9 @@ return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة 
 end
 local Info_Members = Redis:smembers(Timo.."wtka:Group"..msg_chat_id) 
 if #Info_Members == 0 then
-return send(msg_chat_id,msg_id,"◍ لا يوجد تاج , ","md",true)  
+return send(msg_chat_id,msg_id,"◍ لا يوجد حمار , ","md",true)  
 end
-ListMembers = '\n*◍ قائمه التاج  \n • — — — — — — — — — •*\n'
+ListMembers = '\n*◍ قائمه الحمار  \n • — — — — — — — — — •*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = bot.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -10304,10 +10241,10 @@ end
 end
 local reply_markup = bot.replyMarkup{
 type = 'inline',
-data = {{{text = '- مسح التاج', data = msg.sender_id.user_id..'/Delwtk'},},}}
+data = {{{text = '- مسح الحمار', data = msg.sender_id.user_id..'/Delwtk'},},}}
 return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
-if text == 'الملوك' then
+if text == 'المزز' then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
@@ -10315,9 +10252,9 @@ return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة 
 end
 local Info_Members = Redis:smembers(Timo.."twhd:Group"..msg_chat_id) 
 if #Info_Members == 0 then
-return send(msg_chat_id,msg_id,"◍ لا يوجد ملوك حاليا , ","md",true)  
+return send(msg_chat_id,msg_id,"◍ لا يوجد مزز حاليا , ","md",true)  
 end
-ListMembers = '\n*◍ قائمه الملوك  \n • — — — — — — — — — •*\n'
+ListMembers = '\n*◍ قائمه المزز  \n • — — — — — — — — — •*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = bot.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -10329,54 +10266,6 @@ end
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {{{text = '- مسح الملوك', data = msg.sender_id.user_id..'/Deltwhd'},},}}
-return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الجلاب' then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."klb:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return send(msg_chat_id,msg_id,"◍ لا يوجد جلاب حاليا , ","md",true)  
-end
-ListMembers = '\n*◍ قائمه الجلاب  \n • — — — — — — — — — •*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = bot.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {{{text = '- مسح الجلاب', data = msg.sender_id.user_id..'/Delklb'},},}}
-return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الطامسين' then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."mar:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return send(msg_chat_id,msg_id,"◍ لا يوجد طامسين حاليا , ","md",true)  
-end
-ListMembers = '\n*◍ قائمه الطامسين  \n • — — — — — — — — — •*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = bot.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {{{text = '- مسح الطامسين', data = msg.sender_id.user_id..'/Delmar'},},}}
 return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'الزواحف' then
@@ -10403,7 +10292,7 @@ type = 'inline',
 data = {{{text = '- مسح الزواحف', data = msg.sender_id.user_id..'/Del3ra'},},}}
 return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
-if text == 'اللوكيه' then
+if text == 'الخنازير' then
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(Timo.."ch:admin")
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
@@ -10411,9 +10300,9 @@ return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة 
 end
 local Info_Members = Redis:smembers(Timo.."smb:Group"..msg_chat_id) 
 if #Info_Members == 0 then
-return send(msg_chat_id,msg_id,"◍ لا يوجد لوكيه حاليا , ","md",true)  
+return send(msg_chat_id,msg_id,"◍ لا يوجد خنزيره حاليا , ","md",true)  
 end
-ListMembers = '\n*◍ قائمه اللوكيه  \n • — — — — — — — — — •*\n'
+ListMembers = '\n*◍ قائمه الخنزيره  \n • — — — — — — — — — •*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = bot.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -10424,31 +10313,7 @@ end
 end
 local reply_markup = bot.replyMarkup{
 type = 'inline',
-data = {{{text = '- مسح اللوكيه', data = msg.sender_id.user_id..'/Delsmb'},},}}
-return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
-end
-if text == 'الثولان' then
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(Timo.."ch:admin")
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Info_Members = Redis:smembers(Timo.."2rd:Group"..msg_chat_id) 
-if #Info_Members == 0 then
-return send(msg_chat_id,msg_id,"◍ لا يوجد ثولان حاليا , ","md",true)  
-end
-ListMembers = '\n*◍ قائمه الثولان  \n • — — — — — — — — — •*\n'
-for k, v in pairs(Info_Members) do
-local UserInfo = bot.getUser(v)
-if UserInfo and UserInfo.username and UserInfo.username ~= "" then
-ListMembers = ListMembers.."*"..k.." - *[@"..UserInfo.username.."](tg://user?id="..v..")\n"
-else
-ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
-end
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {{{text = '- مسح الثولان', data = msg.sender_id.user_id..'/Del2rd'},},}}
+data = {{{text = '- مسح الخنزيره', data = msg.sender_id.user_id..'/Delsmb'},},}}
 return send(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if text == 'الاغبياء' then
@@ -10461,7 +10326,7 @@ local Info_Members = Redis:smembers(Timo.."8by:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"◍ لا يوجد اغبياء حاليا , ","md",true)  
 end
-ListMembers = '\n*◍ قائمه الاغبيه  \n • — — — — — — — — — •*\n'
+ListMembers = '\n*◍ قائمه الاوتكه  \n • — — — — — — — — — •*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = bot.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -16427,7 +16292,7 @@ MsgText = 'مــلــک 💯😻'
 elseif tonumber(Message) < 3600 then 
 MsgText = 'اسطورة التفاعل❤️' 
 elseif tonumber(Message) < 10000000000 then 
-MsgText = 'ملك التلكرام 💖'  
+MsgText = 'غبي التلكرام 💖'  
 end 
 
 return send(msg_chat_id,msg_id,"◍ تفاعل الجروب : "..MsgText, "md")
@@ -18508,7 +18373,7 @@ if tonumber(Message_Reply.sender_id.user_id) == tonumber(msg.sender_id.user_id) 
 return send(msg_chat_id,msg_id,"انت اثول حبيبي تريد تزوج نفسك ؟ هتتكاثر ازاي طيب ؟!!","md",true)
 end
 if tonumber(Message_Reply.sender_id.user_id) == tonumber(Timo) then
-return send(msg_chat_id,msg_id,"ابعد عني يحيحان ملكقتش غيري","md",true)
+return send(msg_chat_id,msg_id,"ابعد عني يحيحان غبيقتش غيري","md",true)
 end
 if Redis:sismember(Timo..msg_chat_id.."zwgat:",Message_Reply.sender_id.user_id) then
 local rd_mtzwga = {
@@ -19727,9 +19592,6 @@ keyboard.inline_keyboard = {
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 elseif text == 'بنك' or text == 'البنك' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
 if ChannelJoinch(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
 return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
@@ -19743,9 +19605,6 @@ type = 'inline',
 data = {
 {
 {text = 'معلومات اللعبه 🏏', data = msg.sender_id.user_id..'/bank9'},{text = 'اوامر اللعبه 🪁', data = msg.sender_id.user_id..'/bank8'}, 
-},
-{
-{text = 'توب الحراميه 🥷', data = msg.sender_id.user_id..'/topzrf'},{text = 'توب الفلوس 💸', data = msg.sender_id.user_id..'/topmon'},
 },
 {
 {text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
@@ -19857,470 +19716,84 @@ data = {
 }
 }
 local TextHelp = [[*
-◍ اوامر المطور الاساسي  
+🏅 اوامر المطور الاساسي  
 • — — — — 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚— — — — — •
-◍ تفعيل  ←  تعطيل
-◍ رفع  تنزيل ← مطور اساسي
-◍ المطورين الاساسيين
-◍ مسح المطورين الاساسيين
-◍ رفع  تنزيل ← مطور ثانوي
-◍ المطورين الثانويين  
-◍ مسح المطورين الثانويين
-◍ رفع  تنزيل ← مطور
-◍ المطورين ← مسح المطورين
-◍ تغيير المطور الاساسي
-• — — — — — — — — — •
-◍ تفعيل الوضع المدفوع + الايدي 
-◍ الغاء الوضع المدفوع + الايدي
-◍ حظر جروب + { الايدي }
-◍ غادر ← + { الايدي }
-◍ اسم بوتك + غادر بالجروب
-◍ تفعيل تعطيل الاشتراك الاجباري
-◍ الاشتراك الاجباري
-◍ تغيير الاشتراك الاجباري
-◍ تفعيل تعطيل الاشتراك الاجباري للجروب
-◍ الاشتراك الاجباري للجروب
-◍ تعيين عدد الاعضاء + {العدد}
-• — — — — — — — — — •
-◍ حظر عام ، الغاء العام
-◍ قائمه العام ، مسح قائمه العام
-◍ كتم عام ، الغاء كتم عام
-◍ المكتومين عام
-◍ مسح المكتومين عام
-• — — — — — — — — — •
-◍ تغيير ، مسح ←{ اسم البوت }
-◍ ضع صوره للترحيب 
-◍ الاحصائيات
-◍ ذيع + ايدي الجروب بالرد
-◍ اذاعه ، اذاعه خاص
-◍ اذاعه بالتوجيه ، اذاعه بالتثبيت
-◍ اذاعه خاص بالتوجيه
-• — — — — — — — — — •
-◍ تفعيل تعطيل جلب النسخه التلقائيه
-◍ جلب نسخه احتياطيه
-◍ رفع النسخه الاحتياطيه بالرد
-◍ رفع نسخه  سيلفا  بالرد
-◍ جلب نسخه الردود 
-◍ رفع نسخه الردود بالرد
-◍ معلومات التنصيب
-• — — — — — — — — — •
-◍ تعيين ، مسح ← { الايدي عام }
-◍ اضف ، مسح ← {رد عام}
-◍ اضف ، مسح ← {رد عام متعدد}
-◍ ضع ، مسح ← { الترحيب عام } 
-◍ ضع ، مسح ← { كليشه المطور }
-◍ الردود العامه ، مسح الردود العامه
-◍ اضف مسح صوت عام
-◍ الصوتيات العامه 
-◍ مسح الصوتيات العامه
-◍ منع عام ، الغاء منع عام
-◍ قائمه المنع عام
-◍ مسح قائمه المنع عام
-• — — — — — — — — — •
-◍ اضف مسح ← سؤال
-◍ الاسئله المضافه
-◍ مسح الاسئله المضافه
-◍ اضف مسح ← لغز 
-◍ الالغاز ~ مسح الالغاز
-◍ اضف مسح ← سؤال كت 
-◍ اسئله كت
-◍ اضف اسئله كت
-◍ مسح اسئله كت
-◍ اضف موسيقى 
-◍ مسح موسيقى بالرد 
-◍ قائمة الموسيقى 
-◍ مسح قائمه الموسيقى 
-• — — — — — — — — — •
-◍ تفعيل ، تعطيل ← الاوامر التاليه↓
-◍ البوت الخدمي ، المغادرة ، الاذاعه
-◍ التواصل ، الاحصائيات
-◍ ملف ← { اسم الملف }
-• — — — — — — — — — •
-◍ مسح جميع الملفات 
-◍ المتجر ، الملفات
-◍ تحديث ، تحديث السورس
-• — — — — — — — — — •
-◍ اوامر المطور في البوت
-• — — — — — — — — — •
-◍ رفع، تنزيل ← { مالك }
-◍ المالكين ، مسح المالكين
-◍ تنزيل جميع الرتب
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-elseif text == 'اوامر التسليه' then
-if not msg.Dev then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-︙اوامر التسليه كالاتي: 
-• — — — — — 𝚂𝙴𝙻𝚅𝙰— — — — •
-◍ الامر ، تفعيل ، تعطيل  ← { الامر }
-◍ غنيلي ، ريمكس ، اغنيه ، شعر
-◍ صوره ،  متحركه
-◍ انمي ، ميمز
-◍ مسلسل ، فلم
-◍ حساب العمر( احسب + تاريخ الميلاد)
-◍ معنى اسم + الاسم
-• — — — — — — — — — •
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-elseif text == 'م1' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-◍ اوامر الحمايه كالاتي ...
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ قفل ، فتح ← الامر 
-◍ تستطيع قفل حمايه كما يلي ...
-◍ ← { بالتقييد ، بالطرد ، بالكتم }
-• — — — — — — — — — •
-◍ الكل ~ الدخول
-◍ الروابط ~ المعرف
-◍ التاك ~ الشارحه
-◍ التعديل ~ تعديل الميديا
-◍ المتحركه ~ الملفات
-◍ الصور ~ الفيديو 
-• — — — — — — — — — •
-◍ الماركداون ~ البوتات
-◍ التكرار ~ الكلايش
-◍ السيلفي ~ الملصقات
-◍ الانلاين ~  الدردشه
-• — — — — — — — — — •
-◍ التوجيه ~ الاغاني
-◍ الصوت ~ الجهات
-◍ الاشعارات ~ التثبيت 
-◍ الوسائط ~ التفليش
-◍ وسائط المميزين
-◍ الفشار ~ الفارسيه
-◍ الإنكليزيه
-◍ الكفر ~ الاباحي
-• — — — — — — — — — •
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-elseif text == 'م2' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-◍ اوامر ادمنية الجروب ...
-• — — — —𝚂𝙴𝙻𝚅𝙰 — — — — — •
-◍ رفع، تنزيل ← مميز
-◍ المميزين ← مسح المميزين 
-◍ رفع الادمنيه
-◍ تاك ، تاك للكل ، الجروب
-◍ منع ، الغاء منع
-• — — — — — — — — — •
-◍ الاوامر التالية ← {بالرد ، بالمعرف}
-◍ حظر ، طرد ← الغاء حظر 
-◍ كتم ← الغاء كتم
-◍ تقييد ← الغاء تقييد
-◍ كشف ، رفع ← القيود
-• — — — — — — — — — •
-◍ عرض القوائم كما يلي ...
-• — — — — — — — — — •
-◍ المنشئين الاساسيين ، المنشئين 
-◍ المدراء ، الادمنيه ، المميزين
-◍ المشرفين ، المكتومين
-◍ قائمه المنع
-• — — — — — — — — — •
-◍ تثبيت ، الغاء تثبيت
-◍ الرابط ، الاعدادات ، الحمايه
-◍ الترحيب ، القوانين
-◍ ضع رتبه  ← { اسم الرتبه } 
-◍ تحكم ← {بالرد ، بالمعرف}
-• — — — — — — — — — •
-◍ تفعيل ، تعطيل ← الاوامر التاليه :
-◍ الترحيب ، الرابط 
-◍ ردود البوت ، الالعاب
-◍ اطردني ، التسليه
-• — — — — — — — — — •
-◍ مسح ← الاوامر التاليه
-◍ القوائم ، قائمه المنع ، المميزين
-◍ الرابط ، القوانين ، الصوره
-◍ مسح ← { عدد }
-◍ مسح ← { بالرد }
-• — — — — — — — — — •
-◍ اوامر الاعضاء والادمنيه 
-• — — — — — — — — — •
-◍ ايدي ، ايدي بالرد ، رسائلي
-◍ تفاعلي ، لقبي ، بايو ، ترند
-◍ جهاتي ، تعديلاتي ، نقاطي
-◍ بيع نقاطي + العدد
-◍ مسح نقاطي
-◍ كول + الكلمه
-◍ زواج 
-◍ الوقت ، الساعه ، التاريخ
-◍ الصوتيات ، الصوتيات العامه
-◍ زخرفه ، تحويل الصيغ ، غنيلي
-◍ همسه ، اسم برجك ، صورتي
-◍ صلاحياتي ، رتبتي
-◍ صلاحياته ← {بالرد ، بالمعرف}
-◍ الرتبه ← {بالرد ، بالمعرف}
-◍ التفاعل ← {بالرد ، بالمعرف}
-◍ كشف ← {بالرد ، بالمعرف}
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-elseif text == 'م3' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-◍ اوامر المدراء في الجروب
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ رفع ، تنزيل ← ادمن
-◍ الادمنيه ← مسح الادمنيه
-◍ تنزيل الكل ← {بالرد ، بالمعرف}
-◍ ️︙كشف ، طرد ، قفل ← البوتات
-◍ قفل البوتات ← بالطرد
-◍ فحص ← البوت
-◍ طرد ← المحذوفين 
-◍ قفل فتح ← ارسال القناة
-• — — — — — — — — — •
-◍ لتغيير رد الرتب في البوت
-• — — — — — — — — — •
-◍ تغيير رد ← {اسم الرتبه والنص} 
-◍ المطور ، المالك ، المنشئ الاساسي
-◍ المنشئ ، المدير ، الادمن
-◍ المميز ، العضو
-◍ مسح رد ← { اسم الرتبه }
-• — — — — — — — — — •
-◍ وضع الرتب ← { بالرد ، بالمعرف}
-◍ ضع رتبه ← { اسم الرتبه }
-◍ مسح رتبه ← { بالرد ، بالمعرف}
-• — — — — — — — — — •
-◍ وضع ، ضع ← الاوامر التاليه
-◍ اسم + اسم الجروب
-◍ رابط ، صوره
-◍ قوانين ، وصف ،الترحيب 
-• — — — — — — — — — •
-◍ تفعيل ، تعطيل ← الاوامر التاليه :
-◍ الايدي ، الايدي بالصوره 
-◍ ايدي العضو ، البايو
-◍ صورتي ، اسمي
-◍ الردود ، الابراج
-◍ غنيلي ، الصيغ ، كول
-◍ تنبيه الاسماء ، الصوتيات 
-◍ الصوتيات العامه
-• — — — — — — — — — •
-◍ مسح ← + { الامر } 
-◍ المحظورين ، المطرودين
-◍ المكتومين ← المقيدين
-• — — — — — — — — — •
-◍ ترتيب الاوامر ← استعاده الاوامر
-◍ اضف ، مسح ← { رد }
-◍ الردود ، مسح الردود
-◍ اضف ، مسح ← { رد متعدد}
-◍ الردود المتعدده
-◍ مسح الردود المتعدده
-◍ تاك عام ، all
-◍ الميديا ← امسح
-◍ اضف رسائل + العدد { بالرد}
-◍ اضف نقاط + العدد { بالرد }
-◍ اضف تعديلات + العدد {بالرد}
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-elseif text == 'م4' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoinch(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-if ChannelJoin(msg) == false then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-◍ اوامر المنشئ الاساسي
-• — — — — —𝚂𝙴𝙻𝚅𝙰 — — — — •
-◍ رفع ، تنزيل ←{ منشئ }
-◍ المنشئين ، مسح المنشئين
-◍ رفع ، تنزيل ←{ مشرف }
-◍ ضع لقب + اللقب ← { بالرد }
-◍ صلاحيات الجروب
-◍ مسح نقاطه ، رسائله ← {بالرد} 
-◍ تفعيل ، تعطيل ← منع التصفيه
-• — — — — — — — — — •
-◍ اوامر المنشئ الجروب
-• — — — — — — — — — •
-◍ رفع ، تنزيل ← { مدير }
-◍ المدراء ، مسح المدراء
-◍ تغيير ، مسح ←{ الايدي }
-◍ تعيين ، مسح ←{ الايدي }
-◍ اضف ، مسح ← { امر }
-◍ الاوامر المضافه ، مسح الاوامر المضافه
-◍ ضع التكرار ← { عدد }
-◍ تفعيل الاوامر ← { اوامر اساسيه }
-• — — — — — — — — — •
-◍ تفعيل ، تعطيل ← الاوامر التاليه :
-◍ الردود العامه ، الطرد ، الحظر
-◍ الرفع ، التاك ، نزلني ، ضع رتبه 
-◍ تاك عام ، المسح التلقائي
-◍ ضع عدد المسح + { عدد }
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-elseif text == 'م5' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-
-if ChannelJoin(msg) == false then  
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-◍ اوامر مالك الجروب 
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ رفع ، تنزيل ←{ مالك }
-◍ المالكين ، مسح المالكين
- ◍ تنزيل جميع الرتب
-• — — — — — — — — — •
-◍ اوامر المالكين 
-• — — — — — — — — — •
-◍ رفع ، تنزيل ← { منشئ اساسي }
-◍ المنشئين الاساسيين،
-◍ مسح المنشئين الاساسيين
-*]]
-return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
-elseif text == 'م6' then
-if not msg.Admin then
-return send(msg_chat_id,msg_id,'\n*◍ هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-
-if ChannelJoin(msg) == false then  
-local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Channel:Join:Name'), url = 't.me/'..Redis:get(Timo..'Channel:Join')}, },}}
-return send(msg.chat_id,msg.id,'*\n◍  عليك الاشتراك في قناة البوت لأستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
-}
-}
-local TextHelp = [[*
-◍ اوامر التسلية
-• — — — — — — — — — •
-◍ رفع ، تنزيل ← الاوامر التاليه ↓
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ غبي 
-◍ مطي
-◍ اثول
-◍ طامس
-◍ تاج
-◍ ملك
-◍ ملكه
-◍ جلب
-◍ لوكي
-◍ زاحف
-• — — — — — — — — — •
-◍ اوامر التاك 
-• — — — — — — — — — •
-◍ قائمه التاج ~ المـلــوك
-◍ المـلـكات ~ الطامسين
-◍ الثولان ~  الجــلاب
-◍ المطايــه ~  الصخول
-◍ اللوكيــه ~  الاغبيـاء
-• — — — — — — — — — •
-◍ اوامر الترفيه 
-• — — — — — — — — — •
-◍ زخرفه + النص
-◍ مثال زخرفه سيلفا
-◍ احسب + عمرك
-◍ مثال احسب 2001/8/5
-◍ معني + الاسم 
-◍ مثال معني سيلفا
-• — — — — — — — — — •
-◍ نسبه الحب/ الكره
-◍ نسبه الرجوله/ الانوثه 
-◍ نسبه الذكـــــاء/ الغباء 
-• — — — — — — — — — •
-◍ الاوامــر بالـــرد  ⇣ 
-• — — — — — — — — — •
-◍ زواج ~ طلاك
+🚀 تفعيل  ←  تعطيل
+🏓 رفع  تنزيل ← مطور اساسي
+🎯 المطورين الاساسيين
+🎪 مسح المطورين الاساسيين
+🚦 رفع  تنزيل ← مطور ثانوي
+⛓ المطورين الثانويين  
+🛡 مسح المطورين الثانويين
+⚙ رفع  تنزيل ← مطور
+🧿 المطورين ← مسح المطورين
+🎉 تغيير المطور الاساسي
+🪅 تفعيل الوضع المدفوع + الايدي 
+🎈 الغاء الوضع المدفوع + الايدي
+🖇 حظر جروب + { الايدي }
+📌 غادر ← + { الايدي }
+🖊 اسم بوتك + غادر بالجروب
+🔐 تفعيل تعطيل الاشتراك الاجباري
+♻️ الاشتراك الاجباري
+🔰 تغيير الاشتراك الاجباري
+🔱 تفعيل تعطيل الاشتراك الاجباري للجروب
+🌀 الاشتراك الاجباري للجروب
+🌐 تعيين عدد الاعضاء + {العدد}
+🎶 حظر عام ، الغاء العام
+🔔 قائمه العام ، مسح قائمه العام
+🔕 كتم عام ، الغاء كتم عام
+💤 المكتومين عام
+⚠️ مسح المكتومين عام
+🚸 تغيير ، مسح ←{ اسم البوت }
+💠 ضع صوره للترحيب 
+📉 الاحصائيات
+📯 ذيع + ايدي الجروب بالرد
+🔑 اذاعه ، اذاعه خاص
+🗝 اذاعه بالتوجيه ، اذاعه بالتثبيت
+🧸 اذاعه خاص بالتوجيه
+💈 تفعيل تعطيل جلب النسخه التلقائيه
+🔩 جلب نسخه احتياطيه
+💰 رفع النسخه الاحتياطيه بالرد
+✈️ رفع نسخه  سيلفا  بالرد
+🚁 جلب نسخه الردود 
+🎷 رفع نسخه الردود بالرد
+🎸 معلومات التنصيب
+🥁 تعيين ، مسح ← { الايدي عام }
+🎬 اضف ، مسح ← {رد عام}
+🏸 اضف ، مسح ← {رد عام متعدد}
+🎱 ضع ، مسح ← { الترحيب عام } 
+🥂 ضع ، مسح ← { كليشه المطور }
+🍭 الردود العامه ، مسح الردود العامه
+🍡 اضف مسح صوت عام
+🍟 الصوتيات العامه 
+🕸 مسح الصوتيات العامه
+🗼 منع عام ، الغاء منع عام
+🚥 قائمه المنع عام
+🗽 مسح قائمه المنع عام
+🏝 اضف مسح ← سؤال
+🎢 الاسئله المضافه
+🏘 مسح الاسئله المضافه
+🛕 اضف مسح ← لغز 
+📱 الالغاز ~ مسح الالغاز
+⌚️ اضف مسح ← سؤال كت 
+📽 اسئله كت
+🔋 اضف اسئله كت
+💎 مسح اسئله كت
+📿 اضف موسيقى 
+🦠 مسح موسيقى بالرد 
+🧬 قائمة الموسيقى 
+📮 مسح قائمه الموسيقى 
+💌 تفعيل ، تعطيل ← الاوامر التاليه↓
+🧧 البوت الخدمي ، المغادرة ، الاذاعه
+🎏 التواصل ، الاحصائيات
+🔎 ملف ← { اسم الملف }
+🏧 مسح جميع الملفات 
+👁‍🗨 المتجر ، الملفات
+🔰 تحديث ، تحديث السورس
+💯 اوامر المطور في البوت
+📝 رفع، تنزيل ← { مالك }
+🗳 المالكين ، مسح المالكين
+🎀 تنزيل جميع الرتب
 *]]
 return send(msg_chat_id,msg_id,TextHelp,"md",false, false, false, false, reply_markup)
 end
@@ -21762,7 +21235,7 @@ return bot.sendText(msg.chat_id,msg.id,"⇜ راتبك بينزل بعد ( 2 د�
 elseif Redis:ttl(Timo.."iiioo" .. msg.sender_id.user_id) >= 60 then
 return bot.sendText(msg.chat_id,msg.id,"⇜ راتبك بينزل بعد ( 1 دقيقة )","md",true)
 end
-local Textinggt = {"كابتن كريم 🚙", "شرطي 👮🏻‍♂️", "بياع حبوب 🍻", "سواق تاكسي 🚕", "قاضي 👨🏻‍⚖️", "نوم 🛌", "مغني 🎤", "كوفيره 💆🏻‍♀️", "ربة منزل 🤷🏻‍♀️", "مربيه اطفال 💁🏻‍♀️", "كهربائي 💡", "نجار ⛏", "متذوق طعام 🍕", "فلاح 👨🏻‍🌾", "كاشير بنده 🙋🏻‍♂️", "ممرض 👨🏻‍⚕️", "مهرج 🤹‍♂️", "عامل توصيل 🚴🏻‍♂️", "عسكري 👮🏻‍♂️", "مهندس 👨🏻‍🔧", "وزير 👨??‍🦳", "محامي ⚖️", "تاجر 💵", "دكتور 👨🏻‍⚕️", "حفار قبور ⚓️", "حلاق ✂️", "إمام مسجد 📿", "صياد 🎣", "خياط 🧵", "طيار 🛩", "مودل 🕴🏻", "ملك 👑", "سباك 🔧", "موزع 🗺", "سكيورتي 👮🏻‍♂️", "معلم شاورما 🌯", "دكتور ولاده 👨🏻‍⚕️", "مذيع 🗣", "عامل مساج 💆🏻‍♂️", "ممثل 🤵🏻", "جزار 🥩", "مدير بنك 💳", "مبرمج 👨🏻‍💻", "رقاصه 💃🏻", "👩🏼‍💻 صحفي", "🥷 حرامي", "🔮 ساحر", "⚽ لاعب️", "🖼 مصور", "☎️ عامل مقسم", "📖 كاتب", "🧪 مخبري",}
+local Textinggt = {"كابتن كريم 🚙", "شرطي 👮🏻‍♂️", "بياع حبوب 🍻", "سواق تاكسي 🚕", "قاضي 👨🏻‍⚖️", "نوم 🛌", "مغني 🎤", "كوفيره 💆🏻‍♀️", "ربة منزل 🤷🏻‍♀️", "مربيه اطفال 💁🏻‍♀️", "كهربائي 💡", "نجار ⛏", "متذوق طعام 🍕", "فلاح 👨🏻‍🌾", "كاشير بنده 🙋🏻‍♂️", "ممرض 👨🏻‍⚕️", "مهرج 🤹‍♂️", "عامل توصيل 🚴🏻‍♂️", "عسكري 👮🏻‍♂️", "مهندس 👨🏻‍🔧", "وزير 👨??‍🦳", "محامي ⚖️", "حمارر 💵", "دكتور 👨🏻‍⚕️", "حفار قبور ⚓️", "حلاق ✂️", "إمام مسجد 📿", "صياد 🎣", "خياط 🧵", "طيار 🛩", "مودل 🕴🏻", "غبي 👑", "سباك 🔧", "موزع 🗺", "سكيورتي 👮🏻‍♂️", "معلم شاورما 🌯", "دكتور ولاده 👨🏻‍⚕️", "مذيع 🗣", "عامل مساج 💆🏻‍♂️", "ممثل 🤵🏻", "جزار 🥩", "مدير بنك 💳", "مبرمج 👨🏻‍💻", "رقاصه 💃🏻", "👩🏼‍💻 صحفي", "🥷 حرامي", "🔮 ساحر", "⚽ لاعب️", "🖼 مصور", "☎️ عامل مقسم", "📖 كاتب", "🧪 مخبري",}
 local Descriptioont = Textinggt[math.random(#Textinggt)]
 local ban = bot.getUser(msg.sender_id.user_id)
 if ban.first_name then
@@ -21880,10 +21353,10 @@ Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 200)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
 bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 200 جنيه 💵\nوظيفتك : محامي ⚖️\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "تاجر 💵" then
+elseif Descriptioont == "حمارر 💵" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 250)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 250 جنيه 💵\nوظيفتك : تاجر ??\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 250 جنيه 💵\nوظيفتك : حمارر ??\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "دكتور 👨" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 250)
@@ -21925,10 +21398,10 @@ Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 160)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
 bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 160 جنيه 💵\nوظيفتك : مودل 🕴\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "ملك 👑" then
+elseif Descriptioont == "غبي 👑" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 500)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 500 جنيه 💵\nوظيفتك : ملك 👑\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 500 جنيه 💵\nوظيفتك : غبي 👑\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "سباك 🔧" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 20)
@@ -22075,7 +21548,7 @@ return bot.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 2 دق
 elseif Redis:ttl(Timo.."iiihoo" .. msg.sender_id.user_id) >= 60 then
 return bot.sendText(msg.chat_id,msg.id,"⇜ كنزك  بينزل بعد ( 1 دقيقة )","md",true)
 end
-local Textinggt = {"ذهب ✨", "فضه 💰", "ورث 💰", "ياقوت ✨", "مرجان ✨🏻‍⚖️", "سبيكة ذهب خالص 💸", "عمله نادره 🔮", "اثار ⚱️🏻‍♀️", "فلوس 💴💸🏻‍♀️", "عمله قيمه💸🏻‍♀️", "كنز مفقود💸", "مجوهرات 💰", "عمله من العصر الفرعوني 🗿", "عمله من الدوله القديمه 🗿🏻‍🌾", "عمله بيتكوين 💶🏻‍♂️", "ممرض 👨🏻‍⚕️", "عمله فضيه نادره‍♂️", "عمله ذهبيه خالصه🏻‍♂️", "كنز علي بابا المفقود 💰🏻‍♂️", "بطاقه ائتمان💰🏻‍🔧", "دولار امريكي 💸??‍🦳", "دولار كندي 💸", "ين يباني 💸", "جنيه بريطاني 💸🏻‍⚕️", "دنانير عراقيه 💸️", "ريال سعودي 💴️", "درهم اماراتي 💴", "فرنك جيبوتي 💲", "اموال مفقوده 💲", "كنز خاص 💲", "صواع ملك مفقود ⚱️🏻", "تاج خاص بملك 👑", "تاج خاص بملك 👑", "اثار تحت المنزل", "جثة فرعون قديمه🏻‍♂️", "تابوت ملك مصري ⚰️", "تاج ملكه مصريه 👑🏻‍⚕️", "مخطوطه لكنز ", "مقبره فرعونيه 💎⚱️⚰️🏻‍♂️", "تمثال رمسيس ⚰️🏻", "كنز سيلفا المفقود 💲", "كنز اطلانطس المفقود 💲", "زئبق احمر 🌡️🏻‍💻", "ياقوت ومرجان 💰🏻", "عمله من العصر الفاطمي 💶", "مخطوطة كنز 📜", "بلوره قديمه 🔮", "كنز تائه 🏛️", "عملات من العصر المملوكي 💲", "كنز نابليون 💲💲", "كنز وخلاص 😂💲💲", "ممتلكات قديمه 💸",}
+local Textinggt = {"ذهب ✨", "فضه 💰", "ورث 💰", "ياقوت ✨", "مرجان ✨🏻‍⚖️", "سبيكة ذهب خالص 💸", "عمله نادره 🔮", "اثار ⚱️🏻‍♀️", "فلوس 💴💸🏻‍♀️", "عمله قيمه💸🏻‍♀️", "كنز مفقود💸", "مجوهرات 💰", "عمله من العصر الفرعوني 🗿", "عمله من الدوله القديمه 🗿🏻‍🌾", "عمله بيتكوين 💶🏻‍♂️", "ممرض 👨🏻‍⚕️", "عمله فضيه نادره‍♂️", "عمله ذهبيه خالصه🏻‍♂️", "كنز علي بابا المفقود 💰🏻‍♂️", "بطاقه ائتمان💰🏻‍🔧", "دولار امريكي 💸??‍🦳", "دولار كندي 💸", "ين يباني 💸", "جنيه بريطاني 💸🏻‍⚕️", "دنانير عراقيه 💸️", "ريال سعودي 💴️", "درهم اماراتي 💴", "فرنك جيبوتي 💲", "اموال مفقوده 💲", "كنز خاص 💲", "صواع غبي مفقود ⚱️🏻", "حمار خاص بغبي 👑", "حمار خاص بغبي 👑", "اثار تحت المنزل", "جثة فرعون قديمه🏻‍♂️", "تابوت غبي مصري ⚰️", "حمار وتكه مصريه 👑🏻‍⚕️", "مخطوطه لكنز ", "مقبره فرعونيه 💎⚱️⚰️🏻‍♂️", "تمثال رمسيس ⚰️🏻", "كنز سيلفا المفقود 💲", "كنز اطلانطس المفقود 💲", "زئبق احمر 🌡️🏻‍💻", "ياقوت ومرجان 💰🏻", "عمله من العصر الفاطمي 💶", "مخطوطة كنز 📜", "بلوره قديمه 🔮", "كنز تائه 🏛️", "عملات من العصر الممخنزير 💲", "كنز نابليون 💲💲", "كنز وخلاص 😂💲💲", "ممتلكات قديمه 💸",}
 local Descriptioont = Textinggt[math.random(#Textinggt)]
 local ban = bot.getUser(msg.sender_id.user_id)
 if ban.first_name then
@@ -22233,20 +21706,20 @@ Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 230)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
 bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 230 جنيه 💵\nكنزك هـو : كنز خاص 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "صواع ملك مفقود ⚱️" then
+elseif Descriptioont == "صواع غبي مفقود ⚱️" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 160)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : صواع ملك مفقود ⚱️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : صواع غبي مفقود ⚱️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "تاج خاص بملك 👑" then
+elseif Descriptioont == "حمار خاص بغبي 👑" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 1500)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 1500 جنيه 💵\nكنزك هـو : تاج خاص بملك 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 1500 جنيه 💵\nكنزك هـو : حمار خاص بغبي 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "تاج خاص بملك 👑" then
+elseif Descriptioont == "حمار خاص بغبي 👑" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 20)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 20 جنيه 💵\nكنزك هـو : تاج خاص بملك 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 20 جنيه 💵\nكنزك هـو : حمار خاص بغبي 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "اثار تحت المنزل" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 100)
@@ -22258,15 +21731,15 @@ Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 90)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
 bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 90 جنيه 💵\nكنزك هـو : جثة فرعون قديمه\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "تابوت ملك مصري ⚰️" then
+elseif Descriptioont == "تابوت غبي مصري ⚰️" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 160)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : تابوت ملك مصري ⚰️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : تابوت غبي مصري ⚰️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "تاج ملكه مصريه 👑" then
+elseif Descriptioont == "حمار وتكه مصريه 👑" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 160)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : تاج ملكه مصريه 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 160 جنيه 💵\nكنزك هـو : حمار وتكه مصريه 👑\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "مخطوطه لكنز " then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 1200)
@@ -22323,10 +21796,10 @@ Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 200)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
 bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : كنز تائه 🏛️\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "عملات من العصر المملوكي 💲" then
+elseif Descriptioont == "عملات من العصر الممخنزير 💲" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 200)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : عملات من العصر المملوكي 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : عملات من العصر الممخنزير 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "كنز نابليون 💲💲" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 150)
@@ -22545,7 +22018,7 @@ name = string.gsub(name,"نشيط","كسول")
 name = string.gsub(name,"شبعان","جوعان")
 name = string.gsub(name,"موعطشان","عطشان")
 name = string.gsub(name,"خوش ولد","موخوش ولد")
-name = string.gsub(name,"اني","مطي")
+name = string.gsub(name,"اني","كلب")
 name = string.gsub(name,"هادئ","عصبي")
 return send(msg_chat_id,msg_id,"◍ اسرع واحد يدز العكس ~ {"..name.."}","md",true)  
 end
@@ -22777,7 +22250,7 @@ t22 =[[
 ]]
 
 t23 =[[
-1- ماهو الحيوان الذي يلقب بملك الغابه؟
+1- ماهو الحيوان الذي يلقب بغبي الغابه؟
 1-الفيل
 2- الاسد 
 3- النمر
@@ -23124,7 +22597,7 @@ local texting = {"اخر افلام شاهدتها",
 "من محبّين الليل أو الصبح؟ ", 
 "حيوانك المفضل؟ ", 
 "كلمة غريبة ومعناها؟ ", 
-"كم تحتاج من وقت لتثق بشخص؟ ", 
+"كم تححمار من وقت لتثق بشخص؟ ", 
 "اشياء نفسك تجربها؟ ", 
 "يومك ضاع على؟ ", 
 "كل شيء يهون الا ؟ ", 
@@ -23133,7 +22606,7 @@ local texting = {"اخر افلام شاهدتها",
 "أقدم شيء محتفظ فيه من صغرك؟ ", 
 "كلمات ماتستغني عنها بسوالفك؟ ", 
 "وش الحب بنظرك؟ ", 
-"حب التملك في شخصِيـتك ولا ؟ ", 
+"حب التغبي في شخصِيـتك ولا ؟ ", 
 "تخطط للمستقبل ولا ؟ ", 
 "موقف محرج ماتنساه ؟ ", 
 "من طلاسم لهجتكم ؟ ", 
@@ -23419,11 +22892,11 @@ mthal = {"جوز","ضراطه","الحبل","الحافي","شقره","بيدك"
 name = mthal[math.random(#mthal)]
 Redis:set(Timo.."Game:Example"..msg.chat_id,name)
 name = string.gsub(name,"جوز","ينطي____للماعده سنون")
-name = string.gsub(name,"ضراطه","الي يسوق المطي يتحمل___")
+name = string.gsub(name,"ضراطه","الي يسوق الكلب يتحمل___")
 name = string.gsub(name,"بيدك","اكل___محد يفيدك")
 name = string.gsub(name,"الحافي","تجدي من___نعال")
 name = string.gsub(name,"شقره","مع الخيل يا___")
-name = string.gsub(name,"النخله","الطول طول___والعقل عقل الصخلة")
+name = string.gsub(name,"النخله","الطول طول___والعقل عقل القردة")
 name = string.gsub(name,"سلايه","بالوجه امراية وبالظهر___")
 name = string.gsub(name,"الخيل","من قلة___شدو على الچلاب سروج")
 name = string.gsub(name,"حداد","موكل من صخم وجهه كال آني___")
@@ -26883,9 +26356,6 @@ data = {
 {text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
 },
 {
-{text = 'توب الحراميه 🥷', data = IdUser..'/topzrf'}, {text = 'توب الفلوس 💸', data = IdUser..'/topmon'}, 
-},
-{
 {text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
 },
 }
@@ -26937,9 +26407,6 @@ type = 'inline',
 data = {
 {
 {text = 'معلومات اللعبه 🏏', data = IdUser..'/bank9'},{text = 'اوامر اللعبه 🪁', data = IdUser..'/bank8'}, 
-},
-{
-{text = 'توب الحراميه 🥷', data = IdUser..'/topzrf'}, {text = 'توب الفلوس 💸', data = IdUser..'/topmon'}, 
 },
 {
 {text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
@@ -26996,62 +26463,64 @@ data = {
 }
 }
 local TextHelp = [[*
-◍ اوامر ادمنية الجروب ...
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ رفع، تنزيل ← مميز
-◍ المميزين ← مسح المميزين 
-◍ رفع الادمنيه
-◍ تاك ، تاك للكل ، الجروب
-◍ منع ، الغاء منع
-• — — — — — — — — — •
-◍ الاوامر التالية ← {بالرد ، بالمعرف}
-◍ حظر ، طرد ← الغاء حظر 
-◍ كتم ← الغاء كتم
-◍ تقييد ← الغاء تقييد
-◍ كشف ، رفع ← القيود
-• — — — — — — — — — •
-◍ عرض القوائم كما يلي ...
-• — — — — — — — — — •
-◍ المنشئين الاساسيين ، المنشئين 
-◍ المدراء ، الادمنيه ، المميزين
-◍ المشرفين ، المكتومين
-◍ قائمه المنع
-• — — — — — — — — — •
-◍ تثبيت ، الغاء تثبيت
-◍ الرابط ، الاعدادات ، الحمايه
-◍ الترحيب ، القوانين
-◍ ضع رتبه  ← { اسم الرتبه } 
-◍ تحكم ← {بالرد ، بالمعرف}
-• — — — — — — — — — •
-◍ تفعيل ، تعطيل ← الاوامر التاليه :
-◍ الترحيب ، الرابط
-◍ ردود البوت ، الالعاب
-◍ اطردني ، التسليه
-• — — — — — — — — — •
-◍ مسح ← الاوامر التاليه
-◍ القوائم ، قائمه المنع ، المميزين
-◍ الرابط ، القوانين ، الصوره
-◍ مسح ← { عدد }
-◍ مسح ← { بالرد }
-• — — — — — — — — — •
-◍ اوامر الاعضاء والادمنيه 
-• — — — — — — — — — •
-◍ ايدي ، ايدي بالرد ، رسائلي
-◍ تفاعلي ، لقبي ، بايو ، ترند
-◍ جهاتي ، تعديلاتي ، نقاطي
-◍ بيع نقاطي + العدد
-◍ مسح نقاطي
-◍ كول + الكلمه
-◍ زواج 
-◍ الوقت ، الساعه ، التاريخ
-◍ الصوتيات ، الصوتيات العامه
-◍ زخرفه ، تحويل الصيغ ، غنيلي
-◍ همسه ، اسم برجك ، صورتي
-◍ صلاحياتي ، رتبتي ، نزلني 
-◍ صلاحياته ← {بالرد ، بالمعرف}
-◍ الرتبه ← {بالرد ، بالمعرف}
-◍ التفاعل ← {بالرد ، بالمعرف}
-◍ كشف ← {بالرد ، بالمعرف}
+
+✧ مرحبا اليك قائمة الادمنيه ❇️
+✧ استخدام الاوامر بالاسفل 🔰
+✧ لرتبة الادمن فقط 🛡️
+🤖↰ مسح قائمه المنع عام ↳✧
+💥↰ قائمه المنع عام ↳✧
+🤡↰ منع عام ↳✧
+🌟↰ الغاء منع عام ↳✧
+💫↰ رفع رتبه ↳✧
+🔥↰ انذار بالرد علي الشخص ↳✧
+🎉↰ مسح الانذارات بالريب  ↳✧
+😻↰ تفعيل تاك للكل ↳✧
+🙉↰ تفعيل التحذير ↳✧
+💘↰ تفعيل التسليه ↳✧
+❤️‍🩹↰ تحكم ↳✧
+🦠↰ مسح + عدد الرسائل ↳✧
+🌊↰ رفع مميز ↳✧
+☃️↰ مسح رد المميز ↳✧
+🤵↰ ضع رتبه ↳✧
+🎀↰ مسح رتبه ↳✧
+🌪️↰ تاك عام ↳✧
+☁️↰ المنشئين الاساسيين ↳✧
+⚡↰ المنشئين ↳✧
+😊↰ المدراء ↳✧
+🐼↰ الادمنيه ↳✧
+🍭↰ المميزين ↳✧
+🍻↰ المحظورين ↳✧
+🚧↰ المكتومين ↳✧
+⚓↰ حظر + طرد ↳✧
+🚨↰ تقييد + كتم ↳✧
+🚀↰ تاك ايموجي ↳✧
+🗿↰ صيح الاعضاء ↳✧
+🗽↰ تاك للمتفاعلين ↳✧
+🎪↰ تاك للكل ↳✧
+🎢↰ تاك ↳✧
+🗾↰ انشاء رابط ↳✧
+🌐↰ الترحيب ↳✧
+🎂↰ مسح الترحيب ↳✧
+🧨↰ مسح القوانين ↳✧
+🎗️↰ مسح الوصف ↳✧
+🕹️↰ مسح قائمه المنع ↳✧
+🎭↰ قائمه المنع ↳✧
+🔋↰ منع ↳✧
+☄️↰ الغاء منع ↳✧
+🔦↰ التثبيت ↳✧
+🧱↰ الغاء التثبيت ↳✧
+🪆↰ الغاء تثبيت الكل ↳✧
+🧹↰ الحمايه ↳✧
+⚗️↰ اعدادات الحمايه ↳✧
+🔧↰ الاعدادات ↳✧
+🛠️↰ المجموعه ↳✧
+📒↰ تنزيل الكل بالرد علي الشخص ↳✧
+🏁↰ كشف القيود بالرد علي الشخص ↳✧
+📯↰ رفع القيود بالرد علي الشخص ↳✧
+🔑↰ اضف رد انلاين ↳✧
+📢↰ مسح رد انلاين ↳✧
+🔐↰ الاوامر ↳✧
+🛡️↰ مسح القوائم ↳✧
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -27164,32 +26633,31 @@ data = {
 }
 }
 local TextHelp = [[*
-◍ اوامر المنشئ الاساسي
-• — — — — — — — — — •
-◍ رفع ، تنزيل ←{ منشئ }
-◍ المنشئين ، مسح المنشئين
-◍ رفع ، تنزيل ←{ مشرف }
-◍ ضع لقب + اللقب ← { بالرد }
-◍ صلاحيات الجروب
-◍ مسح نقاطه ، رسائله ← {بالرد}
-◍ تفعيل ، تعطيل ← منع التصفيه
-• — — — — — — — — — •
-◍ اوامر المنشئ الجروب
-• — — — — — — — — — •
-◍ رفع ، تنزيل ← { مدير }
-◍ المدراء ، مسح المدراء
-◍ تغيير ، مسح ←{ الايدي }
-◍ تعيين ، مسح ←{ الايدي }
-◍ اضف ، مسح ← { امر }
-◍ الاوامر المضافه ، مسح الاوامر المضافه
-◍ ضع التكرار ← { عدد }
-◍ تفعيل الاوامر ← { اوامر اساسيه }
-• — — — — — — — — — •
-◍ تفعيل ، تعطيل ← الاوامر التاليه :
-◍ الردود العامه ، الطرد ، الحظر
-◍ الرفع ، التاك ، نزلني ، ضع رتبه 
-◍ تاك عام ، المسح التلقائي
-◍ ضع عدد المسح + { عدد }
+✧ قسم الاضافه 🌐
+✧ استخدام الاوامر بالاسفل 🔰
+⌨️↰ اضف رتبه ↳✧
+🔦↰ اضف قسم ↳✧
+📀↰ اضف زخرفه ↳✧
+📱↰ اضف اسم البوت ↳✧
+🖱️↰ اضف رد سورس ↳✧
+🧱↰ اضف رد متعدد ↳✧
+🧮↰ اضف موسيقى ↳✧
+🪟↰ اضف سؤال كت ↳✧
+🧻اضف اسئله كت ↳✧
+🪆↰ اضف سؤال ↳✧
+🕯️↰ اضف لغز ↳✧
+🚿↰ اضف صوت ↳✧
+🪢↰ اضف صوت عام ↳✧
+🧴↰ اضف امر ↳✧
+🧤↰ اضف امر عام ↳✧
+😊↰ اضف رد ↳✧
+👔↰ اضف رد عام ↳✧
+📹↰ اضف رد انلاين ↳✧
+🪗↰ اضف رد انلاين عام ↳✧
+🛩️↰ اضف رد مميز ↳✧
+🥈↰ اضف صوره ↳✧
+🧳↰ اضف نقاط + العدد ↳✧
+🎈↰ اضف رسائل + العدد ↳✧
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -27220,17 +26688,27 @@ data = {
 }
 }
 local TextHelp = [[*
-︙اوامر مالك الجروب 
-• — — — — — — — — — •
-◍ رفع ، تنزيل ←{ مالك }
-◍ المالكين ، مسح المالكين
- ◍ تنزيل جميع الرتب 
-• — — — — — — — — — •
-◍ اوامر المالكين 
-• — — — — — — — — — •
-◍ رفع ، تنزيل ← { منشئ اساسي }
-◍ المنشئين الاساسيين،
-◍ مسح المنشئين الاساسيين 
+✧ اوامر مالك الجروب 🌐
+✧ استخدام الاوامر بالاسفل 🔰
+🛀↰ تفعيل ↳✧
+??️↰ تعطيل ↳✧
+🚣↰ تاك للكل ↳✧
+🌸↰ ترتيب الاوامر ↳✧
+☘️↰ استعاده الاوامر ↳✧
+🪨↰ ايدى المجموعة ↳✧
+☣️↰ ايدي البوت ↳✧
+🌲↰ تفعيل سمسمي ↳✧
+🍀↰ تعطيل سمسمي ↳✧
+🪴↰ حظر + طرد ↳✧
+🌵↰ كتم + تقييد ↳✧
+☃️↰ رفع + تنزيل ↳✧
+🏞️↰ منشئ اساسي ↳✧
+🌋↰ المنشئين الاساسيين ↳✧
+☔↰ مسح المنشئين الاساسيين ↳✧
+🌡️↰ رفع + تنزيل ↳✧
+☣️↰ مالك ↳✧
+🏖️↰ المالكين ↳✧
+🌨️↰ مسح المالكين ↳✧
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -27314,45 +26792,32 @@ data = {
 }
 }
 local TextHelp = [[*
-◍ اوامر التسلية
-• — — — — — — — — — •
-◍ رفع ، تنزيل ← الاوامر التاليه ↓
-• — — — — — — — — — •
-◍ غبي 
-◍ مطي
-◍ اثول
-◍ طامس
-◍ تاج
-◍ ملك
-◍ ملكه
-◍ جلب
-◍ لوكي
-◍ زاحف
-• — — — — — — — — — •
-◍ اوامر التاك 
-• — — — — — — — — — •
-◍ قائمه التاج ~ المـلــوك
-◍ المـلـكات ~ الطامسين
-◍ الثولان ~  الجــلاب
-◍ المطايــه ~  الصخول
-◍ اللوكيــه ~  الاغبيـاء
-• — — — — — — — — — •
-◍ اوامر الترفيه 
-• — — — — — — — — — •
-◍ زخرفه + النص
-◍ مثال زخرفه سيلفا
-◍ احسب + عمرك
-◍ مثال احسب 2001/8/5
-◍ معني + الاسم 
-◍ مثال معني سيلفا
-• — — — — — — — — — •
-◍ نسبه الحب/ الكره
-◍ نسبه الرجوله/ الانوثه 
-◍ نسبه الذكـــــاء/ الغباء 
-• — — — — — — — — — •
-◍ الاوامــر بالـــرد  ⇣ 
-• — — — — — — — — — •
-◍ زواج ~ طلاك
+✧ قائمة الاضافات بالسورس 🏓
+✧ استخدام الامر كالاتي 🔰
+✧ رفع •-• تنزيل ⏺️
+💝↰ خول ↳❤️
+💝↰ وتكه ↳❤️
+💝↰ متوحده ↳❤️
+💝↰ متوحد ↳❤️
+💝↰ كلب ↳❤️
+💝↰ حمار ↳❤️
+💝↰ سمب ↳❤️
+💝↰ قرد ↳❤️
+💝↰ عره ↳❤️
+💝↰ غبي ↳❤️
+💝↰ زوجتي ↳❤️
+??↰ بقلبي ↳❤️
+💝↰ اثول ↳❤️
+💝↰ جلب ↳❤️
+💝↰ كلب ↳❤️
+💝↰ بقره ↳❤️
+💝↰ وتكه ↳❤️
+💝↰ مزه ↳❤️
+💝↰ قرد ↳❤️
+💝↰ حمار ↳❤️
+💝↰ مرتي ↳❤️
+💝↰ خنزير ↳❤️
+💝↰ طلي ↳❤️
 
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
@@ -27425,94 +26890,84 @@ data = {
 }
 }
 local TextHelp = [[*
-◍ اوامر المطور الاساسي  
-• — — — — 𝚂𝙴𝙻𝚅𝙰— — — — — •
-◍ تفعيل  ←  تعطيل
-◍ رفع  تنزيل ← مطور اساسي
-◍ المطورين الاساسيين
-◍ مسح المطورين الاساسيين
-◍ رفع  تنزيل ← مطور ثانوي
-◍ المطورين الثانويين  
-◍ مسح المطورين الثانويين
-◍ رفع  تنزيل ← مطور
-◍ المطورين ← مسح المطورين
-◍ تغيير المطور الاساسي
-• — — — — — — — — — •
-◍ تفعيل الوضع المدفوع + الايدي 
-◍ الغاء الوضع المدفوع + الايدي
-◍ حظر جروب + { الايدي }
-◍ غادر ← + { الايدي }
-◍ اسم بوتك + غادر بالجروب
-◍ تفعيل تعطيل الاشتراك الاجباري
-◍ الاشتراك الاجباري
-◍ تغيير الاشتراك الاجباري
-◍ تفعيل تعطيل الاشتراك الاجباري للجروب
-◍ الاشتراك الاجباري للجروب
-◍ تعيين عدد الاعضاء + {العدد}
-• — — — — — — — — — •
-◍ حظر عام ، الغاء العام
-◍ قائمه العام ، مسح قائمه العام
-◍ كتم عام ، الغاء كتم عام
-◍ المكتومين عام
-◍ مسح المكتومين عام
-• — — — — — — — — — •
-◍ تغيير ، مسح ←{ اسم البوت }
-◍ ضع صوره للترحيب 
-◍ الاحصائيات
-◍ ذيع + ايدي الجروب بالرد
-◍ اذاعه ، اذاعه خاص
-◍ اذاعه بالتوجيه ، اذاعه بالتثبيت
-◍ اذاعه خاص بالتوجيه
-• — — — — — — — — — •
-◍ تفعيل تعطيل جلب النسخه التلقائيه
-◍ جلب نسخه احتياطيه
-◍ رفع النسخه الاحتياطيه بالرد
-◍ رفع نسخه  سيلفا  بالرد
-◍ جلب نسخه الردود 
-◍ رفع نسخه الردود بالرد
-◍ معلومات التنصيب
-• — — — — — — — — — •
-◍ تعيين ، مسح ← { الايدي عام }
-◍ اضف ، مسح ← {رد عام}
-◍ اضف ، مسح ← {رد عام متعدد}
-◍ ضع ، مسح ← { الترحيب عام } 
-◍ ضع ، مسح ← { كليشه المطور }
-◍ الردود العامه ، مسح الردود العامه
-◍ اضف مسح صوت عام
-◍ الصوتيات العامه 
-◍ مسح الصوتيات العامه
-◍ منع عام ، الغاء منع عام
-◍ قائمه المنع عام
-◍ مسح قائمه المنع عام
-• — — — — — — — — — •
-◍ اضف مسح ← سؤال
-◍ الاسئله المضافه
-◍ مسح الاسئله المضافه
-◍ اضف مسح ← لغز 
-◍ الالغاز ~ مسح الالغاز
-◍ اضف مسح ← سؤال كت 
-◍ اسئله كت
-◍ اضف اسئله كت
-◍ مسح اسئله كت
-◍ اضف موسيقى 
-◍ مسح موسيقى بالرد 
-◍ قائمة الموسيقى 
-◍ مسح قائمه الموسيقى
-• — — — — — — — — — •
-◍ تفعيل ، تعطيل ← الاوامر التاليه↓
-◍ البوت الخدمي ، المغادرة ، الاذاعه
-◍ التواصل ، الاحصائيات
-◍ ملف ← { اسم الملف }
-• — — — — — — — — — •
-◍ مسح جميع الملفات 
-◍ المتجر ، الملفات
-◍ تحديث ، تحديث السورس 
-• — — — — — — — — — •
-◍ اوامر المطور في البوت
-• — — — — — — — — — •
-◍ رفع، تنزيل ← { مالك }
-◍ المالكين ، مسح المالكين
-◍ تنزيل جميع الرتب
+🏅 اوامر المطور الاساسي  
+• — — — — 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚— — — — — •
+🚀 تفعيل  ←  تعطيل
+🏓 رفع  تنزيل ← مطور اساسي
+🎯 المطورين الاساسيين
+🎪 مسح المطورين الاساسيين
+🚦 رفع  تنزيل ← مطور ثانوي
+⛓ المطورين الثانويين  
+🛡 مسح المطورين الثانويين
+⚙ رفع  تنزيل ← مطور
+🧿 المطورين ← مسح المطورين
+🎉 تغيير المطور الاساسي
+🪅 تفعيل الوضع المدفوع + الايدي 
+🎈 الغاء الوضع المدفوع + الايدي
+🖇 حظر جروب + { الايدي }
+📌 غادر ← + { الايدي }
+🖊 اسم بوتك + غادر بالجروب
+🔐 تفعيل تعطيل الاشتراك الاجباري
+♻️ الاشتراك الاجباري
+🔰 تغيير الاشتراك الاجباري
+🔱 تفعيل تعطيل الاشتراك الاجباري للجروب
+🌀 الاشتراك الاجباري للجروب
+🌐 تعيين عدد الاعضاء + {العدد}
+🎶 حظر عام ، الغاء العام
+🔔 قائمه العام ، مسح قائمه العام
+🔕 كتم عام ، الغاء كتم عام
+💤 المكتومين عام
+⚠️ مسح المكتومين عام
+🚸 تغيير ، مسح ←{ اسم البوت }
+💠 ضع صوره للترحيب 
+📉 الاحصائيات
+📯 ذيع + ايدي الجروب بالرد
+🔑 اذاعه ، اذاعه خاص
+🗝 اذاعه بالتوجيه ، اذاعه بالتثبيت
+🧸 اذاعه خاص بالتوجيه
+💈 تفعيل تعطيل جلب النسخه التلقائيه
+🔩 جلب نسخه احتياطيه
+💰 رفع النسخه الاحتياطيه بالرد
+✈️ رفع نسخه  سيلفا  بالرد
+🚁 جلب نسخه الردود 
+🎷 رفع نسخه الردود بالرد
+🎸 معلومات التنصيب
+🥁 تعيين ، مسح ← { الايدي عام }
+🎬 اضف ، مسح ← {رد عام}
+🏸 اضف ، مسح ← {رد عام متعدد}
+🎱 ضع ، مسح ← { الترحيب عام } 
+🥂 ضع ، مسح ← { كليشه المطور }
+🍭 الردود العامه ، مسح الردود العامه
+🍡 اضف مسح صوت عام
+🍟 الصوتيات العامه 
+🕸 مسح الصوتيات العامه
+🗼 منع عام ، الغاء منع عام
+🚥 قائمه المنع عام
+🗽 مسح قائمه المنع عام
+🏝 اضف مسح ← سؤال
+🎢 الاسئله المضافه
+🏘 مسح الاسئله المضافه
+🛕 اضف مسح ← لغز 
+📱 الالغاز ~ مسح الالغاز
+⌚️ اضف مسح ← سؤال كت 
+📽 اسئله كت
+🔋 اضف اسئله كت
+💎 مسح اسئله كت
+📿 اضف موسيقى 
+🦠 مسح موسيقى بالرد 
+🧬 قائمة الموسيقى 
+📮 مسح قائمه الموسيقى 
+💌 تفعيل ، تعطيل ← الاوامر التاليه↓
+🧧 البوت الخدمي ، المغادرة ، الاذاعه
+🎏 التواصل ، الاحصائيات
+🔎 ملف ← { اسم الملف }
+🏧 مسح جميع الملفات 
+👁‍🗨 المتجر ، الملفات
+🔰 تحديث ، تحديث السورس
+💯 اوامر المطور في البوت
+📝 رفع، تنزيل ← { مالك }
+🗳 المالكين ، مسح المالكين
+🎀 تنزيل جميع الرتب
 *]]
 edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -29852,7 +29307,7 @@ local UserId = Text:match('(%d+)/Delwtk')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Timo.."wtka:Group"..ChatId) 
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'NoNextSeting'},},}}
-edit(ChatId,Msg_id,"◍ تم مسح جميع التاج", 'md', false)
+edit(ChatId,Msg_id,"◍ تم مسح جميع الحمار", 'md', false)
 end
 elseif Text and Text:match('(%d+)/Deltwhd') then
 local UserId = Text:match('(%d+)/Deltwhd')
@@ -29880,7 +29335,7 @@ local UserId = Text:match('(%d+)/Delsmb')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(Timo.."smb:Group"..ChatId) 
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'NoNextSeting'},},}}
-edit(ChatId,Msg_id,"◍ تم مسح جميع اللوكيه", 'md', false)
+edit(ChatId,Msg_id,"◍ تم مسح جميع الخنزيره", 'md', false)
 end
 elseif Text and Text:match('(%d+)/Del2rd') then
 local UserId = Text:match('(%d+)/Del2rd')
