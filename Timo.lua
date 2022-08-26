@@ -29290,8 +29290,6 @@ edit(ChatId,Msg_id,"◍ عليك اختيار نوع القفل او الفتح 
 end
 if Text and Text:match('(%d+)/topzrf') then
 local UserId = Text:match('(%d+)/topzrf')
-if Text and Text:match('(%d+)/topzrf') then
-local UserId = Text:match('(%d+)/topzrf')
 if tonumber(IdUser) == tonumber(UserId) then
 local ty_users = Redis:smembers("rrfffid")
 if #ty_users == 0 then
