@@ -19574,7 +19574,6 @@ end
 ---
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 local NamesBot = (Redis:get(Timo.."Name:Bot") or "سيلفا")
-local ban = bot.getUser(Message_Reply.sender_id.user_id)
 local bain = bot.getUser(msg.sender_id.user_id)
 if ban.first_name then
 baniusername = '*𓂄𓆩ᴡᴇʟᴄᴏᴍᴇ ʏᴀ *['..bain.first_name..'](tg://user?id='..bain.id..')*'
@@ -21713,7 +21712,7 @@ Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 200)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
 bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 200 جنيه 💵\nكنزك هـو : فرنك جيبوتي 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiihoo" .. msg.sender_id.user_id,600, true)
-elseif Descriptioont == "اموال مفقوده 💲" then
+elseif Descriptioont == "اموال مفقوده ??" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 30)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
 bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nتم استبداله بمبلغ وقدره : 30 جنيه 💵\nكنزك هـو : اموال مفقوده 💲\nنوع العملية : البحث عن كنز\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
@@ -23745,7 +23744,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓂄𓆩ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
+{text = '𓂄??ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
 },
 {
 {text = '𓂄𓆩لـتـنـصـيـب بـوت𓆪𓂁', url = 't.me/uuu_4_bot'},
