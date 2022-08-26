@@ -19827,10 +19827,10 @@ data = {
 {text = '🎮︙الالعاب', data = msg.sender_id.user_id..'/help6'}, 
 },
 {
-{text = '🔐︙القفل والفتح', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '🔃︙التفعيل والتعطيل', data = msg.sender_id.user_id..'/🔃︙التفعيل والتعطيل'}, 
+{text = '🔐︙القفل والفتح', data = msg.sender_id.user_id..'/NoNextSeting'}, {text = '🔃︙التفعيل والتعطيل', data = msg.sender_id.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '𓂄𓆩𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚𓆪𓂁', url = 't.me/SO_SELVA '}, 
+{text = '➕︙اضف البوت الي مجموعتك', url = 't.me/'..UserBot..'?startgroup=new'},
 },
 }
 }
@@ -22002,7 +22002,7 @@ Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "مبرمج 👨" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 180)
 local ballancee = Redis:get(Timo.."boob"..msg.sender_id.user_id) or 0
-bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 50 جنيه 💵\nوظيفتك : مبرمج 👨\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
+bot.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 50 جنيه ??\nوظيفتك : مبرمج 👨\nنوع العملية : اضافة راتب\nرصيدك دلوقتي : "..ballancee.." جنيه 💵","md",true)
 Redis:setex(Timo.."iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "رقاصه 💃" then
 Redis:incrby(Timo.."boob"..msg.sender_id.user_id , 55)
@@ -24412,7 +24412,7 @@ data = {
         {text = 'الاذاعه ⚙',type = 'text'},{text = 'الاشتراك الاجباري ⛓',type = 'text'},
     },
     {
-  {text = '𓂄𓆩┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉𓆪𓂁',type = 'text'},
+  {text = '𓂄𓆩┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉𓆪??',type = 'text'},
    },
     {
         {text = 'المطورين 🔰',type = 'text'},{text = 'العام 🔐',type = 'text'},
