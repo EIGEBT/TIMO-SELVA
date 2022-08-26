@@ -29290,10 +29290,11 @@ edit(ChatId,Msg_id,"◍ عليك اختيار نوع القفل او الفتح 
 end
 if Text and Text:match('(%d+)/topzrf') then
 local UserId = Text:match('(%d+)/topzrf')
-if tonumber(IdUser) == tonumber(UserId) then
+local F_Name = bot.getUser(msg.sender_id.user_id).first_name
+Redis:set(msg.sender_id.user_id.."first_name:", F_Name)
 local ty_users = Redis:smembers("rrfffid")
 if #ty_users == 0 then
-return send(ChatId,Msg_id,"⇜ لا يوجد احد","md",true)
+return bot.sendText(msg.chat_id,msg.id,"⇜ لا يوجد احد","md",true)
 end
 ty_anubis = "توب 20 شخص بتسليب فلوس :\n\n"
 ty_list = {}
@@ -29332,9 +29333,10 @@ local mony = v[1]
 local convert_mony = string.format("%.0f",mony)
 local emoo = emojii[k]
 num_ty = num_ty + 1
-ty_anubis = ty_anubis..emoo.." "..convert_mony.." 💵 | "..user_name.."\n"
+ty_anubis = ty_anubis..emoo.." "..convert_mony.." 💵 ꗝ "..user_name.."\n"
 end
 end
+ty_anubiss = ty_anubis.."\n\nاي اسم مخالف او غش باللعب راح يتصفر وينحظر اللاعب"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -29354,12 +29356,13 @@ end
 end
 if Text and Text:match('(%d+)/topmon') then
 local UserId = Text:match('(%d+)/topmon')
-if tonumber(data.sender_user_id) == tonumber(UserId) then
+local F_Name = bot.getUser(msg.sender_id.user_id).first_name
+Redis:set(msg.sender_id.user_id.."first_name:", F_Name)
 local bank_users = Redis:smembers("booob")
 if #bank_users == 0 then
-return send(ChatId,Msg_id,"⇜ لا يوجد حسابات في البنك","md",true)
+return bot.sendText(msg.chat_id,msg.id,"⇜ لا يوجد حسابات في البنك","md",true)
 end
-top_mony = "توب اغنى 20 شخص :\n\n"
+top_mony = "توب اغنى 30 شخص :\n\n"
 mony_list = {}
 for k,v in pairs(bank_users) do
 local mony = Redis:get("boob"..v)
@@ -29387,18 +29390,29 @@ emoji ={
 "17)",
 "18)",
 "19)",
-"20)"
+"20)",
+"21)",
+"22)",
+"23)",
+"24)",
+"25)",
+"26)",
+"27)",
+"28)",
+"29)",
+"30)"
 }
 for k,v in pairs(mony_list) do
-if num <= 20 then
+if num <= 30 then
 local user_name = bot.getUser(v[2]).first_name or Redis:get(v[2].."first_name:") or "لا يوجد اسم"
 local mony = v[1]
 local convert_mony = string.format("%.0f",mony)
 local emo = emoji[k]
 num = num + 1
-top_mony = top_mony..emo.." "..convert_mony.." 💵 | "..user_name.."\n"
+top_mony = top_mony..emo.." "..convert_mony.." 💵 ꗝ "..user_name.."\n"
 end
 end
+top_monyy = top_mony.."\n\nاي اسم مخالف او غش باللعب راح يتصفر وينحظر اللاعب"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
