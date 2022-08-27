@@ -21062,7 +21062,7 @@ if msg.ControllerBot then
 local Remsg = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = bot.getUser(Remsg.sender_id.user_id)
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
-bot.sendText(msg.chat_id,msg.id,"\n*⇜ سيلفا معندوشا حساب بالبنك 🤣*","md",true)  
+return bot.sendText(msg.chat_id,msg.id,"\n*⇜ سيلفا معندوشا حساب بالبنك 🤣*","md",true)  
 return false
 end
 local ban = bot.getUser(Remsg.sender_id.user_id)
@@ -21077,9 +21077,9 @@ ccccc = Redis:get(Timo.."boobb"..Remsg.sender_id.user_id)
 uuuuu = Redis:get(Timo.."bbobb"..Remsg.sender_id.user_id)
 ppppp = Redis:get(Timo.."zrfff"..Remsg.sender_id.user_id) or 0
 ballanceed = Redis:get(Timo.."boob"..Remsg.sender_id.user_id) or 0
-return send(msg.chat_id,msg.id, "⇜ الاسم ↢ "..news.."\n⇜ الحساب ↢ `"..ccccc.."`\n⇜ بنك ↢ ( سيلفا )\n⇜ نوع ↢ ( "..uuuuu.." )\n⇜ الزرف ↢ ( "..ppppp.." جنيه 💵 )\n⇜ صار رصيده ↢ ( "..ballanceed.." جنيه 💵 )\n✦","md",true)
+return bot.sendText(msg.chat_id,msg.id, "⇜ الاسم ↢ "..news.."\n⇜ الحساب ↢ `"..ccccc.."`\n⇜ بنك ↢ ( سيلفا )\n⇜ نوع ↢ ( "..uuuuu.." )\n⇜ الزرف ↢ ( "..ppppp.." جنيه 💵 )\n⇜ صار رصيده ↢ ( "..ballanceed.." جنيه 💵 )\n✦","md",true)
 else
-return send(msg.chat_id,msg.id, "⇜ معندوش حساب بنكي ","md",true)
+return bot.sendText(msg.chat_id,msg.id, "⇜ معندوش حساب بنكي ","md",true)
 end
 end
 end
