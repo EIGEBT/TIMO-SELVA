@@ -21077,9 +21077,9 @@ ccccc = Redis:get(Timo.."boobb"..Remsg.sender_id.user_id)
 uuuuu = Redis:get(Timo.."bbobb"..Remsg.sender_id.user_id)
 ppppp = Redis:get(Timo.."zrfff"..Remsg.sender_id.user_id) or 0
 ballanceed = Redis:get(Timo.."boob"..Remsg.sender_id.user_id) or 0
-return bot.sendText(msg.chat_id,msg.id, "⇜ الاسم ↢ "..news.."\n⇜ الحساب ↢ `"..ccccc.."`\n⇜ بنك ↢ ( سيلفا )\n⇜ نوع ↢ ( "..uuuuu.." )\n⇜ الزرف ↢ ( "..ppppp.." جنيه 💵 )\n⇜ صار رصيده ↢ ( "..ballanceed.." جنيه 💵 )\n✦","md",true)
+return sendText(msg.chat_id,msg.id, "⇜ الاسم ↢ "..news.."\n⇜ الحساب ↢ `"..ccccc.."`\n⇜ بنك ↢ ( سيلفا )\n⇜ نوع ↢ ( "..uuuuu.." )\n⇜ الزرف ↢ ( "..ppppp.." جنيه 💵 )\n⇜ صار رصيده ↢ ( "..ballanceed.." جنيه 💵 )\n✦","md",true)
 else
-return bot.sendText(msg.chat_id,msg.id, "⇜ معندوش حساب بنكي ","md",true)
+return sendText(msg.chat_id,msg.id, "⇜ معندوش حساب بنكي ","md",true)
 end
 end
 end
