@@ -21381,27 +21381,34 @@ end
 end
 
 if text == 'بخشيش' or text == 'بقشيش' then
-ballanceed = Redis:get("boob"..msg.sender_id.user_id) or 0
-krses = tonumber(Redis:get("kreednum"..msg.sender_id.user_id))
-if Redis:get("kreed"..msg.sender_id.user_id) and tonumber(ballanceed) > 5000000 then
-return bot.sendText(msg.chat_id,msg.id, "⇜ عليك قرض بقيمة "..krses.." دولار 💵 \nقم بسداده بالامر `تسديد القرض` ","md",true)
+if Redis:sismember(Timo.."booob",msg.sender_id.user_id) then
+if Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 580 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 10 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 540 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 9 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 480 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 8 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 420 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 7 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 360 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 6 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 300 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 5 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 240 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 4 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 180 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 3 دقائق )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 120 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 2 دقيقة )","md",true)
+elseif Redis:ttl(Timo.."iioo" .. msg.sender_id.user_id) >= 60 then
+return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخدت بخشيش استنى ( 1 دقيقة )","md",true)
 end
-local F_Name = bot.getUser(msg.sender_id.user_id).first_name
-Redis:set(msg.sender_id.user_id.."first_name:", F_Name)
-if Redis:sismember("booob",msg.sender_id.user_id) then
-if Redis:ttl("iioo" .. msg.sender_id.user_id) >=1 then
-local hours = Redis:ttl("iioo" .. msg.sender_id.user_id) / 60
-return bot.sendText(msg.chat_id,msg.id,"⇜ من شوي اخذت بخشيش أنتظر  "..math.floor(hours).." دقيقة","md",true)
-end
-
-local jjjo = math.random(200,1000);
-ballanceed = Redis:get("boob"..msg.sender_id.user_id) or 0
-bakigcj = ballanceed + jjjo
-Redis:set("boob"..msg.sender_id.user_id , bakigcj)
-bot.sendText(msg.chat_id,msg.id,"⇜ دلعتك اديتك بخشيش "..jjjo.." دولار 💵","md",true)
-Redis:setex("iioo" .. msg.sender_id.user_id,600, true)
+local jjjo = math.random(100,1000);
+Redis:incrby(Timo.."boob"..msg.sender_id.user_id , jjjo)
+bot.sendText(msg.chat_id,msg.id,"⇜ تكرم وهي بخشيش "..jjjo.." جنيه 💵","md",true)
+Redis:setex(Timo.."iioo" .. msg.sender_id.user_id,600, true)
 else
-bot.sendText(msg.chat_id,msg.id, "⇜ انت لا تمتلك حساب بنكي ارسل ↢ ( `انشاء حساب بنكي` )","md",true)
+bot.sendText(msg.chat_id,msg.id, "⇜ معندكش حساب بنكي ارسل ↢ ( `انشاء حساب بنكي` )","md",true)
 end
 end
 
@@ -22653,22 +22660,19 @@ else
 bot.sendText(msg.chat_id,msg.id, "⇜ انت لا تمتلك حساب بنكي ","md",true)
 end
 end
-if text == "توب" or text == "التوب" then
-local toptop = "⇜ اهلاً بك في قوائم التوب\nللمزيد من التفاصيل - [@vvvvsin ]\n✦"
+
+----if text == "توب" or text == "التوب" then
+local toptop = "⇜ اهلاً بك في قوائم التوب\nللمزيد من التفاصيل - [@uu_u_4 ]\n✦"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
 {
 {text = 'الزرف', data = msg.sender_id.user_id..'/topzrf'},{text = 'الفلوس', data = msg.sender_id.user_id..'/topmon'},
 },
-{
-{text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
-},
 }
 }
 return bot.sendText(msg.chat_id,msg.id,toptop,"md",false, false, false, false, reply_markup)
 end
-----
 if text == "الاسرع" or text == "ترتيب" then
 if ChannelJoinch(msg) == false then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {{{text = Redis:get(Timo..'Chat:Channel:Join:Name'..msg.chat_id), url = 't.me/'..Redis:get(Timo..'Chat:Channel:Join'..msg.chat_id)}, },}}
@@ -24215,6 +24219,7 @@ end
 end
 end
  
+end
 -- GroupBot
 if chat_type(msg.chat_id) == "UserBot" then 
 if text == 'تحديث الملفات  ◍' or text == 'تحديث' then
