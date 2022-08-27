@@ -24214,8 +24214,7 @@ send(msg_chat_id,msg_id,txx,"md")
 end
 end
 end
-
-end 
+ 
 -- GroupBot
 if chat_type(msg.chat_id) == "UserBot" then 
 if text == 'تحديث الملفات  ◍' or text == 'تحديث' then
