@@ -255,6 +255,8 @@ if UserId == 6702141393 then
 Status = 'المبرمج تيمو '
 elseif UserId ==  776886547  then
 Status = 'مطـور السـورس '
+elseif UserId ==  6792324910  then
+Status = 'تيتو خول عادي 😂  '
 elseif UserId == Sudo_Id then  
 Status = 'المطـور الاساسي '
 elseif Controll2 then
@@ -19667,7 +19669,7 @@ keyboard.inline_keyboard = {
 {text = '👨🏻‍💻︙ᴅᴇᴠ', url = 't.me/DEVSELVA'},{text = '📢︙ᴄʜᴀɴɴᴇʟ', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/uuu_4_bot'},{text =  '🦹‍♂︙مـطـور الـبـوت' , url =  't.me/'..UserSudo}, 
+{text = '🛃︙لـتـنـصـيـب بـوب', url = 't.me/I_IlIbot'},{text =  '🦹‍♂︙مـطـور الـبـوت' , url =  't.me/'..UserSudo}, 
 },
 {
 {text = '🤖︙اسم البوت ↜ '..NamesBot..' ', url = 't.me/'..UserBot..'?start'},
@@ -23408,6 +23410,19 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {
 return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio(6702141393).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 end
 end
+if text == 'تيتو' or text == 'الخول' or text == 'المطور تيتو' then
+local UserInfo = bot.getUser(6792324910) 
+local photo = bot.getUserProfilePhotos(UserInfo.id)
+if photo.total_count > 0 then
+local reply_markup = bot.replyMarkup{type = 'inline',data = {
+    {
+      {text = UserInfo.first_name , url = 't.me/'..UserInfo.username }
+    },
+  }
+  }
+return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio(6702141393).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+end
+end
 
 if text and text ~= "حذف رد مميز" and text ~= "اضف رد مميز" and text ~= "مسح الردود المميزه" then
 local listmz = Redis:smembers(Timo.."List:Rd:mz"..msg_chat_id)
@@ -23853,7 +23868,7 @@ keyboard.inline_keyboard = {
 {text = '𓂄??ᴅᴇᴠ𓆪𓂁', url = 't.me/SO_SELVA1'},{text = '𓂄𓆩ᴄʜᴀɴɴᴇʟ𓆪𓂁', url = 't.me/SO_SELVA'}, 
 },
 {
-{text = '𓂄𓆩لـتـنـصـيـب بـوت𓆪𓂁', url = 't.me/uuu_4_bot'},
+{text = '𓂄𓆩لـتـنـصـيـب بـوت𓆪𓂁', url = 't.me/I_IlIbot'},
 },
 {
 {text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -23887,7 +23902,7 @@ local T =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '𓂄𓆩 𝙱𝙾𝚃ـ𓆪𓂁', url = 't.me/uuu_4_bot'},
+{text = '𓂄𓆩 𝙱𝙾𝚃ـ𓆪𓂁', url = 't.me/I_IlIbot'},
 },
 {
 {text = '𓂄𓆩 أضـف البـوت الـي مجـموعـتـك 𓆪𓂁', url = 't.me/'..UserBot..'?startgroup=new'},
@@ -23914,7 +23929,7 @@ data = {
 {text = '⌯ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '⌯ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
+{text = '⌯ لتنصيب بوت .', url = 't.me/I_IlIbot'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -23930,7 +23945,7 @@ data = {
 {text = '⌯ اضفني لمجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '⌯ لتنصيب بوت .', url = 't.me/uuu_4_bot'},
+{text = '⌯ لتنصيب بوت .', url = 't.me/I_IlIbot'},
 },
 {
 {text = '• 𝐒𝐨𝐮𝐫𝐜𝐞 𝐒𝐞𝐥𝐯𝐚 •', url = 't.me/SO_SELVA '}, 
@@ -28187,7 +28202,7 @@ end
 if Text and Text:match('(%d+)/NoNextSeting') then
 local UserId = Text:match('(%d+)/NoNextSeting')
 if tonumber(IdUser) == tonumber(UserId) then
-local Text = "*\n◍  اعدادات الجروب ".."\n??︙علامة ال (✔️) تعني مقفول".."\n◍  علامة ال (❌) تعني مفتوح*"
+local Text = "*\n◍  اعدادات الجروب ".."\n🔏︙علامة ال (✔️) تعني مقفول".."\n◍  علامة ال (❌) تعني مفتوح*"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
