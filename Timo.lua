@@ -197,7 +197,7 @@ return Chat_Type
 end
 function The_ControllerAll(UserId)
 ControllerAll = false
-local ListSudos = {Sudo_Id,5223565603, 776886547 }
+local ListSudos = {Sudo_Id,6702141393, 776886547,6792324910 }
 for k, v in pairs(ListSudos) do
 if tonumber(UserId) == tonumber(v) then
 ControllerAll = true
@@ -220,9 +220,11 @@ function Controllerbanall(ChatId,UserId)
 Status = 0
 local Controll2 = Redis:sismember(Timo.."ControlAll:Groups",UserId)
 Devss = Redis:sismember(Timo.."Devss:Groups",UserId) 
-if UserId == 5223565603 then
+if UserId == 6702141393 then
 Status = true
 elseif UserId ==  776886547  then
+Status = true
+elseif UserId ==  6792324910  then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -249,7 +251,7 @@ Manger = Redis:sismember(Timo.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Timo.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Timo.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5223565603 then
+if UserId == 6702141393 then
 Status = 'المبرمج تيمو '
 elseif UserId ==  776886547  then
 Status = 'مطـور السـورس '
@@ -962,7 +964,7 @@ Manger = Redis:sismember(Timo.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Timo.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Timo.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5223565603 then
+if UserId == 6702141393 then
 Status = true
 elseif UserId ==  776886547  then
 Status = true
@@ -1005,7 +1007,7 @@ Manger = Redis:sismember(Timo.."Manger:Group"..ChatId,UserId)
 Admin = Redis:sismember(Timo.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Timo.."Special:Group"..ChatId,UserId)
 StatusMember = bot.getChatMember(ChatId,UserId).status.luatele
-if UserId == 5223565603 then
+if UserId == 6702141393 then
 Status = true
 elseif UserId ==  776886547  then
 Status = true
@@ -1142,7 +1144,7 @@ end
 return false
 end
 
-if tonumber(msg.sender_id.user_id) == 5223565603 then
+if tonumber(msg.sender_id.user_id) == 6702141393 then
 msg.Name_Controller = 'المبرمج تيمو'
 msg.The_Controller = 1
 elseif tonumber(msg.sender_id.user_id) ==  776886547  then
@@ -6657,7 +6659,7 @@ if text and text:match('^رفع مطور اساسي @(%S+)$') then
 local UserName = text:match('^رفع مطور اساسي @(%S+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -6688,7 +6690,7 @@ if text and text:match('^تنزيل مطور اساسي @(%S+)$') then
 local UserName = text:match('^تنزيل مطور اساسي @(%S+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -6718,7 +6720,7 @@ end
 if text == ('رفع مطور اساسي') and msg.reply_to_message_id ~= 0 then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -6746,7 +6748,7 @@ end
 if text == ('تنزيل مطور اساسي') and msg.reply_to_message_id ~= 0 then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -6775,7 +6777,7 @@ if text and text:match('^رفع مطور اساسي (%d+)$') then
 local UserId = text:match('^رفع مطور اساسي (%d+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -6800,7 +6802,7 @@ if text and text:match('^تنزيل مطور اساسي (%d+)$') then
 local UserId = text:match('^تنزيل مطور اساسي (%d+)$')
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -6824,7 +6826,7 @@ end
 if text == 'مسح المطورين الاساسيين' then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -6844,7 +6846,7 @@ end
 if text == 'المطورين الاساسيين' then
 if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
 YouCan = true
-elseif tonumber(msg.sender_id.user_id) == tonumber(5223565603) then
+elseif tonumber(msg.sender_id.user_id) == tonumber(6702141393) then
 YouCan = true
 elseif tonumber(msg.sender_id.user_id) == tonumber( 776886547 ) then
 YouCan = true
@@ -17532,7 +17534,7 @@ end
 -- سب وهينه 
 if text == "اشتمه" then 
   local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
-  if tonumber(Message_Reply.sender_id.user_id) ==  5223565603  or tonumber(Message_Reply.sender_id.user_id) == 5223565603 then
+  if tonumber(Message_Reply.sender_id.user_id) ==  6702141393  or tonumber(Message_Reply.sender_id.user_id) == 6702141393 then
   return send(msg_chat_id,msg_id,"لا دا تيمو حبيبي مينفعش اشتمو ❤️","md",true) 
   end
   if tonumber(Message_Reply.sender_id.user_id) == tonumber(Timo) then
@@ -17548,7 +17550,7 @@ if text == "اشتمه" then
   end
   if text == "هينه" then 
     local Message_Reply = bot.getMessage(msg.chat_id, msg.reply_to_message_id)
-    if tonumber(Message_Reply.sender_id.user_id) ==  5223565603  or tonumber(Message_Reply.sender_id.user_id) == 5223565603 then
+    if tonumber(Message_Reply.sender_id.user_id) ==  6702141393  or tonumber(Message_Reply.sender_id.user_id) == 6702141393 then
     return send(msg_chat_id,msg_id,"لا دا تيمو حبيبي ❤️","md",true) 
     end
     if tonumber(Message_Reply.sender_id.user_id) == tonumber(Timo) then
@@ -20099,7 +20101,7 @@ local bain = bot.getUser(msg.sender_id.user_id)
 if tonumber(Message_Reply.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
 return bot.sendText(msg_chat_id,msg_id,"*⏏️| انت عبيط يسطا دا انت*","md",true)  
 end
-if tonumber(Message_Reply.sender_id.user_id) == tonumber(5223565603) then
+if tonumber(Message_Reply.sender_id.user_id) == tonumber(6702141393) then
 return bot.sendText(msg_chat_id,msg_id,"*يسطا دا مبرمج السورس ممكن يفشخني انا وانتا 😂😞*","md",true)  
 end
 if tonumber(Message_Reply.sender_id.user_id) == tonumber(Timo) then
@@ -20126,7 +20128,7 @@ local bain = bot.getUser(msg.sender_id.user_id)
 if tonumber(Message_Reply.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
 return bot.sendText(msg_chat_id,msg_id,"*⏏️| انت عبيط يسطا دا انت*","md",true)  
 end
-if tonumber(Message_Reply.sender_id.user_id) == tonumber(5223565603) then
+if tonumber(Message_Reply.sender_id.user_id) == tonumber(6702141393) then
 return bot.sendText(msg_chat_id,msg_id,"*🚫| حبيبي دا المبرمج تيمو مش بيتف عليه*","md",true)  
 end
 if tonumber(Message_Reply.sender_id.user_id) == tonumber(Timo) then
@@ -21917,7 +21919,7 @@ bot.sendText(msg.chat_id,msg.id, "⇜ معندكش حساب بنكي ارسل �
 end
 end
 if text == "توب" or text == "التوب" then
-local toptop = "⇜ اهلاً بك في قوائم التوب\nللمزيد من التفاصيل - [@uu_u_4 ]\n✦"
+local toptop = "⇜ اهلاً بك في قوائم التوب\nللمزيد من التفاصيل - [@wvssv ]\n✦"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
@@ -23381,7 +23383,7 @@ return send(msg_chat_id,msg_id,[[*
 end
 
 if text == 'مبرمج السورس' or text == 'المبرمج تيمو' or text == 'تيمو' then
-local UserInfo = bot.getUser( 5223565603 ) 
+local UserInfo = bot.getUser( 6702141393 ) 
 local photo = bot.getUserProfilePhotos(UserInfo.id)
 if photo.total_count > 0 then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {
@@ -23390,11 +23392,11 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {
     },
   }
   }
-return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio( 5223565603 ).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio( 6702141393 ).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 end
 end
 if text == 'المبرمج' or text == 'مبرمج السورس' or text == 'محدث السورس' then
-local UserInfo = bot.getUser(5223565603) 
+local UserInfo = bot.getUser(6702141393) 
 local photo = bot.getUserProfilePhotos(UserInfo.id)
 if photo.total_count > 0 then
 local reply_markup = bot.replyMarkup{type = 'inline',data = {
@@ -23403,7 +23405,7 @@ local reply_markup = bot.replyMarkup{type = 'inline',data = {
     },
   }
   }
-return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio(5223565603).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
+return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio(6702141393).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
 end
 end
 
@@ -23558,12 +23560,12 @@ return false
 end
 
 if text == "مبرمج السورس" or text == "المبرمج تيمو" or text == "وين المطور السورس" or text == "مبرمج سورس" or text == "مطور السورس ◍" then 
-Text = "• *The developer of this source is* : [𝚃𝙸𝙼𝙾 || تـيمو](https://t.me/uu_u_4)."
+Text = "• *The developer of this source is* : [𝚃𝙸𝙼𝙾 || تـيمو](https://t.me/wvssv)."
 keyboard = {} 
 keyboard.inline_keyboard = {
-    {{text='• 𝚃𝙸𝙼𝙾 || تـيمو •',url="t.me/uu_u_4"},},}
+    {{text='• 𝚃𝙸𝙼𝙾 || تـيمو •',url="t.me/wvssv"},},}
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/uu_u_4&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/wvssv&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 if text == "المطور ليدو" then 
@@ -23575,13 +23577,13 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/J0KER7x&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
-if text == "المطور الديب" then 
-Text = "• *The developer of this source is* : [𝙴𝙻𝙳𝙴𝙱 || الـديب](https://t.me/DEEBEG)."
+if text == "المطور تيتو" then 
+Text = "• *The developer of this source is* : [𝙴𝙻𝙳𝙴𝙱 || الـتيتو](https://t.me/c1_Yx)."
 keyboard = {} 
 keyboard.inline_keyboard = {
-    {{text='• 𝙴𝙻𝙳𝙴𝙱 || الـديب •',url="t.me/DEEBEG"},},}
+    {{text='• 𝙴𝙻𝙳𝙴𝙱 || الـتيتو •',url="t.me/c1_Yx"},},}
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/DEEBEG&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/c1_Yx&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
 --     Source Timo     --
@@ -24304,7 +24306,7 @@ data = {
 {text = '𓂄𓆩┉┉┉⊶﴾✧ѕᴏ𝗎ʀᴄᴇ ѕᴇʟᴠᴀ✧﴿⊷┉┉┉𓆪𓂁',type = 'text'},
 },
 {
-{text = 'المطور الديب',type = 'text'},
+{text = 'المطور تيتو',type = 'text'},
 },
 {
 {text = 'رجوع',type = 'text'},
@@ -24699,7 +24701,7 @@ return false
 end
 
 if text == "تيمو" then
-  local UserInfo = bot.getUser( 5223565603 ) 
+  local UserInfo = bot.getUser( 6702141393 ) 
   local photo = bot.getUserProfilePhotos(UserInfo.id)
   local ANUBIS = {
       "ايوا معاك تيمو اهوو",
@@ -25189,7 +25191,7 @@ print('This is Edit for Bot')
 return false
 end
 File_Bot_Run(Message_Edit,Message_Edit)
-if tonumber(Message_Edit.sender_id.user_id) == 5223565603 then
+if tonumber(Message_Edit.sender_id.user_id) == 6702141393 then
 data.The_Controller = 1
 elseif tonumber(Message_Edit.sender_id.user_id) ==  776886547  then
 data.The_Controller = 1
@@ -25277,7 +25279,7 @@ Text = bot.base64_decode(data.payload.data)
 IdUser = data.sender_user_id
 ChatId = data.chat_id
 Msg_id = data.message_id
-if tonumber(IdUser) == 5223565603 then
+if tonumber(IdUser) == 6702141393 then
 data.The_Controller = 1
 elseif tonumber(IdUser) ==  776886547  then
 data.The_Controller = 1
@@ -28185,7 +28187,7 @@ end
 if Text and Text:match('(%d+)/NoNextSeting') then
 local UserId = Text:match('(%d+)/NoNextSeting')
 if tonumber(IdUser) == tonumber(UserId) then
-local Text = "*\n◍  اعدادات الجروب ".."\n🔏︙علامة ال (✔️) تعني مقفول".."\n◍  علامة ال (❌) تعني مفتوح*"
+local Text = "*\n◍  اعدادات الجروب ".."\n??︙علامة ال (✔️) تعني مقفول".."\n◍  علامة ال (❌) تعني مفتوح*"
 local reply_markup = bot.replyMarkup{
 type = 'inline',
 data = {
