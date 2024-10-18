@@ -23384,31 +23384,28 @@ return send(msg_chat_id,msg_id,[[*
 *]],"md")
 end
 
-if text == 'مبرمج السورس' or text == 'المبرمج تيمو' or text == 'تيمو' then
-local UserInfo = bot.getUser( 6702141393 ) 
-local photo = bot.getUserProfilePhotos(UserInfo.id)
-if photo.total_count > 0 then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {
-    {
-      {text = UserInfo.first_name , url = 't.me/'..UserInfo.username }
-    },
-  }
-  }
-return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio( 6702141393 ).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
-end
-end
-if text == 'المبرمج' or text == 'مبرمج السورس' or text == 'محدث السورس' then
-local UserInfo = bot.getUser(6702141393) 
-local photo = bot.getUserProfilePhotos(UserInfo.id)
-if photo.total_count > 0 then
-local reply_markup = bot.replyMarkup{type = 'inline',data = {
-    {
-      {text = UserInfo.first_name , url = 't.me/'..UserInfo.username }
-    },
-  }
-  }
-return bot.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, getbio(6702141393).."\n• — — — — — — — — — •\n"  , "html", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup )
-end
+if text == 'تيمو' or text == 'المبرمج تيمو' then
+photo = "https://t.me/h_o_k"
+local T =[[
+[ٓ  ᯓ 𓆩 ˹ †ø δølløω ძενεløρεƦ øδ †hε ՏøuƦcε ˼ 𓆪 𓆃](t.me/so_selva )
+]]
+klocal like_num = Redis:smembers(Fast.."like:users:"..msg.sender_id.user_id)
+local emo =  Redis:get(Fast.."like:id:emo:"..msg.chat_id) or '♥'eyboard = {} 
+Id_markup = bot.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '‹ ⇣ 𒅒• تــيـمــو 𒅒 ⇣ › .', url = "https://t.me/h_o_k"}
+},
+{
+{text = '‹ ٰ𖣂 • ᑕᕼ • 𖣂 ›', url = "https://t.me/so_selva"}
+},
+{
+{text = #like_num.." "..emo , data = msg.sender_id.user_id.."/likeId/"..#like_num}, 
+},
+}
+local msgg = msg_id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.."&caption=".. URL.escape(T).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if text == 'تيتو' or text == 'الخول' or text == 'المطور تيتو' then
 local UserInfo = bot.getUser(6792324910) 
