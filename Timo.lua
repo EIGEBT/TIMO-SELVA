@@ -23389,8 +23389,8 @@ photo = "https://t.me/h_o_k"
 local T =[[
 [ٓ  ᯓ 𓆩 ˹ †ø δølløω ძενεløρεƦ øδ †hε ՏøuƦcε ˼ 𓆪 𓆃](t.me/so_selva )
 ]]
-klocal like_num = Redis:smembers(Fast.."like:users:"..msg.sender_id.user_id)
-local emo =  Redis:get(Fast.."like:id:emo:"..msg.chat_id) or '♥'eyboard = {} 
+klocal like_num = Redis:smembers(Timo.."like:users:"..msg.sender_id.user_id)
+local emo =  Redis:get(Timo.."like:id:emo:"..msg.chat_id) or '♥'eyboard = {} 
 Id_markup = bot.replyMarkup{
 type = 'inline',
 data = {
